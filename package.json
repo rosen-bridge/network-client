@@ -1,0 +1,24 @@
+{
+  "name": "network-clients",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "clients/*"
+    ]
+  },
+  "scripts": {
+    "generate-client": "npm run generate-client --workspaces",
+    "lint": "npm run lint --workspaces",
+    "build": "npm run build --workspaces",
+    "type-check": "npm run type-check --workspaces",
+    "release": "npm run release --workspaces",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3"
+  },
+  "engines": {
+    "node": ">=18.14.0"
+  }
+}
