@@ -3,7 +3,7 @@ import { axiosInstance } from './axios';
 import * as v0 from './v0/api/default';
 import * as v1 from './v1/api/default';
 
-const ergoNodeClientFactory = (baseURL: string) => {
+const ergoExplorerClientFactory = (baseURL: string) => {
   axiosInstance.defaults.baseURL = baseURL;
 
   return {
@@ -12,4 +12,4 @@ const ergoNodeClientFactory = (baseURL: string) => {
   };
 };
 
-export default ergoNodeClientFactory;
+export default ergoExplorerClientFactory;
