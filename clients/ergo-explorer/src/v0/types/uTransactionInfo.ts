@@ -15,7 +15,7 @@ export interface UTransactionInfo {
   dataInputs?: UDataInputInfo[];
   outputs?: UOutputInfo[];
   /** Approximate time this transaction appeared in the network */
-  creationTimestamp: number;
+  creationTimestamp: bigint;
   /** Size of the transaction in bytes */
-  size: number;
+  size: bigint;
 }

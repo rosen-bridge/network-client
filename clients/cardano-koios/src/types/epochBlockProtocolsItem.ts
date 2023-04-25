@@ -197,9 +197,9 @@ There are bi-weekly calls held that anyone is free to join - or you can drop in 
 
 export type EpochBlockProtocolsItem = {
   /** Protocol major version */
-  proto_major?: number;
+  proto_major?: bigint;
   /** Protocol major version */
-  proto_minor?: number;
+  proto_minor?: bigint;
   /** Amount of blocks with specified major and protocol combination */
-  blocks?: number;
+  blocks?: bigint;
 };

@@ -17,14 +17,14 @@ import type { Votes } from './votes';
  * Can be null if node is not mining or candidate block is not ready
  */
 export type CandidateBlock = {
-  version?: number;
+  version?: bigint;
   extensionHash: Digest32;
   timestamp?: Timestamp;
   stateRoot?: ADDigest;
-  nBits?: number;
+  nBits?: bigint;
   adProofBytes?: SerializedAdProof;
   parentId: ModifierId;
-  transactionsNumber?: number;
+  transactionsNumber?: bigint;
   transactions?: Transactions;
   votes?: Votes;
 } | null;

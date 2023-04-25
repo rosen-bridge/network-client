@@ -13,5 +13,5 @@ import type { Digest32 } from './digest32';
 export interface Asset {
   tokenId: Digest32;
   /** Amount of the token */
-  amount: number;
+  amount: bigint;
 }

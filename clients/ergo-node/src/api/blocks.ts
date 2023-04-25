@@ -53,7 +53,7 @@ export const sendMinedBlock = (
  * @summary Get the header ids at a given height
  */
 export const getFullBlockAt = (
-  blockHeight: number,
+  blockHeight: bigint,
   options?: SecondParameter<typeof axios>
 ) => {
   return axios<string[]>(
@@ -126,7 +126,7 @@ export const getProofForTx = (
  * @summary Get the last headers objects
  */
 export const getLastHeaders = (
-  count: number,
+  count: bigint,
   options?: SecondParameter<typeof axios>
 ) => {
   return axios<BlockHeader[]>(

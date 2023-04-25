@@ -197,19 +197,19 @@ There are bi-weekly calls held that anyone is free to join - or you can drop in 
 
 export type PoolHistoryInfoItem = {
   /** Epoch for which the pool history data is shown */
-  epoch_no?: number;
+  epoch_no?: bigint;
   /** Amount of delegated stake to this pool at the time of epoch snapshot (in lovelaces) */
   active_stake?: string;
   /** Active stake for the pool, expressed as a percentage of total active stake on network */
-  active_stake_pct?: number;
+  active_stake_pct?: bigint;
   /** Saturation percentage of a pool at the time of snapshot (2 decimals) */
-  saturation_pct?: number;
+  saturation_pct?: bigint;
   /** Number of blocks pool created in that epoch */
-  block_cnt?: number | null;
+  block_cnt?: bigint | null;
   /** Number of delegators to the pool for that epoch snapshot */
-  delegator_cnt?: number;
+  delegator_cnt?: bigint;
   /** Margin (decimal format) */
-  margin?: number;
+  margin?: bigint;
   /** Pool fixed cost per epoch (in lovelaces) */
   fixed_cost?: string;
   /** Total amount of fees earned by pool owners in that epoch (in lovelaces) */
@@ -217,5 +217,5 @@ export type PoolHistoryInfoItem = {
   /** Total amount of rewards earned by delegators in that epoch (in lovelaces) */
   deleg_rewards?: string;
   /** Annualized ROS (return on staking) for delegators for this epoch */
-  epoch_ros?: number;
+  epoch_ros?: bigint;
 };

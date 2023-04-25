@@ -7,6 +7,6 @@
  */
 
 export interface PeersStatus {
-  lastIncomingMessage: number;
-  currentNetworkTime: number;
+  lastIncomingMessage: bigint;
+  currentNetworkTime: bigint;
 }

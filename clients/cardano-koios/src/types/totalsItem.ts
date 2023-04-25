@@ -197,7 +197,7 @@ There are bi-weekly calls held that anyone is free to join - or you can drop in 
 
 export type TotalsItem = {
   /** Epoch number */
-  epoch_no?: number;
+  epoch_no?: bigint;
   /** Circulating UTxOs for given epoch (in lovelaces) */
   circulation?: string;
   /** Funds in treasury for given epoch (in lovelaces) */

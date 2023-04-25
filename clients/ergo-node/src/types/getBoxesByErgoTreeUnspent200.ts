@@ -11,5 +11,5 @@ export type GetBoxesByErgoTreeUnspent200 = {
   /** Array of boxes */
   items?: IndexedErgoBox[];
   /** Total number of retreived boxes */
-  total?: number;
+  total?: bigint;
 };

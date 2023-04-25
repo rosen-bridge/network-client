@@ -7,5 +7,5 @@
  */
 
 export interface ScanId {
-  scanId?: number;
+  scanId?: bigint;
 }

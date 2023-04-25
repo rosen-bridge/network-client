@@ -12,11 +12,11 @@ export interface NodeInfo {
   name: string;
   appVersion: string;
   /** Can be 'null' if state is empty (no full block is applied since node launch) */
-  fullHeight: number | null;
+  fullHeight: bigint | null;
   /** Can be 'null' if state is empty (no header applied since node launch) */
-  headersHeight: number | null;
+  headersHeight: bigint | null;
   /** Maximum block height of connected peers. Can be 'null' if state is empty (no peer connected since node launch) */
-  maxPeerHeight: number | null;
+  maxPeerHeight: bigint | null;
   /** Can be 'null' if no full block is applied since node launch */
   bestFullHeaderId: string | null;
   /** Can be 'null' if no full block is applied since node launch */
@@ -30,20 +30,20 @@ export interface NodeInfo {
   stateVersion: string | null;
   isMining: boolean;
   /** Number of connected peers */
-  peersCount: number;
+  peersCount: bigint;
   /** Current unconfirmed transactions count */
-  unconfirmedCount: number;
+  unconfirmedCount: bigint;
   /** Difficulty on current bestFullHeaderId. Can be 'null' if no full block is applied since node launch. Difficulty is a BigInt integer.
    */
-  difficulty: number | null;
+  difficulty: bigint | null;
   /** Current internal node time */
-  currentTime: number;
+  currentTime: bigint;
   /** Time when the node was started */
-  launchTime: number;
+  launchTime: bigint;
   /** Can be 'null' if no headers is applied since node launch. headersScore is a BigInt integer. */
-  headersScore: number | null;
+  headersScore: bigint | null;
   /** Can be 'null' if no full block is applied since node launch. fullBlocksScore is a BigInt integer. */
-  fullBlocksScore: number | null;
+  fullBlocksScore: bigint | null;
   /** Can be 'null' if genesis blocks is not produced yet */
   genesisBlockId: string | null;
   /** current parameters */

@@ -205,5 +205,5 @@ export type AssetInfoItemTokenRegistryMetadata = {
   url?: string;
   /** A PNG image file as a byte string */
   logo?: string;
-  decimals?: number;
+  decimals?: bigint;
 } | null;

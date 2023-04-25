@@ -199,5 +199,5 @@ export type CredentialTxsBody = {
   /** Array of Cardano payment credential(s) in hex format */
   _payment_credentials: string[];
   /** Only fetch information after specific block height */
-  _after_block_height?: number;
+  _after_block_height?: bigint;
 };

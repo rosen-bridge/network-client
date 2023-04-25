@@ -198,9 +198,9 @@ import type { AccountRewardsItemRewardsItemType } from './accountRewardsItemRewa
 
 export type AccountRewardsItemRewardsItem = {
   /** Epoch number */
-  earned_epoch?: number;
+  earned_epoch?: bigint;
   /** Epoch number */
-  spendable_epoch?: number;
+  spendable_epoch?: bigint;
   /** Amount of rewards earned (in lovelace) */
   amount?: string;
   /** The source of the rewards */

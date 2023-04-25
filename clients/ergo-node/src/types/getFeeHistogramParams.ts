@@ -10,9 +10,9 @@ export type GetFeeHistogramParams = {
   /**
    * The number of bins in histogram
    */
-  bins?: number;
+  bins?: bigint;
   /**
    * Maximal wait time in milliseconds
    */
-  maxtime?: number;
+  maxtime?: bigint;
 };

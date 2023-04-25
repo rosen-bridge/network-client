@@ -10,7 +10,7 @@ import type { ScanningPredicate } from './scanningPredicate';
 
 export interface Scan {
   scanName?: string;
-  scanId?: number;
+  scanId?: bigint;
   walletInteraction?: ScanWalletInteraction;
   removeOffchain?: boolean;
   trackingRule?: ScanningPredicate;

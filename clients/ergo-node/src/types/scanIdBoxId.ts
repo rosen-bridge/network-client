@@ -8,6 +8,6 @@
 import type { TransactionBoxId } from './transactionBoxId';
 
 export interface ScanIdBoxId {
-  scanId: number;
+  scanId: bigint;
   boxId: TransactionBoxId;
 }

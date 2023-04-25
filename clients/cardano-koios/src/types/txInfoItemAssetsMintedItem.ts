@@ -203,7 +203,7 @@ export type TxInfoItemAssetsMintedItem = {
   /** The CIP14 fingerprint of the asset */
   fingerprint?: string;
   /** Asset decimals */
-  decimals?: number;
+  decimals?: bigint;
   /** Quantity of minted assets (negative on burn) */
   quantity?: string;
 };

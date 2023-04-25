@@ -212,19 +212,19 @@ export type TxInfoItem = {
   /** Hash of the block */
   block_hash?: string;
   /** Block height */
-  block_height?: number | null;
+  block_height?: bigint | null;
   /** Epoch number of the block */
-  epoch_no?: number;
+  epoch_no?: bigint;
   /** Slot number of the block in epoch */
-  epoch_slot?: number;
+  epoch_slot?: bigint;
   /** Absolute slot number of the block */
-  absolute_slot?: number;
+  absolute_slot?: bigint;
   /** UNIX timestamp of the transaction */
-  tx_timestamp?: number;
+  tx_timestamp?: bigint;
   /** Index of transaction within block */
-  tx_block_index?: number;
+  tx_block_index?: bigint;
   /** Size in bytes of transaction */
-  tx_size?: number;
+  tx_size?: bigint;
   /** Total sum of all transaction outputs (in lovelaces) */
   total_output?: string;
   /** Total Transaction fee (in lovelaces) */

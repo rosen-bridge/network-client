@@ -11,5 +11,5 @@ export type GetBoxesByAddress200 = {
   /** Array of boxes */
   items?: IndexedErgoTransaction[];
   /** Total number of retreived boxes */
-  total?: number;
+  total?: bigint;
 };

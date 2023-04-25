@@ -10,17 +10,17 @@ export type WalletTransactionsParams = {
   /**
    * Minimal tx inclusion height
    */
-  minInclusionHeight?: number;
+  minInclusionHeight?: bigint;
   /**
    * Maximal tx inclusion height
    */
-  maxInclusionHeight?: number;
+  maxInclusionHeight?: bigint;
   /**
    * Minimal confirmations number
    */
-  minConfirmations?: number;
+  minConfirmations?: bigint;
   /**
    * Maximal confirmations number
    */
-  maxConfirmations?: number;
+  maxConfirmations?: bigint;
 };

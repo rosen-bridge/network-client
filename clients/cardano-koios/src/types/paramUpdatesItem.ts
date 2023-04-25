@@ -199,11 +199,11 @@ export type ParamUpdatesItem = {
   /** Hash identifier of the transaction */
   tx_hash?: string;
   /** Block height */
-  block_height?: number | null;
+  block_height?: bigint | null;
   /** UNIX timestamp of the block */
-  block_time?: number;
+  block_time?: bigint;
   /** Epoch number */
-  epoch_no?: number;
+  epoch_no?: bigint;
   /** JSON encoded data with details about the parameter update */
   data?: string;
 };

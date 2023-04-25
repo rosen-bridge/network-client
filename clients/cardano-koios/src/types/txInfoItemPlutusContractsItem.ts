@@ -204,7 +204,7 @@ export type TxInfoItemPlutusContractsItem = {
   /** CBOR-encoded Plutus script data */
   bytecode?: string;
   /** The size of the CBOR serialised script (in bytes) */
-  size?: number;
+  size?: bigint;
   /** True if the contract is valid or there is no contract */
   valid_contract?: boolean;
   input?: TxInfoItemPlutusContractsItemInput;

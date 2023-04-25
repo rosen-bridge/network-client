@@ -14,14 +14,14 @@ import type { TransactionId } from './transactionId';
 export interface ErgoTransactionOutput {
   boxId?: TransactionBoxId;
   /** Amount of Ergo token */
-  value: number;
+  value: bigint;
   ergoTree: ErgoTree;
   /** Height the output was created at */
-  creationHeight: number;
+  creationHeight: bigint;
   /** Assets list in the transaction */
   assets?: Asset[];
   additionalRegisters: Registers;
   transactionId?: TransactionId;
   /** Index in the transaction outputs */
-  index?: number;
+  index?: bigint;
 }

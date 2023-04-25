@@ -22,5 +22,5 @@ export interface ErgoTransaction {
   /** Outputs of the transaction */
   outputs: ErgoTransactionOutput[];
   /** Size in bytes */
-  size?: number;
+  size?: bigint;
 }

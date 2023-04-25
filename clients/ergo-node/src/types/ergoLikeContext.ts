@@ -26,13 +26,13 @@ export interface ErgoLikeContext {
   /** transaction that contains `self` box */
   spendingTransaction: ErgoLikeTransaction;
   /** index of the box in `boxesToSpend` that contains the script we're evaluating */
-  selfIndex: number;
+  selfIndex: bigint;
   /** prover-defined key-value pairs, that may be used inside a script */
   extension: ErgoLikeContextExtension;
   /** validation parameters passed to Interpreter.verify to detect soft-fork conditions */
   validationSettings: string;
   /** hard limit on accumulated execution cost, if exceeded lead to CostLimitException to be thrown */
-  costLimit: number;
+  costLimit: bigint;
   /** initial value of execution cost already accumulated before Interpreter.verify is called */
-  initCost: number;
+  initCost: bigint;
 }

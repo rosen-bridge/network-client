@@ -6,7 +6,7 @@
  */
 
 export type GetApiV1BoxesUnspentByaddressP1Params = {
-  offset?: number;
-  limit?: number;
+  offset?: bigint;
+  limit?: bigint;
   sortDirection?: string;
 };

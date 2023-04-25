@@ -199,5 +199,5 @@ There are bi-weekly calls held that anyone is free to join - or you can drop in 
  * The budget in Memory to run a script
  */
 export type TxInfoItemPlutusContractsItemInputRedeemerUnitMem = {
-  [key: string]: string | number;
+  [key: string]: string | bigint;
 } | null;

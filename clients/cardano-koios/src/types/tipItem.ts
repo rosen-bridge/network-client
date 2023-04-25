@@ -199,13 +199,13 @@ export type TipItem = {
   /** Hash of the block */
   hash?: string;
   /** Epoch number of the block */
-  epoch_no?: number;
+  epoch_no?: bigint;
   /** Absolute slot number of the block */
-  abs_slot?: number;
+  abs_slot?: bigint;
   /** Slot number of the block in epoch */
-  epoch_slot?: number;
+  epoch_slot?: bigint;
   /** Block height */
-  block_no?: number | null;
+  block_no?: bigint | null;
   /** UNIX timestamp of the block */
-  block_time?: number;
+  block_time?: bigint;
 };

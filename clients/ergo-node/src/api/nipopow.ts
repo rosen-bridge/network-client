@@ -32,7 +32,7 @@ export const getPopowHeaderById = (
  * @summary Construct PoPow header for best header at given height
  */
 export const getPopowHeaderByHeight = (
-  height: number,
+  height: bigint,
   options?: SecondParameter<typeof axios>
 ) => {
   return axios<PopowHeader>(
@@ -44,8 +44,8 @@ export const getPopowHeaderByHeight = (
  * @summary Construct PoPoW proof for given min superchain length and suffix length
  */
 export const getPopowProof = (
-  minChainLength: number,
-  suffixLength: number,
+  minChainLength: bigint,
+  suffixLength: bigint,
   options?: SecondParameter<typeof axios>
 ) => {
   return axios<NipopowProof>(
@@ -57,8 +57,8 @@ export const getPopowProof = (
  * @summary Construct PoPoW proof for given min superchain length, suffix length and header ID
  */
 export const getPopowProofByHeaderId = (
-  minChainLength: number,
-  suffixLength: number,
+  minChainLength: bigint,
+  suffixLength: bigint,
   headerId: string,
   options?: SecondParameter<typeof axios>
 ) => {

@@ -203,9 +203,9 @@ export type AssetSummaryItem = {
   /** The CIP14 fingerprint of the asset */
   fingerprint?: string;
   /** Total number of transactions including the given asset */
-  total_transactions?: number;
+  total_transactions?: bigint;
   /** Total number of registered wallets holding the given asset */
-  staked_wallets?: number;
+  staked_wallets?: bigint;
   /** Total number of payment addresses (not belonging to registered wallets) holding the given asset */
-  unstaked_addresses?: number;
+  unstaked_addresses?: bigint;
 };

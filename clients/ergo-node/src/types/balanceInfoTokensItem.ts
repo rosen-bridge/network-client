@@ -11,9 +11,9 @@ export type BalanceInfoTokensItem = {
   /** Identifier of the token */
   tokenId?: ModifierId;
   /** Amount of the token */
-  amount?: number;
+  amount?: bigint;
   /** Number of decimals of the token */
-  decimals?: number;
+  decimals?: bigint;
   /** Name of the token, if any */
   name?: string;
 };

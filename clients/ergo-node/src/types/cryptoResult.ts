@@ -14,5 +14,5 @@ export interface CryptoResult {
   /** value of SigmaProp type which represents a statement verifiable via sigma protocol */
   value: SigmaBoolean;
   /** Estimated cost of contract execution */
-  cost: number;
+  cost: bigint;
 }

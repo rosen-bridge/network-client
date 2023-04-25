@@ -205,5 +205,5 @@ export type PoolInfoItemRelaysItem = {
   /** IPv6 address of the relay (nullable) */
   ipv6?: string | null;
   /** Port number of the relay (nullable) */
-  port?: number | null;
+  port?: bigint | null;
 };

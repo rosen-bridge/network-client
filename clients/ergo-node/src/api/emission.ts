@@ -20,7 +20,7 @@ type SecondParameter<T extends (...args: any) => any> = T extends (
  * @summary Get emission data for a given height
  */
 export const emissionAt = (
-  blockHeight: number,
+  blockHeight: bigint,
   options?: SecondParameter<typeof axios>
 ) => {
   return axios<EmissionInfo>(

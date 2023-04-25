@@ -199,27 +199,27 @@ export type BlocksItem = {
   /** Hash of the block */
   hash?: string;
   /** Epoch number of the block */
-  epoch_no?: number;
+  epoch_no?: bigint;
   /** Absolute slot number of the block */
-  abs_slot?: number;
+  abs_slot?: bigint;
   /** Slot number of the block in epoch */
-  epoch_slot?: number;
+  epoch_slot?: bigint;
   /** Block height */
-  block_height?: number | null;
+  block_height?: bigint | null;
   /** Block size in bytes */
-  block_size?: number;
+  block_size?: bigint;
   /** UNIX timestamp of the block */
-  block_time?: number;
+  block_time?: bigint;
   /** Number of transactions in the block */
-  tx_count?: number;
+  tx_count?: bigint;
   /** VRF key of the block producer */
   vrf_key?: string;
   /** Pool ID in bech32 format (null for pre-Shelley blocks) */
   pool?: string | null;
   /** Counter value of the operational certificate used to create this block */
-  op_cert_counter?: number;
+  op_cert_counter?: bigint;
   /** The protocol major version */
-  proto_major?: number | null;
+  proto_major?: bigint | null;
   /** The protocol minor version */
-  proto_minor?: number | null;
+  proto_minor?: bigint | null;
 };

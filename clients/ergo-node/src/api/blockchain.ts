@@ -72,7 +72,7 @@ export const getTxById = (
  * @summary Retrieve a transaction by global index number
  */
 export const getTxByIndex = (
-  txIndex: number,
+  txIndex: bigint,
   options?: SecondParameter<typeof axios>
 ) => {
   return axios<IndexedErgoTransaction>(
@@ -115,7 +115,7 @@ export const getTxRange = (
  * @summary Retrieve a box by global index number
  */
 export const getBoxByIndex = (
-  boxIndex: number,
+  boxIndex: bigint,
   options?: SecondParameter<typeof axios>
 ) => {
   return axios<IndexedErgoBox>(

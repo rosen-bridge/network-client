@@ -6,5 +6,5 @@
  */
 
 export type GetApiV0AddressesP1Params = {
-  minConfirmations?: number;
+  minConfirmations?: bigint;
 };

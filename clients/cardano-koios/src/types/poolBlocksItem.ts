@@ -197,15 +197,15 @@ There are bi-weekly calls held that anyone is free to join - or you can drop in 
 
 export type PoolBlocksItem = {
   /** Epoch number */
-  epoch_no?: number;
+  epoch_no?: bigint;
   /** Slot number of the block in epoch */
-  epoch_slot?: number;
+  epoch_slot?: bigint;
   /** Absolute slot number of the block */
-  abs_slot?: number;
+  abs_slot?: bigint;
   /** Block height */
-  block_height?: number | null;
+  block_height?: bigint | null;
   /** Hash of the block */
   block_hash?: string;
   /** UNIX timestamp of the block */
-  block_time?: number;
+  block_time?: bigint;
 };

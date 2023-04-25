@@ -14,5 +14,5 @@ export interface BlockADProofs {
   proofBytes: SerializedAdProof;
   digest: Digest32;
   /** Size in bytes */
-  size: number;
+  size: bigint;
 }

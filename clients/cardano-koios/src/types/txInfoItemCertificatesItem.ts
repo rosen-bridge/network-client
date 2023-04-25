@@ -198,7 +198,7 @@ import type { TxInfoItemCertificatesItemInfo } from './txInfoItemCertificatesIte
 
 export type TxInfoItemCertificatesItem = {
   /** Certificate index */
-  index?: number | null;
+  index?: bigint | null;
   /** Type of certificate (could be delegation, stake_registration, stake_deregistraion, pool_update, pool_retire, param_proposal, reserve_MIR, treasury_MIR) */
   type?: string;
   /** A JSON array containing information from the certificate */

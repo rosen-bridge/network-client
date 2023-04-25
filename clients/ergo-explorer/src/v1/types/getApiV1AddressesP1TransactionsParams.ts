@@ -6,12 +6,12 @@
  */
 
 export type GetApiV1AddressesP1TransactionsParams = {
-  offset?: number;
-  limit?: number;
+  offset?: bigint;
+  limit?: bigint;
   /**
    * Display only address inputs/outputs in transaction
    */
   concise?: boolean;
-  fromHeight?: number;
-  toHeight?: number;
+  fromHeight?: bigint;
+  toHeight?: bigint;
 };

@@ -198,4 +198,4 @@ There are bi-weekly calls held that anyone is free to join - or you can drop in 
 /**
  * Block height for specifying time delta
  */
-export type _AfterBlockHeightParameter = number;
+export type _AfterBlockHeightParameter = bigint;

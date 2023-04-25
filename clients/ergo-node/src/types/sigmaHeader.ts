@@ -25,12 +25,12 @@ export interface SigmaHeader {
   stateRoot: AvlTreeData;
   transactionsRoot: Digest32;
   transactionsId?: ModifierId;
-  nBits: number;
+  nBits: bigint;
   extensionHash: Digest32;
   extensionRoot?: Digest32;
   extensionId?: ModifierId;
-  height: number;
-  size?: number;
+  height: bigint;
+  size?: bigint;
   parentId: ModifierId;
   powSolutions?: PowSolutions;
   votes: Votes;
@@ -38,5 +38,5 @@ export interface SigmaHeader {
   powOnetimePk?: string;
   powNonce?: Digest32;
   /** sigma.BigInt */
-  powDistance?: number;
+  powDistance?: bigint;
 }

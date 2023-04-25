@@ -6,8 +6,8 @@
  */
 
 export type GetApiV1BlocksParams = {
-  offset?: number;
-  limit?: number;
+  offset?: bigint;
+  limit?: bigint;
   sortBy?: string;
   sortDirection?: string;
 };

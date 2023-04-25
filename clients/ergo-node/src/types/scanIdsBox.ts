@@ -11,6 +11,6 @@ import type { ErgoTransactionOutput } from './ergoTransactionOutput';
  * Ergo box with associated scans (their respective identifiers)
  */
 export interface ScanIdsBox {
-  scanIds: number[];
+  scanIds: bigint[];
   box: ErgoTransactionOutput;
 }

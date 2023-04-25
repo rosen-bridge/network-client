@@ -197,39 +197,39 @@ There are bi-weekly calls held that anyone is free to join - or you can drop in 
 
 export type EpochParamsItem = {
   /** Epoch number */
-  epoch_no?: number;
+  epoch_no?: bigint;
   /** The 'a' parameter to calculate the minimum transaction fee */
-  min_fee_a?: number | null;
+  min_fee_a?: bigint | null;
   /** The 'b' parameter to calculate the minimum transaction fee */
-  min_fee_b?: number | null;
+  min_fee_b?: bigint | null;
   /** The maximum block size (in bytes) */
-  max_block_size?: number | null;
+  max_block_size?: bigint | null;
   /** The maximum transaction size (in bytes) */
-  max_tx_size?: number | null;
+  max_tx_size?: bigint | null;
   /** The maximum block header size (in bytes) */
-  max_bh_size?: number | null;
+  max_bh_size?: bigint | null;
   /** The amount (in lovelace) required for a deposit to register a stake address */
   key_deposit?: string | null;
   /** The amount (in lovelace) required for a deposit to register a stake pool */
   pool_deposit?: string | null;
   /** The maximum number of epochs in the future that a pool retirement is allowed to be scheduled for */
-  max_epoch?: number | null;
+  max_epoch?: bigint | null;
   /** The optimal number of stake pools */
-  optimal_pool_count?: number | null;
+  optimal_pool_count?: bigint | null;
   /** The pledge influence on pool rewards */
-  influence?: number | null;
+  influence?: bigint | null;
   /** The monetary expansion rate */
-  monetary_expand_rate?: number | null;
+  monetary_expand_rate?: bigint | null;
   /** The treasury growth rate */
-  treasury_growth_rate?: number | null;
+  treasury_growth_rate?: bigint | null;
   /** The decentralisation parameter (1 fully centralised, 0 fully decentralised) */
-  decentralisation?: number | null;
+  decentralisation?: bigint | null;
   /** The hash of 32-byte string of extra random-ness added into the protocol's entropy pool */
   extra_entropy?: string | null;
   /** The protocol major version */
-  protocol_major?: number | null;
+  protocol_major?: bigint | null;
   /** The protocol minor version */
-  protocol_minor?: number | null;
+  protocol_minor?: bigint | null;
   /** The minimum value of a UTxO entry */
   min_utxo_value?: string | null;
   /** The minimum pool cost */
@@ -241,23 +241,23 @@ export type EpochParamsItem = {
   /** The per language cost models */
   cost_models?: string | null;
   /** The per word cost of script memory usage */
-  price_mem?: number | null;
+  price_mem?: bigint | null;
   /** The cost of script execution step usage */
-  price_step?: number | null;
+  price_step?: bigint | null;
   /** The maximum number of execution memory allowed to be used in a single transaction */
-  max_tx_ex_mem?: number | null;
+  max_tx_ex_mem?: bigint | null;
   /** The maximum number of execution steps allowed to be used in a single transaction */
-  max_tx_ex_steps?: number | null;
+  max_tx_ex_steps?: bigint | null;
   /** The maximum number of execution memory allowed to be used in a single block */
-  max_block_ex_mem?: number | null;
+  max_block_ex_mem?: bigint | null;
   /** The maximum number of execution steps allowed to be used in a single block */
-  max_block_ex_steps?: number | null;
+  max_block_ex_steps?: bigint | null;
   /** The maximum Val size */
-  max_val_size?: number | null;
+  max_val_size?: bigint | null;
   /** The percentage of the tx fee which must be provided as collateral when including non-native scripts */
-  collateral_percent?: number | null;
+  collateral_percent?: bigint | null;
   /** The maximum number of collateral inputs allowed in a transaction */
-  max_collateral_inputs?: number | null;
+  max_collateral_inputs?: bigint | null;
   /** The cost per UTxO size */
   coins_per_utxo_size?: string | null;
 };

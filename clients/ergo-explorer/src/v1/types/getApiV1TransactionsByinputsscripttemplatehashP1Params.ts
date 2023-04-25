@@ -6,7 +6,7 @@
  */
 
 export type GetApiV1TransactionsByinputsscripttemplatehashP1Params = {
-  offset?: number;
-  limit?: number;
+  offset?: bigint;
+  limit?: bigint;
   sortDirection?: string;
 };

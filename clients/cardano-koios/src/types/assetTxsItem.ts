@@ -199,9 +199,9 @@ export type AssetTxsItem = {
   /** Hash identifier of the transaction */
   tx_hash?: string;
   /** Epoch number of the block */
-  epoch_no?: number;
+  epoch_no?: bigint;
   /** Block height */
-  block_height?: number | null;
+  block_height?: bigint | null;
   /** UNIX timestamp of the block */
-  block_time?: number;
+  block_time?: bigint;
 };

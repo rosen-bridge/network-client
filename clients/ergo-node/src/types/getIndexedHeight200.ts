@@ -8,7 +8,7 @@
 
 export type GetIndexedHeight200 = {
   /** number of blocks indexed */
-  indexedHeight?: number;
+  indexedHeight?: bigint;
   /** number of all known blocks */
-  fullHeight?: number;
+  fullHeight?: bigint;
 };

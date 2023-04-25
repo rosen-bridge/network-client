@@ -203,7 +203,7 @@ export type TxInfoItemOutputsItemReferenceScript = {
   /** Hash of referenced script */
   hash?: string;
   /** Size in bytes */
-  size?: number;
+  size?: bigint;
   /** Type of script */
   type?: string;
   /** Script bytes (hex) */

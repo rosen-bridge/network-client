@@ -199,5 +199,5 @@ export type StakeAddressesWithEpochNoBody = {
   /** Array of Cardano stake address(es) in bech32 format */
   _stake_addresses: string[];
   /** Only fetch information for a specific epoch */
-  _epoch_no?: number;
+  _epoch_no?: bigint;
 };

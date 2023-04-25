@@ -16,11 +16,11 @@ export interface IndexedToken {
   /** Id of the box that created the token */
   boxId: ModifierId;
   /** The total supply of the token */
-  emissionAmount: number;
+  emissionAmount: bigint;
   /** The name of the token */
   name: string;
   /** The description of the token */
   description: string;
   /** The number of decimals the token supports */
-  decimals: number;
+  decimals: bigint;
 }

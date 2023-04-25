@@ -9,4 +9,4 @@
 /**
  * Ergo blockchain protocol version
  */
-export type Version = number;
+export type Version = bigint;

@@ -199,5 +199,5 @@ export type AddressTxsBody = {
   /** Array of Cardano payment address(es) in bech32 format */
   _addresses: string[];
   /** Only fetch information after specific block height */
-  _after_block_height?: number;
+  _after_block_height?: bigint;
 };

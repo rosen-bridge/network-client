@@ -205,7 +205,7 @@ export type AssetTokenRegistryItem = {
   ticker?: string;
   description?: string;
   url?: string;
-  decimals?: number;
+  decimals?: bigint;
   /** A PNG image file as a byte string */
   logo?: string;
 };

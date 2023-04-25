@@ -202,17 +202,17 @@ export type PoolUpdatesItem = {
   /** Hash identifier of the transaction */
   tx_hash?: string;
   /** UNIX timestamp of the block */
-  block_time?: number;
+  block_time?: bigint;
   /** Pool ID (bech32 format) */
   pool_id_bech32?: string;
   /** Pool ID (Hex format) */
   pool_id_hex?: string;
   /** Epoch number in which the update becomes active */
-  active_epoch_no?: number;
+  active_epoch_no?: bigint;
   /** Pool VRF key hash */
   vrf_key_hash?: string;
   /** Margin (decimal format) */
-  margin?: number;
+  margin?: bigint;
   /** Pool fixed cost per epoch */
   fixed_cost?: string;
   /** Pool pledge in lovelace */
@@ -229,5 +229,5 @@ export type PoolUpdatesItem = {
   /** Pool status */
   pool_status?: PoolUpdatesItemPoolStatus;
   /** Announced retiring epoch (nullable) */
-  retiring_epoch?: number | null;
+  retiring_epoch?: bigint | null;
 };

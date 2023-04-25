@@ -13,8 +13,8 @@ import type { Votes } from './votes';
 export interface PreHeader {
   timestamp: Timestamp;
   version: Version;
-  nBits: number;
-  height: number;
+  nBits: bigint;
+  height: bigint;
   parentId: ModifierId;
   votes: Votes;
   minerPk?: string;

@@ -19,5 +19,5 @@ export interface FullBlock {
   adProofs: BlockADProofs;
   extension: Extension;
   /** Size in bytes */
-  size: number;
+  size: bigint;
 }

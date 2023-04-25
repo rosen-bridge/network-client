@@ -11,7 +11,7 @@ import type { Asset } from './asset';
  * Amount of Ergo tokens and assets
  */
 export interface BalancesSnapshot {
-  height: number;
-  balance: number;
+  height: bigint;
+  balance: bigint;
   assets?: Asset[];
 }

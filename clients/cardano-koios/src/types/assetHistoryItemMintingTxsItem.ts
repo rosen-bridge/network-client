@@ -200,7 +200,7 @@ export type AssetHistoryItemMintingTxsItem = {
   /** Hash of minting/burning transaction */
   tx_hash?: string;
   /** UNIX timestamp of the block */
-  block_time?: number;
+  block_time?: bigint;
   /** Quantity minted/burned (negative numbers indicate burn transactions) */
   quantity?: string;
   /** Array of Transaction Metadata for given transaction */

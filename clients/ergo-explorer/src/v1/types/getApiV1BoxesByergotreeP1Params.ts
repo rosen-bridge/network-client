@@ -6,6 +6,6 @@
  */
 
 export type GetApiV1BoxesByergotreeP1Params = {
-  offset?: number;
-  limit?: number;
+  offset?: bigint;
+  limit?: bigint;
 };

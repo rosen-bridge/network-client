@@ -11,10 +11,10 @@ export interface BlockHeader {
   id: string;
   /** Modifier ID */
   parentId: string;
-  version: number;
-  timestamp: number;
-  height: number;
-  nBits: number;
+  version: bigint;
+  timestamp: bigint;
+  height: bigint;
+  nBits: bigint;
   votes: string;
   /** Hex-encoded string */
   stateRoot: string;

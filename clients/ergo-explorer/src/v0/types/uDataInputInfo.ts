@@ -11,13 +11,13 @@ export interface UDataInputInfo {
   /** ID of the transaction this data input was used in */
   transactionId: string;
   /** Amount of nanoERGs in the corresponding box */
-  value?: number;
+  value?: bigint;
   /** Index of the input in a transaction */
-  index: number;
+  index: bigint;
   /** ID of the output transaction */
   outputTransactionId?: string;
   /** Index of the output corresponding this input */
-  outputIndex?: number;
+  outputIndex?: bigint;
   /** Address */
   address?: string;
 }

@@ -203,7 +203,7 @@ export type ScriptRedeemersItemRedeemersItem = {
   /** Hash of Transaction containing the redeemer */
   tx_hash?: string;
   /** The index of the redeemer pointer in the transaction */
-  tx_index?: number;
+  tx_index?: bigint;
   /** The budget in Memory to run a script */
   unit_mem?: ScriptRedeemersItemRedeemersItemUnitMem;
   /** The budget in Cpu steps to run a script */
