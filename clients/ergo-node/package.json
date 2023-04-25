@@ -6,7 +6,8 @@
   "types": "dist/src/index.d.ts",
   "type": "module",
   "scripts": {
-    "generate-client": "orval && rimraf ./src/api/index.ts",
+    "codemod": "jscodeshift --parser=ts -t ../../codemod/number-to-bigint.ts ./src/**/*.ts",
+    "generate-client": "orval && rimraf ./src/api/index.ts && npm run codemod",
     "prettify": "prettier --write . --ignore-path .gitignore",
     "lint": "eslint --fix . && npm run prettify",
     "build": "tsc --build",
@@ -19,11 +20,13 @@
   },
   "license": "GPL-3.0",
   "devDependencies": {
+    "@types/jscodeshift": "^0.11.6",
     "@types/node": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.26.0",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
+    "jscodeshift": "^0.14.0",
     "orval": "^6.12.1",
     "prettier": "^2.8.4",
     "rimraf": "^4.4.1",
