@@ -11,5 +11,5 @@ export type GetTxsByAddress200 = {
   /** Array of transactions */
   items?: IndexedErgoTransaction[];
   /** Total count of retreived transactions */
-  total?: number;
+  total?: bigint;
 };

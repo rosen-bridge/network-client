@@ -199,7 +199,7 @@ export type AccountHistoryItemHistoryItem = {
   /** Bech32 representation of pool ID */
   pool_id?: string;
   /** Epoch number */
-  epoch_no?: number;
+  epoch_no?: bigint;
   /** Active stake amount (in lovelaces) */
   active_stake?: string;
 };

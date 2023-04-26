@@ -201,7 +201,7 @@ export type PoolDelegatorsItem = {
   /** Current delegator live stake (in lovelace) */
   amount?: string;
   /** Epoch number in which the delegation becomes active */
-  active_epoch_no?: number;
+  active_epoch_no?: bigint;
   /** Latest transaction hash used for delegation by the account */
   latest_delegation_tx_hash?: string;
 };

@@ -13,5 +13,5 @@ export interface SyncInfo {
   mode: PeerMode;
   version: string;
   status: string;
-  height: number;
+  height: bigint;
 }

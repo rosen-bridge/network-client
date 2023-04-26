@@ -22,11 +22,11 @@ export interface WalletTransaction {
   /** Transaction outputs */
   outputs: ErgoTransactionOutput[];
   /** Height of a block the transaction was included in */
-  inclusionHeight: number;
+  inclusionHeight: bigint;
   /** Number of transaction confirmations */
-  numConfirmations: number;
+  numConfirmations: bigint;
   /** Scan identifiers the transaction relates to */
-  scans: number[];
+  scans: bigint[];
   /** Size in bytes */
-  size?: number;
+  size?: bigint;
 }

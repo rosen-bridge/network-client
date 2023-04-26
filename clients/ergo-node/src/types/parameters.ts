@@ -9,22 +9,22 @@ import type { Version } from './version';
 
 export interface Parameters {
   /** Height when current parameters were considered(not actual height). Can be '0' if state is empty */
-  height: number;
+  height: bigint;
   /** Storage fee coefficient (per byte per storage period ~4 years) */
-  storageFeeFactor: number;
+  storageFeeFactor: bigint;
   /** Minimum value per byte of an output */
-  minValuePerByte: number;
+  minValuePerByte: bigint;
   /** Maximum block size (in bytes) */
-  maxBlockSize: number;
+  maxBlockSize: bigint;
   /** Maximum cumulative computational cost of input scripts in block transactions */
-  maxBlockCost: number;
+  maxBlockCost: bigint;
   blockVersion: Version;
   /** Validation cost of a single token */
-  tokenAccessCost: number;
+  tokenAccessCost: bigint;
   /** Validation cost per one transaction input */
-  inputCost: number;
+  inputCost: bigint;
   /** Validation cost per one data input */
-  dataInputCost: number;
+  dataInputCost: bigint;
   /** Validation cost per one transaction output */
-  outputCost: number;
+  outputCost: bigint;
 }

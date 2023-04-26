@@ -10,9 +10,9 @@ export type GetExpectedWaitTimeParams = {
   /**
    * Transaction fee (in nanoErgs)
    */
-  fee?: number;
+  fee?: bigint;
   /**
    * Transaction size
    */
-  txSize?: number;
+  txSize?: bigint;
 };

@@ -10,6 +10,6 @@
  * Fee histogram bin
  */
 export interface FeeHistogramBin {
-  nTxns?: number;
-  totalFee?: number;
+  nTxns?: bigint;
+  totalFee?: bigint;
 }

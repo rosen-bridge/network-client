@@ -10,17 +10,17 @@ export type WalletBoxesParams = {
   /**
    * Minimal number of confirmations, -1 means we consider unconfirmed
    */
-  minConfirmations?: number;
+  minConfirmations?: bigint;
   /**
    * Maximum number of confirmations, -1 means unlimited
    */
-  maxConfirmations?: number;
+  maxConfirmations?: bigint;
   /**
    * Minimal box inclusion height
    */
-  minInclusionHeight?: number;
+  minInclusionHeight?: bigint;
   /**
    * Maximum box inclusion height, -1 means unlimited
    */
-  maxInclusionHeight?: number;
+  maxInclusionHeight?: bigint;
 };

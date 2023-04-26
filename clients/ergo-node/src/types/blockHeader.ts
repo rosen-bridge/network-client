@@ -20,15 +20,15 @@ export interface BlockHeader {
   adProofsRoot: Digest32;
   stateRoot: ADDigest;
   transactionsRoot: Digest32;
-  nBits: number;
+  nBits: bigint;
   extensionHash: Digest32;
   powSolutions: PowSolutions;
-  height: number;
+  height: bigint;
   difficulty: string;
   parentId: ModifierId;
   votes: Votes;
   /** Size in bytes */
-  size?: number;
+  size?: bigint;
   extensionId?: ModifierId;
   transactionsId?: ModifierId;
   adProofsId?: ModifierId;

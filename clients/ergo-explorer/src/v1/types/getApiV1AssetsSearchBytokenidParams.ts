@@ -7,6 +7,6 @@
 
 export type GetApiV1AssetsSearchBytokenidParams = {
   query: string;
-  offset?: number;
-  limit?: number;
+  offset?: bigint;
+  limit?: bigint;
 };

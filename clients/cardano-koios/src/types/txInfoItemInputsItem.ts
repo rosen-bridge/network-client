@@ -206,7 +206,7 @@ export type TxInfoItemInputsItem = {
   /** Hash of transaction for UTxO */
   tx_hash?: string;
   /** Index of UTxO in the transaction */
-  tx_index?: number;
+  tx_index?: bigint;
   /** Total sum of ADA on the UTxO */
   value?: string;
   /** Hash of datum (if any) connected to UTxO */

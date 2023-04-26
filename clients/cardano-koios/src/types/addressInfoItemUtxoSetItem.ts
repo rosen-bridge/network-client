@@ -202,11 +202,11 @@ export type AddressInfoItemUtxoSetItem = {
   /** Hash of transaction for UTxO */
   tx_hash?: string;
   /** Index of UTxO in the transaction */
-  tx_index?: number;
+  tx_index?: bigint;
   /** Block height */
-  block_height?: number | null;
+  block_height?: bigint | null;
   /** UNIX timestamp of the block */
-  block_time?: number;
+  block_time?: bigint;
   /** Total sum of ADA on the UTxO */
   value?: string;
   /** The Hash of the Plutus Data */

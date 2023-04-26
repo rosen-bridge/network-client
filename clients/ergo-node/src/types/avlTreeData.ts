@@ -9,7 +9,7 @@ import type { Digest32 } from './digest32';
 
 export interface AvlTreeData {
   digest: Digest32;
-  treeFlags?: number;
-  keyLength?: number;
-  valueLength?: number | null;
+  treeFlags?: bigint;
+  keyLength?: bigint;
+  valueLength?: bigint | null;
 }

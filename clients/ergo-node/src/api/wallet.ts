@@ -227,7 +227,7 @@ export const walletGetTransaction = (
  * @summary Get scan-related transactions by scan id
  */
 export const walletTransactionsByScanId = (
-  scanId: number,
+  scanId: bigint,
   params?: WalletTransactionsByScanIdParams,
   options?: SecondParameter<typeof axios>
 ) => {

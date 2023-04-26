@@ -10,9 +10,9 @@ export type GetChainSliceParams = {
   /**
    * Min header height
    */
-  fromHeight?: number;
+  fromHeight?: bigint;
   /**
    * Max header height (best header height by default)
    */
-  toHeight?: number;
+  toHeight?: bigint;
 };

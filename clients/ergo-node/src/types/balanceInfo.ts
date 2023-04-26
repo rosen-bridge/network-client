@@ -12,7 +12,7 @@ import type { BalanceInfoTokensItem } from './balanceInfoTokensItem';
  */
 export interface BalanceInfo {
   /** Balance of nanoERGs */
-  nanoErgs: number;
+  nanoErgs: bigint;
   /** Balance of tokens */
   tokens: BalanceInfoTokensItem[];
 }

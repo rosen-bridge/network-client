@@ -6,4 +6,4 @@
  * OpenAPI spec version: 5.0.7
  */
 
-export type MerkleProofLevelsItemItem = string | number;
+export type MerkleProofLevelsItemItem = string | bigint;

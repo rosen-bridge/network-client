@@ -7,5 +7,5 @@
  */
 
 export type WalletRescanBody = {
-  fromHeight: number;
+  fromHeight: bigint;
 };

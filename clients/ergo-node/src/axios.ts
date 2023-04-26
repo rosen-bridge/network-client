@@ -1,6 +1,14 @@
 import Axios, { AxiosRequestConfig } from 'axios';
+import JsonBigintFactory from 'json-bigint';
 
-export const axiosInstance = Axios.create();
+const JsonBigInt = JsonBigintFactory({
+  alwaysParseAsBig: true,
+  useNativeBigInt: true,
+});
+
+export const axiosInstance = Axios.create({
+  transformResponse: (data) => JsonBigInt.parse(data),
+});
 
 export const axios = <T>(
   config: AxiosRequestConfig,

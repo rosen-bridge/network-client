@@ -10,9 +10,9 @@ export type GetHeaderIdsParams = {
   /**
    * The number of items in list to return
    */
-  limit?: number;
+  limit?: bigint;
   /**
    * The number of items in list to skip
    */
-  offset?: number;
+  offset?: bigint;
 };

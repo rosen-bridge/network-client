@@ -14,5 +14,5 @@ export interface PowSolutions {
   pk: string;
   w: string;
   n: string;
-  d: number;
+  d: bigint;
 }

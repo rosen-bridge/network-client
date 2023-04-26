@@ -197,23 +197,23 @@ There are bi-weekly calls held that anyone is free to join - or you can drop in 
 
 export type EpochInfoItem = {
   /** Epoch number */
-  epoch_no?: number;
+  epoch_no?: bigint;
   /** Total output value across all transactions in epoch */
   out_sum?: string;
   /** Total fees incurred by transactions in epoch */
   fees?: string;
   /** Number of transactions submitted in epoch */
-  tx_count?: number;
+  tx_count?: bigint;
   /** Number of blocks created in epoch */
-  blk_count?: number;
+  blk_count?: bigint;
   /** UNIX timestamp of the epoch start */
-  start_time?: number;
+  start_time?: bigint;
   /** UNIX timestamp of the epoch end */
-  end_time?: number;
+  end_time?: bigint;
   /** UNIX timestamp of the epoch's first block */
-  first_block_time?: number;
+  first_block_time?: bigint;
   /** UNIX timestamp of the epoch's last block */
-  last_block_time?: number;
+  last_block_time?: bigint;
   /** Total active stake in epoch stake snapshot (null for pre-Shelley epochs) */
   active_stake?: string | null;
   /** Total rewards earned in epoch (null for pre-Shelley epochs) */

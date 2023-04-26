@@ -202,5 +202,5 @@ export type PolicyAssetListItem = {
   fingerprint?: string;
   total_supply?: string;
   /** Asset decimals */
-  decimals?: number;
+  decimals?: bigint;
 };

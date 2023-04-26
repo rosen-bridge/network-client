@@ -10,8 +10,8 @@
  * Emission info for height
  */
 export interface EmissionInfo {
-  minerReward?: number;
-  totalCoinsIssued?: number;
-  totalRemainCoins?: number;
-  reemitted?: number;
+  minerReward?: bigint;
+  totalCoinsIssued?: bigint;
+  totalRemainCoins?: bigint;
+  reemitted?: bigint;
 }

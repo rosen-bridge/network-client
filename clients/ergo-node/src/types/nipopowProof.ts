@@ -10,9 +10,9 @@ import type { BlockHeader } from './blockHeader';
 
 export interface NipopowProof {
   /** security parameter (min μ-level superchain length) */
-  m: number;
+  m: bigint;
   /** security parameter (min suffix length, >= 1) */
-  k: number;
+  k: bigint;
   /** proof prefix headers */
   prefix: PopowHeader[];
   suffixHead: PopowHeader;

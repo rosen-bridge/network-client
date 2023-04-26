@@ -199,7 +199,7 @@ export type PoolSnapshotItem = {
   /** Type of snapshot ("Mark", "Set" or "Go") */
   snapshot?: string;
   /** Epoch number for the snapshot entry */
-  epoch_no?: number;
+  epoch_no?: bigint;
   /** The nonce value for this epoch */
   nonce?: string | null;
   /** Pool's Active Stake for the given epoch */

@@ -7,9 +7,9 @@
 
 export interface TxStats {
   /** Total amount of coins transferred by transaction */
-  totalCoinsTransferred: number;
+  totalCoinsTransferred: bigint;
   /** Total amount of fee in the transaction */
-  totalFee: number;
+  totalFee: bigint;
   /** Amount of nanoERGs ber byte in transaction */
-  feePerByte: number;
+  feePerByte: bigint;
 }

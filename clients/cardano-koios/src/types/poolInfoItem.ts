@@ -204,11 +204,11 @@ export type PoolInfoItem = {
   /** Pool ID (Hex format) */
   pool_id_hex?: string;
   /** Epoch number in which the update becomes active */
-  active_epoch_no?: number;
+  active_epoch_no?: bigint;
   /** Pool VRF key hash */
   vrf_key_hash?: string;
   /** Margin (decimal format) */
-  margin?: number;
+  margin?: bigint;
   /** Pool fixed cost per epoch */
   fixed_cost?: string;
   /** Pool pledge in lovelace */
@@ -225,23 +225,23 @@ export type PoolInfoItem = {
   /** Pool status */
   pool_status?: PoolInfoItemPoolStatus;
   /** Announced retiring epoch (nullable) */
-  retiring_epoch?: number | null;
+  retiring_epoch?: bigint | null;
   /** Pool latest operational certificate hash */
   op_cert?: string | null;
   /** Pool latest operational certificate counter value */
-  op_cert_counter?: number | null;
+  op_cert_counter?: bigint | null;
   /** Pool active stake (will be null post epoch transition until dbsync calculation is complete) */
   active_stake?: string | null;
   /** Pool relative active stake share */
-  sigma?: number | null;
+  sigma?: bigint | null;
   /** Total pool blocks on chain */
-  block_count?: number | null;
+  block_count?: bigint | null;
   /** Summary of account balance for all pool owner's */
   live_pledge?: string | null;
   /** Pool live stake */
   live_stake?: string | null;
   /** Pool live delegator count */
-  live_delegators?: number;
+  live_delegators?: bigint;
   /** Pool live saturation (decimal format) */
-  live_saturation?: number | null;
+  live_saturation?: bigint | null;
 };

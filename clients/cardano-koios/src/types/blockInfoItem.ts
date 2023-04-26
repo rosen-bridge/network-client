@@ -199,37 +199,37 @@ export type BlockInfoItem = {
   /** Hash of the block */
   hash?: string;
   /** Epoch number of the block */
-  epoch_no?: number;
+  epoch_no?: bigint;
   /** Absolute slot number of the block */
-  abs_slot?: number;
+  abs_slot?: bigint;
   /** Slot number of the block in epoch */
-  epoch_slot?: number;
+  epoch_slot?: bigint;
   /** Block height */
-  block_height?: number | null;
+  block_height?: bigint | null;
   /** Block size in bytes */
-  block_size?: number;
+  block_size?: bigint;
   /** UNIX timestamp of the block */
-  block_time?: number;
+  block_time?: bigint;
   /** Number of transactions in the block */
-  tx_count?: number;
+  tx_count?: bigint;
   /** VRF key of the block producer */
   vrf_key?: string;
   /** Hash of the block producers' operational certificate */
   op_cert?: string;
   /** Counter value of the operational certificate used to create this block */
-  op_cert_counter?: number;
+  op_cert_counter?: bigint;
   /** Pool ID in bech32 format (null for pre-Shelley blocks) */
   pool?: string | null;
   /** The protocol major version */
-  proto_major?: number | null;
+  proto_major?: bigint | null;
   /** The protocol minor version */
-  proto_minor?: number | null;
+  proto_minor?: bigint | null;
   /** Total output of the block (in lovelace) */
   total_output?: string | null;
   /** Total fees of the block (in lovelace) */
   total_fees?: string | null;
   /** Number of confirmations for the block */
-  num_confirmations?: number;
+  num_confirmations?: bigint;
   /** Hash of the parent of this block */
   parent_hash?: string;
   /** Hash of the child of this block (if present) */

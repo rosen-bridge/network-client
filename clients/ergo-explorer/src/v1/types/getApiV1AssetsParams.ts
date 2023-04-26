@@ -6,8 +6,8 @@
  */
 
 export type GetApiV1AssetsParams = {
-  offset?: number;
-  limit?: number;
+  offset?: bigint;
+  limit?: bigint;
   sortDirection?: string;
   /**
    * Exclude NFTs from result set

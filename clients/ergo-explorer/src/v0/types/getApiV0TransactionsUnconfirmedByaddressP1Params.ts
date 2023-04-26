@@ -6,6 +6,6 @@
  */
 
 export type GetApiV0TransactionsUnconfirmedByaddressP1Params = {
-  offset?: number;
-  limit?: number;
+  offset?: bigint;
+  limit?: bigint;
 };

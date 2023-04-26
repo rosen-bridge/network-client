@@ -14,5 +14,5 @@ export interface BoxesRequestHolder {
   /** Target assets */
   targetAssets: BoxesRequestHolderTargetAssetsItemItem[][];
   /** Target balance */
-  targetBalance: number;
+  targetBalance: bigint;
 }

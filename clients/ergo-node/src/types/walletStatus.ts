@@ -17,7 +17,7 @@ export interface WalletStatus {
   /** address to send change to. Empty when wallet is not initialized or locked. By default change address correponds to root key address, could be set via /wallet/updateChangeAddress method. */
   changeAddress: string;
   /** last scanned height for the wallet (and external scans) */
-  walletHeight: number;
+  walletHeight: bigint;
   /** last wallet error caught */
   error: string;
 }

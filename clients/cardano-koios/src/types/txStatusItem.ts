@@ -199,5 +199,5 @@ export type TxStatusItem = {
   /** Hash identifier of the transaction */
   tx_hash?: string;
   /** Number of block confirmations */
-  num_confirmations?: number | null;
+  num_confirmations?: bigint | null;
 };

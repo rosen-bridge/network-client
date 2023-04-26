@@ -24,16 +24,16 @@ export interface IndexedErgoTransaction {
   /** Transaction outputs */
   outputs: ErgoTransactionOutput[];
   /** Height of a block the transaction was included in */
-  inclusionHeight: number;
+  inclusionHeight: bigint;
   /** Number of transaction confirmations */
-  numConfirmations: number;
+  numConfirmations: bigint;
   /** Id of the block the transaction was included in */
   blockId: ModifierId;
   timestamp: Timestamp;
   /** index of the transaction in the block it was included in */
-  index: number;
+  index: bigint;
   /** Global index of the transaction in the blockchain */
-  globalIndex: number;
+  globalIndex: bigint;
   /** Size in bytes */
-  size: number;
+  size: bigint;
 }

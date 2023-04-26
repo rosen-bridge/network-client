@@ -210,11 +210,11 @@ export type AssetInfoItem = {
   minting_tx_hash?: string;
   total_supply?: string;
   /** Count of total mint transactions */
-  mint_cnt?: number;
+  mint_cnt?: bigint;
   /** Count of total burn transactions */
-  burn_cnt?: number;
+  burn_cnt?: bigint;
   /** UNIX timestamp of the first asset mint */
-  creation_time?: number;
+  creation_time?: bigint;
   /** Latest minting transaction metadata (aligns with CIP-25) */
   minting_tx_metadata?: AssetInfoItemMintingTxMetadataAllOf;
   /** Asset metadata registered on the Cardano Token Registry */

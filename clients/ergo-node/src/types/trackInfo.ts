@@ -9,7 +9,7 @@ import type { TrackInfoRequested } from './trackInfoRequested';
 import type { TrackInfoReceived } from './trackInfoReceived';
 
 export interface TrackInfo {
-  invalidModifierApproxSize: number;
+  invalidModifierApproxSize: bigint;
   /** Currently requested modifiers */
   requested: TrackInfoRequested;
   /** Received modifiers */

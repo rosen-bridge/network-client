@@ -9,4 +9,4 @@
 /**
  * TokenId or Long
  */
-export type BoxesRequestHolderTargetAssetsItemItem = string | number;
+export type BoxesRequestHolderTargetAssetsItemItem = string | bigint;

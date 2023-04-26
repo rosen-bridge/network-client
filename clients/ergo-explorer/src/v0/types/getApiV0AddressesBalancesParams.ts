@@ -6,6 +6,6 @@
  */
 
 export type GetApiV0AddressesBalancesParams = {
-  offset?: number;
-  limit?: number;
+  offset?: bigint;
+  limit?: bigint;
 };

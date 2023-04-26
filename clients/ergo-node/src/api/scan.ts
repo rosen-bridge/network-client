@@ -70,7 +70,7 @@ export const listAllScans = (options?: SecondParameter<typeof axios>) => {
  * @summary List boxes which are not spent.
  */
 export const listUnspentScans = (
-  scanId: number,
+  scanId: bigint,
   params?: ListUnspentScansParams,
   options?: SecondParameter<typeof axios>
 ) => {
@@ -83,7 +83,7 @@ export const listUnspentScans = (
  * @summary List boxes which are spent.
  */
 export const listSpentScans = (
-  scanId: number,
+  scanId: bigint,
   params?: ListSpentScansParams,
   options?: SecondParameter<typeof axios>
 ) => {

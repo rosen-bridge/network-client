@@ -19,14 +19,14 @@ export interface BlockHeaderWithoutPow {
   adProofsRoot: Digest32;
   stateRoot: ADDigest;
   transactionsRoot: Digest32;
-  nBits: number;
+  nBits: bigint;
   extensionHash: Digest32;
-  height: number;
-  difficulty: number;
+  height: bigint;
+  difficulty: bigint;
   parentId: ModifierId;
   votes: Votes;
   /** Size in bytes */
-  size?: number;
+  size?: bigint;
   extensionId?: ModifierId;
   transactionsId?: ModifierId;
   adProofsId?: ModifierId;

@@ -12,7 +12,7 @@ import type { HexString } from './hexString';
  */
 export interface SigmaBoolean {
   /** Sigma opCode */
-  op: number;
+  op: bigint;
   h?: HexString;
   g?: HexString;
   u?: HexString;

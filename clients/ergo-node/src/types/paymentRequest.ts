@@ -15,7 +15,7 @@ import type { Registers } from './registers';
 export interface PaymentRequest {
   address: ErgoAddress;
   /** Payment amount */
-  value: number;
+  value: bigint;
   /** Assets list in the transaction */
   assets?: Asset[];
   registers?: Registers;

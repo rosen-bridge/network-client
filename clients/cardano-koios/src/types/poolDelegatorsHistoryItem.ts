@@ -201,5 +201,5 @@ export type PoolDelegatorsHistoryItem = {
   /** Current delegator live stake (in lovelace) */
   amount?: string;
   /** Epoch number for the delegation history */
-  epoch_no?: number;
+  epoch_no?: bigint;
 };

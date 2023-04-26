@@ -10,5 +10,5 @@ export interface RequestedInfo {
   address?: string;
   version?: string;
   /** How many times we checked for modifier delivery status */
-  checks: number;
+  checks: bigint;
 }

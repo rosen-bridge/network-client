@@ -9,4 +9,4 @@
 /**
  * Basic timestamp definition
  */
-export type Timestamp = number;
+export type Timestamp = bigint;

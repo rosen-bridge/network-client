@@ -203,7 +203,7 @@ export type TxInfoItemOutputsItemAssetListItem = {
   /** The CIP14 fingerprint of the asset */
   fingerprint?: string;
   /** Asset decimals */
-  decimals?: number;
+  decimals?: bigint;
   /** Quantity of assets on the UTxO */
   quantity?: string;
 };

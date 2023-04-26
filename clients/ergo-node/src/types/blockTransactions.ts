@@ -12,5 +12,5 @@ export interface BlockTransactions {
   headerId: ModifierId;
   transactions: Transactions;
   /** Size in bytes */
-  size: number;
+  size: bigint;
 }

@@ -7,27 +7,27 @@
 
 export interface StatsSummary {
   /** Number of block within defined period */
-  blocksCount: number;
+  blocksCount: bigint;
   /** Avg. block time within defined period */
-  blocksAvgTime: number;
+  blocksAvgTime: bigint;
   /** Total number of coins transferred within defined period */
-  totalCoins: number;
+  totalCoins: bigint;
   /** Total number of transactions within defined period */
-  totalTransactionsCount: number;
+  totalTransactionsCount: bigint;
   /** Total amount of tx fees within defined period */
-  totalFee: number;
+  totalFee: bigint;
   /** Total amount of unspent outputs within defined period */
   totalOutput: string;
   /** Total amount of estimated outputs within defined period */
   estimatedOutput: string;
   /** Total miner revenue within defined period */
-  totalMinerRevenue: number;
+  totalMinerRevenue: bigint;
   /** Percent of tx fees in total amount of coins within defined period */
-  percentEarnedTransactionsFees: number;
+  percentEarnedTransactionsFees: bigint;
   /** Percent of miner rewards in total amount of coins within defined period */
-  percentTransactionVolume: number;
+  percentTransactionVolume: bigint;
   /** Avg. transaction fee within defined period */
-  costPerTx: number;
+  costPerTx: bigint;
   /** Latest network difficulty */
   lastDifficulty: string;
   /** Total network hashrate within defined period */

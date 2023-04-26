@@ -15,15 +15,15 @@ export interface AssetIssueRequest {
   /** Optional, first address in the wallet will be used if not defined */
   address?: ErgoAddress;
   /** Optional, amount of ergs to be put into box with issued assets */
-  ergValue?: number;
+  ergValue?: bigint;
   /** Supply amount */
-  amount: number;
+  amount: bigint;
   /** Assets name */
   name: string;
   /** Assets description */
   description: string;
   /** Number of decimal places */
-  decimals: number;
+  decimals: bigint;
   /** Optional, possible values for registers R7...R9 */
   registers?: Registers;
 }

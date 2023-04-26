@@ -202,11 +202,11 @@ export type AccountUpdatesItemUpdatesItem = {
   /** Hash identifier of the transaction */
   tx_hash?: string;
   /** Epoch number of the block */
-  epoch_no?: number;
+  epoch_no?: bigint;
   /** Slot number of the block in epoch */
-  epoch_slot?: number;
+  epoch_slot?: bigint;
   /** Absolute slot number of the block */
-  absolute_slot?: number;
+  absolute_slot?: bigint;
   /** UNIX timestamp of the block */
-  block_time?: number;
+  block_time?: bigint;
 };

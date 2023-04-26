@@ -9,5 +9,5 @@
 export interface PeerMode {
   state: string;
   verifyingTransactions: boolean;
-  fullBlocksSuffix: number;
+  fullBlocksSuffix: bigint;
 }

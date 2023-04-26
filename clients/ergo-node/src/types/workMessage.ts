@@ -14,7 +14,7 @@ export interface WorkMessage {
   /** Base16-encoded block header bytes without PoW solution */
   msg: string;
   /** Work target value */
-  b: number;
+  b: bigint;
   /** Base16-encoded miner public key */
   pk: string;
   proof?: ProofOfUpcomingTransactions;

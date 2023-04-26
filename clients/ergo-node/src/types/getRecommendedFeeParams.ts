@@ -10,9 +10,9 @@ export type GetRecommendedFeeParams = {
   /**
    * Maximum transaction wait time in minutes
    */
-  waitTime?: number;
+  waitTime?: bigint;
   /**
    * Transaction size
    */
-  txSize?: number;
+  txSize?: bigint;
 };

@@ -8,7 +8,7 @@
 
 export interface ApiError {
   /** Error code */
-  error: number;
+  error: bigint;
   /** String error code */
   reason: string;
   /** Detailed error description */

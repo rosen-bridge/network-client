@@ -6,5 +6,5 @@
  */
 
 export type GetApiV1AddressesP1BalanceConfirmedParams = {
-  minConfirmations?: number;
+  minConfirmations?: bigint;
 };

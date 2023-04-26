@@ -10,9 +10,9 @@ export type GetBoxesByErgoTreeUnspentParams = {
   /**
    * amount of elements to skip from the start
    */
-  offset?: number;
+  offset?: bigint;
   /**
    * amount of elements to retrieve
    */
-  limit?: number;
+  limit?: bigint;
 };

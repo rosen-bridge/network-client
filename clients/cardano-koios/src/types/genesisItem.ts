@@ -207,7 +207,7 @@ export type GenesisItem = {
   /** Maximum smallest units (lovelaces) supply for the blockchain */
   maxlovelacesupply?: string;
   /** UNIX timestamp of the first block (genesis) on chain */
-  systemstart?: number;
+  systemstart?: bigint;
   /** Active Slot Co-Efficient (f) - determines the _probability_ of number of slots in epoch that are expected to have blocks (so mainnet, this would be: 432000 * 0.05 = 21600 estimated blocks) */
   activeslotcoeff?: string;
   /** Number of slots that represent a single KES period (a unit used for validation of KES key evolutions) */
