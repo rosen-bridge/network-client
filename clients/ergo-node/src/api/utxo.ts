@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.7
+ * OpenAPI spec version: 5.0.10
  */
 import type {
   SerializedAdProof,
@@ -83,6 +83,11 @@ export const genesisBoxes = (options?: SecondParameter<typeof axios>) => {
     options
   );
 };
+
+type AwaitedInput<T> = PromiseLike<T> | T;
+
+type Awaited<O> = O extends AwaitedInput<infer T> ? T : never;
+
 export type GetBoxesBinaryProofResult = NonNullable<
   Awaited<ReturnType<typeof getBoxesBinaryProof>>
 >;

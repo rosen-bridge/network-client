@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.7
+ * OpenAPI spec version: 5.0.10
  */
 
 export type OrPredicateAllOf = { [key: string]: any };

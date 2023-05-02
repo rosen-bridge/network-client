@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.7
+ * OpenAPI spec version: 5.0.10
  */
 import { axios } from '../axios';
 
@@ -21,6 +21,11 @@ type SecondParameter<T extends (...args: any) => any> = T extends (
 export const nodeShutdown = (options?: SecondParameter<typeof axios>) => {
   return axios<void>({ url: `/node/shutdown`, method: 'post' }, options);
 };
+
+type AwaitedInput<T> = PromiseLike<T> | T;
+
+type Awaited<O> = O extends AwaitedInput<infer T> ? T : never;
+
 export type NodeShutdownResult = NonNullable<
   Awaited<ReturnType<typeof nodeShutdown>>
 >;

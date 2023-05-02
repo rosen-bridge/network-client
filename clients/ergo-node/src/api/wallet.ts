@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.7
+ * OpenAPI spec version: 5.0.10
  */
 import type {
   InitWalletResult,
@@ -33,6 +33,7 @@ import type {
   TransactionSigningRequest,
   TransactionId,
   PaymentRequest,
+  DlogSecret,
   TransactionHintsBag,
   GenerateCommitmentsRequest,
   HintExtractionRequest,
@@ -383,6 +384,23 @@ export const walletPaymentTransactionGenerateAndSend = (
   );
 };
 /**
+ * @summary Get the private key corresponding to a known address
+ */
+export const walletGetPrivateKey = (
+  ergoAddress: ErgoAddress,
+  options?: SecondParameter<typeof axios>
+) => {
+  return axios<DlogSecret>(
+    {
+      url: `/wallet/getPrivateKey`,
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      data: ergoAddress,
+    },
+    options
+  );
+};
+/**
  * @summary Generate signature commitments for inputs of an unsigned transaction
  */
 export const generateCommitments = (
@@ -433,6 +451,11 @@ export const addBox = (
     options
   );
 };
+
+type AwaitedInput<T> = PromiseLike<T> | T;
+
+type Awaited<O> = O extends AwaitedInput<infer T> ? T : never;
+
 export type WalletInitResult = NonNullable<
   Awaited<ReturnType<typeof walletInit>>
 >;
@@ -504,6 +527,9 @@ export type WalletTransactionGenerateAndSendResult = NonNullable<
 >;
 export type WalletPaymentTransactionGenerateAndSendResult = NonNullable<
   Awaited<ReturnType<typeof walletPaymentTransactionGenerateAndSend>>
+>;
+export type WalletGetPrivateKeyResult = NonNullable<
+  Awaited<ReturnType<typeof walletGetPrivateKey>>
 >;
 export type GenerateCommitmentsResult = NonNullable<
   Awaited<ReturnType<typeof generateCommitments>>
