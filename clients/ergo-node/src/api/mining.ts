@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.7
+ * OpenAPI spec version: 5.0.10
  */
 import type {
   WorkMessage,
@@ -89,6 +89,11 @@ export const miningSubmitSolution = (
     options
   );
 };
+
+type AwaitedInput<T> = PromiseLike<T> | T;
+
+type Awaited<O> = O extends AwaitedInput<infer T> ? T : never;
+
 export type MiningRequestBlockCandidateResult = NonNullable<
   Awaited<ReturnType<typeof miningRequestBlockCandidate>>
 >;

@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.7
+ * OpenAPI spec version: 5.0.10
  */
 import type {
   IndexedErgoBox,
@@ -150,7 +150,7 @@ export const getBoxesByAddressUnspent = (
   params?: GetBoxesByAddressUnspentParams,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<IndexedErgoTransaction[]>(
+  return axios<IndexedErgoBox[]>(
     {
       url: `/blockchain/box/unspent/byAddress`,
       method: 'post',
@@ -240,6 +240,11 @@ export const getAddressBalanceTotal = (
     options
   );
 };
+
+type AwaitedInput<T> = PromiseLike<T> | T;
+
+type Awaited<O> = O extends AwaitedInput<infer T> ? T : never;
+
 export type GetBoxByIdResult = NonNullable<
   Awaited<ReturnType<typeof getBoxById>>
 >;
