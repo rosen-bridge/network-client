@@ -54,7 +54,7 @@ export const sendTransactionAsBytes = (
     {
       url: `/transactions/bytes`,
       method: 'post',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain' },
       data: sendTransactionAsBytesBody,
     },
     options

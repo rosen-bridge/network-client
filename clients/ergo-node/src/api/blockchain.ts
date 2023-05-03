@@ -185,7 +185,7 @@ export const getBoxesByErgoTree = (
     {
       url: `/blockchain/box/byErgoTree`,
       method: 'post',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain' },
       data: getBoxesByErgoTreeBody,
       params,
     },
@@ -234,7 +234,7 @@ export const getAddressBalanceTotal = (
     {
       url: `/blockchain/balance`,
       method: 'post',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain' },
       data: ergoAddress,
     },
     options
