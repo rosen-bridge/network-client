@@ -6,7 +6,7 @@
  */
 import type {
   TransactionInfo,
-  ItemsA,
+  ItemsTransactionInfo,
   GetApiV1TransactionsByinputsscripttemplatehashP1Params,
   ListTransactionInfo,
   GetApiV1TransactionsByglobalindexStreamParams,
@@ -16,6 +16,7 @@ import type {
   GetApiV1BoxesUnspentStreamParams,
   GetApiV1BoxesByergotreetemplatehashP1StreamParams,
   GetApiV1BoxesUnspentByergotreetemplatehashP1StreamParams,
+  ItemsOutputInfo,
   GetApiV1BoxesUnspentBytokenidP1Params,
   GetApiV1BoxesBytokenidP1Params,
   OutputInfo,
@@ -31,18 +32,22 @@ import type {
   BoxQuery,
   PostApiV1BoxesUnspentSearchParams,
   PostApiV1BoxesSearchParams,
+  ItemsTokenInfo,
   GetApiV1TokensParams,
   GetApiV1TokensSearchParams,
   TokenInfo,
   GetApiV1AssetsParams,
+  ItemsAssetInfo,
   GetApiV1AssetsSearchBytokenidParams,
   EpochInfo,
   GetApiV1AddressesP1TransactionsParams,
   Balance,
   GetApiV1AddressesP1BalanceConfirmedParams,
   TotalBalance,
+  ItemsBlockInfo,
   GetApiV1BlocksParams,
   BlockSummary,
+  ItemsBlockHeader,
   GetApiV1BlocksHeadersParams,
   ListBlockInfo,
   GetApiV1BlocksByglobalindexStreamParams,
@@ -50,6 +55,7 @@ import type {
   GetApiV1BlocksStreamSummaryParams,
   TxIdResponse,
   PostApiV1MempoolTransactionsSubmitBody,
+  ItemsUTransactionInfo,
   GetApiV1MempoolTransactionsByaddressP1Params,
   NetworkState,
   NetworkStats,
@@ -78,7 +84,7 @@ export const getApiV1TransactionsByinputsscripttemplatehashP1 = (
   params?: GetApiV1TransactionsByinputsscripttemplatehashP1Params,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsTransactionInfo>(
     {
       url: `/api/v1/transactions/byInputsScriptTemplateHash/${p1}`,
       method: 'get',
@@ -169,7 +175,7 @@ export const getApiV1BoxesUnspentBytokenidP1 = (
   params?: GetApiV1BoxesUnspentBytokenidP1Params,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsOutputInfo>(
     { url: `/api/v1/boxes/unspent/byTokenId/${p1}`, method: 'get', params },
     options
   );
@@ -179,7 +185,7 @@ export const getApiV1BoxesBytokenidP1 = (
   params?: GetApiV1BoxesBytokenidP1Params,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsOutputInfo>(
     { url: `/api/v1/boxes/byTokenId/${p1}`, method: 'get', params },
     options
   );
@@ -198,7 +204,7 @@ export const getApiV1BoxesByergotreeP1 = (
   params?: GetApiV1BoxesByergotreeP1Params,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsOutputInfo>(
     { url: `/api/v1/boxes/byErgoTree/${p1}`, method: 'get', params },
     options
   );
@@ -208,7 +214,7 @@ export const getApiV1BoxesByergotreetemplatehashP1 = (
   params?: GetApiV1BoxesByergotreetemplatehashP1Params,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsOutputInfo>(
     {
       url: `/api/v1/boxes/byErgoTreeTemplateHash/${p1}`,
       method: 'get',
@@ -222,7 +228,7 @@ export const getApiV1BoxesUnspentByergotreeP1 = (
   params?: GetApiV1BoxesUnspentByergotreeP1Params,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsOutputInfo>(
     { url: `/api/v1/boxes/unspent/byErgoTree/${p1}`, method: 'get', params },
     options
   );
@@ -232,7 +238,7 @@ export const getApiV1BoxesUnspentByergotreetemplatehashP1 = (
   params?: GetApiV1BoxesUnspentByergotreetemplatehashP1Params,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsOutputInfo>(
     {
       url: `/api/v1/boxes/unspent/byErgoTreeTemplateHash/${p1}`,
       method: 'get',
@@ -246,7 +252,7 @@ export const getApiV1BoxesByaddressP1 = (
   params?: GetApiV1BoxesByaddressP1Params,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsOutputInfo>(
     { url: `/api/v1/boxes/byAddress/${p1}`, method: 'get', params },
     options
   );
@@ -256,7 +262,7 @@ export const getApiV1BoxesUnspentByaddressP1 = (
   params?: GetApiV1BoxesUnspentByaddressP1Params,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsOutputInfo>(
     { url: `/api/v1/boxes/unspent/byAddress/${p1}`, method: 'get', params },
     options
   );
@@ -281,7 +287,7 @@ export const postApiV1BoxesUnspentSearchUnion = (
   params?: PostApiV1BoxesUnspentSearchUnionParams,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsOutputInfo>(
     {
       url: `/api/v1/boxes/unspent/search/union`,
       method: 'post',
@@ -300,7 +306,7 @@ export const postApiV1BoxesUnspentSearch = (
   params?: PostApiV1BoxesUnspentSearchParams,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsOutputInfo>(
     {
       url: `/api/v1/boxes/unspent/search`,
       method: 'post',
@@ -319,7 +325,7 @@ export const postApiV1BoxesSearch = (
   params?: PostApiV1BoxesSearchParams,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsOutputInfo>(
     {
       url: `/api/v1/boxes/search`,
       method: 'post',
@@ -334,7 +340,7 @@ export const getApiV1Tokens = (
   params?: GetApiV1TokensParams,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsTokenInfo>(
     { url: `/api/v1/tokens`, method: 'get', params },
     options
   );
@@ -346,7 +352,7 @@ export const getApiV1TokensSearch = (
   params: GetApiV1TokensSearchParams,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsTokenInfo>(
     { url: `/api/v1/tokens/search`, method: 'get', params },
     options
   );
@@ -380,7 +386,7 @@ export const getApiV1Assets = (
   params?: GetApiV1AssetsParams,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsTokenInfo>(
     { url: `/api/v1/assets`, method: 'get', params },
     options
   );
@@ -389,7 +395,7 @@ export const getApiV1AssetsSearchBytokenid = (
   params: GetApiV1AssetsSearchBytokenidParams,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsAssetInfo>(
     { url: `/api/v1/assets/search/byTokenId`, method: 'get', params },
     options
   );
@@ -407,7 +413,7 @@ export const getApiV1AddressesP1Transactions = (
   params?: GetApiV1AddressesP1TransactionsParams,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsTransactionInfo>(
     { url: `/api/v1/addresses/${p1}/transactions`, method: 'get', params },
     options
   );
@@ -435,7 +441,7 @@ export const getApiV1Blocks = (
   params?: GetApiV1BlocksParams,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsBlockInfo>(
     { url: `/api/v1/blocks`, method: 'get', params },
     options
   );
@@ -453,7 +459,7 @@ export const getApiV1BlocksHeaders = (
   params?: GetApiV1BlocksHeadersParams,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsBlockHeader>(
     { url: `/api/v1/blocks/headers`, method: 'get', params },
     options
   );
@@ -501,7 +507,7 @@ export const getApiV1MempoolTransactionsByaddressP1 = (
   params?: GetApiV1MempoolTransactionsByaddressP1Params,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsUTransactionInfo>(
     {
       url: `/api/v1/mempool/transactions/byAddress/${p1}`,
       method: 'get',

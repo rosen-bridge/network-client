@@ -98,7 +98,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Items_A'
+                $ref: '#/components/schemas/Items_TransactionInfo'
         '404':
           description: Not found
           content:
@@ -190,7 +190,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Items_A'
+                $ref: '#/components/schemas/Items_BalanceInfo'
         '404':
           description: Not found
           content:
@@ -232,7 +232,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Items_A'
+                $ref: '#/components/schemas/Items_OutputInfo'
         '404':
           description: Not found
           content:
@@ -320,7 +320,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Items_A'
+                $ref: '#/components/schemas/Items_BlockInfo'
         '404':
           description: Not found
           content:
@@ -610,7 +610,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Items_A'
+                $ref: '#/components/schemas/Items_UTransactionInfo'
         '404':
           description: Not found
           content:
@@ -662,7 +662,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Items_A'
+                $ref: '#/components/schemas/Items_UTransactionInfo'
         '404':
           description: Not found
           content:
@@ -1399,7 +1399,7 @@ components:
         address:
           type: string
           description: Decoded address of the corresponding box holder
-    Items_A:
+    Items_TransactionInfo:
       required:
         - total
       type: object
@@ -1408,6 +1408,58 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TransactionInfo'
+          description: Items in selection
+        total:
+          type: integer
+          description: Total qty of items
+    Items_UTransactionInfo:
+      required:
+        - total
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/UTransactionInfo'
+          description: Items in selection
+        total:
+          type: integer
+          description: Total qty of items
+    Items_BalanceInfo:
+      required:
+        - total
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/BalanceInfo'
+          description: Items in selection
+        total:
+          type: integer
+          description: Total qty of items
+    Items_OutputInfo:
+      required:
+        - total
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OutputInfo'
+          description: Items in selection
+        total:
+          type: integer
+          description: Total qty of items
+    Items_BlockInfo:
+      required:
+        - total
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/BlockInfo'
           description: Items in selection
         total:
           type: integer

@@ -4,11 +4,11 @@
  * Ergo Explorer API v0
  * OpenAPI spec version: 1.0
  */
-import type { TransactionInfo } from './transactionInfo';
+import type { BalanceInfo } from './balanceInfo';
 
-export interface ItemsA {
+export interface ItemsBalanceInfo {
   /** Items in selection */
-  items?: TransactionInfo[];
+  items?: BalanceInfo[];
   /** Total qty of items */
   total: bigint;
 }
