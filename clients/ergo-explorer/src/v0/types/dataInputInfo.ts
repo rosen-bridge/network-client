@@ -9,13 +9,13 @@ export interface DataInputInfo {
   /** ID of the corresponding box */
   id: string;
   /** Number of nanoErgs in the corresponding box */
-  value?: number;
-  index: number;
+  value?: bigint;
+  index: bigint;
   /** ID of the transaction this data input was used in */
   transactionId: string;
   /** ID of the transaction outputting corresponding box */
   outputTransactionId?: string;
-  outputIndex?: number;
+  outputIndex?: bigint;
   /** Decoded address of the corresponding box holder */
   address?: string;
 }

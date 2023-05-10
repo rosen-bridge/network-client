@@ -9,6 +9,6 @@ export type GetApiV1BoxesUnspentByglobalindexStreamParams = {
   /**
    * Min global index (in blockchain) of an on-chain entity
    */
-  minGix: number;
-  limit: number;
+  minGix: bigint;
+  limit: bigint;
 };

@@ -10,5 +10,5 @@ export interface ItemsBlockInfo {
   /** Items in selection */
   items?: BlockInfo[];
   /** Total qty of items */
-  total: number;
+  total: bigint;
 }

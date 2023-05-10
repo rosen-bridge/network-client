@@ -13,11 +13,11 @@ export interface UOutputInfo {
   /** Id of the transaction that created the box */
   transactionId: string;
   /** Value of the box in nanoERG */
-  value: number;
+  value: bigint;
   /** Index of the output in a transaction */
-  index: number;
+  index: bigint;
   /** Height at which the box was created */
-  creationHeight: number;
+  creationHeight: bigint;
   /** Serialized ergo tree */
   ergoTree: string;
   /** An address derived from ergo tree */

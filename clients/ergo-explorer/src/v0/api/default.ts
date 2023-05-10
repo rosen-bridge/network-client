@@ -120,7 +120,7 @@ export const getApiV0BlocksP1 = (
   );
 };
 export const getApiV0BlocksAtP1 = (
-  p1: number,
+  p1: bigint,
   options?: SecondParameter<typeof axios>
 ) => {
   return axios<string[]>(
@@ -200,7 +200,7 @@ export const getApiV0TransactionsUnconfirmed = (
   );
 };
 export const getApiV0TransactionsSinceP1 = (
-  p1: number,
+  p1: bigint,
   params?: GetApiV0TransactionsSinceP1Params,
   options?: SecondParameter<typeof axios>
 ) => {

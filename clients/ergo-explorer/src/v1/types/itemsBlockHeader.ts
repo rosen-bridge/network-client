@@ -10,5 +10,5 @@ export interface ItemsBlockHeader {
   /** Items in selection */
   items?: BlockHeader[];
   /** Total qty of items */
-  total: number;
+  total: bigint;
 }

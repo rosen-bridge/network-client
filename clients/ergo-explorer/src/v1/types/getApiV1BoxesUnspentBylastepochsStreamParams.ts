@@ -6,5 +6,5 @@
  */
 
 export type GetApiV1BoxesUnspentBylastepochsStreamParams = {
-  lastEpochs: number;
+  lastEpochs: bigint;
 };

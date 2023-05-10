@@ -9,9 +9,9 @@ export interface TokenAmount {
   /** Token ID */
   tokenId: string;
   /** Token amount */
-  amount: number;
+  amount: bigint;
   /** Number of decimals */
-  decimals: number;
+  decimals: bigint;
   /** Token name */
   name?: string;
   /** Asset type (token standard) */

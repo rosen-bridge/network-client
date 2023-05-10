@@ -6,6 +6,6 @@
  */
 
 export type PostApiV1BoxesSearchParams = {
-  offset?: number;
-  limit?: number;
+  offset?: bigint;
+  limit?: bigint;
 };

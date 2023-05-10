@@ -6,6 +6,6 @@
  */
 
 export type GetApiV1BoxesByergotreetemplatehashP1StreamParams = {
-  minHeight: number;
-  maxHeight: number;
+  minHeight: bigint;
+  maxHeight: bigint;
 };

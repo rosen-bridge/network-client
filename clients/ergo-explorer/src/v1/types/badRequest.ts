@@ -6,6 +6,6 @@
  */
 
 export interface BadRequest {
-  status: number;
+  status: bigint;
   reason: string;
 }

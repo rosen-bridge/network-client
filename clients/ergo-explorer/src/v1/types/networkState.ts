@@ -9,8 +9,8 @@ import type { EpochInfo } from './epochInfo';
 export interface NetworkState {
   /** Modifier ID */
   lastBlockId: string;
-  height: number;
-  maxBoxGix: number;
-  maxTxGix: number;
+  height: bigint;
+  maxBoxGix: bigint;
+  maxTxGix: bigint;
   params: EpochInfo;
 }

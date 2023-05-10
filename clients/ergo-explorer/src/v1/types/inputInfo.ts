@@ -11,9 +11,9 @@ export interface InputInfo {
   /** ID of the corresponding box */
   boxId: string;
   /** Number of nanoErgs in the corresponding box */
-  value: number;
+  value: bigint;
   /** Index of the input in a transaction */
-  index: number;
+  index: bigint;
   /** Hex-encoded serialized sigma proof */
   spendingProof?: string;
   /** Modifier ID */
@@ -21,13 +21,13 @@ export interface InputInfo {
   /** ID of the transaction outputting corresponding box */
   outputTransactionId: string;
   /** Index of the output corresponding this input */
-  outputIndex: number;
+  outputIndex: bigint;
   /** Global index of the output corresponding this input */
-  outputGlobalIndex: number;
+  outputGlobalIndex: bigint;
   /** Height the output corresponding this input was created at */
-  outputCreatedAt: number;
+  outputCreatedAt: bigint;
   /** Height the output corresponding this input was settled at */
-  outputSettledAt: number;
+  outputSettledAt: bigint;
   /** Hex-encoded string */
   ergoTree: string;
   /** Decoded address of the corresponding box holder */

@@ -15,15 +15,15 @@ export interface OutputInfo {
   /** Id of the block a box included in */
   blockId: string;
   /** Value of the box in nanoERG */
-  value: number;
+  value: bigint;
   /** Index of the output in a transaction */
-  index: number;
+  index: bigint;
   /** Global index of the output in the blockchain */
-  globalIndex: number;
+  globalIndex: bigint;
   /** Height at which the box was created */
-  creationHeight: number;
+  creationHeight: bigint;
   /** Height at which the box got fixed in blockchain */
-  settlementHeight: number;
+  settlementHeight: bigint;
   /** Serialized ergo tree */
   ergoTree: string;
   /** An address derived from ergo tree */

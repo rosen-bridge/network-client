@@ -9,5 +9,5 @@ export interface BalanceInfo {
   /** Address */
   address: string;
   /** Balance in nanoERG */
-  balance: number;
+  balance: bigint;
 }

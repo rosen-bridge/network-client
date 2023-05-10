@@ -9,9 +9,9 @@ export interface BlockChainInfo {
   /** Network protocol version */
   version: string;
   /** Total supply in nanoErgs */
-  supply: number;
+  supply: bigint;
   /** Average number of transactions per block */
-  transactionAverage: number;
+  transactionAverage: bigint;
   /** Network hash rate */
   hashRate: string;
 }

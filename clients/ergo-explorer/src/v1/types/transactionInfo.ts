@@ -14,18 +14,18 @@ export interface TransactionInfo {
   /** ID of the corresponding header */
   blockId: string;
   /** Height of the block the transaction was included in */
-  inclusionHeight: number;
+  inclusionHeight: bigint;
   /** Timestamp the transaction got into the network */
-  timestamp: number;
+  timestamp: bigint;
   /** Index of a transaction inside a block */
-  index: number;
+  index: bigint;
   /** global index of a transaction in the blockchain */
-  globalIndex: number;
+  globalIndex: bigint;
   /** Number of transaction confirmations */
-  numConfirmations: number;
+  numConfirmations: bigint;
   inputs?: InputInfo[];
   dataInputs?: DataInputInfo[];
   outputs?: OutputInfo[];
   /** Transaction size in bytes */
-  size: number;
+  size: bigint;
 }

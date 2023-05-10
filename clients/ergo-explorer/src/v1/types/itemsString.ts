@@ -9,5 +9,5 @@ export interface ItemsString {
   /** Items in selection */
   items?: string[];
   /** Total qty of items */
-  total: number;
+  total: bigint;
 }

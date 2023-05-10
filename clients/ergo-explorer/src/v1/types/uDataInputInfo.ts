@@ -11,15 +11,15 @@ export interface UDataInputInfo {
   /** ID of the corresponding box */
   boxId: string;
   /** Number of nanoErgs in the corresponding box */
-  value: number;
+  value: bigint;
   /** Index of the input in a transaction */
-  index: number;
+  index: bigint;
   /** Modifier ID */
   outputBlockId?: string;
   /** ID of the transaction outputting corresponding box */
   outputTransactionId: string;
   /** Index of the output corresponding this input */
-  outputIndex: number;
+  outputIndex: bigint;
   /** ErgoTree Template */
   ergoTree: string;
   /** Decoded address of the corresponding box holder */

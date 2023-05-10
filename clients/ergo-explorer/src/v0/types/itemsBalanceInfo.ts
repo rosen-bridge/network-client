@@ -10,5 +10,5 @@ export interface ItemsBalanceInfo {
   /** Items in selection */
   items?: BalanceInfo[];
   /** Total qty of items */
-  total: number;
+  total: bigint;
 }

@@ -50,7 +50,6 @@ export * from './headerInfo';
 export * from './inputInfo';
 export * from './inputInfo1';
 export * from './inputInfoAdditionalRegisters';
-export * from './itemsA';
 export * from './itemsAssetInfo';
 export * from './itemsBlockHeader';
 export * from './itemsBlockInfo';

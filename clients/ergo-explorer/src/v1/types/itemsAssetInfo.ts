@@ -10,5 +10,5 @@ export interface ItemsAssetInfo {
   /** Items in selection */
   items?: AssetInfo[];
   /** Total qty of items */
-  total: number;
+  total: bigint;
 }

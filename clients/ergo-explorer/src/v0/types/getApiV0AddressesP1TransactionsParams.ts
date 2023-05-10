@@ -6,8 +6,8 @@
  */
 
 export type GetApiV0AddressesP1TransactionsParams = {
-  offset?: number;
-  limit?: number;
+  offset?: bigint;
+  limit?: bigint;
   /**
    * Hide excessive data
    */

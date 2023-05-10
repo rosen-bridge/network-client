@@ -6,6 +6,6 @@
  */
 
 export type PostApiV1BoxesUnspentSearchUnionParams = {
-  offset?: number;
-  limit?: number;
+  offset?: bigint;
+  limit?: bigint;
 };

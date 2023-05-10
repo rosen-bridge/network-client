@@ -9,7 +9,7 @@
  * Block votes (3 bytes)
  */
 export interface Tuple3ByteByteByte {
-  _1: number;
-  _2: number;
-  _3: number;
+  _1: bigint;
+  _2: bigint;
+  _3: bigint;
 }

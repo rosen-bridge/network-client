@@ -13,10 +13,10 @@ export interface UOutputInfo {
   /** Id of the transaction that created the box */
   txId: string;
   /** Amount of nanoERGs containing in the box */
-  value: number;
-  index: number;
+  value: bigint;
+  index: bigint;
   /** Approximate height the box was created */
-  creationHeight: number;
+  creationHeight: bigint;
   /** Encoded script */
   ergoTree: string;
   /** Address derived from ErgoTree */

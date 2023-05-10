@@ -6,6 +6,6 @@
  */
 
 export type GetApiV1BoxesUnspentStreamParams = {
-  minHeight: number;
-  maxHeight: number;
+  minHeight: bigint;
+  maxHeight: bigint;
 };

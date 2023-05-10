@@ -6,6 +6,6 @@
  */
 
 export interface NotFound {
-  status: number;
+  status: bigint;
   reason: string;
 }

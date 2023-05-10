@@ -10,5 +10,5 @@ export interface ItemsUTransactionInfo {
   /** Items in selection */
   items?: UTransactionInfo[];
   /** Total qty of items */
-  total: number;
+  total: bigint;
 }

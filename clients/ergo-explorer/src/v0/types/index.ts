@@ -26,7 +26,6 @@ export * from './getApiV0TransactionsUnconfirmedByaddressP1Params';
 export * from './getApiV0TransactionsUnconfirmedParams';
 export * from './headerInfo';
 export * from './inputInfo';
-export * from './itemsA';
 export * from './itemsBalanceInfo';
 export * from './itemsBlockInfo';
 export * from './itemsOutputInfo';
