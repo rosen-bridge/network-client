@@ -12,10 +12,10 @@ export interface UTransactionInfo {
   /** Transaction ID */
   id: string;
   /** Timestamp the transaction got into the network */
-  creationTimestamp: bigint;
+  creationTimestamp: number;
   inputs?: UInputInfo[];
   dataInputs?: UDataInputInfo[];
   outputs?: UOutputInfo[];
   /** Transaction size in bytes */
-  size: bigint;
+  size: number;
 }

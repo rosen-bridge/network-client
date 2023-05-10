@@ -6,8 +6,8 @@
  */
 
 export type GetApiV1BlocksHeadersParams = {
-  offset?: bigint;
-  limit?: bigint;
+  offset?: number;
+  limit?: number;
   sortBy?: string;
   sortDirection?: string;
 };

@@ -10,20 +10,20 @@ export interface BlockInfo {
   /** Block ID */
   id: string;
   /** Block height */
-  height: bigint;
+  height: number;
   /** Block epoch (Epochs are enumerated from 0) */
-  epoch: bigint;
+  epoch: number;
   /** Block version */
-  version: bigint;
+  version: number;
   /** Timestamp the block was created (UNIX timestamp in millis) */
-  timestamp: bigint;
+  timestamp: number;
   /** Number of transactions included in the block */
-  transactionsCount: bigint;
+  transactionsCount: number;
   miner: MinerInfo;
   /** Overall size of the block in bytes */
-  size: bigint;
+  size: number;
   /** Block difficulty */
   difficulty: string;
   /** The amount of nanoErgs miner received as a reward for block */
-  minerReward: bigint;
+  minerReward: number;
 }

@@ -9,13 +9,13 @@ export interface AssetInstanceInfo {
   /** Token ID */
   tokenId: string;
   /** Index of the asset in an output */
-  index: bigint;
+  index: number;
   /** Amount of tokens */
-  amount: bigint;
+  amount: number;
   /** Name of a token */
   name?: string;
   /** Number of decimal places */
-  decimals?: bigint;
+  decimals?: number;
   /** Type of a token (token standard) */
   type?: string;
 }

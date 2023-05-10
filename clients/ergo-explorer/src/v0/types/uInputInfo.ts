@@ -13,13 +13,13 @@ export interface UInputInfo {
   transactionId: string;
   spendingProof: SpendingProofInfo;
   /** Amount of nanoERGs in the corresponding box */
-  value?: bigint;
+  value?: number;
   /** Index of the input in a transaction */
-  index: bigint;
+  index: number;
   /** ID of the output transaction */
   outputTransactionId?: string;
   /** Index of the output corresponding this input */
-  outputIndex?: bigint;
+  outputIndex?: number;
   /** Address */
   address?: string;
 }

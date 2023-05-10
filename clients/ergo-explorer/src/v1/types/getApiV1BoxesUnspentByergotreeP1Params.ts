@@ -6,7 +6,7 @@
  */
 
 export type GetApiV1BoxesUnspentByergotreeP1Params = {
-  offset?: bigint;
-  limit?: bigint;
+  offset?: number;
+  limit?: number;
   sortDirection?: string;
 };

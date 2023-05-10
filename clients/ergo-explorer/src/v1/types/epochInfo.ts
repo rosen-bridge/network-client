@@ -6,14 +6,14 @@
  */
 
 export interface EpochInfo {
-  height: bigint;
-  storageFeeFactor: bigint;
-  minValuePerByte: bigint;
-  maxBlockSize: bigint;
-  maxBlockCost: bigint;
-  blockVersion: bigint;
-  tokenAccessCost: bigint;
-  inputCost: bigint;
-  dataInputCost: bigint;
-  outputCost: bigint;
+  height: number;
+  storageFeeFactor: number;
+  minValuePerByte: number;
+  maxBlockSize: number;
+  maxBlockCost: number;
+  blockVersion: number;
+  tokenAccessCost: number;
+  inputCost: number;
+  dataInputCost: number;
+  outputCost: number;
 }

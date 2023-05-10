@@ -14,13 +14,13 @@ export interface TransactionInfo1 {
   /** ID of the corresponding header */
   headerId: string;
   /** Height of the block the transaction was included in */
-  inclusionHeight: bigint;
+  inclusionHeight: number;
   /** Timestamp the transaction got into the network */
-  timestamp: bigint;
+  timestamp: number;
   /** Index of a transaction inside a block */
-  index: bigint;
+  index: number;
   /** Number of transaction confirmations */
-  confirmationsCount: bigint;
+  confirmationsCount: number;
   inputs?: InputInfo1[];
   dataInputs?: DataInputInfo1[];
   outputs?: OutputInfo1[];

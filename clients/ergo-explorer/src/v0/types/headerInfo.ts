@@ -13,11 +13,11 @@ export interface HeaderInfo {
   /** ID of the parental block/header */
   parentId: string;
   /** Version of the header */
-  version: bigint;
+  version: number;
   /** Block/header height */
-  height: bigint;
+  height: number;
   /** Block/header epoch (Epochs are enumerated from 0) */
-  epoch: bigint;
+  epoch: number;
   /** Block/header difficulty */
   difficulty: string;
   /** Hex-encoded root of the corresponding AD proofs */
@@ -27,11 +27,11 @@ export interface HeaderInfo {
   /** Hex-encoded root of the corresponding transactions */
   transactionsRoot: string;
   /** Timestamp the block/header was created */
-  timestamp: bigint;
+  timestamp: number;
   /** Encoded required difficulty */
-  nBits: bigint;
+  nBits: number;
   /** Size of the header in bytes */
-  size: bigint;
+  size: number;
   /** Hex-encoded hash of the corresponding extension */
   extensionHash: string;
   powSolutions: PowSolutionInfo;

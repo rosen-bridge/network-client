@@ -16,8 +16,8 @@ export interface UTransactionSummary {
   dataInputs?: UDataInputInfo[];
   outputs?: UOutputInfo[];
   /** Approximate time this transaction appeared in the network */
-  creationTimestamp: bigint;
+  creationTimestamp: number;
   /** Size of the transaction in bytes */
-  size: bigint;
+  size: number;
   ioSummary: TxStats;
 }

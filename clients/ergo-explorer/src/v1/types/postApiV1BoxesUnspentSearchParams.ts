@@ -6,6 +6,6 @@
  */
 
 export type PostApiV1BoxesUnspentSearchParams = {
-  offset?: bigint;
-  limit?: bigint;
+  offset?: number;
+  limit?: number;
 };

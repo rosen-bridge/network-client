@@ -8,13 +8,13 @@ import type { AssetSummary } from './assetSummary';
 
 export interface Transactions {
   /** Number of confirmed txs */
-  confirmed: bigint;
+  confirmed: number;
   /** Total number of received nanoErgs */
   totalReceived: string;
   /** Confirmed balance of address in nanoErgs */
-  confirmedBalance: bigint;
+  confirmedBalance: number;
   /** Total (confirmed + unconfirmed) balance of address in nanoErgs */
-  totalBalance: bigint;
+  totalBalance: number;
   /** Confirmed tokens balance of address */
   confirmedTokensBalance?: AssetSummary[];
   /** Total (confirmed + unconfirmed) tokens balance of address */

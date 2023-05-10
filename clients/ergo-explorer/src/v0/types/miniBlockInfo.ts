@@ -9,5 +9,5 @@ export interface MiniBlockInfo {
   /** Block ID */
   id: string;
   /** Block height */
-  height: bigint;
+  height: number;
 }

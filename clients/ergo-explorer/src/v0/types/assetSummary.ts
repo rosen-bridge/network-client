@@ -9,9 +9,9 @@ export interface AssetSummary {
   /** Token ID */
   tokenId: string;
   /** Amount of tokens */
-  amount: bigint;
+  amount: number;
   /** Name of a token */
   name?: string;
   /** Number of decimal places */
-  decimals?: bigint;
+  decimals?: number;
 }

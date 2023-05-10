@@ -7,6 +7,6 @@
 
 export type GetApiV1TokensSearchParams = {
   query: string;
-  offset?: bigint;
-  limit?: bigint;
+  offset?: number;
+  limit?: number;
 };

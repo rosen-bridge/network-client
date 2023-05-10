@@ -13,11 +13,11 @@ export interface OutputInfo {
   /** Id of the transaction that created the box */
   txId: string;
   /** Value of the box in nanoERG */
-  value: bigint;
+  value: number;
   /** Index of the output in a transaction */
-  index: bigint;
+  index: number;
   /** Height at which the box was created */
-  creationHeight: bigint;
+  creationHeight: number;
   /** Serialized ergo tree */
   ergoTree: string;
   /** An address derived from ergo tree */

@@ -6,6 +6,6 @@
  */
 
 export type GetApiV1BoxesByaddressP1Params = {
-  offset?: bigint;
-  limit?: bigint;
+  offset?: number;
+  limit?: number;
 };

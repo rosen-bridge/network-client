@@ -11,7 +11,7 @@ export interface TokenInfo {
   /** Box ID this asset was issued by */
   boxId: string;
   /** Number of decimal places */
-  emissionAmount: bigint;
+  emissionAmount: number;
   /** Name of the asset */
   name?: string;
   /** Description of the asset */
@@ -19,5 +19,5 @@ export interface TokenInfo {
   /** Asset type (token standard) */
   type?: string;
   /** Number of decimal places */
-  decimals?: bigint;
+  decimals?: number;
 }

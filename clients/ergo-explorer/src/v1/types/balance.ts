@@ -8,7 +8,7 @@ import type { TokenAmount } from './tokenAmount';
 
 export interface Balance {
   /** Ergo balance */
-  nanoErgs: bigint;
+  nanoErgs: number;
   /** Tokens balances */
   tokens?: TokenAmount[];
 }

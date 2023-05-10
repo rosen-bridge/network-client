@@ -6,6 +6,6 @@
  */
 
 export type GetApiV1BoxesBytokenidP1Params = {
-  offset?: bigint;
-  limit?: bigint;
+  offset?: number;
+  limit?: number;
 };

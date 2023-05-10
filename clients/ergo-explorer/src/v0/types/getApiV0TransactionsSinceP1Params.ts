@@ -6,6 +6,6 @@
  */
 
 export type GetApiV0TransactionsSinceP1Params = {
-  offset?: bigint;
-  limit?: bigint;
+  offset?: number;
+  limit?: number;
 };

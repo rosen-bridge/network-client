@@ -9,6 +9,6 @@ export type GetApiV1TransactionsByglobalindexStreamParams = {
   /**
    * Min global index (in blockchain) of the TX
    */
-  minGix: bigint;
-  limit: bigint;
+  minGix: number;
+  limit: number;
 };

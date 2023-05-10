@@ -6,6 +6,6 @@
  */
 
 export type GetApiV0AddressesAssetholdersP1Params = {
-  offset?: bigint;
-  limit?: bigint;
+  offset?: number;
+  limit?: number;
 };

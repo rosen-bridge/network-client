@@ -6,8 +6,8 @@
  */
 
 export type GetApiV1TokensParams = {
-  offset?: bigint;
-  limit?: bigint;
+  offset?: number;
+  limit?: number;
   sortDirection?: string;
   /**
    * Exclude NFTs from result set

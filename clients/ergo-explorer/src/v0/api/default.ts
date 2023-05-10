@@ -7,12 +7,15 @@
 import type {
   AddressInfo,
   GetApiV0AddressesP1Params,
-  ItemsA,
+  ItemsTransactionInfo,
   GetApiV0AddressesP1TransactionsParams,
   GetApiV0AddressesAssetholdersP1Params,
+  ItemsBalanceInfo,
   GetApiV0AddressesBalancesParams,
+  ItemsOutputInfo,
   GetApiV0AssetsIssuingboxesParams,
   OutputInfo,
+  ItemsBlockInfo,
   GetApiV0BlocksParams,
   BlockSummary,
   DexSellOrderInfo,
@@ -21,6 +24,7 @@ import type {
   GetApiV0DexTokensP1UnspentbuyordersParams,
   TransactionSummary,
   UTransactionSummary,
+  ItemsUTransactionInfo,
   GetApiV0TransactionsUnconfirmedByaddressP1Params,
   GetApiV0TransactionsUnconfirmedParams,
   TransactionInfo,
@@ -55,7 +59,7 @@ export const getApiV0AddressesP1Transactions = (
   params?: GetApiV0AddressesP1TransactionsParams,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsTransactionInfo>(
     { url: `/api/v0/addresses/${p1}/transactions`, method: 'get', params },
     options
   );
@@ -74,7 +78,7 @@ export const getApiV0AddressesBalances = (
   params?: GetApiV0AddressesBalancesParams,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsBalanceInfo>(
     { url: `/api/v0/addresses/balances`, method: 'get', params },
     options
   );
@@ -83,7 +87,7 @@ export const getApiV0AssetsIssuingboxes = (
   params?: GetApiV0AssetsIssuingboxesParams,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsOutputInfo>(
     { url: `/api/v0/assets/issuingBoxes`, method: 'get', params },
     options
   );
@@ -101,7 +105,7 @@ export const getApiV0Blocks = (
   params?: GetApiV0BlocksParams,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsBlockInfo>(
     { url: `/api/v0/blocks`, method: 'get', params },
     options
   );
@@ -177,7 +181,7 @@ export const getApiV0TransactionsUnconfirmedByaddressP1 = (
   params?: GetApiV0TransactionsUnconfirmedByaddressP1Params,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsUTransactionInfo>(
     {
       url: `/api/v0/transactions/unconfirmed/byAddress/${p1}`,
       method: 'get',
@@ -190,7 +194,7 @@ export const getApiV0TransactionsUnconfirmed = (
   params?: GetApiV0TransactionsUnconfirmedParams,
   options?: SecondParameter<typeof axios>
 ) => {
-  return axios<ItemsA>(
+  return axios<ItemsUTransactionInfo>(
     { url: `/api/v0/transactions/unconfirmed`, method: 'get', params },
     options
   );

@@ -6,6 +6,6 @@
  */
 
 export type GetApiV0DexTokensP1UnspentbuyordersParams = {
-  offset?: bigint;
-  limit?: bigint;
+  offset?: number;
+  limit?: number;
 };

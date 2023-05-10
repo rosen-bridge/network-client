@@ -9,6 +9,6 @@ export type GetApiV1BlocksByglobalindexStreamParams = {
   /**
    * Min global index (in blockchain) of an on-chain entity
    */
-  minGix: bigint;
-  limit: bigint;
+  minGix: number;
+  limit: number;
 };

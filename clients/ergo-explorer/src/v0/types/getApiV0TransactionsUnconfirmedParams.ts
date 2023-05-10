@@ -6,8 +6,8 @@
  */
 
 export type GetApiV0TransactionsUnconfirmedParams = {
-  offset?: bigint;
-  limit?: bigint;
+  offset?: number;
+  limit?: number;
   sortBy?: string;
   sortDirection?: string;
 };

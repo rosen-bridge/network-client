@@ -6,6 +6,6 @@
  */
 
 export type GetApiV1BoxesUnspentByergotreetemplatehashP1Params = {
-  offset?: bigint;
-  limit?: bigint;
+  offset?: number;
+  limit?: number;
 };

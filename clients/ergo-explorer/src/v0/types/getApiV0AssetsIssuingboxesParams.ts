@@ -6,6 +6,6 @@
  */
 
 export type GetApiV0AssetsIssuingboxesParams = {
-  offset?: bigint;
-  limit?: bigint;
+  offset?: number;
+  limit?: number;
 };

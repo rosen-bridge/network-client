@@ -6,6 +6,6 @@
  */
 
 export interface UnknownErr {
-  status: bigint;
+  status: number;
   reason: string;
 }

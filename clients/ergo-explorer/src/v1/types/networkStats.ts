@@ -6,5 +6,5 @@
  */
 
 export interface NetworkStats {
-  uniqueAddressesNum: bigint;
+  uniqueAddressesNum: number;
 }

@@ -10,5 +10,5 @@ export interface DexBuyOrderInfo {
   outputInfo: OutputInfo;
   /** Token ID */
   tokenId: string;
-  tokenAmount: bigint;
+  tokenAmount: number;
 }

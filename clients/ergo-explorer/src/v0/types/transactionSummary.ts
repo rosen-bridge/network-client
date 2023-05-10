@@ -15,15 +15,15 @@ export interface TransactionSummary {
   id: string;
   miniBlockInfo: MiniBlockInfo;
   /** Timestamp the transaction got into the network */
-  timestamp: bigint;
+  timestamp: number;
   /** Index of a transaction inside a block */
-  index: bigint;
+  index: number;
   /** Number of transaction confirmations */
-  confirmationsCount: bigint;
+  confirmationsCount: number;
   inputs?: InputInfo[];
   dataInputs?: DataInputInfo[];
   outputs?: OutputInfo[];
   /** Size of a transaction in bytes */
-  size: bigint;
+  size: number;
   ioSummary: TxStats;
 }

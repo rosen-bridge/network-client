@@ -9,5 +9,5 @@ import type { OutputInfo } from './outputInfo';
 export interface DexSellOrderInfo {
   outputInfo: OutputInfo;
   /** ERG amount */
-  amount: bigint;
+  amount: number;
 }
