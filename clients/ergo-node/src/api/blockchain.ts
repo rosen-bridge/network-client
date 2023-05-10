@@ -154,7 +154,7 @@ export const getBoxesByAddressUnspent = (
     {
       url: `/blockchain/box/unspent/byAddress`,
       method: 'post',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain' },
       data: ergoAddress,
       params,
     },
