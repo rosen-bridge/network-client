@@ -10,6 +10,18 @@ import * as script from './api/script';
 import * as stackAccount from './api/stake-account';
 import * as transactions from './api/transactions';
 
+type CardanoKoiosClient = {
+  address: typeof address;
+  asset: typeof asset;
+  block: typeof block;
+  epoch: typeof epoch;
+  network: typeof network;
+  pool: typeof pool;
+  script: typeof script;
+  stackAccount: typeof stackAccount;
+  transactions: typeof transactions;
+};
+
 const cardanoKoiosClientFactory = (baseURL: string) => {
   axiosInstance.defaults.baseURL = baseURL;
 
@@ -27,3 +39,5 @@ const cardanoKoiosClientFactory = (baseURL: string) => {
 };
 
 export default cardanoKoiosClientFactory;
+
+export type { CardanoKoiosClient };
