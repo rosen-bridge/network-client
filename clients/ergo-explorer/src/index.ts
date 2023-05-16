@@ -13,3 +13,5 @@ const ergoExplorerClientFactory = (baseURL: string) => {
 };
 
 export default ergoExplorerClientFactory;
+
+export * from './types';
