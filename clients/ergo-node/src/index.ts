@@ -41,3 +41,5 @@ const ergoNodeClientFactory = (baseURL: string) => {
 };
 
 export default ergoNodeClientFactory;
+
+export * from './types';

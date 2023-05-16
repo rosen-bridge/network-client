@@ -27,3 +27,5 @@ const cardanoKoiosClientFactory = (baseURL: string) => {
 };
 
 export default cardanoKoiosClientFactory;
+
+export * from './types';
