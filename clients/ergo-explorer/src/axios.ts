@@ -4,6 +4,8 @@ import JsonBigintFactory from 'json-bigint';
 const JsonBigInt = JsonBigintFactory({
   alwaysParseAsBig: true,
   useNativeBigInt: true,
+  constructorAction: 'ignore',
+  protoAction: 'ignore',
 });
 
 export const axiosInstance = Axios.create({
