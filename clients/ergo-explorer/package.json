@@ -1,18 +1,18 @@
 {
   "name": "@rosen-clients/ergo-explorer",
-  "version": "0.3.1",
+  "version": "1.0.0",
   "description": "A client library for Ergo Explorer",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "type": "module",
   "scripts": {
-    "codemod": "jscodeshift --parser=ts -t ../../codemod/number-to-bigint.ts ./src/**/**/*.ts",
+    "codemod": "jscodeshift --parser=ts -t ../../codemod/big-int-fiels-support.ts ./src/**/**/*.ts",
     "generate-v0-client": "cross-env VERSION=0 orval && rimraf ./src/v0/api/index.ts ",
     "generate-v1-client": "cross-env VERSION=1 orval && rimraf ./src/v1/api/index.ts",
     "generate-client": "npm run generate-v0-client && npm run generate-v1-client && npm run codemod",
     "prettify": "prettier --write . --ignore-path .gitignore",
     "lint": "eslint --fix . && npm run prettify",
-    "build": "tsc --build",
+    "build": "rimraf ./dist && tsc --build",
     "type-check": "tsc --noEmit",
     "release": "npm run build && npm publish --access public"
   },
@@ -30,7 +30,7 @@
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "jscodeshift": "^0.14.0",
-    "orval": "^6.12.1",
+    "orval": "6.15.0",
     "prettier": "^2.8.4",
     "rimraf": "^4.4.1",
     "typescript": "^5.0.3"
