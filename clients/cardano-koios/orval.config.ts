@@ -15,12 +15,14 @@ export default defineConfig({
       target: '.',
       schemas: '../types',
       workspace: './src/api',
-      mode: 'tags',
+      client: 'axios',
+      mode: 'split',
       prettier: true,
       override: {
+        useBigInt: true,
         mutator: {
           path: '../axios.ts',
-          name: 'axios',
+          name: 'createAxiosInstance',
         },
       },
     },
