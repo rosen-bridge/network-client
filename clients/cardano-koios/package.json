@@ -11,7 +11,7 @@
     "generate-client": "bun ./generate-client.ts && npm run codemod",
     "prettify": "prettier --write . --ignore-path .gitignore",
     "lint": "eslint --fix . && npm run prettify",
-    "build": "tsc --build",
+    "build": "rimraf ./dist && tsc --build",
     "type-check": "tsc --noEmit",
     "release": "npm run build && npm publish --access public"
   },
