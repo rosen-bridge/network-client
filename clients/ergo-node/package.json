@@ -1,16 +1,16 @@
 {
   "name": "@rosen-clients/ergo-node",
-  "version": "0.3.4",
+  "version": "1.0.0",
   "description": "A client library for Ergo Node",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "type": "module",
   "scripts": {
-    "codemod": "jscodeshift --parser=ts -t ../../codemod/number-to-bigint.ts ./src/**/*.ts",
+    "codemod": "jscodeshift --parser=ts -t ../../codemod/big-int-fiels-support.ts ./src/**/*.ts",
     "generate-client": "orval && rimraf ./src/api/index.ts && npm run codemod",
     "prettify": "prettier --write . --ignore-path .gitignore",
     "lint": "eslint --fix . && npm run prettify",
-    "build": "tsc --build",
+    "build": "rimraf ./dist && tsc --build",
     "type-check": "tsc --noEmit",
     "release": "npm run build && npm publish --access public"
   },
@@ -27,7 +27,7 @@
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "jscodeshift": "^0.14.0",
-    "orval": "^6.12.1",
+    "orval": "^6.15.0",
     "prettier": "^2.8.4",
     "rimraf": "^4.4.1",
     "typescript": "^5.0.3"
