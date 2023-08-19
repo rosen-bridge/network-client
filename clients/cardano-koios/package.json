@@ -6,7 +6,7 @@
   "types": "dist/src/index.d.ts",
   "type": "module",
   "scripts": {
-    "codemod": "jscodeshift --parser=ts -t ../../codemod/big-int-fiels-support.ts ./src/**/*.ts",
+    "codemod": "jscodeshift --parser=ts -t ../../codemod/big-int-fields-support.ts ./src/**/*.ts",
     "generate-client-base": "orval && rimraf ./src/api/index.ts",
     "generate-client": "bun ./generate-client.ts && npm run codemod",
     "prettify": "prettier --write . --ignore-path .gitignore",

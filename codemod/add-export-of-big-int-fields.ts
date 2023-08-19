@@ -64,12 +64,7 @@ export default (root: any, api: API) => {
   const bigIntFields = [];
   root.find(j.TSTypeAliasDeclaration).forEach((item) => {
     name = item.node.original.id.name;
-    if (
-      item.node &&
-      item.node.typeAnnotation &&
-      item.node.typeAnnotation &&
-      item.node.typeAnnotation.type === 'TSBigIntKeyword'
-    )
+    if (item.node?.typeAnnotation?.type === 'TSBigIntKeyword')
       bigIntFields.push(j.stringLiteral(''));
   });
   root.find(j.TSInterfaceDeclaration).forEach((item) => {
