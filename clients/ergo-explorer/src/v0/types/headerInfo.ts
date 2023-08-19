@@ -44,6 +44,10 @@ export interface HeaderInfo {
 export const bigIntsHeaderInfo = [
   'timestamp',
   'nBits',
-  ...bigIntsPowSolutionInfo.map((item) => `powSolutions.${item}`),
-  ...bigIntsTuple3ByteByteByte.map((item) => `votes.${item}`),
+  ...bigIntsPowSolutionInfo.map((item) =>
+    item === '' ? 'powSolutions' : `powSolutions.${item}`
+  ),
+  ...bigIntsTuple3ByteByteByte.map((item) =>
+    item === '' ? 'votes' : `votes.${item}`
+  ),
 ];

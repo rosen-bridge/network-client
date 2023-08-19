@@ -1,4 +1,4 @@
-import { API, FileInfo } from 'jscodeshift';
+import { API } from 'jscodeshift';
 
 export default (root: any, api: API) => {
   const j = api.jscodeshift;

@@ -208,10 +208,10 @@ export type TxInfoItemPlutusContractsItemInputRedeemerUnit = {
 };
 
 export const bigIntsTxInfoItemPlutusContractsItemInputRedeemerUnit = [
-  ...bigIntsTxInfoItemPlutusContractsItemInputRedeemerUnitSteps.map(
-    (item) => `steps.${item}`
+  ...bigIntsTxInfoItemPlutusContractsItemInputRedeemerUnitSteps.map((item) =>
+    item === '' ? 'steps' : `steps.${item}`
   ),
-  ...bigIntsTxInfoItemPlutusContractsItemInputRedeemerUnitMem.map(
-    (item) => `mem.${item}`
+  ...bigIntsTxInfoItemPlutusContractsItemInputRedeemerUnitMem.map((item) =>
+    item === '' ? 'mem' : `mem.${item}`
   ),
 ];

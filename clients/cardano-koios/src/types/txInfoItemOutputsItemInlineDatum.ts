@@ -209,7 +209,7 @@ export type TxInfoItemOutputsItemInlineDatum = {
 } | null;
 
 export const bigIntsTxInfoItemOutputsItemInlineDatum = [
-  ...bigIntsTxInfoItemOutputsItemInlineDatumValue.map(
-    (item) => `value.${item}`
+  ...bigIntsTxInfoItemOutputsItemInlineDatumValue.map((item) =>
+    item === '' ? 'value' : `value.${item}`
   ),
 ];

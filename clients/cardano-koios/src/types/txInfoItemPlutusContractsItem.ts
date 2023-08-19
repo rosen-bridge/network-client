@@ -211,6 +211,9 @@ export type TxInfoItemPlutusContractsItem = {
   valid_contract?: boolean;
   input?: TxInfoItemPlutusContractsItemInput;
 };
+
 export const bigIntsTxInfoItemPlutusContractsItem = [
-  ...bigIntsTxInfoItemPlutusContractsItemInput.map((item) => `input.${item}`),
+  ...bigIntsTxInfoItemPlutusContractsItemInput.map((item) =>
+    item === '' ? 'input' : `input.${item}`
+  ),
 ];

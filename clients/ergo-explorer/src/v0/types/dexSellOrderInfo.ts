@@ -13,7 +13,10 @@ export interface DexSellOrderInfo {
   /** ERG amount */
   amount: bigint;
 }
+
 export const bigIntsDexSellOrderInfo = [
-  ...bigIntsOutputInfo.map((item) => `outputInfo.${item}`),
+  ...bigIntsOutputInfo.map((item) =>
+    item === '' ? 'outputInfo' : `outputInfo.${item}`
+  ),
   'amount',
 ];

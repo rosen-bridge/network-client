@@ -13,5 +13,5 @@ export type SigmaBooleanOrPredicateAllOfTwo = {
   args?: SigmaBoolean[];
 };
 export const bigIntsSigmaBooleanOrPredicateAllOfTwo = [
-  ...bigIntsSigmaBoolean.map((item) => `args.${item}`),
+  ...bigIntsSigmaBoolean.map((item) => (item === '' ? 'args' : `args.${item}`)),
 ];

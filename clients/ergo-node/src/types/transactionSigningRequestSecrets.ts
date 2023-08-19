@@ -22,6 +22,6 @@ export type TransactionSigningRequestSecrets = {
 };
 
 export const bigIntsTransactionSigningRequestSecrets = [
-  ...bigIntsDlogSecret.map((item) => `dlog.${item}`),
-  ...bigIntsDhtSecret.map((item) => `dht.${item}`),
+  ...bigIntsDlogSecret.map((item) => (item === '' ? 'dlog' : `dlog.${item}`)),
+  ...bigIntsDhtSecret.map((item) => (item === '' ? 'dht' : `dht.${item}`)),
 ];

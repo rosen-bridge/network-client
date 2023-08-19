@@ -28,7 +28,9 @@ export interface HintExtractionRequest {
 }
 
 export const bigIntsHintExtractionRequest = [
-  ...bigIntsErgoTransaction.map((item) => `tx.${item}`),
-  ...bigIntsSigmaBoolean.map((item) => `real.${item}`),
-  ...bigIntsSigmaBoolean.map((item) => `simulated.${item}`),
+  ...bigIntsErgoTransaction.map((item) => (item === '' ? 'tx' : `tx.${item}`)),
+  ...bigIntsSigmaBoolean.map((item) => (item === '' ? 'real' : `real.${item}`)),
+  ...bigIntsSigmaBoolean.map((item) =>
+    item === '' ? 'simulated' : `simulated.${item}`
+  ),
 ];

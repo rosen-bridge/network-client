@@ -15,5 +15,5 @@ export interface ItemsBlockInfo {
   total: number;
 }
 export const bigIntsItemsBlockInfo = [
-  ...bigIntsBlockInfo.map((item) => `items.${item}`),
+  ...bigIntsBlockInfo.map((item) => (item === '' ? 'items' : `items.${item}`)),
 ];

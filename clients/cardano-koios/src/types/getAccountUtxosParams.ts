@@ -204,6 +204,9 @@ export type GetAccountUtxosParams = {
    */
   _stake_address: _StakeAddressParameter;
 };
+
 export const bigIntsGetAccountUtxosParams = [
-  ...bigInts_StakeAddressParameter.map((item) => `_stake_address.${item}`),
+  ...bigInts_StakeAddressParameter.map((item) =>
+    item === '' ? '_stake_address' : `_stake_address.${item}`
+  ),
 ];

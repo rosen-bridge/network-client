@@ -206,10 +206,10 @@ export type TxInfoItemPlutusContractsItemInput = {
 };
 
 export const bigIntsTxInfoItemPlutusContractsItemInput = [
-  ...bigIntsTxInfoItemPlutusContractsItemInputRedeemer.map(
-    (item) => `redeemer.${item}`
+  ...bigIntsTxInfoItemPlutusContractsItemInputRedeemer.map((item) =>
+    item === '' ? 'redeemer' : `redeemer.${item}`
   ),
-  ...bigIntsTxInfoItemPlutusContractsItemInputDatum.map(
-    (item) => `datum.${item}`
+  ...bigIntsTxInfoItemPlutusContractsItemInputDatum.map((item) =>
+    item === '' ? 'datum' : `datum.${item}`
   ),
 ];

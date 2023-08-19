@@ -12,6 +12,9 @@ import { bigIntsErgoAddress } from './ergoAddress';
 export interface RewardAddress {
   rewardAddress: ErgoAddress;
 }
+
 export const bigIntsRewardAddress = [
-  ...bigIntsErgoAddress.map((item) => `rewardAddress.${item}`),
+  ...bigIntsErgoAddress.map((item) =>
+    item === '' ? 'rewardAddress' : `rewardAddress.${item}`
+  ),
 ];

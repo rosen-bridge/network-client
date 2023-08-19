@@ -203,6 +203,9 @@ export type AccountAssetsItem = {
   stake_address?: string;
   asset_list?: AccountAssetsItemAssetListItem[];
 };
+
 export const bigIntsAccountAssetsItem = [
-  ...bigIntsAccountAssetsItemAssetListItem.map((item) => `asset_list.${item}`),
+  ...bigIntsAccountAssetsItemAssetListItem.map((item) =>
+    item === '' ? 'asset_list' : `asset_list.${item}`
+  ),
 ];

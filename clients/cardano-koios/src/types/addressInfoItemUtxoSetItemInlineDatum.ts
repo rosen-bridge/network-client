@@ -209,7 +209,7 @@ export type AddressInfoItemUtxoSetItemInlineDatum = {
 } | null;
 
 export const bigIntsAddressInfoItemUtxoSetItemInlineDatum = [
-  ...bigIntsAddressInfoItemUtxoSetItemInlineDatumValue.map(
-    (item) => `value.${item}`
+  ...bigIntsAddressInfoItemUtxoSetItemInlineDatumValue.map((item) =>
+    item === '' ? 'value' : `value.${item}`
   ),
 ];

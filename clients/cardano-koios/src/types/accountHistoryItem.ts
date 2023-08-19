@@ -203,6 +203,9 @@ export type AccountHistoryItem = {
   stake_address?: string;
   history?: AccountHistoryItemHistoryItem[];
 };
+
 export const bigIntsAccountHistoryItem = [
-  ...bigIntsAccountHistoryItemHistoryItem.map((item) => `history.${item}`),
+  ...bigIntsAccountHistoryItemHistoryItem.map((item) =>
+    item === '' ? 'history' : `history.${item}`
+  ),
 ];

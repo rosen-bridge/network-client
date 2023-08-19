@@ -226,14 +226,16 @@ export type TxUtxosItemInputsItem = {
 };
 
 export const bigIntsTxUtxosItemInputsItem = [
-  ...bigIntsTxUtxosItemInputsItemPaymentAddr.map(
-    (item) => `payment_addr.${item}`
+  ...bigIntsTxUtxosItemInputsItemPaymentAddr.map((item) =>
+    item === '' ? 'payment_addr' : `payment_addr.${item}`
   ),
-  ...bigIntsTxUtxosItemInputsItemStakeAddr.map((item) => `stake_addr.${item}`),
-  ...bigIntsTxUtxosItemInputsItemInlineDatum.map(
-    (item) => `inline_datum.${item}`
+  ...bigIntsTxUtxosItemInputsItemStakeAddr.map((item) =>
+    item === '' ? 'stake_addr' : `stake_addr.${item}`
   ),
-  ...bigIntsTxUtxosItemInputsItemReferenceScript.map(
-    (item) => `reference_script.${item}`
+  ...bigIntsTxUtxosItemInputsItemInlineDatum.map((item) =>
+    item === '' ? 'inline_datum' : `inline_datum.${item}`
+  ),
+  ...bigIntsTxUtxosItemInputsItemReferenceScript.map((item) =>
+    item === '' ? 'reference_script' : `reference_script.${item}`
   ),
 ];

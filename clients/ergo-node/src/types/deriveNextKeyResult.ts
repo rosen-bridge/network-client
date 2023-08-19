@@ -14,6 +14,9 @@ export interface DeriveNextKeyResult {
   derivationPath: string;
   address: ErgoAddress;
 }
+
 export const bigIntsDeriveNextKeyResult = [
-  ...bigIntsErgoAddress.map((item) => `address.${item}`),
+  ...bigIntsErgoAddress.map((item) =>
+    item === '' ? 'address' : `address.${item}`
+  ),
 ];

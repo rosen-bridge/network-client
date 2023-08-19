@@ -20,6 +20,10 @@ export interface Scan {
 }
 
 export const bigIntsScan = [
-  ...bigIntsScanWalletInteraction.map((item) => `walletInteraction.${item}`),
-  ...bigIntsScanningPredicate.map((item) => `trackingRule.${item}`),
+  ...bigIntsScanWalletInteraction.map((item) =>
+    item === '' ? 'walletInteraction' : `walletInteraction.${item}`
+  ),
+  ...bigIntsScanningPredicate.map((item) =>
+    item === '' ? 'trackingRule' : `trackingRule.${item}`
+  ),
 ];

@@ -16,6 +16,10 @@ export interface AddressInfo {
 }
 
 export const bigIntsAddressInfo = [
-  ...bigIntsSummary.map((item) => `summary.${item}`),
-  ...bigIntsTransactions.map((item) => `transactions.${item}`),
+  ...bigIntsSummary.map((item) =>
+    item === '' ? 'summary' : `summary.${item}`
+  ),
+  ...bigIntsTransactions.map((item) =>
+    item === '' ? 'transactions' : `transactions.${item}`
+  ),
 ];

@@ -40,17 +40,37 @@ export interface BlockHeaderWithoutPow {
 }
 
 export const bigIntsBlockHeaderWithoutPow = [
-  ...bigIntsModifierId.map((item) => `id.${item}`),
-  ...bigIntsTimestamp.map((item) => `timestamp.${item}`),
-  ...bigIntsVersion.map((item) => `version.${item}`),
-  ...bigIntsDigest32.map((item) => `adProofsRoot.${item}`),
-  ...bigIntsADDigest.map((item) => `stateRoot.${item}`),
-  ...bigIntsDigest32.map((item) => `transactionsRoot.${item}`),
+  ...bigIntsModifierId.map((item) => (item === '' ? 'id' : `id.${item}`)),
+  ...bigIntsTimestamp.map((item) =>
+    item === '' ? 'timestamp' : `timestamp.${item}`
+  ),
+  ...bigIntsVersion.map((item) =>
+    item === '' ? 'version' : `version.${item}`
+  ),
+  ...bigIntsDigest32.map((item) =>
+    item === '' ? 'adProofsRoot' : `adProofsRoot.${item}`
+  ),
+  ...bigIntsADDigest.map((item) =>
+    item === '' ? 'stateRoot' : `stateRoot.${item}`
+  ),
+  ...bigIntsDigest32.map((item) =>
+    item === '' ? 'transactionsRoot' : `transactionsRoot.${item}`
+  ),
   'nBits',
-  ...bigIntsDigest32.map((item) => `extensionHash.${item}`),
-  ...bigIntsModifierId.map((item) => `parentId.${item}`),
-  ...bigIntsVotes.map((item) => `votes.${item}`),
-  ...bigIntsModifierId.map((item) => `extensionId.${item}`),
-  ...bigIntsModifierId.map((item) => `transactionsId.${item}`),
-  ...bigIntsModifierId.map((item) => `adProofsId.${item}`),
+  ...bigIntsDigest32.map((item) =>
+    item === '' ? 'extensionHash' : `extensionHash.${item}`
+  ),
+  ...bigIntsModifierId.map((item) =>
+    item === '' ? 'parentId' : `parentId.${item}`
+  ),
+  ...bigIntsVotes.map((item) => (item === '' ? 'votes' : `votes.${item}`)),
+  ...bigIntsModifierId.map((item) =>
+    item === '' ? 'extensionId' : `extensionId.${item}`
+  ),
+  ...bigIntsModifierId.map((item) =>
+    item === '' ? 'transactionsId' : `transactionsId.${item}`
+  ),
+  ...bigIntsModifierId.map((item) =>
+    item === '' ? 'adProofsId' : `adProofsId.${item}`
+  ),
 ];

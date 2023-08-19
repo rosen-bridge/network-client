@@ -19,6 +19,10 @@ export interface BlockTransactions {
 }
 
 export const bigIntsBlockTransactions = [
-  ...bigIntsModifierId.map((item) => `headerId.${item}`),
-  ...bigIntsTransactions.map((item) => `transactions.${item}`),
+  ...bigIntsModifierId.map((item) =>
+    item === '' ? 'headerId' : `headerId.${item}`
+  ),
+  ...bigIntsTransactions.map((item) =>
+    item === '' ? 'transactions' : `transactions.${item}`
+  ),
 ];

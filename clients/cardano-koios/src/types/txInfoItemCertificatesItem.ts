@@ -206,6 +206,9 @@ export type TxInfoItemCertificatesItem = {
   /** A JSON array containing information from the certificate */
   info?: TxInfoItemCertificatesItemInfo;
 };
+
 export const bigIntsTxInfoItemCertificatesItem = [
-  ...bigIntsTxInfoItemCertificatesItemInfo.map((item) => `info.${item}`),
+  ...bigIntsTxInfoItemCertificatesItemInfo.map((item) =>
+    item === '' ? 'info' : `info.${item}`
+  ),
 ];

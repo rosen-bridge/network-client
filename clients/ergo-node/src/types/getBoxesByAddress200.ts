@@ -15,6 +15,9 @@ export type GetBoxesByAddress200 = {
   /** Total number of retreived boxes */
   total?: number;
 };
+
 export const bigIntsGetBoxesByAddress200 = [
-  ...bigIntsIndexedErgoBox.map((item) => `items.${item}`),
+  ...bigIntsIndexedErgoBox.map((item) =>
+    item === '' ? 'items' : `items.${item}`
+  ),
 ];

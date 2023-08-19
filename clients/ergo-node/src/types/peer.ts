@@ -20,6 +20,10 @@ export interface Peer {
 }
 
 export const bigIntsPeer = [
-  ...bigIntsTimestamp.map((item) => `lastSeen.${item}`),
-  ...bigIntsPeerConnectionType.map((item) => `connectionType.${item}`),
+  ...bigIntsTimestamp.map((item) =>
+    item === '' ? 'lastSeen' : `lastSeen.${item}`
+  ),
+  ...bigIntsPeerConnectionType.map((item) =>
+    item === '' ? 'connectionType' : `connectionType.${item}`
+  ),
 ];

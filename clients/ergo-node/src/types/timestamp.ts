@@ -10,4 +10,4 @@
  * Basic timestamp definition
  */
 export type Timestamp = bigint;
-export const bigIntsTimestamp = [];
+export const bigIntsTimestamp = [''];

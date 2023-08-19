@@ -30,6 +30,9 @@ export interface Parameters {
   /** Validation cost per one transaction output */
   outputCost: number;
 }
+
 export const bigIntsParameters = [
-  ...bigIntsVersion.map((item) => `blockVersion.${item}`),
+  ...bigIntsVersion.map((item) =>
+    item === '' ? 'blockVersion' : `blockVersion.${item}`
+  ),
 ];

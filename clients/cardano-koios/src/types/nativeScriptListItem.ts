@@ -206,6 +206,9 @@ export type NativeScriptListItem = {
   /** Type of the script */
   type?: NativeScriptListItemType;
 };
+
 export const bigIntsNativeScriptListItem = [
-  ...bigIntsNativeScriptListItemType.map((item) => `type.${item}`),
+  ...bigIntsNativeScriptListItemType.map((item) =>
+    item === '' ? 'type' : `type.${item}`
+  ),
 ];

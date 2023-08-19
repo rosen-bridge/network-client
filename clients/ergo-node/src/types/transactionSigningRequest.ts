@@ -30,7 +30,13 @@ export interface TransactionSigningRequest {
 }
 
 export const bigIntsTransactionSigningRequest = [
-  ...bigIntsUnsignedErgoTransaction.map((item) => `tx.${item}`),
-  ...bigIntsTransactionHintsBag.map((item) => `hints.${item}`),
-  ...bigIntsTransactionSigningRequestSecrets.map((item) => `secrets.${item}`),
+  ...bigIntsUnsignedErgoTransaction.map((item) =>
+    item === '' ? 'tx' : `tx.${item}`
+  ),
+  ...bigIntsTransactionHintsBag.map((item) =>
+    item === '' ? 'hints' : `hints.${item}`
+  ),
+  ...bigIntsTransactionSigningRequestSecrets.map((item) =>
+    item === '' ? 'secrets' : `secrets.${item}`
+  ),
 ];

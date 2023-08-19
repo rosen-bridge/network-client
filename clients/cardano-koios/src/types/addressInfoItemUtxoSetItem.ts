@@ -223,13 +223,13 @@ export type AddressInfoItemUtxoSetItem = {
 };
 
 export const bigIntsAddressInfoItemUtxoSetItem = [
-  ...bigIntsAddressInfoItemUtxoSetItemInlineDatum.map(
-    (item) => `inline_datum.${item}`
+  ...bigIntsAddressInfoItemUtxoSetItemInlineDatum.map((item) =>
+    item === '' ? 'inline_datum' : `inline_datum.${item}`
   ),
-  ...bigIntsAddressInfoItemUtxoSetItemReferenceScript.map(
-    (item) => `reference_script.${item}`
+  ...bigIntsAddressInfoItemUtxoSetItemReferenceScript.map((item) =>
+    item === '' ? 'reference_script' : `reference_script.${item}`
   ),
-  ...bigIntsAddressInfoItemUtxoSetItemAssetListItem.map(
-    (item) => `asset_list.${item}`
+  ...bigIntsAddressInfoItemUtxoSetItemAssetListItem.map((item) =>
+    item === '' ? 'asset_list' : `asset_list.${item}`
   ),
 ];

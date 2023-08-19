@@ -32,7 +32,13 @@ export interface TransactionInfo1 {
 
 export const bigIntsTransactionInfo1 = [
   'timestamp',
-  ...bigIntsInputInfo1.map((item) => `inputs.${item}`),
-  ...bigIntsDataInputInfo1.map((item) => `dataInputs.${item}`),
-  ...bigIntsOutputInfo1.map((item) => `outputs.${item}`),
+  ...bigIntsInputInfo1.map((item) =>
+    item === '' ? 'inputs' : `inputs.${item}`
+  ),
+  ...bigIntsDataInputInfo1.map((item) =>
+    item === '' ? 'dataInputs' : `dataInputs.${item}`
+  ),
+  ...bigIntsOutputInfo1.map((item) =>
+    item === '' ? 'outputs' : `outputs.${item}`
+  ),
 ];

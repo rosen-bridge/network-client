@@ -24,7 +24,13 @@ export interface NipopowProof {
 }
 
 export const bigIntsNipopowProof = [
-  ...bigIntsPopowHeader.map((item) => `prefix.${item}`),
-  ...bigIntsPopowHeader.map((item) => `suffixHead.${item}`),
-  ...bigIntsBlockHeader.map((item) => `suffixTail.${item}`),
+  ...bigIntsPopowHeader.map((item) =>
+    item === '' ? 'prefix' : `prefix.${item}`
+  ),
+  ...bigIntsPopowHeader.map((item) =>
+    item === '' ? 'suffixHead' : `suffixHead.${item}`
+  ),
+  ...bigIntsBlockHeader.map((item) =>
+    item === '' ? 'suffixTail' : `suffixTail.${item}`
+  ),
 ];

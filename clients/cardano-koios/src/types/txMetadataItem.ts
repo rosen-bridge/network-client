@@ -204,6 +204,9 @@ export type TxMetadataItem = {
   /** A JSON array containing details about metadata within transaction */
   metadata?: TxMetadataItemMetadata;
 };
+
 export const bigIntsTxMetadataItem = [
-  ...bigIntsTxMetadataItemMetadata.map((item) => `metadata.${item}`),
+  ...bigIntsTxMetadataItemMetadata.map((item) =>
+    item === '' ? 'metadata' : `metadata.${item}`
+  ),
 ];

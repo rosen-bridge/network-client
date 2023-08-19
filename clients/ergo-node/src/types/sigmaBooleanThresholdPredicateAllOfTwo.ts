@@ -13,5 +13,5 @@ export type SigmaBooleanThresholdPredicateAllOfTwo = {
   args?: SigmaBoolean[];
 };
 export const bigIntsSigmaBooleanThresholdPredicateAllOfTwo = [
-  ...bigIntsSigmaBoolean.map((item) => `args.${item}`),
+  ...bigIntsSigmaBoolean.map((item) => (item === '' ? 'args' : `args.${item}`)),
 ];

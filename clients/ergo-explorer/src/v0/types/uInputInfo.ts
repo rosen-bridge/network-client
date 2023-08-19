@@ -25,7 +25,10 @@ export interface UInputInfo {
   /** Address */
   address?: string;
 }
+
 export const bigIntsUInputInfo = [
-  ...bigIntsSpendingProofInfo.map((item) => `spendingProof.${item}`),
+  ...bigIntsSpendingProofInfo.map((item) =>
+    item === '' ? 'spendingProof' : `spendingProof.${item}`
+  ),
   'value',
 ];

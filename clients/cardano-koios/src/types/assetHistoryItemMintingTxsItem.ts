@@ -210,7 +210,7 @@ export type AssetHistoryItemMintingTxsItem = {
 };
 
 export const bigIntsAssetHistoryItemMintingTxsItem = [
-  ...bigIntsAssetHistoryItemMintingTxsItemMetadataItemAllOf.map(
-    (item) => `metadata.${item}`
+  ...bigIntsAssetHistoryItemMintingTxsItemMetadataItemAllOf.map((item) =>
+    item === '' ? 'metadata' : `metadata.${item}`
   ),
 ];

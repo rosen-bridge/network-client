@@ -206,7 +206,7 @@ export type TxInfoItemNativeScriptsItem = {
 };
 
 export const bigIntsTxInfoItemNativeScriptsItem = [
-  ...bigIntsTxInfoItemNativeScriptsItemScriptJson.map(
-    (item) => `script_json.${item}`
+  ...bigIntsTxInfoItemNativeScriptsItemScriptJson.map((item) =>
+    item === '' ? 'script_json' : `script_json.${item}`
   ),
 ];

@@ -17,7 +17,10 @@ export interface Asset {
   /** Amount of the token */
   amount: bigint;
 }
+
 export const bigIntsAsset = [
-  ...bigIntsDigest32.map((item) => `tokenId.${item}`),
+  ...bigIntsDigest32.map((item) =>
+    item === '' ? 'tokenId' : `tokenId.${item}`
+  ),
   'amount',
 ];

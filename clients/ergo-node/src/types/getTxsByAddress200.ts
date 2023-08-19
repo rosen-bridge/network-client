@@ -15,6 +15,9 @@ export type GetTxsByAddress200 = {
   /** Total count of retreived transactions */
   total?: number;
 };
+
 export const bigIntsGetTxsByAddress200 = [
-  ...bigIntsIndexedErgoTransaction.map((item) => `items.${item}`),
+  ...bigIntsIndexedErgoTransaction.map((item) =>
+    item === '' ? 'items' : `items.${item}`
+  ),
 ];

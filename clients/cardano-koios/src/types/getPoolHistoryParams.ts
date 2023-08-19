@@ -212,6 +212,10 @@ export type GetPoolHistoryParams = {
 };
 
 export const bigIntsGetPoolHistoryParams = [
-  ...bigInts_PoolBech32Parameter.map((item) => `_pool_bech32.${item}`),
-  ...bigInts_EpochNoParameter.map((item) => `_epoch_no.${item}`),
+  ...bigInts_PoolBech32Parameter.map((item) =>
+    item === '' ? '_pool_bech32' : `_pool_bech32.${item}`
+  ),
+  ...bigInts_EpochNoParameter.map((item) =>
+    item === '' ? '_epoch_no' : `_epoch_no.${item}`
+  ),
 ];

@@ -204,6 +204,9 @@ export type GetPoolUpdatesParams = {
    */
   _pool_bech32?: _PoolBech32OptionalParameter;
 };
+
 export const bigIntsGetPoolUpdatesParams = [
-  ...bigInts_PoolBech32OptionalParameter.map((item) => `_pool_bech32.${item}`),
+  ...bigInts_PoolBech32OptionalParameter.map((item) =>
+    item === '' ? '_pool_bech32' : `_pool_bech32.${item}`
+  ),
 ];

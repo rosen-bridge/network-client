@@ -22,7 +22,11 @@ export interface BlockADProofs {
 }
 
 export const bigIntsBlockADProofs = [
-  ...bigIntsModifierId.map((item) => `headerId.${item}`),
-  ...bigIntsSerializedAdProof.map((item) => `proofBytes.${item}`),
-  ...bigIntsDigest32.map((item) => `digest.${item}`),
+  ...bigIntsModifierId.map((item) =>
+    item === '' ? 'headerId' : `headerId.${item}`
+  ),
+  ...bigIntsSerializedAdProof.map((item) =>
+    item === '' ? 'proofBytes' : `proofBytes.${item}`
+  ),
+  ...bigIntsDigest32.map((item) => (item === '' ? 'digest' : `digest.${item}`)),
 ];

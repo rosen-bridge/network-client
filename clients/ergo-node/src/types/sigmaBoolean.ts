@@ -23,8 +23,8 @@ export interface SigmaBoolean {
 }
 
 export const bigIntsSigmaBoolean = [
-  ...bigIntsHexString.map((item) => `h.${item}`),
-  ...bigIntsHexString.map((item) => `g.${item}`),
-  ...bigIntsHexString.map((item) => `u.${item}`),
-  ...bigIntsHexString.map((item) => `v.${item}`),
+  ...bigIntsHexString.map((item) => (item === '' ? 'h' : `h.${item}`)),
+  ...bigIntsHexString.map((item) => (item === '' ? 'g' : `g.${item}`)),
+  ...bigIntsHexString.map((item) => (item === '' ? 'u' : `u.${item}`)),
+  ...bigIntsHexString.map((item) => (item === '' ? 'v' : `v.${item}`)),
 ];

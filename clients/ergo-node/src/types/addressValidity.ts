@@ -17,6 +17,9 @@ export interface AddressValidity {
   isValid: boolean;
   error?: string;
 }
+
 export const bigIntsAddressValidity = [
-  ...bigIntsErgoAddress.map((item) => `address.${item}`),
+  ...bigIntsErgoAddress.map((item) =>
+    item === '' ? 'address' : `address.${item}`
+  ),
 ];

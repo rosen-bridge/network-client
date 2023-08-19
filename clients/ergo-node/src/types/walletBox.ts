@@ -37,8 +37,16 @@ export interface WalletBox {
 }
 
 export const bigIntsWalletBox = [
-  ...bigIntsErgoTransactionOutput.map((item) => `box.${item}`),
-  ...bigIntsErgoAddress.map((item) => `address.${item}`),
-  ...bigIntsModifierId.map((item) => `creationTransaction.${item}`),
-  ...bigIntsModifierId.map((item) => `spendingTransaction.${item}`),
+  ...bigIntsErgoTransactionOutput.map((item) =>
+    item === '' ? 'box' : `box.${item}`
+  ),
+  ...bigIntsErgoAddress.map((item) =>
+    item === '' ? 'address' : `address.${item}`
+  ),
+  ...bigIntsModifierId.map((item) =>
+    item === '' ? 'creationTransaction' : `creationTransaction.${item}`
+  ),
+  ...bigIntsModifierId.map((item) =>
+    item === '' ? 'spendingTransaction' : `spendingTransaction.${item}`
+  ),
 ];

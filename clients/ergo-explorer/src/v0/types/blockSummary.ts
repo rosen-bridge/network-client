@@ -16,6 +16,10 @@ export interface BlockSummary {
 }
 
 export const bigIntsBlockSummary = [
-  ...bigIntsFullBlockInfo.map((item) => `block.${item}`),
-  ...bigIntsBlockReferencesInfo.map((item) => `references.${item}`),
+  ...bigIntsFullBlockInfo.map((item) =>
+    item === '' ? 'block' : `block.${item}`
+  ),
+  ...bigIntsBlockReferencesInfo.map((item) =>
+    item === '' ? 'references' : `references.${item}`
+  ),
 ];

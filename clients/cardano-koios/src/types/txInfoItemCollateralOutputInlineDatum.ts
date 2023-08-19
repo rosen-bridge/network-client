@@ -209,7 +209,7 @@ export type TxInfoItemCollateralOutputInlineDatum = {
 } | null;
 
 export const bigIntsTxInfoItemCollateralOutputInlineDatum = [
-  ...bigIntsTxInfoItemCollateralOutputInlineDatumValue.map(
-    (item) => `value.${item}`
+  ...bigIntsTxInfoItemCollateralOutputInlineDatumValue.map((item) =>
+    item === '' ? 'value' : `value.${item}`
   ),
 ];

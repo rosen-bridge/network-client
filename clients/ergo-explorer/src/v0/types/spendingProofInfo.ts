@@ -14,6 +14,9 @@ export interface SpendingProofInfo {
   /** Proof extension (key->value dictionary) */
   extension: SpendingProofInfoExtension;
 }
+
 export const bigIntsSpendingProofInfo = [
-  ...bigIntsSpendingProofInfoExtension.map((item) => `extension.${item}`),
+  ...bigIntsSpendingProofInfoExtension.map((item) =>
+    item === '' ? 'extension' : `extension.${item}`
+  ),
 ];

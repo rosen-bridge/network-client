@@ -226,14 +226,16 @@ export type TxInfoItemOutputsItem = {
 };
 
 export const bigIntsTxInfoItemOutputsItem = [
-  ...bigIntsTxInfoItemOutputsItemPaymentAddr.map(
-    (item) => `payment_addr.${item}`
+  ...bigIntsTxInfoItemOutputsItemPaymentAddr.map((item) =>
+    item === '' ? 'payment_addr' : `payment_addr.${item}`
   ),
-  ...bigIntsTxInfoItemOutputsItemStakeAddr.map((item) => `stake_addr.${item}`),
-  ...bigIntsTxInfoItemOutputsItemInlineDatum.map(
-    (item) => `inline_datum.${item}`
+  ...bigIntsTxInfoItemOutputsItemStakeAddr.map((item) =>
+    item === '' ? 'stake_addr' : `stake_addr.${item}`
   ),
-  ...bigIntsTxInfoItemOutputsItemReferenceScript.map(
-    (item) => `reference_script.${item}`
+  ...bigIntsTxInfoItemOutputsItemInlineDatum.map((item) =>
+    item === '' ? 'inline_datum' : `inline_datum.${item}`
+  ),
+  ...bigIntsTxInfoItemOutputsItemReferenceScript.map((item) =>
+    item === '' ? 'reference_script' : `reference_script.${item}`
   ),
 ];

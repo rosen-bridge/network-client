@@ -17,7 +17,8 @@ export interface BalancesSnapshot {
   balance: bigint;
   assets?: Asset[];
 }
+
 export const bigIntsBalancesSnapshot = [
   'balance',
-  ...bigIntsAsset.map((item) => `assets.${item}`),
+  ...bigIntsAsset.map((item) => (item === '' ? 'assets' : `assets.${item}`)),
 ];

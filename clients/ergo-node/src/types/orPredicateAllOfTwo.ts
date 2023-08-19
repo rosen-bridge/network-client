@@ -12,6 +12,9 @@ import { bigIntsScanningPredicate } from './scanningPredicate';
 export type OrPredicateAllOfTwo = {
   args?: ScanningPredicate[];
 };
+
 export const bigIntsOrPredicateAllOfTwo = [
-  ...bigIntsScanningPredicate.map((item) => `args.${item}`),
+  ...bigIntsScanningPredicate.map((item) =>
+    item === '' ? 'args' : `args.${item}`
+  ),
 ];

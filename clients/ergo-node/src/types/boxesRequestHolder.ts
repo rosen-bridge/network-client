@@ -20,8 +20,8 @@ export interface BoxesRequestHolder {
 }
 
 export const bigIntsBoxesRequestHolder = [
-  ...bigIntsBoxesRequestHolderTargetAssetsItemItem.map(
-    (item) => `targetAssets.${item}`
+  ...bigIntsBoxesRequestHolderTargetAssetsItemItem.map((item) =>
+    item === '' ? 'targetAssets' : `targetAssets.${item}`
   ),
   'targetBalance',
 ];

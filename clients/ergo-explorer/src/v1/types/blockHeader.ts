@@ -32,5 +32,7 @@ export interface BlockHeader {
 export const bigIntsBlockHeader = [
   'timestamp',
   'nBits',
-  ...bigIntsBlockPowSolutions.map((item) => `powSolutions.${item}`),
+  ...bigIntsBlockPowSolutions.map((item) =>
+    item === '' ? 'powSolutions' : `powSolutions.${item}`
+  ),
 ];

@@ -204,6 +204,9 @@ export type GetPolicyAssetListParams = {
    */
   _asset_policy: _AssetPolicyParameter;
 };
+
 export const bigIntsGetPolicyAssetListParams = [
-  ...bigInts_AssetPolicyParameter.map((item) => `_asset_policy.${item}`),
+  ...bigInts_AssetPolicyParameter.map((item) =>
+    item === '' ? '_asset_policy' : `_asset_policy.${item}`
+  ),
 ];

@@ -16,8 +16,11 @@ export interface NetworkState {
   maxTxGix: bigint;
   params: EpochInfo;
 }
+
 export const bigIntsNetworkState = [
   'maxBoxGix',
   'maxTxGix',
-  ...bigIntsEpochInfo.map((item) => `params.${item}`),
+  ...bigIntsEpochInfo.map((item) =>
+    item === '' ? 'params' : `params.${item}`
+  ),
 ];

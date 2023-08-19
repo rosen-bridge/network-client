@@ -224,16 +224,16 @@ export type ScriptRedeemersItemRedeemersItem = {
 };
 
 export const bigIntsScriptRedeemersItemRedeemersItem = [
-  ...bigIntsScriptRedeemersItemRedeemersItemUnitMem.map(
-    (item) => `unit_mem.${item}`
+  ...bigIntsScriptRedeemersItemRedeemersItemUnitMem.map((item) =>
+    item === '' ? 'unit_mem' : `unit_mem.${item}`
   ),
-  ...bigIntsScriptRedeemersItemRedeemersItemUnitSteps.map(
-    (item) => `unit_steps.${item}`
+  ...bigIntsScriptRedeemersItemRedeemersItemUnitSteps.map((item) =>
+    item === '' ? 'unit_steps' : `unit_steps.${item}`
   ),
-  ...bigIntsScriptRedeemersItemRedeemersItemPurpose.map(
-    (item) => `purpose.${item}`
+  ...bigIntsScriptRedeemersItemRedeemersItemPurpose.map((item) =>
+    item === '' ? 'purpose' : `purpose.${item}`
   ),
-  ...bigIntsScriptRedeemersItemRedeemersItemDatumValue.map(
-    (item) => `datum_value.${item}`
+  ...bigIntsScriptRedeemersItemRedeemersItemDatumValue.map((item) =>
+    item === '' ? 'datum_value' : `datum_value.${item}`
   ),
 ];

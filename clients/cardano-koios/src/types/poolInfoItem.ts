@@ -251,7 +251,13 @@ export type PoolInfoItem = {
 };
 
 export const bigIntsPoolInfoItem = [
-  ...bigIntsPoolInfoItemRelaysItem.map((item) => `relays.${item}`),
-  ...bigIntsPoolInfoItemMetaJson.map((item) => `meta_json.${item}`),
-  ...bigIntsPoolInfoItemPoolStatus.map((item) => `pool_status.${item}`),
+  ...bigIntsPoolInfoItemRelaysItem.map((item) =>
+    item === '' ? 'relays' : `relays.${item}`
+  ),
+  ...bigIntsPoolInfoItemMetaJson.map((item) =>
+    item === '' ? 'meta_json' : `meta_json.${item}`
+  ),
+  ...bigIntsPoolInfoItemPoolStatus.map((item) =>
+    item === '' ? 'pool_status' : `pool_status.${item}`
+  ),
 ];

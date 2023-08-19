@@ -17,6 +17,10 @@ export interface ErgoTransactionInput {
 }
 
 export const bigIntsErgoTransactionInput = [
-  ...bigIntsTransactionBoxId.map((item) => `boxId.${item}`),
-  ...bigIntsSpendingProof.map((item) => `spendingProof.${item}`),
+  ...bigIntsTransactionBoxId.map((item) =>
+    item === '' ? 'boxId' : `boxId.${item}`
+  ),
+  ...bigIntsSpendingProof.map((item) =>
+    item === '' ? 'spendingProof' : `spendingProof.${item}`
+  ),
 ];

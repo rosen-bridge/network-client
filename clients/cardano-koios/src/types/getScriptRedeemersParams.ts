@@ -204,6 +204,9 @@ export type GetScriptRedeemersParams = {
    */
   _script_hash: _ScriptHashParameter;
 };
+
 export const bigIntsGetScriptRedeemersParams = [
-  ...bigInts_ScriptHashParameter.map((item) => `_script_hash.${item}`),
+  ...bigInts_ScriptHashParameter.map((item) =>
+    item === '' ? '_script_hash' : `_script_hash.${item}`
+  ),
 ];

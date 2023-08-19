@@ -12,6 +12,9 @@ import { bigIntsErgoAddress } from './ergoAddress';
 export interface DeriveKeyResult {
   address: ErgoAddress;
 }
+
 export const bigIntsDeriveKeyResult = [
-  ...bigIntsErgoAddress.map((item) => `address.${item}`),
+  ...bigIntsErgoAddress.map((item) =>
+    item === '' ? 'address' : `address.${item}`
+  ),
 ];

@@ -38,12 +38,24 @@ export type CandidateBlock = {
 } | null;
 
 export const bigIntsCandidateBlock = [
-  ...bigIntsDigest32.map((item) => `extensionHash.${item}`),
-  ...bigIntsTimestamp.map((item) => `timestamp.${item}`),
-  ...bigIntsADDigest.map((item) => `stateRoot.${item}`),
+  ...bigIntsDigest32.map((item) =>
+    item === '' ? 'extensionHash' : `extensionHash.${item}`
+  ),
+  ...bigIntsTimestamp.map((item) =>
+    item === '' ? 'timestamp' : `timestamp.${item}`
+  ),
+  ...bigIntsADDigest.map((item) =>
+    item === '' ? 'stateRoot' : `stateRoot.${item}`
+  ),
   'nBits',
-  ...bigIntsSerializedAdProof.map((item) => `adProofBytes.${item}`),
-  ...bigIntsModifierId.map((item) => `parentId.${item}`),
-  ...bigIntsTransactions.map((item) => `transactions.${item}`),
-  ...bigIntsVotes.map((item) => `votes.${item}`),
+  ...bigIntsSerializedAdProof.map((item) =>
+    item === '' ? 'adProofBytes' : `adProofBytes.${item}`
+  ),
+  ...bigIntsModifierId.map((item) =>
+    item === '' ? 'parentId' : `parentId.${item}`
+  ),
+  ...bigIntsTransactions.map((item) =>
+    item === '' ? 'transactions' : `transactions.${item}`
+  ),
+  ...bigIntsVotes.map((item) => (item === '' ? 'votes' : `votes.${item}`)),
 ];

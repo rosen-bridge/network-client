@@ -21,6 +21,9 @@ export interface WorkMessage {
   pk: string;
   proof?: ProofOfUpcomingTransactions;
 }
+
 export const bigIntsWorkMessage = [
-  ...bigIntsProofOfUpcomingTransactions.map((item) => `proof.${item}`),
+  ...bigIntsProofOfUpcomingTransactions.map((item) =>
+    item === '' ? 'proof' : `proof.${item}`
+  ),
 ];

@@ -212,8 +212,10 @@ export type GetEpochInfoParams = {
 };
 
 export const bigIntsGetEpochInfoParams = [
-  ...bigInts_EpochNoParameter.map((item) => `_epoch_no.${item}`),
-  ...bigInts_IncludeNextEpochParameter.map(
-    (item) => `_include_next_epoch.${item}`
+  ...bigInts_EpochNoParameter.map((item) =>
+    item === '' ? '_epoch_no' : `_epoch_no.${item}`
+  ),
+  ...bigInts_IncludeNextEpochParameter.map((item) =>
+    item === '' ? '_include_next_epoch' : `_include_next_epoch.${item}`
   ),
 ];

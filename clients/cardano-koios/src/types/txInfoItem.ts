@@ -271,19 +271,25 @@ export type TxInfoItem = {
 };
 
 export const bigIntsTxInfoItem = [
-  ...bigIntsTxInfoItemCollateralInputsItem.map(
-    (item) => `collateral_inputs.${item}`
+  ...bigIntsTxInfoItemCollateralInputsItem.map((item) =>
+    item === '' ? 'collateral_inputs' : `collateral_inputs.${item}`
   ),
-  ...bigIntsTxInfoItemCollateralOutput.map(
-    (item) => `collateral_output.${item}`
+  ...bigIntsTxInfoItemCollateralOutput.map((item) =>
+    item === '' ? 'collateral_output' : `collateral_output.${item}`
   ),
-  ...bigIntsTxInfoItemReferenceInputsItem.map(
-    (item) => `reference_inputs.${item}`
+  ...bigIntsTxInfoItemReferenceInputsItem.map((item) =>
+    item === '' ? 'reference_inputs' : `reference_inputs.${item}`
   ),
-  ...bigIntsTxInfoItemInputsItem.map((item) => `inputs.${item}`),
-  ...bigIntsTxInfoItemOutputsItem.map((item) => `outputs.${item}`),
-  ...bigIntsTxInfoItemMetadata.map((item) => `metadata.${item}`),
-  ...bigIntsTxInfoItemPlutusContractsItem.map(
-    (item) => `plutus_contracts.${item}`
+  ...bigIntsTxInfoItemInputsItem.map((item) =>
+    item === '' ? 'inputs' : `inputs.${item}`
+  ),
+  ...bigIntsTxInfoItemOutputsItem.map((item) =>
+    item === '' ? 'outputs' : `outputs.${item}`
+  ),
+  ...bigIntsTxInfoItemMetadata.map((item) =>
+    item === '' ? 'metadata' : `metadata.${item}`
+  ),
+  ...bigIntsTxInfoItemPlutusContractsItem.map((item) =>
+    item === '' ? 'plutus_contracts' : `plutus_contracts.${item}`
   ),
 ];

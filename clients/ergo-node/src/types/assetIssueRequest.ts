@@ -32,8 +32,12 @@ export interface AssetIssueRequest {
 }
 
 export const bigIntsAssetIssueRequest = [
-  ...bigIntsErgoAddress.map((item) => `address.${item}`),
+  ...bigIntsErgoAddress.map((item) =>
+    item === '' ? 'address' : `address.${item}`
+  ),
   'ergValue',
   'amount',
-  ...bigIntsRegisters.map((item) => `registers.${item}`),
+  ...bigIntsRegisters.map((item) =>
+    item === '' ? 'registers' : `registers.${item}`
+  ),
 ];
