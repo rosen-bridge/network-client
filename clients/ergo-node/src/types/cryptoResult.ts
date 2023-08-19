@@ -18,7 +18,10 @@ export interface CryptoResult {
   /** Estimated cost of contract execution */
   cost: bigint;
 }
+
 export const bigIntsCryptoResult = [
-  ...bigIntsSigmaBoolean.map((item) => `value.${item}`),
+  ...bigIntsSigmaBoolean.map((item) =>
+    item === '' ? 'value' : `value.${item}`
+  ),
   'cost',
 ];

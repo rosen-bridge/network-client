@@ -215,7 +215,7 @@ export type TxInfoItemCollateralInputsItemReferenceScript = {
 } | null;
 
 export const bigIntsTxInfoItemCollateralInputsItemReferenceScript = [
-  ...bigIntsTxInfoItemCollateralInputsItemReferenceScriptValue.map(
-    (item) => `value.${item}`
+  ...bigIntsTxInfoItemCollateralInputsItemReferenceScriptValue.map((item) =>
+    item === '' ? 'value' : `value.${item}`
   ),
 ];

@@ -26,8 +26,12 @@ export interface PaymentRequest {
 }
 
 export const bigIntsPaymentRequest = [
-  ...bigIntsErgoAddress.map((item) => `address.${item}`),
+  ...bigIntsErgoAddress.map((item) =>
+    item === '' ? 'address' : `address.${item}`
+  ),
   'value',
-  ...bigIntsAsset.map((item) => `assets.${item}`),
-  ...bigIntsRegisters.map((item) => `registers.${item}`),
+  ...bigIntsAsset.map((item) => (item === '' ? 'assets' : `assets.${item}`)),
+  ...bigIntsRegisters.map((item) =>
+    item === '' ? 'registers' : `registers.${item}`
+  ),
 ];

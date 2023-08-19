@@ -212,6 +212,10 @@ export type GetAssetNftAddressParams = {
 };
 
 export const bigIntsGetAssetNftAddressParams = [
-  ...bigInts_AssetPolicyNftParameter.map((item) => `_asset_policy.${item}`),
-  ...bigInts_AssetNameNftParameter.map((item) => `_asset_name.${item}`),
+  ...bigInts_AssetPolicyNftParameter.map((item) =>
+    item === '' ? '_asset_policy' : `_asset_policy.${item}`
+  ),
+  ...bigInts_AssetNameNftParameter.map((item) =>
+    item === '' ? '_asset_name' : `_asset_name.${item}`
+  ),
 ];

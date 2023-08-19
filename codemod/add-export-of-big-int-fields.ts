@@ -16,15 +16,23 @@ const getFieldType = (name: string, typeAnnotation: any, api: API) => {
             [
               j.arrowFunctionExpression(
                 [j.identifier('item')],
-                j.templateLiteral(
-                  [
-                    j.templateElement(
-                      { cooked: `${name}.`, raw: `${name}.` },
-                      false
-                    ),
-                    j.templateElement({ cooked: '', raw: '' }, true),
-                  ],
-                  [j.identifier('item')]
+                j.conditionalExpression(
+                  j.binaryExpression(
+                    '===',
+                    j.identifier('item'),
+                    j.stringLiteral('')
+                  ),
+                  j.stringLiteral(name),
+                  j.templateLiteral(
+                    [
+                      j.templateElement(
+                        { cooked: `${name}.`, raw: `${name}.` },
+                        false
+                      ),
+                      j.templateElement({ cooked: '', raw: '' }, true),
+                    ],
+                    [j.identifier('item')]
+                  )
                 )
               ),
             ]
@@ -53,14 +61,21 @@ export default (root: any, api: API) => {
     row.insertAfter(newImport);
   });
   let name = '';
+  const bigIntFields = [];
   root.find(j.TSTypeAliasDeclaration).forEach((item) => {
     name = item.node.original.id.name;
+    if (
+      item.node &&
+      item.node.typeAnnotation &&
+      item.node.typeAnnotation &&
+      item.node.typeAnnotation.type === 'TSBigIntKeyword'
+    )
+      bigIntFields.push(j.stringLiteral(''));
   });
   root.find(j.TSInterfaceDeclaration).forEach((item) => {
     name = item.node.original.id.name;
   });
   const properties = root.find(j.TSPropertySignature);
-  const bigIntFields = [];
   properties.forEach((item) => {
     const element = getFieldType(
       item.node.key.name,

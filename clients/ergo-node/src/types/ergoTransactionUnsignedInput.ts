@@ -17,8 +17,10 @@ export interface ErgoTransactionUnsignedInput {
 }
 
 export const bigIntsErgoTransactionUnsignedInput = [
-  ...bigIntsTransactionBoxId.map((item) => `boxId.${item}`),
-  ...bigIntsErgoTransactionUnsignedInputExtension.map(
-    (item) => `extension.${item}`
+  ...bigIntsTransactionBoxId.map((item) =>
+    item === '' ? 'boxId' : `boxId.${item}`
+  ),
+  ...bigIntsErgoTransactionUnsignedInputExtension.map((item) =>
+    item === '' ? 'extension' : `extension.${item}`
   ),
 ];

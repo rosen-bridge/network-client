@@ -203,6 +203,9 @@ export type AddressAssetsItem = {
   address?: string;
   asset_list?: AddressAssetsItemAssetListItem[];
 };
+
 export const bigIntsAddressAssetsItem = [
-  ...bigIntsAddressAssetsItemAssetListItem.map((item) => `asset_list.${item}`),
+  ...bigIntsAddressAssetsItemAssetListItem.map((item) =>
+    item === '' ? 'asset_list' : `asset_list.${item}`
+  ),
 ];

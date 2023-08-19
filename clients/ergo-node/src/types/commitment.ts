@@ -28,7 +28,13 @@ export interface Commitment {
 }
 
 export const bigIntsCommitment = [
-  ...bigIntsCommitmentHint.map((item) => `hint.${item}`),
-  ...bigIntsSigmaBoolean.map((item) => `pubkey.${item}`),
-  ...bigIntsCommitmentType.map((item) => `type.${item}`),
+  ...bigIntsCommitmentHint.map((item) =>
+    item === '' ? 'hint' : `hint.${item}`
+  ),
+  ...bigIntsSigmaBoolean.map((item) =>
+    item === '' ? 'pubkey' : `pubkey.${item}`
+  ),
+  ...bigIntsCommitmentType.map((item) =>
+    item === '' ? 'type' : `type.${item}`
+  ),
 ];

@@ -215,7 +215,7 @@ export type AddressInfoItemUtxoSetItemReferenceScript = {
 } | null;
 
 export const bigIntsAddressInfoItemUtxoSetItemReferenceScript = [
-  ...bigIntsAddressInfoItemUtxoSetItemReferenceScriptValue.map(
-    (item) => `value.${item}`
+  ...bigIntsAddressInfoItemUtxoSetItemReferenceScriptValue.map((item) =>
+    item === '' ? 'value' : `value.${item}`
   ),
 ];

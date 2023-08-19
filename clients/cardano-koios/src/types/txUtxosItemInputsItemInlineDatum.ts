@@ -209,7 +209,7 @@ export type TxUtxosItemInputsItemInlineDatum = {
 } | null;
 
 export const bigIntsTxUtxosItemInputsItemInlineDatum = [
-  ...bigIntsTxUtxosItemInputsItemInlineDatumValue.map(
-    (item) => `value.${item}`
+  ...bigIntsTxUtxosItemInputsItemInlineDatumValue.map((item) =>
+    item === '' ? 'value' : `value.${item}`
   ),
 ];

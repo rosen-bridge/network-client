@@ -204,6 +204,9 @@ export type GetEpochBlockProtocolsParams = {
    */
   _epoch_no?: _EpochNoParameter;
 };
+
 export const bigIntsGetEpochBlockProtocolsParams = [
-  ...bigInts_EpochNoParameter.map((item) => `_epoch_no.${item}`),
+  ...bigInts_EpochNoParameter.map((item) =>
+    item === '' ? '_epoch_no' : `_epoch_no.${item}`
+  ),
 ];

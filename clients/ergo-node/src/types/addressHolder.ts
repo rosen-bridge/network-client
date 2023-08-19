@@ -15,6 +15,9 @@ import { bigIntsErgoAddress } from './ergoAddress';
 export interface AddressHolder {
   address: ErgoAddress;
 }
+
 export const bigIntsAddressHolder = [
-  ...bigIntsErgoAddress.map((item) => `address.${item}`),
+  ...bigIntsErgoAddress.map((item) =>
+    item === '' ? 'address' : `address.${item}`
+  ),
 ];

@@ -20,6 +20,10 @@ export interface TransactionHintsBag {
 }
 
 export const bigIntsTransactionHintsBag = [
-  ...bigIntsInputHints.map((item) => `secretHints.${item}`),
-  ...bigIntsInputHints.map((item) => `publicHints.${item}`),
+  ...bigIntsInputHints.map((item) =>
+    item === '' ? 'secretHints' : `secretHints.${item}`
+  ),
+  ...bigIntsInputHints.map((item) =>
+    item === '' ? 'publicHints' : `publicHints.${item}`
+  ),
 ];

@@ -19,7 +19,10 @@ export type BalanceInfoTokensItem = {
   /** Name of the token, if any */
   name?: string;
 };
+
 export const bigIntsBalanceInfoTokensItem = [
-  ...bigIntsModifierId.map((item) => `tokenId.${item}`),
+  ...bigIntsModifierId.map((item) =>
+    item === '' ? 'tokenId' : `tokenId.${item}`
+  ),
   'amount',
 ];

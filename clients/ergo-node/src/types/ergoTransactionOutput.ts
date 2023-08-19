@@ -33,10 +33,18 @@ export interface ErgoTransactionOutput {
 }
 
 export const bigIntsErgoTransactionOutput = [
-  ...bigIntsTransactionBoxId.map((item) => `boxId.${item}`),
+  ...bigIntsTransactionBoxId.map((item) =>
+    item === '' ? 'boxId' : `boxId.${item}`
+  ),
   'value',
-  ...bigIntsErgoTree.map((item) => `ergoTree.${item}`),
-  ...bigIntsAsset.map((item) => `assets.${item}`),
-  ...bigIntsRegisters.map((item) => `additionalRegisters.${item}`),
-  ...bigIntsTransactionId.map((item) => `transactionId.${item}`),
+  ...bigIntsErgoTree.map((item) =>
+    item === '' ? 'ergoTree' : `ergoTree.${item}`
+  ),
+  ...bigIntsAsset.map((item) => (item === '' ? 'assets' : `assets.${item}`)),
+  ...bigIntsRegisters.map((item) =>
+    item === '' ? 'additionalRegisters' : `additionalRegisters.${item}`
+  ),
+  ...bigIntsTransactionId.map((item) =>
+    item === '' ? 'transactionId' : `transactionId.${item}`
+  ),
 ];

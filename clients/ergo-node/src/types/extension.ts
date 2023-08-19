@@ -21,6 +21,8 @@ export interface Extension {
 }
 
 export const bigIntsExtension = [
-  ...bigIntsModifierId.map((item) => `headerId.${item}`),
-  ...bigIntsDigest32.map((item) => `digest.${item}`),
+  ...bigIntsModifierId.map((item) =>
+    item === '' ? 'headerId' : `headerId.${item}`
+  ),
+  ...bigIntsDigest32.map((item) => (item === '' ? 'digest' : `digest.${item}`)),
 ];

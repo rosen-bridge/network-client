@@ -14,6 +14,9 @@ export interface ConnectedPeer {
   version?: string;
   lastMessage?: Timestamp;
 }
+
 export const bigIntsConnectedPeer = [
-  ...bigIntsTimestamp.map((item) => `lastMessage.${item}`),
+  ...bigIntsTimestamp.map((item) =>
+    item === '' ? 'lastMessage' : `lastMessage.${item}`
+  ),
 ];

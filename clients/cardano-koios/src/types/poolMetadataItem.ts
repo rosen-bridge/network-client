@@ -207,6 +207,9 @@ export type PoolMetadataItem = {
   meta_hash?: string | null;
   meta_json?: PoolMetadataItemMetaJson;
 };
+
 export const bigIntsPoolMetadataItem = [
-  ...bigIntsPoolMetadataItemMetaJson.map((item) => `meta_json.${item}`),
+  ...bigIntsPoolMetadataItemMetaJson.map((item) =>
+    item === '' ? 'meta_json' : `meta_json.${item}`
+  ),
 ];

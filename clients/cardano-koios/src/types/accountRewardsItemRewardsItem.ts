@@ -210,6 +210,9 @@ export type AccountRewardsItemRewardsItem = {
   /** Bech32 representation of pool ID */
   pool_id?: string | null;
 };
+
 export const bigIntsAccountRewardsItemRewardsItem = [
-  ...bigIntsAccountRewardsItemRewardsItemType.map((item) => `type.${item}`),
+  ...bigIntsAccountRewardsItemRewardsItemType.map((item) =>
+    item === '' ? 'type' : `type.${item}`
+  ),
 ];

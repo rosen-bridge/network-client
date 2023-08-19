@@ -26,7 +26,13 @@ export interface UTransactionInfo {
 
 export const bigIntsUTransactionInfo = [
   'creationTimestamp',
-  ...bigIntsUInputInfo.map((item) => `inputs.${item}`),
-  ...bigIntsUDataInputInfo.map((item) => `dataInputs.${item}`),
-  ...bigIntsUOutputInfo.map((item) => `outputs.${item}`),
+  ...bigIntsUInputInfo.map((item) =>
+    item === '' ? 'inputs' : `inputs.${item}`
+  ),
+  ...bigIntsUDataInputInfo.map((item) =>
+    item === '' ? 'dataInputs' : `dataInputs.${item}`
+  ),
+  ...bigIntsUOutputInfo.map((item) =>
+    item === '' ? 'outputs' : `outputs.${item}`
+  ),
 ];

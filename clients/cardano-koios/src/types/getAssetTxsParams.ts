@@ -224,10 +224,16 @@ export type GetAssetTxsParams = {
 };
 
 export const bigIntsGetAssetTxsParams = [
-  ...bigInts_AssetPolicyParameter.map((item) => `_asset_policy.${item}`),
-  ...bigInts_AssetNameParameter.map((item) => `_asset_name.${item}`),
-  ...bigInts_AfterBlockHeightParameter.map(
-    (item) => `_after_block_height.${item}`
+  ...bigInts_AssetPolicyParameter.map((item) =>
+    item === '' ? '_asset_policy' : `_asset_policy.${item}`
   ),
-  ...bigInts_HistoryParameter.map((item) => `_history.${item}`),
+  ...bigInts_AssetNameParameter.map((item) =>
+    item === '' ? '_asset_name' : `_asset_name.${item}`
+  ),
+  ...bigInts_AfterBlockHeightParameter.map((item) =>
+    item === '' ? '_after_block_height' : `_after_block_height.${item}`
+  ),
+  ...bigInts_HistoryParameter.map((item) =>
+    item === '' ? '_history' : `_history.${item}`
+  ),
 ];

@@ -18,6 +18,10 @@ export interface PopowHeader {
 }
 
 export const bigIntsPopowHeader = [
-  ...bigIntsBlockHeader.map((item) => `header.${item}`),
-  ...bigIntsModifierId.map((item) => `interlinks.${item}`),
+  ...bigIntsBlockHeader.map((item) =>
+    item === '' ? 'header' : `header.${item}`
+  ),
+  ...bigIntsModifierId.map((item) =>
+    item === '' ? 'interlinks' : `interlinks.${item}`
+  ),
 ];

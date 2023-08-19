@@ -15,6 +15,9 @@ export interface BlockExtensionInfo {
   digest: string;
   fields: BlockExtensionInfoFields;
 }
+
 export const bigIntsBlockExtensionInfo = [
-  ...bigIntsBlockExtensionInfoFields.map((item) => `fields.${item}`),
+  ...bigIntsBlockExtensionInfoFields.map((item) =>
+    item === '' ? 'fields' : `fields.${item}`
+  ),
 ];

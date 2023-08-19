@@ -222,10 +222,10 @@ export type PolicyAssetInfoItem = {
 };
 
 export const bigIntsPolicyAssetInfoItem = [
-  ...bigIntsPolicyAssetInfoItemMintingTxMetadataAllOf.map(
-    (item) => `minting_tx_metadata.${item}`
+  ...bigIntsPolicyAssetInfoItemMintingTxMetadataAllOf.map((item) =>
+    item === '' ? 'minting_tx_metadata' : `minting_tx_metadata.${item}`
   ),
-  ...bigIntsPolicyAssetInfoItemTokenRegistryMetadata.map(
-    (item) => `token_registry_metadata.${item}`
+  ...bigIntsPolicyAssetInfoItemTokenRegistryMetadata.map((item) =>
+    item === '' ? 'token_registry_metadata' : `token_registry_metadata.${item}`
   ),
 ];

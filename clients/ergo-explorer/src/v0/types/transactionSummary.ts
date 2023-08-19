@@ -35,10 +35,20 @@ export interface TransactionSummary {
 }
 
 export const bigIntsTransactionSummary = [
-  ...bigIntsMiniBlockInfo.map((item) => `miniBlockInfo.${item}`),
+  ...bigIntsMiniBlockInfo.map((item) =>
+    item === '' ? 'miniBlockInfo' : `miniBlockInfo.${item}`
+  ),
   'timestamp',
-  ...bigIntsInputInfo.map((item) => `inputs.${item}`),
-  ...bigIntsDataInputInfo.map((item) => `dataInputs.${item}`),
-  ...bigIntsOutputInfo.map((item) => `outputs.${item}`),
-  ...bigIntsTxStats.map((item) => `ioSummary.${item}`),
+  ...bigIntsInputInfo.map((item) =>
+    item === '' ? 'inputs' : `inputs.${item}`
+  ),
+  ...bigIntsDataInputInfo.map((item) =>
+    item === '' ? 'dataInputs' : `dataInputs.${item}`
+  ),
+  ...bigIntsOutputInfo.map((item) =>
+    item === '' ? 'outputs' : `outputs.${item}`
+  ),
+  ...bigIntsTxStats.map((item) =>
+    item === '' ? 'ioSummary' : `ioSummary.${item}`
+  ),
 ];

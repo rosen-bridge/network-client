@@ -17,6 +17,9 @@ export interface MerkleProof {
   leaf: string;
   levels: MerkleProofLevelsItemItem[][];
 }
+
 export const bigIntsMerkleProof = [
-  ...bigIntsMerkleProofLevelsItemItem.map((item) => `levels.${item}`),
+  ...bigIntsMerkleProofLevelsItemItem.map((item) =>
+    item === '' ? 'levels' : `levels.${item}`
+  ),
 ];

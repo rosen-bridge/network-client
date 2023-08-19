@@ -14,6 +14,10 @@ export interface TotalBalance {
 }
 
 export const bigIntsTotalBalance = [
-  ...bigIntsBalance.map((item) => `confirmed.${item}`),
-  ...bigIntsBalance.map((item) => `unconfirmed.${item}`),
+  ...bigIntsBalance.map((item) =>
+    item === '' ? 'confirmed' : `confirmed.${item}`
+  ),
+  ...bigIntsBalance.map((item) =>
+    item === '' ? 'unconfirmed' : `unconfirmed.${item}`
+  ),
 ];

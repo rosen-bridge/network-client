@@ -28,8 +28,16 @@ export interface FullBlock {
 }
 
 export const bigIntsFullBlock = [
-  ...bigIntsBlockHeader.map((item) => `header.${item}`),
-  ...bigIntsBlockTransactions.map((item) => `blockTransactions.${item}`),
-  ...bigIntsBlockADProofs.map((item) => `adProofs.${item}`),
-  ...bigIntsExtension.map((item) => `extension.${item}`),
+  ...bigIntsBlockHeader.map((item) =>
+    item === '' ? 'header' : `header.${item}`
+  ),
+  ...bigIntsBlockTransactions.map((item) =>
+    item === '' ? 'blockTransactions' : `blockTransactions.${item}`
+  ),
+  ...bigIntsBlockADProofs.map((item) =>
+    item === '' ? 'adProofs' : `adProofs.${item}`
+  ),
+  ...bigIntsExtension.map((item) =>
+    item === '' ? 'extension' : `extension.${item}`
+  ),
 ];

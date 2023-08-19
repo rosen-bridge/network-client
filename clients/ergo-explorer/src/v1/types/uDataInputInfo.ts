@@ -33,8 +33,10 @@ export interface UDataInputInfo {
 
 export const bigIntsUDataInputInfo = [
   'value',
-  ...bigIntsAssetInstanceInfo.map((item) => `assets.${item}`),
-  ...bigIntsUDataInputInfoAdditionalRegisters.map(
-    (item) => `additionalRegisters.${item}`
+  ...bigIntsAssetInstanceInfo.map((item) =>
+    item === '' ? 'assets' : `assets.${item}`
+  ),
+  ...bigIntsUDataInputInfoAdditionalRegisters.map((item) =>
+    item === '' ? 'additionalRegisters' : `additionalRegisters.${item}`
   ),
 ];

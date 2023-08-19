@@ -12,6 +12,9 @@ import { bigIntsTransactionBoxId } from './transactionBoxId';
 export interface ErgoTransactionDataInput {
   boxId: TransactionBoxId;
 }
+
 export const bigIntsErgoTransactionDataInput = [
-  ...bigIntsTransactionBoxId.map((item) => `boxId.${item}`),
+  ...bigIntsTransactionBoxId.map((item) =>
+    item === '' ? 'boxId' : `boxId.${item}`
+  ),
 ];

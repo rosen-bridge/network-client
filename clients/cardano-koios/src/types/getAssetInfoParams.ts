@@ -212,6 +212,10 @@ export type GetAssetInfoParams = {
 };
 
 export const bigIntsGetAssetInfoParams = [
-  ...bigInts_AssetPolicyParameter.map((item) => `_asset_policy.${item}`),
-  ...bigInts_AssetNameParameter.map((item) => `_asset_name.${item}`),
+  ...bigInts_AssetPolicyParameter.map((item) =>
+    item === '' ? '_asset_policy' : `_asset_policy.${item}`
+  ),
+  ...bigInts_AssetNameParameter.map((item) =>
+    item === '' ? '_asset_name' : `_asset_name.${item}`
+  ),
 ];

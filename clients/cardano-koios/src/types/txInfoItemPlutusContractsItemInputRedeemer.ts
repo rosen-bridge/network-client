@@ -212,13 +212,13 @@ export type TxInfoItemPlutusContractsItemInputRedeemer = {
 };
 
 export const bigIntsTxInfoItemPlutusContractsItemInputRedeemer = [
-  ...bigIntsTxInfoItemPlutusContractsItemInputRedeemerPurpose.map(
-    (item) => `purpose.${item}`
+  ...bigIntsTxInfoItemPlutusContractsItemInputRedeemerPurpose.map((item) =>
+    item === '' ? 'purpose' : `purpose.${item}`
   ),
-  ...bigIntsTxInfoItemPlutusContractsItemInputRedeemerUnit.map(
-    (item) => `unit.${item}`
+  ...bigIntsTxInfoItemPlutusContractsItemInputRedeemerUnit.map((item) =>
+    item === '' ? 'unit' : `unit.${item}`
   ),
-  ...bigIntsTxInfoItemPlutusContractsItemInputRedeemerDatum.map(
-    (item) => `datum.${item}`
+  ...bigIntsTxInfoItemPlutusContractsItemInputRedeemerDatum.map((item) =>
+    item === '' ? 'datum' : `datum.${item}`
   ),
 ];

@@ -212,6 +212,10 @@ export type AddressInfoItem = {
 };
 
 export const bigIntsAddressInfoItem = [
-  ...bigIntsAddressInfoItemStakeAddress.map((item) => `stake_address.${item}`),
-  ...bigIntsAddressInfoItemUtxoSetItem.map((item) => `utxo_set.${item}`),
+  ...bigIntsAddressInfoItemStakeAddress.map((item) =>
+    item === '' ? 'stake_address' : `stake_address.${item}`
+  ),
+  ...bigIntsAddressInfoItemUtxoSetItem.map((item) =>
+    item === '' ? 'utxo_set' : `utxo_set.${item}`
+  ),
 ];

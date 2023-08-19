@@ -18,5 +18,5 @@ export interface SyncInfo {
   height: number;
 }
 export const bigIntsSyncInfo = [
-  ...bigIntsPeerMode.map((item) => `mode.${item}`),
+  ...bigIntsPeerMode.map((item) => (item === '' ? 'mode' : `mode.${item}`)),
 ];

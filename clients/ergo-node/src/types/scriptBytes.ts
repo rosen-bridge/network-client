@@ -13,5 +13,5 @@ export interface ScriptBytes {
   bytes: HexString;
 }
 export const bigIntsScriptBytes = [
-  ...bigIntsHexString.map((item) => `bytes.${item}`),
+  ...bigIntsHexString.map((item) => (item === '' ? 'bytes' : `bytes.${item}`)),
 ];

@@ -205,5 +205,7 @@ export type ScriptRedeemersItem = {
 };
 
 export const bigIntsScriptRedeemersItem = [
-  ...bigIntsScriptRedeemersItemRedeemersItem.map((item) => `redeemers.${item}`),
+  ...bigIntsScriptRedeemersItemRedeemersItem.map((item) =>
+    item === '' ? 'redeemers' : `redeemers.${item}`
+  ),
 ];

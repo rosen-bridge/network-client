@@ -15,5 +15,5 @@ export interface ItemsOutputInfo {
   total: number;
 }
 export const bigIntsItemsOutputInfo = [
-  ...bigIntsOutputInfo.map((item) => `items.${item}`),
+  ...bigIntsOutputInfo.map((item) => (item === '' ? 'items' : `items.${item}`)),
 ];

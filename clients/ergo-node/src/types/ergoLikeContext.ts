@@ -45,14 +45,28 @@ export interface ErgoLikeContext {
 }
 
 export const bigIntsErgoLikeContext = [
-  ...bigIntsAvlTreeData.map((item) => `lastBlockUtxoRoot.${item}`),
-  ...bigIntsSigmaHeader.map((item) => `headers.${item}`),
-  ...bigIntsPreHeader.map((item) => `preHeader.${item}`),
-  ...bigIntsErgoTransactionOutput.map((item) => `dataBoxes.${item}`),
-  ...bigIntsErgoTransactionOutput.map((item) => `boxesToSpend.${item}`),
-  ...bigIntsErgoLikeTransaction.map((item) => `spendingTransaction.${item}`),
+  ...bigIntsAvlTreeData.map((item) =>
+    item === '' ? 'lastBlockUtxoRoot' : `lastBlockUtxoRoot.${item}`
+  ),
+  ...bigIntsSigmaHeader.map((item) =>
+    item === '' ? 'headers' : `headers.${item}`
+  ),
+  ...bigIntsPreHeader.map((item) =>
+    item === '' ? 'preHeader' : `preHeader.${item}`
+  ),
+  ...bigIntsErgoTransactionOutput.map((item) =>
+    item === '' ? 'dataBoxes' : `dataBoxes.${item}`
+  ),
+  ...bigIntsErgoTransactionOutput.map((item) =>
+    item === '' ? 'boxesToSpend' : `boxesToSpend.${item}`
+  ),
+  ...bigIntsErgoLikeTransaction.map((item) =>
+    item === '' ? 'spendingTransaction' : `spendingTransaction.${item}`
+  ),
   'selfIndex',
-  ...bigIntsErgoLikeContextExtension.map((item) => `extension.${item}`),
+  ...bigIntsErgoLikeContextExtension.map((item) =>
+    item === '' ? 'extension' : `extension.${item}`
+  ),
   'costLimit',
   'initCost',
 ];

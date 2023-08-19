@@ -210,6 +210,10 @@ export type TxUtxosItem = {
 };
 
 export const bigIntsTxUtxosItem = [
-  ...bigIntsTxUtxosItemInputsItem.map((item) => `inputs.${item}`),
-  ...bigIntsTxUtxosItemOutputsItem.map((item) => `outputs.${item}`),
+  ...bigIntsTxUtxosItemInputsItem.map((item) =>
+    item === '' ? 'inputs' : `inputs.${item}`
+  ),
+  ...bigIntsTxUtxosItemOutputsItem.map((item) =>
+    item === '' ? 'outputs' : `outputs.${item}`
+  ),
 ];

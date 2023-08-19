@@ -225,10 +225,10 @@ export type AssetInfoItem = {
 };
 
 export const bigIntsAssetInfoItem = [
-  ...bigIntsAssetInfoItemMintingTxMetadataAllOf.map(
-    (item) => `minting_tx_metadata.${item}`
+  ...bigIntsAssetInfoItemMintingTxMetadataAllOf.map((item) =>
+    item === '' ? 'minting_tx_metadata' : `minting_tx_metadata.${item}`
   ),
-  ...bigIntsAssetInfoItemTokenRegistryMetadata.map(
-    (item) => `token_registry_metadata.${item}`
+  ...bigIntsAssetInfoItemTokenRegistryMetadata.map((item) =>
+    item === '' ? 'token_registry_metadata' : `token_registry_metadata.${item}`
   ),
 ];

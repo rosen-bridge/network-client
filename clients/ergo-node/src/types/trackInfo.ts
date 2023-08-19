@@ -20,6 +20,10 @@ export interface TrackInfo {
 }
 
 export const bigIntsTrackInfo = [
-  ...bigIntsTrackInfoRequested.map((item) => `requested.${item}`),
-  ...bigIntsTrackInfoReceived.map((item) => `received.${item}`),
+  ...bigIntsTrackInfoRequested.map((item) =>
+    item === '' ? 'requested' : `requested.${item}`
+  ),
+  ...bigIntsTrackInfoReceived.map((item) =>
+    item === '' ? 'received' : `received.${item}`
+  ),
 ];

@@ -203,6 +203,9 @@ export type AccountRewardsItem = {
   stake_address?: string;
   rewards?: AccountRewardsItemRewardsItem[];
 };
+
 export const bigIntsAccountRewardsItem = [
-  ...bigIntsAccountRewardsItemRewardsItem.map((item) => `rewards.${item}`),
+  ...bigIntsAccountRewardsItemRewardsItem.map((item) =>
+    item === '' ? 'rewards' : `rewards.${item}`
+  ),
 ];

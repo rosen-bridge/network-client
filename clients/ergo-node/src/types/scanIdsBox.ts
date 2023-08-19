@@ -16,6 +16,9 @@ export interface ScanIdsBox {
   scanIds: number[];
   box: ErgoTransactionOutput;
 }
+
 export const bigIntsScanIdsBox = [
-  ...bigIntsErgoTransactionOutput.map((item) => `box.${item}`),
+  ...bigIntsErgoTransactionOutput.map((item) =>
+    item === '' ? 'box' : `box.${item}`
+  ),
 ];

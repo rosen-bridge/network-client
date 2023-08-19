@@ -18,6 +18,9 @@ export interface ProofOfUpcomingTransactions {
   /** Merkle proofs of transactions included into blocks (not necessarily all the block transactions) */
   txProofs: MerkleProof[];
 }
+
 export const bigIntsProofOfUpcomingTransactions = [
-  ...bigIntsMerkleProof.map((item) => `txProofs.${item}`),
+  ...bigIntsMerkleProof.map((item) =>
+    item === '' ? 'txProofs' : `txProofs.${item}`
+  ),
 ];

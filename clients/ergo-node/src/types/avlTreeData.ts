@@ -16,5 +16,5 @@ export interface AvlTreeData {
   valueLength?: number | null;
 }
 export const bigIntsAvlTreeData = [
-  ...bigIntsDigest32.map((item) => `digest.${item}`),
+  ...bigIntsDigest32.map((item) => (item === '' ? 'digest' : `digest.${item}`)),
 ];

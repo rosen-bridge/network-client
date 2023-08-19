@@ -31,8 +31,14 @@ export interface ErgoTransaction {
 }
 
 export const bigIntsErgoTransaction = [
-  ...bigIntsTransactionId.map((item) => `id.${item}`),
-  ...bigIntsErgoTransactionInput.map((item) => `inputs.${item}`),
-  ...bigIntsErgoTransactionDataInput.map((item) => `dataInputs.${item}`),
-  ...bigIntsErgoTransactionOutput.map((item) => `outputs.${item}`),
+  ...bigIntsTransactionId.map((item) => (item === '' ? 'id' : `id.${item}`)),
+  ...bigIntsErgoTransactionInput.map((item) =>
+    item === '' ? 'inputs' : `inputs.${item}`
+  ),
+  ...bigIntsErgoTransactionDataInput.map((item) =>
+    item === '' ? 'dataInputs' : `dataInputs.${item}`
+  ),
+  ...bigIntsErgoTransactionOutput.map((item) =>
+    item === '' ? 'outputs' : `outputs.${item}`
+  ),
 ];

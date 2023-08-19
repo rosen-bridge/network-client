@@ -26,9 +26,15 @@ export interface PreHeader {
 }
 
 export const bigIntsPreHeader = [
-  ...bigIntsTimestamp.map((item) => `timestamp.${item}`),
-  ...bigIntsVersion.map((item) => `version.${item}`),
+  ...bigIntsTimestamp.map((item) =>
+    item === '' ? 'timestamp' : `timestamp.${item}`
+  ),
+  ...bigIntsVersion.map((item) =>
+    item === '' ? 'version' : `version.${item}`
+  ),
   'nBits',
-  ...bigIntsModifierId.map((item) => `parentId.${item}`),
-  ...bigIntsVotes.map((item) => `votes.${item}`),
+  ...bigIntsModifierId.map((item) =>
+    item === '' ? 'parentId' : `parentId.${item}`
+  ),
+  ...bigIntsVotes.map((item) => (item === '' ? 'votes' : `votes.${item}`)),
 ];

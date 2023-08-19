@@ -20,6 +20,10 @@ export interface SecretProven {
 }
 
 export const bigIntsSecretProven = [
-  ...bigIntsSecretProvenHint.map((item) => `hint.${item}`),
-  ...bigIntsSigmaBoolean.map((item) => `pubkey.${item}`),
+  ...bigIntsSecretProvenHint.map((item) =>
+    item === '' ? 'hint' : `hint.${item}`
+  ),
+  ...bigIntsSigmaBoolean.map((item) =>
+    item === '' ? 'pubkey' : `pubkey.${item}`
+  ),
 ];

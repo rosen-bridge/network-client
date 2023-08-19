@@ -220,6 +220,9 @@ export type AccountInfoItem = {
   /** Total treasury MIR value of the account */
   treasury?: string;
 };
+
 export const bigIntsAccountInfoItem = [
-  ...bigIntsAccountInfoItemStatus.map((item) => `status.${item}`),
+  ...bigIntsAccountInfoItemStatus.map((item) =>
+    item === '' ? 'status' : `status.${item}`
+  ),
 ];

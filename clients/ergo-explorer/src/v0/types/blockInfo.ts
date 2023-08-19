@@ -28,6 +28,6 @@ export interface BlockInfo {
 
 export const bigIntsBlockInfo = [
   'timestamp',
-  ...bigIntsMinerInfo.map((item) => `miner.${item}`),
+  ...bigIntsMinerInfo.map((item) => (item === '' ? 'miner' : `miner.${item}`)),
   'minerReward',
 ];

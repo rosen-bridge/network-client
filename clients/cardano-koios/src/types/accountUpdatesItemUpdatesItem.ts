@@ -214,7 +214,7 @@ export type AccountUpdatesItemUpdatesItem = {
 };
 
 export const bigIntsAccountUpdatesItemUpdatesItem = [
-  ...bigIntsAccountUpdatesItemUpdatesItemActionType.map(
-    (item) => `action_type.${item}`
+  ...bigIntsAccountUpdatesItemUpdatesItemActionType.map((item) =>
+    item === '' ? 'action_type' : `action_type.${item}`
   ),
 ];

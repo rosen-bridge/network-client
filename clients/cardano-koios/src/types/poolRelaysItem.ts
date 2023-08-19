@@ -203,6 +203,9 @@ export type PoolRelaysItem = {
   pool_id_bech32?: string;
   relays?: PoolRelaysItemRelaysItem[];
 };
+
 export const bigIntsPoolRelaysItem = [
-  ...bigIntsPoolRelaysItemRelaysItem.map((item) => `relays.${item}`),
+  ...bigIntsPoolRelaysItemRelaysItem.map((item) =>
+    item === '' ? 'relays' : `relays.${item}`
+  ),
 ];

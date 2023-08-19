@@ -28,7 +28,7 @@ export interface IndexedToken {
 }
 
 export const bigIntsIndexedToken = [
-  ...bigIntsModifierId.map((item) => `id.${item}`),
-  ...bigIntsModifierId.map((item) => `boxId.${item}`),
+  ...bigIntsModifierId.map((item) => (item === '' ? 'id' : `id.${item}`)),
+  ...bigIntsModifierId.map((item) => (item === '' ? 'boxId' : `boxId.${item}`)),
   'emissionAmount',
 ];

@@ -21,6 +21,10 @@ export interface SpendingProof {
 }
 
 export const bigIntsSpendingProof = [
-  ...bigIntsSpendingProofBytes.map((item) => `proofBytes.${item}`),
-  ...bigIntsSpendingProofExtension.map((item) => `extension.${item}`),
+  ...bigIntsSpendingProofBytes.map((item) =>
+    item === '' ? 'proofBytes' : `proofBytes.${item}`
+  ),
+  ...bigIntsSpendingProofExtension.map((item) =>
+    item === '' ? 'extension' : `extension.${item}`
+  ),
 ];

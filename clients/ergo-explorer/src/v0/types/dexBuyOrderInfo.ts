@@ -14,7 +14,10 @@ export interface DexBuyOrderInfo {
   tokenId: string;
   tokenAmount: bigint;
 }
+
 export const bigIntsDexBuyOrderInfo = [
-  ...bigIntsOutputInfo.map((item) => `outputInfo.${item}`),
+  ...bigIntsOutputInfo.map((item) =>
+    item === '' ? 'outputInfo' : `outputInfo.${item}`
+  ),
   'tokenAmount',
 ];

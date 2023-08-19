@@ -206,6 +206,9 @@ export type DatumInfoItem = {
   /** Datum bytes (hex) */
   bytes?: string;
 };
+
 export const bigIntsDatumInfoItem = [
-  ...bigIntsDatumInfoItemValue.map((item) => `value.${item}`),
+  ...bigIntsDatumInfoItemValue.map((item) =>
+    item === '' ? 'value' : `value.${item}`
+  ),
 ];

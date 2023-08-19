@@ -203,6 +203,9 @@ export type AccountUpdatesItem = {
   stake_address?: string;
   updates?: AccountUpdatesItemUpdatesItem[];
 };
+
 export const bigIntsAccountUpdatesItem = [
-  ...bigIntsAccountUpdatesItemUpdatesItem.map((item) => `updates.${item}`),
+  ...bigIntsAccountUpdatesItemUpdatesItem.map((item) =>
+    item === '' ? 'updates' : `updates.${item}`
+  ),
 ];

@@ -215,7 +215,7 @@ export type TxInfoItemReferenceInputsItemReferenceScript = {
 } | null;
 
 export const bigIntsTxInfoItemReferenceInputsItemReferenceScript = [
-  ...bigIntsTxInfoItemReferenceInputsItemReferenceScriptValue.map(
-    (item) => `value.${item}`
+  ...bigIntsTxInfoItemReferenceInputsItemReferenceScriptValue.map((item) =>
+    item === '' ? 'value' : `value.${item}`
   ),
 ];

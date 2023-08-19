@@ -16,6 +16,9 @@ export interface BurnTokensRequest {
   /** Assets list to burn in the transaction */
   assetsToBurn: Asset[];
 }
+
 export const bigIntsBurnTokensRequest = [
-  ...bigIntsAsset.map((item) => `assetsToBurn.${item}`),
+  ...bigIntsAsset.map((item) =>
+    item === '' ? 'assetsToBurn' : `assetsToBurn.${item}`
+  ),
 ];

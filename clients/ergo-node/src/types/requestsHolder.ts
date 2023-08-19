@@ -24,6 +24,8 @@ export interface RequestsHolder {
 }
 
 export const bigIntsRequestsHolder = [
-  ...bigIntsRequestsHolderRequestsItem.map((item) => `requests.${item}`),
+  ...bigIntsRequestsHolderRequestsItem.map((item) =>
+    item === '' ? 'requests' : `requests.${item}`
+  ),
   'fee',
 ];

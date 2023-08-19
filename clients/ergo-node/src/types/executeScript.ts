@@ -21,6 +21,10 @@ export interface ExecuteScript {
 }
 
 export const bigIntsExecuteScript = [
-  ...bigIntsExecuteScriptNamedConstants.map((item) => `namedConstants.${item}`),
-  ...bigIntsErgoLikeContext.map((item) => `context.${item}`),
+  ...bigIntsExecuteScriptNamedConstants.map((item) =>
+    item === '' ? 'namedConstants' : `namedConstants.${item}`
+  ),
+  ...bigIntsErgoLikeContext.map((item) =>
+    item === '' ? 'context' : `context.${item}`
+  ),
 ];
