@@ -16,6 +16,11 @@ const transformBigInt = (obj: any, bigIntObj: any, field: string): any => {
       );
     }) as unknown as JSON;
   }
+  if (!Object.hasOwn(obj, field.split('.')[0])) {
+    return {
+      ...obj,
+    };
+  }
   if (field.indexOf('.') !== -1) {
     const subKeys = field.split('.');
     return {
