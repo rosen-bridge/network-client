@@ -231,55 +231,58 @@ components:
                 type: string
                 description: Name of the token, if any
 
-    IndexedErgoBox:
+    IndexedErgoBox: # FIXME: Should be fixed after updating ErgoNode (network-client local-git #8)
       type: object
       description: Box indexed with extra information
       required:
-        - box
-        - confirmationsNum
+        - value
+        - ergoTree
+        - additionalRegisters
+        - creationHeight
         - address
-        - creationTransaction
-        - spendingTransaction
-        - spendingHeight
         - inclusionHeight
-        - spent
         - globalIndex
       properties:
-        box:
-          $ref: '#/components/schemas/ErgoTransactionOutput'
-        confirmationsNum:
-          description: Number of confirmations, if the box is included into the blockchain
+        boxId:
+          $ref: '#/components/schemas/TransactionBoxId'
+        value:
+          description: Amount of Ergo token
           type: integer
-          format: int32
+          format: int64
           minimum: 0
           example: 147
-          nullable: true
+        ergoTree:
+          $ref: '#/components/schemas/ErgoTree'
+        creationHeight:
+          description: Height the output was created at
+          type: integer
+          format: int32
+          example: 9149
+        assets:
+          description: Assets list in the transaction
+          type: array
+          items:
+            $ref: '#/components/schemas/Asset'
+        additionalRegisters:
+          $ref: '#/components/schemas/Registers'
+        transactionId:
+          $ref: '#/components/schemas/TransactionId'
+        index:
+          description: Index in the transaction outputs
+          type: integer
+          format: int32
         address:
           $ref: '#/components/schemas/ErgoAddress'
-        creationTransaction:
-          description: Transaction which created the box
-          $ref: '#/components/schemas/ModifierId'
-        spendingTransaction:
+        spentTransactionId:
           description: Transaction which created the box
           nullable: true
           $ref: '#/components/schemas/ModifierId'
-        spendingHeight:
-          description: The height the box was spent at
-          type: integer
-          format: int32
-          minimum: 0
-          example: 147
-          nullable: true
         inclusionHeight:
           description: The height the transaction containing the box was included in a block at
           type: integer
           format: int32
           minimum: 0
           example: 147
-        spent:
-          description: A flag signalling whether the box was spent
-          type: boolean
-          example: false
         globalIndex:
           description: Global index of the output in the blockchain
           type: integer
