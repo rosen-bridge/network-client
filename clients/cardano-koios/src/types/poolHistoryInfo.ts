@@ -199,4 +199,4 @@ import type { PoolHistoryInfoItem } from './poolHistoryInfoItem';
 import { bigIntsPoolHistoryInfoItem } from './poolHistoryInfoItem';
 
 export type PoolHistoryInfo = PoolHistoryInfoItem[];
-export const bigIntsPoolHistoryInfo = [];
+export const bigIntsPoolHistoryInfo = [...bigIntsPoolHistoryInfoItem];

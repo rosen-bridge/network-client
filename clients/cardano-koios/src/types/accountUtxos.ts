@@ -199,4 +199,4 @@ import type { AccountUtxosItem } from './accountUtxosItem';
 import { bigIntsAccountUtxosItem } from './accountUtxosItem';
 
 export type AccountUtxos = AccountUtxosItem[];
-export const bigIntsAccountUtxos = [];
+export const bigIntsAccountUtxos = [...bigIntsAccountUtxosItem];

@@ -202,4 +202,4 @@ import { bigIntsPolicyAssetInfoItem } from './policyAssetInfoItem';
  * List of policy assets
  */
 export type PolicyAssetInfo = PolicyAssetInfoItem[];
-export const bigIntsPolicyAssetInfo = [];
+export const bigIntsPolicyAssetInfo = [...bigIntsPolicyAssetInfoItem];

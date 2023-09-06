@@ -199,4 +199,4 @@ import type { EpochBlockProtocolsItem } from './epochBlockProtocolsItem';
 import { bigIntsEpochBlockProtocolsItem } from './epochBlockProtocolsItem';
 
 export type EpochBlockProtocols = EpochBlockProtocolsItem[];
-export const bigIntsEpochBlockProtocols = [];
+export const bigIntsEpochBlockProtocols = [...bigIntsEpochBlockProtocolsItem];

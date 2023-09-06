@@ -17,4 +17,9 @@ export type ContainsPredicate = ScanningPredicate &
   ContainsPredicateAllOf &
   unknown &
   ContainsPredicateAllOfTwo;
-export const bigIntsContainsPredicate = [];
+
+export const bigIntsContainsPredicate = [
+  ...bigIntsScanningPredicate,
+  ...bigIntsContainsPredicateAllOf,
+  ...bigIntsContainsPredicateAllOfTwo,
+];

@@ -199,4 +199,4 @@ import type { AssetHistoryItem } from './assetHistoryItem';
 import { bigIntsAssetHistoryItem } from './assetHistoryItem';
 
 export type AssetHistory = AssetHistoryItem[];
-export const bigIntsAssetHistory = [];
+export const bigIntsAssetHistory = [...bigIntsAssetHistoryItem];

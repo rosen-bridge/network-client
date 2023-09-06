@@ -199,4 +199,4 @@ import type { TxMetalabelsItem } from './txMetalabelsItem';
 import { bigIntsTxMetalabelsItem } from './txMetalabelsItem';
 
 export type TxMetalabels = TxMetalabelsItem[];
-export const bigIntsTxMetalabels = [];
+export const bigIntsTxMetalabels = [...bigIntsTxMetalabelsItem];

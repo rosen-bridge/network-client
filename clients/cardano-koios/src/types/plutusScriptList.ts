@@ -199,4 +199,4 @@ import type { PlutusScriptListItem } from './plutusScriptListItem';
 import { bigIntsPlutusScriptListItem } from './plutusScriptListItem';
 
 export type PlutusScriptList = PlutusScriptListItem[];
-export const bigIntsPlutusScriptList = [];
+export const bigIntsPlutusScriptList = [...bigIntsPlutusScriptListItem];

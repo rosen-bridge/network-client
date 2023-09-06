@@ -202,4 +202,4 @@ import { bigIntsAssetAddressesItem } from './assetAddressesItem';
  * An array of payment addresses holding the given token (including balances)
  */
 export type AssetAddresses = AssetAddressesItem[];
-export const bigIntsAssetAddresses = [];
+export const bigIntsAssetAddresses = [...bigIntsAssetAddressesItem];

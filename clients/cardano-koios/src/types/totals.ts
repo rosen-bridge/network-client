@@ -199,4 +199,4 @@ import type { TotalsItem } from './totalsItem';
 import { bigIntsTotalsItem } from './totalsItem';
 
 export type Totals = TotalsItem[];
-export const bigIntsTotals = [];
+export const bigIntsTotals = [...bigIntsTotalsItem];

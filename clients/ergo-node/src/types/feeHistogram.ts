@@ -13,4 +13,4 @@ import { bigIntsFeeHistogramBin } from './feeHistogramBin';
  * Fee histogram for transactions in mempool
  */
 export type FeeHistogram = FeeHistogramBin[];
-export const bigIntsFeeHistogram = [];
+export const bigIntsFeeHistogram = [...bigIntsFeeHistogramBin];

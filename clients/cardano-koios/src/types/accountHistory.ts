@@ -199,4 +199,4 @@ import type { AccountHistoryItem } from './accountHistoryItem';
 import { bigIntsAccountHistoryItem } from './accountHistoryItem';
 
 export type AccountHistory = AccountHistoryItem[];
-export const bigIntsAccountHistory = [];
+export const bigIntsAccountHistory = [...bigIntsAccountHistoryItem];

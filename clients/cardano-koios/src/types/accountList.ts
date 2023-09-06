@@ -199,4 +199,4 @@ import type { AccountListItem } from './accountListItem';
 import { bigIntsAccountListItem } from './accountListItem';
 
 export type AccountList = AccountListItem[];
-export const bigIntsAccountList = [];
+export const bigIntsAccountList = [...bigIntsAccountListItem];

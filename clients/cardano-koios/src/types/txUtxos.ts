@@ -199,4 +199,4 @@ import type { TxUtxosItem } from './txUtxosItem';
 import { bigIntsTxUtxosItem } from './txUtxosItem';
 
 export type TxUtxos = TxUtxosItem[];
-export const bigIntsTxUtxos = [];
+export const bigIntsTxUtxos = [...bigIntsTxUtxosItem];

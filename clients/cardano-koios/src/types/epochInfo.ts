@@ -199,4 +199,4 @@ import type { EpochInfoItem } from './epochInfoItem';
 import { bigIntsEpochInfoItem } from './epochInfoItem';
 
 export type EpochInfo = EpochInfoItem[];
-export const bigIntsEpochInfo = [];
+export const bigIntsEpochInfo = [...bigIntsEpochInfoItem];

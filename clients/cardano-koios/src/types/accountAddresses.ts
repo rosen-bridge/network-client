@@ -199,4 +199,4 @@ import type { AccountAddressesItem } from './accountAddressesItem';
 import { bigIntsAccountAddressesItem } from './accountAddressesItem';
 
 export type AccountAddresses = AccountAddressesItem[];
-export const bigIntsAccountAddresses = [];
+export const bigIntsAccountAddresses = [...bigIntsAccountAddressesItem];

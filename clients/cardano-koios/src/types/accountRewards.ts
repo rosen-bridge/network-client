@@ -199,4 +199,4 @@ import type { AccountRewardsItem } from './accountRewardsItem';
 import { bigIntsAccountRewardsItem } from './accountRewardsItem';
 
 export type AccountRewards = AccountRewardsItem[];
-export const bigIntsAccountRewards = [];
+export const bigIntsAccountRewards = [...bigIntsAccountRewardsItem];

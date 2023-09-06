@@ -17,4 +17,9 @@ export type OrPredicate = ScanningPredicate &
   OrPredicateAllOf &
   unknown &
   OrPredicateAllOfTwo;
-export const bigIntsOrPredicate = [];
+
+export const bigIntsOrPredicate = [
+  ...bigIntsScanningPredicate,
+  ...bigIntsOrPredicateAllOf,
+  ...bigIntsOrPredicateAllOfTwo,
+];

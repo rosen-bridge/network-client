@@ -199,4 +199,4 @@ import type { PoolMetadataItem } from './poolMetadataItem';
 import { bigIntsPoolMetadataItem } from './poolMetadataItem';
 
 export type PoolMetadata = PoolMetadataItem[];
-export const bigIntsPoolMetadata = [];
+export const bigIntsPoolMetadata = [...bigIntsPoolMetadataItem];

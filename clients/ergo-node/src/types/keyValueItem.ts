@@ -10,4 +10,4 @@ import type { HexString } from './hexString';
 import { bigIntsHexString } from './hexString';
 
 export type KeyValueItem = HexString[];
-export const bigIntsKeyValueItem = [];
+export const bigIntsKeyValueItem = [...bigIntsHexString];

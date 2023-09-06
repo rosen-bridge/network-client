@@ -199,4 +199,4 @@ import type { NativeScriptListItem } from './nativeScriptListItem';
 import { bigIntsNativeScriptListItem } from './nativeScriptListItem';
 
 export type NativeScriptList = NativeScriptListItem[];
-export const bigIntsNativeScriptList = [];
+export const bigIntsNativeScriptList = [...bigIntsNativeScriptListItem];

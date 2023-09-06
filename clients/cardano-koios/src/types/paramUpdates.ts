@@ -199,4 +199,4 @@ import type { ParamUpdatesItem } from './paramUpdatesItem';
 import { bigIntsParamUpdatesItem } from './paramUpdatesItem';
 
 export type ParamUpdates = ParamUpdatesItem[];
-export const bigIntsParamUpdates = [];
+export const bigIntsParamUpdates = [...bigIntsParamUpdatesItem];

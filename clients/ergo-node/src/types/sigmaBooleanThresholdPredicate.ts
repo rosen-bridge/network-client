@@ -17,4 +17,9 @@ export type SigmaBooleanThresholdPredicate = SigmaBoolean &
   SigmaBooleanThresholdPredicateAllOf &
   unknown &
   SigmaBooleanThresholdPredicateAllOfTwo;
-export const bigIntsSigmaBooleanThresholdPredicate = [];
+
+export const bigIntsSigmaBooleanThresholdPredicate = [
+  ...bigIntsSigmaBoolean,
+  ...bigIntsSigmaBooleanThresholdPredicateAllOf,
+  ...bigIntsSigmaBooleanThresholdPredicateAllOfTwo,
+];

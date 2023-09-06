@@ -199,4 +199,4 @@ import type { AddressTxs } from './addressTxs';
 import { bigIntsAddressTxs } from './addressTxs';
 
 export type CredentialTxs = AddressTxs;
-export const bigIntsCredentialTxs = [];
+export const bigIntsCredentialTxs = [...bigIntsAddressTxs];

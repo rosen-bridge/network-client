@@ -199,4 +199,4 @@ import type { AddressAssetsItem } from './addressAssetsItem';
 import { bigIntsAddressAssetsItem } from './addressAssetsItem';
 
 export type AddressAssets = AddressAssetsItem[];
-export const bigIntsAddressAssets = [];
+export const bigIntsAddressAssets = [...bigIntsAddressAssetsItem];

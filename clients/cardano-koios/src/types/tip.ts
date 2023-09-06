@@ -199,4 +199,4 @@ import type { TipItem } from './tipItem';
 import { bigIntsTipItem } from './tipItem';
 
 export type Tip = TipItem[];
-export const bigIntsTip = [];
+export const bigIntsTip = [...bigIntsTipItem];

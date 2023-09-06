@@ -199,4 +199,4 @@ import type { BlocksItem } from './blocksItem';
 import { bigIntsBlocksItem } from './blocksItem';
 
 export type Blocks = BlocksItem[];
-export const bigIntsBlocks = [];
+export const bigIntsBlocks = [...bigIntsBlocksItem];

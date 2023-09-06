@@ -13,4 +13,4 @@ import { bigIntsErgoTransaction } from './ergoTransaction';
  * Ergo transaction objects
  */
 export type Transactions = ErgoTransaction[];
-export const bigIntsTransactions = [];
+export const bigIntsTransactions = [...bigIntsErgoTransaction];
