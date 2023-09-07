@@ -199,4 +199,4 @@ import type { DatumInfoItem } from './datumInfoItem';
 import { bigIntsDatumInfoItem } from './datumInfoItem';
 
 export type DatumInfo = DatumInfoItem[];
-export const bigIntsDatumInfo = [];
+export const bigIntsDatumInfo = [...bigIntsDatumInfoItem];

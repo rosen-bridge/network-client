@@ -199,4 +199,4 @@ import type { TxStatusItem } from './txStatusItem';
 import { bigIntsTxStatusItem } from './txStatusItem';
 
 export type TxStatus = TxStatusItem[];
-export const bigIntsTxStatus = [];
+export const bigIntsTxStatus = [...bigIntsTxStatusItem];

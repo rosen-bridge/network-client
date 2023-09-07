@@ -17,4 +17,9 @@ export type SigmaBooleanAndPredicate = SigmaBoolean &
   SigmaBooleanAndPredicateAllOf &
   unknown &
   SigmaBooleanAndPredicateAllOfTwo;
-export const bigIntsSigmaBooleanAndPredicate = [];
+
+export const bigIntsSigmaBooleanAndPredicate = [
+  ...bigIntsSigmaBoolean,
+  ...bigIntsSigmaBooleanAndPredicateAllOf,
+  ...bigIntsSigmaBooleanAndPredicateAllOfTwo,
+];

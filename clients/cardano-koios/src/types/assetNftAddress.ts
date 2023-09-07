@@ -202,4 +202,4 @@ import { bigIntsAssetNftAddressItem } from './assetNftAddressItem';
  * An array of payment addresses holding the given token
  */
 export type AssetNftAddress = AssetNftAddressItem[];
-export const bigIntsAssetNftAddress = [];
+export const bigIntsAssetNftAddress = [...bigIntsAssetNftAddressItem];

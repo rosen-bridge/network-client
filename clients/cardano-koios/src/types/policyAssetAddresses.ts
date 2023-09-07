@@ -202,4 +202,4 @@ import { bigIntsPolicyAssetAddressesItem } from './policyAssetAddressesItem';
  * Array of asset names and payment addresses for the given policy (including balances)
  */
 export type PolicyAssetAddresses = PolicyAssetAddressesItem[];
-export const bigIntsPolicyAssetAddresses = [];
+export const bigIntsPolicyAssetAddresses = [...bigIntsPolicyAssetAddressesItem];

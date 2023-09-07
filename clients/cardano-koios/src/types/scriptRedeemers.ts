@@ -199,4 +199,4 @@ import type { ScriptRedeemersItem } from './scriptRedeemersItem';
 import { bigIntsScriptRedeemersItem } from './scriptRedeemersItem';
 
 export type ScriptRedeemers = ScriptRedeemersItem[];
-export const bigIntsScriptRedeemers = [];
+export const bigIntsScriptRedeemers = [...bigIntsScriptRedeemersItem];

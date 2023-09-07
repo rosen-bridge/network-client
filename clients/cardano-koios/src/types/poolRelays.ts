@@ -199,4 +199,4 @@ import type { PoolRelaysItem } from './poolRelaysItem';
 import { bigIntsPoolRelaysItem } from './poolRelaysItem';
 
 export type PoolRelays = PoolRelaysItem[];
-export const bigIntsPoolRelays = [];
+export const bigIntsPoolRelays = [...bigIntsPoolRelaysItem];

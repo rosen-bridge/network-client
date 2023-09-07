@@ -202,4 +202,4 @@ import { bigIntsAssetTxsItem } from './assetTxsItem';
  * An array of Tx hashes that included the given asset (latest first)
  */
 export type AssetTxs = AssetTxsItem[];
-export const bigIntsAssetTxs = [];
+export const bigIntsAssetTxs = [...bigIntsAssetTxsItem];

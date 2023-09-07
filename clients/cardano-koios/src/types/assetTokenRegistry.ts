@@ -202,4 +202,4 @@ import { bigIntsAssetTokenRegistryItem } from './assetTokenRegistryItem';
  * An array of token registry information (registered via github) for each asset
  */
 export type AssetTokenRegistry = AssetTokenRegistryItem[];
-export const bigIntsAssetTokenRegistry = [];
+export const bigIntsAssetTokenRegistry = [...bigIntsAssetTokenRegistryItem];

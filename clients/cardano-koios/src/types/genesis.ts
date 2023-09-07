@@ -199,4 +199,4 @@ import type { GenesisItem } from './genesisItem';
 import { bigIntsGenesisItem } from './genesisItem';
 
 export type Genesis = GenesisItem[];
-export const bigIntsGenesis = [];
+export const bigIntsGenesis = [...bigIntsGenesisItem];

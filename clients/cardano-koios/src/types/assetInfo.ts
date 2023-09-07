@@ -199,4 +199,4 @@ import type { AssetInfoItem } from './assetInfoItem';
 import { bigIntsAssetInfoItem } from './assetInfoItem';
 
 export type AssetInfo = AssetInfoItem[];
-export const bigIntsAssetInfo = [];
+export const bigIntsAssetInfo = [...bigIntsAssetInfoItem];

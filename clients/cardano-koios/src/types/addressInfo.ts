@@ -199,4 +199,4 @@ import type { AddressInfoItem } from './addressInfoItem';
 import { bigIntsAddressInfoItem } from './addressInfoItem';
 
 export type AddressInfo = AddressInfoItem[];
-export const bigIntsAddressInfo = [];
+export const bigIntsAddressInfo = [...bigIntsAddressInfoItem];

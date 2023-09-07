@@ -13,4 +13,4 @@ import { bigIntsCommitment } from './commitment';
  * commitment to secret along with secret (!) randomness
  */
 export type CommitmentWithSecret = Commitment;
-export const bigIntsCommitmentWithSecret = [];
+export const bigIntsCommitmentWithSecret = [...bigIntsCommitment];

@@ -17,4 +17,9 @@ export type EqualsPredicate = ScanningPredicate &
   EqualsPredicateAllOf &
   unknown &
   EqualsPredicateAllOfTwo;
-export const bigIntsEqualsPredicate = [];
+
+export const bigIntsEqualsPredicate = [
+  ...bigIntsScanningPredicate,
+  ...bigIntsEqualsPredicateAllOf,
+  ...bigIntsEqualsPredicateAllOfTwo,
+];

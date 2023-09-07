@@ -1,6 +1,6 @@
 {
   "name": "@rosen-clients/cardano-koios",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A client library for Cardano Koios",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",

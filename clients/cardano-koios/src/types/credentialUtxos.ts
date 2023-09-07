@@ -199,4 +199,4 @@ import type { CredentialUtxosItem } from './credentialUtxosItem';
 import { bigIntsCredentialUtxosItem } from './credentialUtxosItem';
 
 export type CredentialUtxos = CredentialUtxosItem[];
-export const bigIntsCredentialUtxos = [];
+export const bigIntsCredentialUtxos = [...bigIntsCredentialUtxosItem];

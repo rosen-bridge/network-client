@@ -17,4 +17,9 @@ export type AndPredicate = ScanningPredicate &
   AndPredicateAllOf &
   unknown &
   AndPredicateAllOfTwo;
-export const bigIntsAndPredicate = [];
+
+export const bigIntsAndPredicate = [
+  ...bigIntsScanningPredicate,
+  ...bigIntsAndPredicateAllOf,
+  ...bigIntsAndPredicateAllOfTwo,
+];

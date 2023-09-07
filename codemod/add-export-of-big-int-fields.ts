@@ -8,35 +8,37 @@ const getFieldType = (name: string, typeAnnotation: any, api: API) => {
         return j.stringLiteral(name);
       case 'TSTypeReference':
         return j.spreadElement(
-          j.callExpression(
-            j.memberExpression(
-              j.identifier(`bigInts${typeAnnotation.typeName.name}`),
-              j.identifier('map')
-            ),
-            [
-              j.arrowFunctionExpression(
-                [j.identifier('item')],
-                j.conditionalExpression(
-                  j.binaryExpression(
-                    '===',
-                    j.identifier('item'),
-                    j.stringLiteral('')
-                  ),
-                  j.stringLiteral(name),
-                  j.templateLiteral(
-                    [
-                      j.templateElement(
-                        { cooked: `${name}.`, raw: `${name}.` },
-                        false
+          name
+            ? j.callExpression(
+                j.memberExpression(
+                  j.identifier(`bigInts${typeAnnotation.typeName.name}`),
+                  j.identifier('map')
+                ),
+                [
+                  j.arrowFunctionExpression(
+                    [j.identifier('item')],
+                    j.conditionalExpression(
+                      j.binaryExpression(
+                        '===',
+                        j.identifier('item'),
+                        j.stringLiteral('')
                       ),
-                      j.templateElement({ cooked: '', raw: '' }, true),
-                    ],
-                    [j.identifier('item')]
-                  )
-                )
-              ),
-            ]
-          )
+                      j.stringLiteral(name),
+                      j.templateLiteral(
+                        [
+                          j.templateElement(
+                            { cooked: `${name}.`, raw: `${name}.` },
+                            false
+                          ),
+                          j.templateElement({ cooked: '', raw: '' }, true),
+                        ],
+                        [j.identifier('item')]
+                      )
+                    )
+                  ),
+                ]
+              )
+            : j.identifier(`bigInts${typeAnnotation.typeName.name}`)
         );
       case 'TSArrayType':
         return getFieldType(name, typeAnnotation.elementType, api);
@@ -62,24 +64,38 @@ export default (root: any, api: API) => {
   });
   let name = '';
   const bigIntFields = [];
+  const addField = (element) => {
+    if (element) {
+      bigIntFields.push(element);
+    }
+  };
   root.find(j.TSTypeAliasDeclaration).forEach((item) => {
     name = item.node.original.id.name;
-    if (item.node?.typeAnnotation?.type === 'TSBigIntKeyword')
-      bigIntFields.push(j.stringLiteral(''));
+    switch (item.node?.typeAnnotation?.type) {
+      case 'TSBigIntKeyword':
+        bigIntFields.push(j.stringLiteral(''));
+        break;
+      case 'TSIntersectionType':
+        item.node?.typeAnnotation?.types.forEach((type) =>
+          addField(getFieldType('', type, api))
+        );
+        break;
+      default:
+        addField(getFieldType('', item.node?.typeAnnotation, api));
+    }
   });
   root.find(j.TSInterfaceDeclaration).forEach((item) => {
     name = item.node.original.id.name;
   });
   const properties = root.find(j.TSPropertySignature);
   properties.forEach((item) => {
-    const element = getFieldType(
-      item.node.key.name,
-      item.node.typeAnnotation.typeAnnotation,
-      api
+    addField(
+      getFieldType(
+        item.node.key.name,
+        item.node.typeAnnotation.typeAnnotation,
+        api
+      )
     );
-    if (element) {
-      bigIntFields.push(element);
-    }
   });
   const bigInts = j.variableDeclaration('const', [
     j.variableDeclarator(

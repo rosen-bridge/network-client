@@ -199,4 +199,4 @@ import type { BlockInfoItem } from './blockInfoItem';
 import { bigIntsBlockInfoItem } from './blockInfoItem';
 
 export type BlockInfo = BlockInfoItem[];
-export const bigIntsBlockInfo = [];
+export const bigIntsBlockInfo = [...bigIntsBlockInfoItem];

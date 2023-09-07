@@ -199,4 +199,4 @@ import type { PoolUpdatesItem } from './poolUpdatesItem';
 import { bigIntsPoolUpdatesItem } from './poolUpdatesItem';
 
 export type PoolUpdates = PoolUpdatesItem[];
-export const bigIntsPoolUpdates = [];
+export const bigIntsPoolUpdates = [...bigIntsPoolUpdatesItem];
