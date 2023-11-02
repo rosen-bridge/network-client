@@ -1,7 +1,7 @@
 import { getKoiosAPI } from './api/koiosAPI';
 
-const cardanoKoiosClientFactory = (baseURL: string) => {
-  return getKoiosAPI(baseURL);
+const cardanoKoiosClientFactory = (baseURL: string, authToken?: string) => {
+  return getKoiosAPI(baseURL, authToken);
 };
 
 export default cardanoKoiosClientFactory;

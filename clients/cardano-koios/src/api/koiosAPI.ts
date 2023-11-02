@@ -345,8 +345,8 @@ import {
 
 import { createAxiosInstance, JsonFieldBigintFactory } from '../axios';
 
-export const getKoiosAPI = (url: string) => {
-  const instance = createAxiosInstance(url);
+export const getKoiosAPI = (url: string, authToken?: string) => {
+  const instance = createAxiosInstance(url, authToken);
   /**
    * Get the tip info about the latest block seen by chain
    * @summary Query Chain Tip
