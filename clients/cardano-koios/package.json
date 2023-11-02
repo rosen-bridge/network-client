@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "codemod": "jscodeshift --parser=ts -t ../../codemod/big-int-fields-support.ts ./src/**/*.ts",
-    "generate-client-base": "orval && rimraf ./src/api/index.ts",
+    "generate-client-base": "orval",
     "generate-client": "bun ./generate-client.ts && npm run codemod",
     "prettify": "prettier --write . --ignore-path .gitignore",
     "lint": "eslint --fix . && npm run prettify",
