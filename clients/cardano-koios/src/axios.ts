@@ -47,9 +47,12 @@ export const JsonFieldBigintFactory = (fields: Array<string>) => {
 
 export const axiosInstance = Axios.create();
 
-export const createAxiosInstance = (url: string) => {
+export const createAxiosInstance = (url: string, authToken?: string) => {
   const instance = Axios.create();
   instance.defaults.baseURL = url;
+  if (authToken) {
+    instance.defaults.headers.common['Authorization'] = `Bearer ${authToken}`;
+  }
   return <T>(config: AxiosRequestConfig): Promise<T> => {
     return instance.request<T>(config).then((response) => response.data);
   };
