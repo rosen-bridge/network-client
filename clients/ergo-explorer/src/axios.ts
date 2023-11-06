@@ -2,7 +2,7 @@ import Axios, { AxiosRequestConfig } from 'axios';
 import JsonBigintFactory from 'json-bigint';
 
 const JsonBigInt = JsonBigintFactory({
-  alwaysParseAsBig: true,
+  alwaysParseAsBig: false,
   useNativeBigInt: true,
 });
 
@@ -32,7 +32,7 @@ const transformBigInt = (obj: any, bigIntObj: any, field: string): any => {
       ),
     };
   }
-  return { ...obj, [field]: bigIntObj[field] };
+  return { ...obj, [field]: BigInt(bigIntObj[field]) };
 };
 export const JsonFieldBigintFactory = (fields: Array<string>) => {
   return (data: any) => {
