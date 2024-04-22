@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.10
+ * OpenAPI spec version: 5.0.21
  */
 
 export * from './aDDigest';
@@ -84,6 +84,9 @@ export * from './getBoxesByErgoTree200';
 export * from './getBoxesByErgoTreeParams';
 export * from './getBoxesByErgoTreeUnspent200';
 export * from './getBoxesByErgoTreeUnspentParams';
+export * from './getBoxesByTokenId200';
+export * from './getBoxesByTokenIdParams';
+export * from './getBoxesByTokenIdUnspentParams';
 export * from './getChainSliceParams';
 export * from './getExpectedWaitTimeParams';
 export * from './getFeeHistogramParams';
@@ -100,6 +103,7 @@ export * from './getUnconfirmedTransactionsParams';
 export * from './hexString';
 export * from './hintExtractionRequest';
 export * from './indexedErgoBox';
+export * from './indexedErgoBoxAllOf';
 export * from './indexedErgoTransaction';
 export * from './indexedToken';
 export * from './initWallet';
@@ -162,6 +166,8 @@ export * from './sigmaBooleanThresholdPredicate';
 export * from './sigmaBooleanThresholdPredicateAllOf';
 export * from './sigmaBooleanThresholdPredicateAllOfTwo';
 export * from './sigmaHeader';
+export * from './snapshotsInfo';
+export * from './snapshotsInfoAvailableManifestsItem';
 export * from './sourceHolder';
 export * from './spendingProof';
 export * from './spendingProofBytes';

@@ -3,11 +3,14 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.10
+ * OpenAPI spec version: 5.0.21
  */
 import type { HexString } from './hexString';
 
 import { bigIntsHexString } from './hexString';
 
+/**
+ * Key-value record represented as a pair of hex strings in an array.
+ */
 export type KeyValueItem = HexString[];
 export const bigIntsKeyValueItem = [...bigIntsHexString];

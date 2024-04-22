@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.10
+ * OpenAPI spec version: 5.0.21
  */
 import type { ModifierId } from './modifierId';
 import { bigIntsModifierId } from './modifierId';
@@ -21,24 +21,41 @@ import type { Votes } from './votes';
 
 import { bigIntsVotes } from './votes';
 
+/**
+ * Header of a block. It authenticates link to a previous block, other block sections (transactions, UTXO set transformation proofs, extension), UTXO set, votes for blockchain parameters to be changed and proof-of-work related data.
+ */
 export interface BlockHeader {
+  /** Block id */
   id: ModifierId;
+  /** Block generation time reported by a miner */
   timestamp: Timestamp;
+  /** Protocol version used to generate the block */
   version: Version;
+  /** Digest of UTXO set transformation proofs */
   adProofsRoot: Digest32;
+  /** AVL+ tree digest of UTXO set (after the block is applied) */
   stateRoot: ADDigest;
+  /** Merkle tree digest of transactions in the block (BlockTransactions section) */
   transactionsRoot: Digest32;
+  /** Proof-of-work target (difficulty encoded) */
   nBits: bigint;
+  /** Merkle tree digest of the extension section of the block */
   extensionHash: Digest32;
+  /** Solution for the proof-of-work puzzle */
   powSolutions: PowSolutions;
+  /** Height of the block (genesis block height == 1) */
   height: number;
   difficulty: string;
   parentId: ModifierId;
+  /** Votes for changing system parameters */
   votes: Votes;
-  /** Size in bytes */
+  /** Size of the header in bytes */
   size?: number;
+  /** Hash of the extension section of the block == hash(modifier type id, header id, extensionHash) */
   extensionId?: ModifierId;
+  /** Hash of the transactions section of the block == hash(modifier type id, header id, transactionsRoot) */
   transactionsId?: ModifierId;
+  /** Hash of the UTXO set transformation proofs section of the block == hash(modifier type id, header id, adProofsRoot) */
   adProofsId?: ModifierId;
 }
 

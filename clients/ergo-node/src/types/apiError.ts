@@ -3,13 +3,16 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.10
+ * OpenAPI spec version: 5.0.21
  */
 
+/**
+ * Error response from API
+ */
 export interface ApiError {
   /** Error code */
   error: number;
-  /** String error code */
+  /** Error message explaining the reason of the error */
   reason: string;
   /** Detailed error description */
   detail: string | null;

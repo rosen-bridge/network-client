@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.10
+ * OpenAPI spec version: 5.0.21
  */
 import type { ModifierId } from './modifierId';
 import { bigIntsModifierId } from './modifierId';
@@ -14,8 +14,11 @@ import type { Digest32 } from './digest32';
 import { bigIntsDigest32 } from './digest32';
 
 export interface BlockADProofs {
+  /** Identifier of a header of the block which contains the proofs */
   headerId: ModifierId;
+  /** Serialized bytes of the authenticated dictionary proof */
   proofBytes: SerializedAdProof;
+  /** Hash of the proofBytes */
   digest: Digest32;
   /** Size in bytes */
   size: number;

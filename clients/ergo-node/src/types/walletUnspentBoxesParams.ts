@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.10
+ * OpenAPI spec version: 5.0.21
  */
 
 export type WalletUnspentBoxesParams = {
@@ -23,5 +23,13 @@ export type WalletUnspentBoxesParams = {
    * Maximum box inclusion height, -1 means unlimited
    */
   maxInclusionHeight?: number;
+  /**
+   * amount of elements to retrieve
+   */
+  limit?: number;
+  /**
+   * The number of items in list to skip
+   */
+  offset?: number;
 };
 export const bigIntsWalletUnspentBoxesParams = [];

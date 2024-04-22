@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.10
+ * OpenAPI spec version: 5.0.21
  */
 import type { NodeInfoStateType } from './nodeInfoStateType';
 import { bigIntsNodeInfoStateType } from './nodeInfoStateType';
@@ -11,45 +11,51 @@ import type { Parameters } from './parameters';
 
 import { bigIntsParameters } from './parameters';
 
+/**
+ * Data container for /info API request output. Contains information about node's state and configuration. Contains data about best block, best header, state, etc. Best block is the block with the maximum height.
+ */
 export interface NodeInfo {
+  /** Node's (peer) self-chosen name from config */
   name: string;
+  /** Node's application version */
   appVersion: string;
-  /** Can be 'null' if state is empty (no full block is applied since node launch) */
+  /** Height of the best block known to the node. Can be 'null' if state is empty (no full block is applied since node launch) */
   fullHeight: number | null;
-  /** Can be 'null' if state is empty (no header applied since node launch) */
+  /** The height of the best header (i.e. the one with the maximum height). Can be 'null' if state is empty (no header applied since node launch) */
   headersHeight: number | null;
   /** Maximum block height of connected peers. Can be 'null' if state is empty (no peer connected since node launch) */
   maxPeerHeight: number | null;
-  /** Can be 'null' if no full block is applied since node launch */
+  /** Best full-block id (header id of such block). Can be 'null' if no full block is applied since node launch. */
   bestFullHeaderId: string | null;
-  /** Can be 'null' if no full block is applied since node launch */
+  /** Header id of the parent block of the best full-block (i.e. previous block in the blockchain). Can be 'null' if no full block is applied since node launch */
   previousFullHeaderId: string | null;
-  /** Can be 'null' if no header applied since node launch */
+  /** Best header ID (hex representation). Can be 'null' if no header applied since node launch. */
   bestHeaderId: string | null;
-  /** Can be 'null' if state is empty (no full block is applied since node launch) */
+  /** Current UTXO set digest. Can be 'null' if state is empty (no full block is applied since node launch) */
   stateRoot: string | null;
+  /** Whether the node is storing UTXO set or only its digest. Equals `digest` if only digest is stored, `utxo` if full UTXO set is stored. */
   stateType: NodeInfoStateType;
-  /** Can be 'null' if no full block is applied since node launch */
+  /** Id of a block where UTXO set digest is taken from. Can be 'null' if no full block is applied since node launch. */
   stateVersion: string | null;
+  /** Whether the node is mining (i.e. generating blocks). */
   isMining: boolean;
-  /** Number of connected peers */
+  /** Number of peers this node is connected with. */
   peersCount: number;
-  /** Current unconfirmed transactions count */
+  /** Number of unconfirmed transactions in the mempool. */
   unconfirmedCount: number;
-  /** Difficulty on current bestFullHeaderId. Can be 'null' if no full block is applied since node launch. Difficulty is a BigInt integer.
-   */
+  /** Difficulty on current bestFullHeaderId. Can be 'null' if no full block is applied since node launch. Difficulty is a BigInt integer. */
   difficulty: number | null;
   /** Current internal node time */
   currentTime: number;
-  /** Time when the node was started */
+  /** When the node was launched (in Java time format, UNIX time * 1000). */
   launchTime: number;
-  /** Can be 'null' if no headers is applied since node launch. headersScore is a BigInt integer. */
+  /** Cumulative difficulty of best headers-chain. Can be 'null' if no headers is applied since node launch. headersScore is a BigInt integer. */
   headersScore: number | null;
-  /** Can be 'null' if no full block is applied since node launch. fullBlocksScore is a BigInt integer. */
+  /** Cumulative difficulty of best full blocks chain. Can be 'null' if no full block is applied since node launch. fullBlocksScore is a BigInt integer. */
   fullBlocksScore: number | null;
-  /** Can be 'null' if genesis blocks is not produced yet */
+  /** Header id of genesis block. Can be 'null' if genesis blocks is not produced yet. */
   genesisBlockId: string | null;
-  /** current parameters */
+  /** System parameters which could be readjusted via collective miners decision. */
   parameters: Parameters;
   /** Whether EIP-27 locked in */
   eip27Supported?: boolean;
