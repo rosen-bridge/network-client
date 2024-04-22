@@ -732,6 +732,47 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UnknownErr'
+  /api/v1/boxes/unspent/unconfirmed/byAddress/{p1}:
+    get:
+      operationId: getApiV1BoxesUnspentUnconfirmedByaddressP1
+      parameters:
+        - name: p1
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: sortDirection
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MOutputInfo'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        default:
+          description: Unknown error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnknownErr'
   /api/v1/boxes/unspent/byAddress/{p1}:
     get:
       operationId: getApiV1BoxesUnspentByaddressP1
@@ -1852,6 +1893,40 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UnknownErr'
+  /api/v1/ergotree/convert:
+    post:
+      operationId: postApiV1ErgotreeConvert
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErgoTreeConversionRequest'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErgoTreeHuman'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        default:
+          description: Unknown error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnknownErr'
 components:
   schemas:
     AssetInfo:
@@ -2245,6 +2320,26 @@ components:
           type: integer
         outputCost:
           type: integer
+    ErgoTreeConversionRequest:
+      required:
+        - hashed
+      type: object
+      properties:
+        hashed:
+          type: string
+          description: Hashed value of ergo script
+    ErgoTreeHuman:
+      required:
+        - constants
+        - script
+      type: object
+      properties:
+        constants:
+          type: string
+          description: Constants use in ergo script
+        script:
+          type: string
+          description: Human readable ergo script
     FullBlockInfo:
       required:
         - header
@@ -2339,6 +2434,8 @@ components:
         - outputCreatedAt
         - outputSettledAt
         - ergoTree
+        - ergoTreeConstants
+        - ergoTreeScript
         - address
         - additionalRegisters
       type: object
@@ -2378,6 +2475,10 @@ components:
         ergoTree:
           type: string
           description: Hex-encoded string
+        ergoTreeConstants:
+          type: string
+        ergoTreeScript:
+          type: string
         address:
           type: string
           description: Decoded address of the corresponding box holder
@@ -2551,6 +2652,64 @@ components:
         - type: array
           items:
             $ref: '#/components/schemas/TransactionInfo'
+    MOutputInfo:
+      required:
+        - boxId
+        - transactionId
+        - value
+        - index
+        - creationHeight
+        - ergoTree
+        - address
+        - additionalRegisters
+        - mainChain
+      type: object
+      properties:
+        boxId:
+          type: string
+          description: Id of the box
+        transactionId:
+          type: string
+          description: Id of the transaction that created the box
+        blockId:
+          type: string
+          description: Id of the block a box included in
+        value:
+          type: integer
+          description: Value of the box in nanoERG
+          format: int64
+        index:
+          type: integer
+          description: Index of the output in a transaction
+        globalIndex:
+          type: integer
+          description: Global index of the output in the blockchain
+          format: int64
+        creationHeight:
+          type: integer
+          description: Height at which the box was created
+        settlementHeight:
+          type: integer
+          description: Height at which the box got fixed in blockchain
+        ergoTree:
+          type: string
+          description: Serialized ergo tree
+        address:
+          type: string
+          description: An address derived from ergo tree
+        assets:
+          type: array
+          items:
+            $ref: '#/components/schemas/AssetInstanceInfo'
+        additionalRegisters:
+          type: object
+          additionalProperties:
+            type: string
+        spentTransactionId:
+          type: string
+          description: Id of the transaction this output was spent by
+        mainChain:
+          type: boolean
     MinerInfo:
       required:
         - address
@@ -2616,6 +2775,8 @@ components:
         - creationHeight
         - settlementHeight
         - ergoTree
+        - ergoTreeConstants
+        - ergoTreeScript
         - address
         - additionalRegisters
         - mainChain
@@ -2650,6 +2811,10 @@ components:
         ergoTree:
           type: string
           description: Serialized ergo tree
+        ergoTreeConstants:
+          type: string
+        ergoTreeScript:
+          type: string
         address:
           type: string
           description: An address derived from ergo tree

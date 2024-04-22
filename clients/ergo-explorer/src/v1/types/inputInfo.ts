@@ -33,6 +33,8 @@ export interface InputInfo {
   outputSettledAt: number;
   /** Hex-encoded string */
   ergoTree: string;
+  ergoTreeConstants: string;
+  ergoTreeScript: string;
   /** Decoded address of the corresponding box holder */
   address: string;
   assets?: AssetInstanceInfo[];

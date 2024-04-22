@@ -25,6 +25,8 @@ import type {
   GetApiV1BoxesUnspentByergotreeP1Params,
   GetApiV1BoxesUnspentByergotreetemplatehashP1Params,
   GetApiV1BoxesByaddressP1Params,
+  MOutputInfo,
+  GetApiV1BoxesUnspentUnconfirmedByaddressP1Params,
   GetApiV1BoxesUnspentByaddressP1Params,
   GetApiV1BoxesByglobalindexStreamParams,
   BoxAssetsQuery,
@@ -59,6 +61,8 @@ import type {
   GetApiV1MempoolTransactionsByaddressP1Params,
   NetworkState,
   NetworkStats,
+  ErgoTreeHuman,
+  ErgoTreeConversionRequest,
 } from '../types';
 
 import {
@@ -68,6 +72,7 @@ import {
   bigIntsListOutputInfo,
   bigIntsItemsOutputInfo,
   bigIntsOutputInfo,
+  bigIntsMOutputInfo,
   bigIntsItemsTokenInfo,
   bigIntsTokenInfo,
   bigIntsItemsAssetInfo,
@@ -83,6 +88,7 @@ import {
   bigIntsItemsUTransactionInfo,
   bigIntsNetworkState,
   bigIntsNetworkStats,
+  bigIntsErgoTreeHuman,
 } from '../types';
 
 import { createAxiosInstance, JsonFieldBigintFactory } from '../../axios';
@@ -275,6 +281,18 @@ export const getErgoExplorerAPIV1 = (url: string) => {
       method: 'get',
       params,
       transformResponse: JsonFieldBigintFactory(bigIntsItemsOutputInfo),
+    });
+  };
+
+  const getApiV1BoxesUnspentUnconfirmedByaddressP1 = (
+    p1: string,
+    params?: GetApiV1BoxesUnspentUnconfirmedByaddressP1Params
+  ) => {
+    return instance<MOutputInfo[]>({
+      url: `/api/v1/boxes/unspent/unconfirmed/byAddress/${p1}`,
+      method: 'get',
+      params,
+      transformResponse: JsonFieldBigintFactory(bigIntsMOutputInfo),
     });
   };
 
@@ -575,6 +593,18 @@ export const getErgoExplorerAPIV1 = (url: string) => {
     });
   };
 
+  const postApiV1ErgotreeConvert = (
+    ergoTreeConversionRequest: ErgoTreeConversionRequest
+  ) => {
+    return instance<ErgoTreeHuman>({
+      url: `/api/v1/ergotree/convert`,
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      data: ergoTreeConversionRequest,
+      transformResponse: JsonFieldBigintFactory(bigIntsErgoTreeHuman),
+    });
+  };
+
   return {
     getApiV1TransactionsP1,
     getApiV1TransactionsByinputsscripttemplatehashP1,
@@ -592,6 +622,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
     getApiV1BoxesUnspentByergotreeP1,
     getApiV1BoxesUnspentByergotreetemplatehashP1,
     getApiV1BoxesByaddressP1,
+    getApiV1BoxesUnspentUnconfirmedByaddressP1,
     getApiV1BoxesUnspentByaddressP1,
     getApiV1BoxesByglobalindexStream,
     postApiV1BoxesUnspentSearchUnion,
@@ -618,6 +649,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
     getApiV1Info,
     getApiV1Networkstate,
     getApiV1Networkstats,
+    postApiV1ErgotreeConvert,
   };
 };
 
@@ -752,6 +784,15 @@ export type GetApiV1BoxesByaddressP1Result = NonNullable<
   Awaited<
     ReturnType<
       ReturnType<typeof getErgoExplorerAPIV1>['getApiV1BoxesByaddressP1']
+    >
+  >
+>;
+export type GetApiV1BoxesUnspentUnconfirmedByaddressP1Result = NonNullable<
+  Awaited<
+    ReturnType<
+      ReturnType<
+        typeof getErgoExplorerAPIV1
+      >['getApiV1BoxesUnspentUnconfirmedByaddressP1']
     >
   >
 >;
@@ -915,5 +956,12 @@ export type GetApiV1NetworkstateResult = NonNullable<
 export type GetApiV1NetworkstatsResult = NonNullable<
   Awaited<
     ReturnType<ReturnType<typeof getErgoExplorerAPIV1>['getApiV1Networkstats']>
+  >
+>;
+export type PostApiV1ErgotreeConvertResult = NonNullable<
+  Awaited<
+    ReturnType<
+      ReturnType<typeof getErgoExplorerAPIV1>['postApiV1ErgotreeConvert']
+    >
   >
 >;

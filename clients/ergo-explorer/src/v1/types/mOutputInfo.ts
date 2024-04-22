@@ -6,47 +6,45 @@
  */
 import type { AssetInstanceInfo } from './assetInstanceInfo';
 import { bigIntsAssetInstanceInfo } from './assetInstanceInfo';
-import type { OutputInfoAdditionalRegisters } from './outputInfoAdditionalRegisters';
+import type { MOutputInfoAdditionalRegisters } from './mOutputInfoAdditionalRegisters';
 
-import { bigIntsOutputInfoAdditionalRegisters } from './outputInfoAdditionalRegisters';
+import { bigIntsMOutputInfoAdditionalRegisters } from './mOutputInfoAdditionalRegisters';
 
-export interface OutputInfo {
+export interface MOutputInfo {
   /** Id of the box */
   boxId: string;
   /** Id of the transaction that created the box */
   transactionId: string;
   /** Id of the block a box included in */
-  blockId: string;
+  blockId?: string;
   /** Value of the box in nanoERG */
   value: bigint;
   /** Index of the output in a transaction */
   index: number;
   /** Global index of the output in the blockchain */
-  globalIndex: bigint;
+  globalIndex?: bigint;
   /** Height at which the box was created */
   creationHeight: number;
   /** Height at which the box got fixed in blockchain */
-  settlementHeight: number;
+  settlementHeight?: number;
   /** Serialized ergo tree */
   ergoTree: string;
-  ergoTreeConstants: string;
-  ergoTreeScript: string;
   /** An address derived from ergo tree */
   address: string;
   assets?: AssetInstanceInfo[];
-  additionalRegisters: OutputInfoAdditionalRegisters;
+  additionalRegisters: MOutputInfoAdditionalRegisters;
   /** Id of the transaction this output was spent by */
   spentTransactionId?: string;
   mainChain: boolean;
 }
 
-export const bigIntsOutputInfo = [
+export const bigIntsMOutputInfo = [
   'value',
   'globalIndex',
   ...bigIntsAssetInstanceInfo.map((item) =>
     item === '' ? 'assets' : `assets.${item}`
   ),
-  ...bigIntsOutputInfoAdditionalRegisters.map((item) =>
+  ...bigIntsMOutputInfoAdditionalRegisters.map((item) =>
     item === '' ? 'additionalRegisters' : `additionalRegisters.${item}`
   ),
 ];
