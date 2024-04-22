@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.10
+ * OpenAPI spec version: 5.0.21
  */
 
 export type GetHeaderIdsParams = {
@@ -12,7 +12,7 @@ export type GetHeaderIdsParams = {
    */
   limit?: number;
   /**
-   * The number of items in list to skip
+   * The first block height to include in the list
    */
   offset?: number;
 };

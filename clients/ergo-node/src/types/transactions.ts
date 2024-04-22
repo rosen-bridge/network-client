@@ -3,14 +3,14 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.10
+ * OpenAPI spec version: 5.0.21
  */
 import type { ErgoTransaction } from './ergoTransaction';
 
 import { bigIntsErgoTransaction } from './ergoTransaction';
 
 /**
- * Ergo transaction objects
+ * List of ErgoTransaction objects
  */
 export type Transactions = ErgoTransaction[];
 export const bigIntsTransactions = [...bigIntsErgoTransaction];

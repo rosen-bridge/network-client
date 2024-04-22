@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.10
+ * OpenAPI spec version: 5.0.21
  */
 import type { ModifierId } from './modifierId';
 import { bigIntsModifierId } from './modifierId';
@@ -13,8 +13,13 @@ import type { KeyValueItem } from './keyValueItem';
 
 import { bigIntsKeyValueItem } from './keyValueItem';
 
+/**
+ * Section of a block which contains extension data.
+ */
 export interface Extension {
+  /** Identifier of a header of a corresponding block */
   headerId: ModifierId;
+  /** Root hash (aka digest) merkelized list of key-value records */
   digest: Digest32;
   /** List of key-value records */
   fields: KeyValueItem[] | null;

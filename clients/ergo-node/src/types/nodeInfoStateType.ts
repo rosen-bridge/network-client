@@ -3,9 +3,12 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.10
+ * OpenAPI spec version: 5.0.21
  */
 
+/**
+ * Whether the node is storing UTXO set or only its digest. Equals `digest` if only digest is stored, `utxo` if full UTXO set is stored.
+ */
 export type NodeInfoStateType =
   (typeof NodeInfoStateType)[keyof typeof NodeInfoStateType];
 

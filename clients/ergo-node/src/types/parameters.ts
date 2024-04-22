@@ -3,12 +3,15 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.10
+ * OpenAPI spec version: 5.0.21
  */
 import type { Version } from './version';
 
 import { bigIntsVersion } from './version';
 
+/**
+ * System parameters which could be readjusted via collective miners decision.
+ */
 export interface Parameters {
   /** Height when current parameters were considered(not actual height). Can be '0' if state is empty */
   height: number;

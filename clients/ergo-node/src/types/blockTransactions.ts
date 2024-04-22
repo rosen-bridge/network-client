@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.10
+ * OpenAPI spec version: 5.0.21
  */
 import type { ModifierId } from './modifierId';
 import { bigIntsModifierId } from './modifierId';
@@ -11,10 +11,15 @@ import type { Transactions } from './transactions';
 
 import { bigIntsTransactions } from './transactions';
 
+/**
+ * Section of a block which contains transactions.
+ */
 export interface BlockTransactions {
+  /** Identifier of a header of a corresponding block */
   headerId: ModifierId;
+  /** Transactions of the block */
   transactions: Transactions;
-  /** Size in bytes */
+  /** Size in bytes of all block transactions */
   size: number;
 }
 

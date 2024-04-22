@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.10
+ * OpenAPI spec version: 5.0.21
  */
 import type { TransactionId } from './transactionId';
 import { bigIntsTransactionId } from './transactionId';
@@ -16,17 +16,18 @@ import type { ErgoTransactionOutput } from './ergoTransactionOutput';
 import { bigIntsErgoTransactionOutput } from './ergoTransactionOutput';
 
 /**
- * Ergo transaction
+ * ErgoTransaction is an atomic operation which changes UTXO state.
  */
 export interface ErgoTransaction {
+  /** Id of the transaction */
   id?: TransactionId;
-  /** Inputs of the transaction */
+  /** Inputs, that will be spent by this transaction */
   inputs: ErgoTransactionInput[];
-  /** Data inputs of the transaction */
+  /** Read-only inputs, that are not going to be spent by transaction. */
   dataInputs: ErgoTransactionDataInput[];
-  /** Outputs of the transaction */
+  /** Outputs of the transaction, i.e. box candidates to be created by this transaction. */
   outputs: ErgoTransactionOutput[];
-  /** Size in bytes */
+  /** Size of ErgoTransaction in bytes */
   size?: number;
 }
 

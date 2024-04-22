@@ -3,69 +3,16 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.10
+ * OpenAPI spec version: 5.0.21
  */
-import type { TransactionBoxId } from './transactionBoxId';
-import { bigIntsTransactionBoxId } from './transactionBoxId';
-import type { ErgoTree } from './ergoTree';
-import { bigIntsErgoTree } from './ergoTree';
-import type { Asset } from './asset';
-import { bigIntsAsset } from './asset';
-import type { Registers } from './registers';
-import { bigIntsRegisters } from './registers';
-import type { TransactionId } from './transactionId';
-import { bigIntsTransactionId } from './transactionId';
-import type { ErgoAddress } from './ergoAddress';
-import { bigIntsErgoAddress } from './ergoAddress';
-import type { ModifierId } from './modifierId';
+import type { ErgoTransactionOutput } from './ergoTransactionOutput';
+import { bigIntsErgoTransactionOutput } from './ergoTransactionOutput';
+import type { IndexedErgoBoxAllOf } from './indexedErgoBoxAllOf';
 
-import { bigIntsModifierId } from './modifierId';
+import { bigIntsIndexedErgoBoxAllOf } from './indexedErgoBoxAllOf';
 
-/**
- * Box indexed with extra information
- */
-export interface IndexedErgoBox {
-  boxId?: TransactionBoxId;
-  /** Amount of Ergo token */
-  value: bigint;
-  ergoTree: ErgoTree;
-  /** Height the output was created at */
-  creationHeight: number;
-  /** Assets list in the transaction */
-  assets?: Asset[];
-  additionalRegisters: Registers;
-  transactionId?: TransactionId;
-  /** Index in the transaction outputs */
-  index?: number;
-  address: ErgoAddress;
-  /** Transaction which created the box */
-  spentTransactionId?: ModifierId;
-  /** The height the transaction containing the box was included in a block at */
-  inclusionHeight: number;
-  /** Global index of the output in the blockchain */
-  globalIndex: bigint;
-}
-
+export type IndexedErgoBox = ErgoTransactionOutput & IndexedErgoBoxAllOf;
 export const bigIntsIndexedErgoBox = [
-  ...bigIntsTransactionBoxId.map((item) =>
-    item === '' ? 'boxId' : `boxId.${item}`
-  ),
-  'value',
-  ...bigIntsErgoTree.map((item) =>
-    item === '' ? 'ergoTree' : `ergoTree.${item}`
-  ),
-  ...bigIntsAsset.map((item) => (item === '' ? 'assets' : `assets.${item}`)),
-  ...bigIntsRegisters.map((item) =>
-    item === '' ? 'additionalRegisters' : `additionalRegisters.${item}`
-  ),
-  ...bigIntsTransactionId.map((item) =>
-    item === '' ? 'transactionId' : `transactionId.${item}`
-  ),
-  ...bigIntsErgoAddress.map((item) =>
-    item === '' ? 'address' : `address.${item}`
-  ),
-  ...bigIntsModifierId.map((item) =>
-    item === '' ? 'spentTransactionId' : `spentTransactionId.${item}`
-  ),
-  'globalIndex',
+  ...bigIntsErgoTransactionOutput,
+  ...bigIntsIndexedErgoBoxAllOf,
 ];

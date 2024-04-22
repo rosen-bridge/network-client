@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.10
+ * OpenAPI spec version: 5.0.21
  */
 import type { ModifierId } from './modifierId';
 
@@ -14,17 +14,17 @@ import { bigIntsModifierId } from './modifierId';
  */
 export interface IndexedToken {
   /** Id of the token */
-  id?: ModifierId;
+  id: ModifierId;
   /** Id of the box that created the token */
-  boxId?: ModifierId;
+  boxId: ModifierId;
   /** The total supply of the token */
-  emissionAmount?: bigint;
+  emissionAmount: bigint;
   /** The name of the token */
-  name?: string;
+  name: string;
   /** The description of the token */
-  description?: string;
+  description: string;
   /** The number of decimals the token supports */
-  decimals?: number;
+  decimals: number;
 }
 
 export const bigIntsIndexedToken = [

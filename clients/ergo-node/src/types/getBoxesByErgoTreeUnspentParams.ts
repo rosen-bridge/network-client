@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.10
+ * OpenAPI spec version: 5.0.21
  */
 
 export type GetBoxesByErgoTreeUnspentParams = {
@@ -19,5 +19,9 @@ export type GetBoxesByErgoTreeUnspentParams = {
    * desc = new boxes first ; asc = old boxes first
    */
   sortDirection?: string;
+  /**
+   * if true include unconfirmed transactions from mempool
+   */
+  includeUnconfirmed?: boolean;
 };
 export const bigIntsGetBoxesByErgoTreeUnspentParams = [];

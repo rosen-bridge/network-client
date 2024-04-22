@@ -29,6 +29,8 @@ export interface OutputInfo {
   settlementHeight: number;
   /** Serialized ergo tree */
   ergoTree: string;
+  ergoTreeConstants: string;
+  ergoTreeScript: string;
   /** An address derived from ergo tree */
   address: string;
   assets?: AssetInstanceInfo[];

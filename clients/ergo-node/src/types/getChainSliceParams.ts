@@ -3,16 +3,16 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.10
+ * OpenAPI spec version: 5.0.21
  */
 
 export type GetChainSliceParams = {
   /**
-   * Min header height
+   * Min header height (start of the range)
    */
   fromHeight?: number;
   /**
-   * Max header height (best header height by default)
+   * Max header height of the range (last header height then omitted)
    */
   toHeight?: number;
 };
