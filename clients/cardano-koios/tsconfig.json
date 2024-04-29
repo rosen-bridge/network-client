@@ -5,5 +5,5 @@
     "rootDir": "./"
   },
   "include": ["src"],
-  "references": [{ "path": "../../packages/axios" }]
+  "references": [{ "path": "../../packages/axios/tsconfig.build.json" }]
 }
