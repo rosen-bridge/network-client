@@ -298,18 +298,16 @@ import {
   bigIntsDatumInfo,
 } from '../types';
 
-import { createAxiosInstance, JsonFieldBigintFactory } from '../axios';
-
-// eslint-disable-next-line
-type SecondParameter<T extends (...args: any) => any> = T extends (
-  config: any,
-  args: infer P
-) => any
-  ? P
-  : never;
+import {
+  createAxiosInstanceWithHeaders,
+  JsonFieldBigintFactory,
+} from '../axios';
 
 export const getKoiosAPI = (url: string, authToken?: string) => {
-  const instance = createAxiosInstance(url, authToken);
+  const instance = createAxiosInstanceWithHeaders(url, {
+    Authorization: `Bearer ${authToken}`,
+  });
+
   /**
    * Get the tip info about the latest block seen by chain
    * @summary Query Chain Tip
