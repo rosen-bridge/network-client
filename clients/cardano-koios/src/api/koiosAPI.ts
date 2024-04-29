@@ -304,9 +304,14 @@ import {
 } from '../axios';
 
 export const getKoiosAPI = (url: string, authToken?: string) => {
-  const instance = createAxiosInstanceWithHeaders(url, {
-    Authorization: `Bearer ${authToken}`,
-  });
+  const instance = createAxiosInstanceWithHeaders(
+    url,
+    authToken
+      ? {
+          Authorization: `Bearer ${authToken}`,
+        }
+      : {}
+  );
 
   /**
    * Get the tip info about the latest block seen by chain
