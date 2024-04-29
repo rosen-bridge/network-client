@@ -3,16 +3,17 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "clients/*"
+      "clients/*",
+      "packages/*"
     ]
   },
   "scripts": {
+    "build": "npm run build --workspaces",
     "generate-client": "npm run generate-client --workspaces",
     "lint": "npm run lint --workspaces",
-    "build": "npm run build --workspaces",
-    "type-check": "npm run type-check --workspaces",
+    "prepare": "husky install",
     "release": "npm run release --workspaces",
-    "prepare": "husky install"
+    "type-check": "npm run type-check --workspaces"
   },
   "devDependencies": {
     "@types/jscodeshift": "^0.11.6",
