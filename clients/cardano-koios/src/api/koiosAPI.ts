@@ -307,7 +307,7 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
   const instance = createAxiosInstanceWithHeaders(url, {
     Authorization: `Bearer ${authToken}`,
   });
-  // const instance = createAxiosInstance(url);
+
   /**
    * Get the tip info about the latest block seen by chain
    * @summary Query Chain Tip
