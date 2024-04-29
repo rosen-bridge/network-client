@@ -47,8 +47,6 @@ export const JsonFieldBigintFactory = (fields: Array<string>) => {
   };
 };
 
-export const axiosInstance = Axios.create();
-
 export const createAxiosInstanceWithHeaders = (
   url: string,
   headers: { [key: string]: string }
