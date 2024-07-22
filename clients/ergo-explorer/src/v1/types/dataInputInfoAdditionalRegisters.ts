@@ -5,5 +5,11 @@
  * OpenAPI spec version: 1.0
  */
 
-export type DataInputInfoAdditionalRegisters = { [key: string]: string };
+export type DataInputInfoAdditionalRegisters = {
+  [key: string]: {
+    serializedValue: string;
+    sigmaType: string;
+    renderedValue: string;
+  };
+};
 export const bigIntsDataInputInfoAdditionalRegisters = [];
