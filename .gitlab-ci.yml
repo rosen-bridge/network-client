@@ -5,6 +5,7 @@ stages:
   - build
   - type_check
   - lint
+  - changeset
 
 installation:
   stage: installation
@@ -55,3 +56,17 @@ lint:
       - clients/*/dist
   script:
     - npm run lint
+
+changeset:
+  stage: changeset
+  cache:
+    key: $CI_COMMIT_REF_NAME
+    policy: pull
+    paths:
+      - node_modules
+      - '**/node_modules'
+      - '**/dist'
+  before_script:
+    - git fetch origin dev
+  script:
+    - npx changeset status --since=origin/dev
