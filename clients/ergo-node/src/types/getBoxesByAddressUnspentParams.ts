@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.21
+ * OpenAPI spec version: 5.0.22
  */
 
 export type GetBoxesByAddressUnspentParams = {
@@ -23,5 +23,9 @@ export type GetBoxesByAddressUnspentParams = {
    * if true include unconfirmed transactions from mempool
    */
   includeUnconfirmed?: boolean;
+  /**
+   * if true exclude spent inputs from mempool
+   */
+  excludeMempoolSpent?: boolean;
 };
 export const bigIntsGetBoxesByAddressUnspentParams = [];
