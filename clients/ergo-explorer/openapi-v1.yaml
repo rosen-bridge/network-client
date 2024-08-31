@@ -2258,7 +2258,18 @@ components:
         additionalRegisters:
           type: object
           additionalProperties:
-            type: string
+            required:
+              - serializedValue
+              - sigmaType
+              - renderedValue
+            type: object
+            properties:
+              serializedValue:
+                type: string
+              sigmaType:
+                type: string
+              renderedValue:
+                type: string
     DataInputInfo1:
       required:
         - id
@@ -2489,7 +2500,18 @@ components:
         additionalRegisters:
           type: object
           additionalProperties:
-            type: string
+            required:
+              - serializedValue
+              - sigmaType
+              - renderedValue
+            type: object
+            properties:
+              serializedValue:
+                type: string
+              sigmaType:
+                type: string
+              renderedValue:
+                type: string
     InputInfo1:
       required:
         - id
@@ -2825,7 +2847,18 @@ components:
         additionalRegisters:
           type: object
           additionalProperties:
-            type: string
+            required:
+              - serializedValue
+              - sigmaType
+              - renderedValue
+            type: object
+            properties:
+              serializedValue:
+                type: string
+              sigmaType:
+                type: string
+              renderedValue:
+                type: string
         spentTransactionId:
           type: string
           description: Id of the transaction this output was spent by
