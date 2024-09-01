@@ -3,16 +3,14 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.21
+ * OpenAPI spec version: 5.0.22
  */
 import type { TransactionId } from './transactionId';
 import { bigIntsTransactionId } from './transactionId';
-import type { ErgoTransactionInput } from './ergoTransactionInput';
-import { bigIntsErgoTransactionInput } from './ergoTransactionInput';
+import type { IndexedErgoBox } from './indexedErgoBox';
+import { bigIntsIndexedErgoBox } from './indexedErgoBox';
 import type { ErgoTransactionDataInput } from './ergoTransactionDataInput';
 import { bigIntsErgoTransactionDataInput } from './ergoTransactionDataInput';
-import type { ErgoTransactionOutput } from './ergoTransactionOutput';
-import { bigIntsErgoTransactionOutput } from './ergoTransactionOutput';
 import type { ModifierId } from './modifierId';
 import { bigIntsModifierId } from './modifierId';
 import type { Timestamp } from './timestamp';
@@ -25,11 +23,11 @@ import { bigIntsTimestamp } from './timestamp';
 export interface IndexedErgoTransaction {
   id: TransactionId;
   /** Transaction inputs */
-  inputs: ErgoTransactionInput[];
+  inputs: IndexedErgoBox[];
   /** Transaction data inputs */
   dataInputs: ErgoTransactionDataInput[];
   /** Transaction outputs */
-  outputs: ErgoTransactionOutput[];
+  outputs: IndexedErgoBox[];
   /** Height of a block the transaction was included in */
   inclusionHeight: number;
   /** Number of transaction confirmations */
@@ -47,13 +45,13 @@ export interface IndexedErgoTransaction {
 
 export const bigIntsIndexedErgoTransaction = [
   ...bigIntsTransactionId.map((item) => (item === '' ? 'id' : `id.${item}`)),
-  ...bigIntsErgoTransactionInput.map((item) =>
+  ...bigIntsIndexedErgoBox.map((item) =>
     item === '' ? 'inputs' : `inputs.${item}`
   ),
   ...bigIntsErgoTransactionDataInput.map((item) =>
     item === '' ? 'dataInputs' : `dataInputs.${item}`
   ),
-  ...bigIntsErgoTransactionOutput.map((item) =>
+  ...bigIntsIndexedErgoBox.map((item) =>
     item === '' ? 'outputs' : `outputs.${item}`
   ),
   ...bigIntsModifierId.map((item) =>

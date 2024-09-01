@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.21
+ * OpenAPI spec version: 5.0.22
  */
 import type { IndexedErgoTransaction } from './indexedErgoTransaction';
 
@@ -12,7 +12,7 @@ import { bigIntsIndexedErgoTransaction } from './indexedErgoTransaction';
 export type GetTxsByAddress200 = {
   /** Array of transactions */
   items?: IndexedErgoTransaction[];
-  /** Total count of retreived transactions */
+  /** Total count of retrieved transactions */
   total?: number;
 };
 
