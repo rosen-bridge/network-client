@@ -1,0 +1,7 @@
+# @rosen-clients/ergo-node
+
+## 1.2.0
+
+### Minor Changes
+
+- Update ergo node client to version 5.0.22
