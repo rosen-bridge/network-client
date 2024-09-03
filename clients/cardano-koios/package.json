@@ -8,7 +8,7 @@
   "scripts": {
     "codemod": "jscodeshift --parser=ts -t ../../codemod/big-int-fields-support.ts ./src/**/*.ts",
     "generate-client-base": "orval && rimraf ./src/api/index.ts",
-    "generate-client": "bun ./generate-client.ts && npm run codemod",
+    "generate-client": "rimraf ./src/api && rimraf ./src/types && bun ./generate-client.ts && npm run codemod",
     "prettify": "prettier --write . --ignore-path .gitignore",
     "lint": "eslint --fix . && npm run prettify",
     "build": "rimraf ./dist && tsc --build",

@@ -5,3 +5,4 @@ dist
 .nyc_output
 # TypeScript cache
 *.tsbuildinfo
+.DS_Store
