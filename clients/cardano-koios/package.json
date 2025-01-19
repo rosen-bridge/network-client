@@ -6,11 +6,9 @@
   "types": "dist/src/index.d.ts",
   "type": "module",
   "scripts": {
-    "codemod": "jscodeshift --parser=ts -t ../../codemod/big-int-fields-support.ts ./src/**/*.ts",
-    "codemod-test": "jscodeshift --parser=ts -t ../../codemod/big-int-fields-support.ts ./src/types/txbinBody.ts",
-    "codemod-koios": "jscodeshift --parser=ts -t ../../codemod/koios-fixes.ts ./src/api/koiosAPI.ts",
+    "codemod": "jscodeshift --parser=ts -t ../../codemod/big-int-fields-support.ts ./src/**/*.ts && jscodeshift --parser=ts -t ../../codemod/koios-fixes.ts ./src/api/koiosAPI.ts",
     "generate-client-base": "orval && rimraf ./src/api/index.ts",
-    "generate-client": "bun ./generate-client.ts && npm run codemod && npm run codemod-koios",
+    "generate-client": "bun ./generate-client.ts && npm run codemod",
     "prettify": "prettier --write . --ignore-path .gitignore",
     "lint": "eslint --fix . && npm run prettify",
     "build": "rimraf ./dist && tsc --build",
