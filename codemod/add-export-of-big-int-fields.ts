@@ -7,6 +7,7 @@ const getFieldType = (name: string, typeAnnotation: any, api: API) => {
       case 'TSBigIntKeyword':
         return j.stringLiteral(name);
       case 'TSTypeReference':
+        if (typeAnnotation.typeName.name == 'Blob') return undefined;
         return j.spreadElement(
           name
             ? j.callExpression(
