@@ -43,6 +43,12 @@ const getFieldType = (name: string, typeAnnotation: any, api: API) => {
         );
       case 'TSArrayType':
         return getFieldType(name, typeAnnotation.elementType, api);
+      case 'TSUnionType':
+        return j.arrayExpression(
+          typeAnnotation.types
+            .map((subType: any) => getFieldType(name, subType, api))
+            .filter(Boolean) // Remove undefined values if any subType fails
+        );
     }
   } catch (e) {
     console.log(e);
@@ -67,7 +73,9 @@ export default (root: any, api: API) => {
   const bigIntFields = [];
   const addField = (element) => {
     if (element) {
-      bigIntFields.push(element);
+      if (element.type == 'ArrayExpression') {
+        bigIntFields.push(...element.elements);
+      } else bigIntFields.push(element);
     }
   };
   root.find(j.TSTypeAliasDeclaration).forEach((item) => {
@@ -100,7 +108,7 @@ export default (root: any, api: API) => {
   });
   const bigInts = j.variableDeclaration('const', [
     j.variableDeclarator(
-      j.identifier(`bigInts${name}`),
+      j.identifier(`bigInts${name}: Array<string>`),
       j.arrayExpression(bigIntFields)
     ),
   ]);
