@@ -4941,7 +4941,7 @@ components:
                   $ref: '#/components/schemas/proposal_list/items/properties/param_proposal'
     tx_cbor:
       description: Raw Transaction(s) in CBOR format
-      item:
+      items:
         properties:
           tx_hash:
             $ref: '#/components/schemas/tx_info/items/properties/tx_hash'
