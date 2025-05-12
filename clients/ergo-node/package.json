@@ -1,6 +1,6 @@
 {
   "name": "@rosen-clients/ergo-node",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A client library for Ergo Node",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
@@ -40,6 +40,6 @@
     "dist"
   ],
   "dependencies": {
-    "@rosen-clients/axios": "^0.1.0"
+    "@rosen-clients/axios": "^0.1.1"
   }
 }
