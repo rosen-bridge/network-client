@@ -38,12 +38,16 @@ const transformBigInt = (obj: any, bigIntObj: any, field: string): any => {
 };
 export const JsonFieldBigintFactory = (fields: Array<string>) => {
   return (data: any) => {
-    let dataJson = JSON.parse(data);
-    const dataBigInt = JsonBigInt.parse(data);
-    fields.forEach((field) => {
-      dataJson = transformBigInt(dataJson, dataBigInt, field);
-    });
-    return dataJson;
+    try {
+      let dataJson = JSON.parse(data);
+      const dataBigInt = JsonBigInt.parse(data);
+      fields.forEach((field) => {
+        dataJson = transformBigInt(dataJson, dataBigInt, field);
+      });
+      return dataJson;
+    } catch (e) {
+      return data;
+    }
   };
 };
 
