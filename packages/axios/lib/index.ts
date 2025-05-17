@@ -1,4 +1,4 @@
-import Axios, { AxiosRequestConfig } from 'axios';
+import Axios, { AxiosRequestConfig } from '@rosen-bridge/rate-limited-axios';
 import JsonBigintFactory from 'json-bigint';
 
 const JsonBigInt = JsonBigintFactory({
