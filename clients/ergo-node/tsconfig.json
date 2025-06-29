@@ -6,7 +6,7 @@
   },
   "include": ["src"],
   "references": [
-    { "path": "../../packages/axios/tsconfig.build.json" },
-    { "path": "../../packages/rate-limited-axios/tsconfig.build.json" }
+    { "path": "../../packages/rate-limited-axios/tsconfig.build.json" },
+    { "path": "../../packages/axios/tsconfig.build.json" }
   ]
 }

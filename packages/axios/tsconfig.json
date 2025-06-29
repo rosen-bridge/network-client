@@ -4,5 +4,5 @@
     "outDir": "./dist"
   },
   "include": ["lib"],
-  "references": [{ "path": "../rate-limited-axios" }]
+  "references": [{ "path": "../rate-limited-axios/tsconfig.build.json" }]
 }
