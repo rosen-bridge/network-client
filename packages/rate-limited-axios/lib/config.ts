@@ -1,4 +1,3 @@
-import { RateLimiterMemory } from 'rate-limiter-flexible';
 import { AbstractLogger, DummyLogger } from '@rosen-bridge/abstract-logger';
 import { Rule } from './types';
 import { Semaphore } from 'await-semaphore';
@@ -16,16 +15,15 @@ export class RateLimitedAxiosConfig {
   public static addRule(
     pattern: string,
     rateLimit: number,
-    throttleWindow: number
+    throttleWindow: number,
+    timeout: number
   ) {
     RateLimitedAxiosConfig.removeRule(pattern);
     RateLimitedAxiosConfig.limitRules.push({
       pattern: new RegExp(pattern),
-      limiter: new RateLimiterMemory({
-        points: rateLimit,
-        duration: throttleWindow,
-      }),
       semaphore: new Semaphore(rateLimit),
+      throttleWindow: throttleWindow,
+      timeout: timeout,
     });
   }
 
