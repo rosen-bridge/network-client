@@ -29,7 +29,7 @@
     "node": ">=18.11.0"
   },
   "dependencies": {
-    "@rosen-bridge/rate-limited-axios": "^0.2.1",
+    "@rosen-clients/rate-limited-axios": "^0.2.1",
     "json-bigint": "^1.0.0"
   }
 }

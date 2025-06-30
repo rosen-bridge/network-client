@@ -31,9 +31,9 @@ To enable global rate-limiting across your application, you should initialize th
 ```ts
 import RateLimitedAxios, { RateLimitedAxiosConfig } from '@rosen-clients/rate-limited-axios';
 
-RateLimiterAxiosConfig.addRule('^http://google.com/.*$', 10, 30, 90);
-RateLimiterAxiosConfig.addRule('^http://yahoo.com/.*$', 10, 30, 90);
-RateLimiterAxiosConfig.addRule('^http://bing.com/.*$', 10, 30, 90);
+RateLimiterAxiosConfig.addRule('^http://google.com/.*$', 10, 30);
+RateLimiterAxiosConfig.addRule('^http://yahoo.com/.*$', 10, 30);
+RateLimiterAxiosConfig.addRule('^http://bing.com/.*$', 10, 30);
 .
 .
 .

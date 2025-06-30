@@ -1,4 +1,7 @@
-import { AxiosRequestConfig, create } from '@rosen-clients/rate-limited-axios';
+import {
+  AxiosRequestConfig,
+  create as createAxiosInstance,
+} from '@rosen-clients/rate-limited-axios';
 import JsonBigintFactory from 'json-bigint';
 
 const JsonBigInt = JsonBigintFactory({
@@ -55,7 +58,7 @@ export const createAxiosInstanceWithHeaders = (
   url: string,
   headers: { [key: string]: string }
 ) => {
-  const instance = create();
+  const instance = createAxiosInstance();
   instance.defaults.baseURL = url;
   Object.entries(headers).forEach((header) => {
     instance.defaults.headers.common[header[0]] = header[1];
