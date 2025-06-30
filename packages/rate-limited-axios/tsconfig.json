@@ -1,8 +1,10 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
-  "include": ["tests", "lib", "vitest.config.ts"],
+  "include": ["tests", "lib", "vitest.config.ts", "package.json"],
   "references": []
 }
