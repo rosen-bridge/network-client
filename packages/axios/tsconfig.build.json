@@ -3,5 +3,8 @@
   "compilerOptions": {
     "rootDir": "./lib"
   },
-  "exclude": ["tests"]
+  "exclude": ["tests"],
+  "references": [
+    { "path": "../../packages/rate-limited-axios/tsconfig.build.json" }
+  ]
 }
