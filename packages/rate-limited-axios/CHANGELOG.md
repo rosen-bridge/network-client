@@ -1,1 +1,1 @@
-# @rosen-bridge/rate-limited-axios
+# @rosen-clients/rate-limited-axios
