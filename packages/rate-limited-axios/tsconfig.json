@@ -3,6 +3,6 @@
   "compilerOptions": {
     "outDir": "./dist"
   },
-  "include": ["lib"],
-  "references": [{ "path": "../rate-limited-axios/tsconfig.json" }]
+  "include": ["tests", "lib", "vitest.config.ts"],
+  "references": []
 }
