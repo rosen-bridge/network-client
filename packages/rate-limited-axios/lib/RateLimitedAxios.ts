@@ -21,7 +21,7 @@ declare module 'axios' {
 
 class RateLimitedAxios extends originalAxios.Axios {
   VERSION = pkg.version;
-  protected static timeoutIndicesPerRelease = new Map<
+  protected static releaseTimeoutMap = new Map<
     () => void,
     ReturnType<typeof setTimeout>
   >();
@@ -65,17 +65,19 @@ class RateLimitedAxios extends originalAxios.Axios {
    */
   protected static releaseQueue = (config: InternalAxiosRequestConfig) => {
     const url = config.url ?? '';
-    const rule = RateLimitedAxios.getUrlRule(url);
 
-    if (rule && config.meta.release) {
-      const key = rule.pattern.toString();
-      const release = config.meta['release'];
-      let releaseTime =
-        rule.throttleWindow * 1000 - (Date.now() - config.meta.startedTime);
-      if (releaseTime < 0) releaseTime = 0;
+    if (config.meta.release) {
+      const release = config.meta.release;
+      const rule = RateLimitedAxios.getUrlRule(url);
+      let releaseTime = 0;
+      if (rule) {
+        releaseTime =
+          rule.throttleWindow * 1000 - (Date.now() - config.meta.startedTime);
+        if (releaseTime < 0) releaseTime = 0;
+      }
+      clearTimeout(RateLimitedAxios.releaseTimeoutMap.get(release));
+      RateLimitedAxios.releaseTimeoutMap.delete(release);
       setTimeout(() => {
-        clearTimeout(RateLimitedAxios.timeoutIndicesPerRelease.get(release));
-        RateLimitedAxios.timeoutIndicesPerRelease.delete(release);
         // release the locked queue
         release();
       }, releaseTime);
@@ -99,23 +101,15 @@ class RateLimitedAxios extends originalAxios.Axios {
     const release = await rule.semaphore.acquire();
     config.meta = { release: release, startedTime: Date.now() };
 
-    try {
-      RateLimitedAxios.timeoutIndicesPerRelease.set(
-        release,
-        setTimeout(() => {
-          RateLimitedAxiosConfig.getLogger().debug(
-            `The response time has exceeded the defined limit for the ${key} URL pattern`
-          );
-          RateLimitedAxios.releaseQueue(config);
-        }, rule.timeout * 1000)
-      );
-    } catch (err) {
-      RateLimitedAxiosConfig.getLogger().error(
-        `Error on the RateLimitedAxios.interceptorForRequest occurred: ${err}`
-      );
-      release();
-      throw err;
-    }
+    RateLimitedAxios.releaseTimeoutMap.set(
+      release,
+      setTimeout(() => {
+        RateLimitedAxiosConfig.getLogger().debug(
+          `The response time has exceeded the defined limit for the ${key} URL pattern`
+        );
+        RateLimitedAxios.releaseQueue(config);
+      }, rule.timeout * 1000)
+    );
 
     return config;
   };
