@@ -68,13 +68,10 @@ class RateLimitedAxios extends originalAxios.Axios {
 
     if (config.meta.release) {
       const release = config.meta.release;
+      config.meta.release = undefined;
       const rule = RateLimitedAxios.getUrlRule(url);
       let releaseTime = 0;
-      if (rule) {
-        releaseTime =
-          rule.throttleWindow * 1000 - (Date.now() - config.meta.startedTime);
-        if (releaseTime < 0) releaseTime = 0;
-      }
+      if (rule) releaseTime = rule.throttleWindow * 1000;
       clearTimeout(RateLimitedAxios.releaseTimeoutMap.get(release));
       RateLimitedAxios.releaseTimeoutMap.delete(release);
       setTimeout(() => {
