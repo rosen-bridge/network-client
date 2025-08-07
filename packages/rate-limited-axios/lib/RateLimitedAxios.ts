@@ -25,7 +25,7 @@ class RateLimitedAxios extends originalAxios.Axios {
     () => void,
     ReturnType<typeof setTimeout>
   >();
-  RateLimitedAxios = RateLimitedAxios;
+  Axios = RateLimitedAxios;
   RateLimitedAxiosConfig = RateLimitedAxiosConfig;
   CanceledError = CanceledError;
   CancelToken = {} as CancelToken;
@@ -92,11 +92,13 @@ class RateLimitedAxios extends originalAxios.Axios {
     const url = config.url ?? '';
     const rule = RateLimitedAxios.getUrlRule(url);
 
+    config.meta = { release: undefined, startedTime: Date.now() };
+
     if (!rule) return config;
 
     const key = rule.pattern.toString();
     const release = await rule.semaphore.acquire();
-    config.meta = { release: release, startedTime: Date.now() };
+    config.meta.release = release;
 
     RateLimitedAxios.releaseTimeoutMap.set(
       release,

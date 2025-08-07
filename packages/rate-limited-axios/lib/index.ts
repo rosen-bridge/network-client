@@ -1,24 +1,62 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import axios, {
+  AxiosHeaderValue,
+  RawAxiosRequestHeaders,
+  AxiosRequestHeaders,
+  RawAxiosResponseHeaders,
+  AxiosResponseHeaders,
+  AxiosRequestTransformer,
+  AxiosResponseTransformer,
+  AxiosAdapter,
+  AxiosBasicCredentials,
+  AxiosProxyConfig,
+  Method,
+  ResponseType,
+  responseEncoding,
+  TransitionalOptions,
+  GenericAbortSignal,
+  FormDataVisitorHelpers,
+  SerializerVisitor,
+  SerializerOptions,
+  FormSerializerOptions,
+  ParamEncoder,
+  CustomParamsSerializer,
+  ParamsSerializerOptions,
+  AxiosProgressEvent,
+  LookupAddressEntry,
+  LookupAddress,
+  AxiosRequestConfig,
+  RawAxiosRequestConfig,
+  InternalAxiosRequestConfig,
+  HeadersDefaults,
+  AxiosDefaults,
+  CreateAxiosDefaults,
+  AxiosResponse,
+  AxiosPromise,
+  CancelStatic,
+  Cancel,
+  Canceler,
+  CancelTokenStatic,
+  CancelToken,
+  CancelTokenSource,
+  AxiosInterceptorOptions,
+  AxiosInterceptorManager,
+  AxiosInstance,
+  GenericFormData,
+  AxiosStatic,
+} from 'axios';
 import { RateLimitedAxios, RateLimitedAxiosConfig } from './RateLimitedAxios';
 export { Rule } from './types';
-export * from 'axios';
 
-function createInstance(config?: AxiosRequestConfig) {
-  const instance = new RateLimitedAxios(config) as RateLimitedAxios & {
-    default: ReturnType<typeof createInstance>;
-    create: (config?: AxiosRequestConfig) => ReturnType<typeof createInstance>;
-  };
+type RateLimitedAxiosInstance = RateLimitedAxios & {
+  default: RateLimitedAxios;
+  create: (config?: AxiosRequestConfig) => RateLimitedAxiosInstance;
+};
 
-  instance.create = function create(instanceConfig?: AxiosRequestConfig) {
-    return createInstance(
-      axios.mergeConfig(
-        axios.defaults as AxiosRequestConfig,
-        instanceConfig ?? {}
-      )
-    );
-  };
-
-  return instance;
+function createInstance(config?: AxiosRequestConfig): RateLimitedAxiosInstance {
+  const instance = new RateLimitedAxios(config);
+  (instance as RateLimitedAxiosInstance).default = instance;
+  (instance as RateLimitedAxiosInstance).create = createInstance;
+  return instance as RateLimitedAxiosInstance;
 }
 
 const rateLimitedAxios = createInstance(axios.defaults as AxiosRequestConfig);
@@ -31,7 +69,6 @@ const {
   CanceledError,
   isCancel,
   CancelToken,
-  VERSION,
   all,
   Cancel,
   isAxiosError,
@@ -46,21 +83,62 @@ const {
 
 export {
   rateLimitedAxios as default,
-  RateLimitedAxios,
+  RateLimitedAxios as Axios,
   RateLimitedAxiosConfig,
+  AxiosHeaderValue,
+  AxiosHeaders,
+  RawAxiosRequestHeaders,
+  AxiosRequestHeaders,
+  RawAxiosResponseHeaders,
+  AxiosResponseHeaders,
+  AxiosRequestTransformer,
+  AxiosResponseTransformer,
+  AxiosAdapter,
+  AxiosBasicCredentials,
+  AxiosProxyConfig,
+  HttpStatusCode,
+  Method,
+  ResponseType,
+  responseEncoding,
+  TransitionalOptions,
+  GenericAbortSignal,
+  FormDataVisitorHelpers,
+  SerializerVisitor,
+  SerializerOptions,
+  FormSerializerOptions,
+  ParamEncoder,
+  CustomParamsSerializer,
+  ParamsSerializerOptions,
+  AxiosProgressEvent,
+  LookupAddressEntry,
+  LookupAddress,
+  AxiosRequestConfig,
+  RawAxiosRequestConfig,
+  InternalAxiosRequestConfig,
+  HeadersDefaults,
+  AxiosDefaults,
+  CreateAxiosDefaults,
+  AxiosResponse,
   AxiosError,
   CanceledError,
-  isCancel,
-  CancelToken,
-  VERSION,
-  all,
+  AxiosPromise,
+  CancelStatic,
   Cancel,
+  Canceler,
+  CancelTokenStatic,
+  CancelToken,
+  CancelTokenSource,
+  AxiosInterceptorOptions,
+  AxiosInterceptorManager,
+  AxiosInstance,
+  GenericFormData,
+  getAdapter,
+  toFormData,
+  formToJSON,
   isAxiosError,
   spread,
-  toFormData,
-  AxiosHeaders,
-  HttpStatusCode,
-  formToJSON,
-  getAdapter,
+  isCancel,
+  all,
   mergeConfig,
+  AxiosStatic,
 };
