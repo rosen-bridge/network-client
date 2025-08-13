@@ -22,6 +22,7 @@ import axios, {
   CustomParamsSerializer,
   ParamsSerializerOptions,
   AxiosProgressEvent,
+  AddressFamily,
   LookupAddressEntry,
   LookupAddress,
   AxiosRequestConfig,
@@ -42,6 +43,7 @@ import axios, {
   AxiosInterceptorManager,
   AxiosInstance,
   GenericFormData,
+  GenericHTMLFormElement,
   AxiosStatic,
 } from 'axios';
 import { RateLimitedAxios, RateLimitedAxiosConfig } from './RateLimitedAxios';
@@ -110,6 +112,7 @@ export {
   CustomParamsSerializer,
   ParamsSerializerOptions,
   AxiosProgressEvent,
+  AddressFamily,
   LookupAddressEntry,
   LookupAddress,
   AxiosRequestConfig,
@@ -132,6 +135,7 @@ export {
   AxiosInterceptorManager,
   AxiosInstance,
   GenericFormData,
+  GenericHTMLFormElement,
   getAdapter,
   toFormData,
   formToJSON,
