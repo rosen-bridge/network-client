@@ -1,5 +1,13 @@
 # @rosen-clients/cardano-koios
 
+## 2.1.3
+
+### Patch Changes
+
+- Update license to MIT
+- Updated dependencies
+  - @rosen-clients/axios@0.1.4
+
 ## 2.1.2
 
 ### Patch Changes
