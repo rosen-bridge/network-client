@@ -1,5 +1,13 @@
 # @rosen-clients/axios
 
+## 0.1.4
+
+### Patch Changes
+
+- Update license to MIT
+- Updated dependencies
+  - @rosen-clients/rate-limited-axios@0.0.2
+
 ## 0.1.3
 
 ### Patch Changes

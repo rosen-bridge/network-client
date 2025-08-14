@@ -1,8 +1,8 @@
 {
   "name": "@rosen-clients/rate-limited-axios",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A lightweight rate-limiting wrapped Axios that helps control the number of HTTP requests and prevent API throttling.",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "author": "Rosen Team",
   "type": "module",
   "main": "dist/index.js",
