@@ -1,5 +1,13 @@
 # @rosen-clients/ergo-node
 
+## 1.2.4
+
+### Patch Changes
+
+- Update license to MIT
+- Updated dependencies
+  - @rosen-clients/axios@0.1.4
+
 ## 1.2.3
 
 ### Patch Changes

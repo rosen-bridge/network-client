@@ -1,5 +1,13 @@
 # @rosen-clients/ergo-explorer
 
+## 1.1.6
+
+### Patch Changes
+
+- Update license to MIT
+- Updated dependencies
+  - @rosen-clients/axios@0.1.4
+
 ## 1.1.5
 
 ### Patch Changes
