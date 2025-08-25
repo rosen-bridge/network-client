@@ -1,6 +1,148 @@
-import { RateLimitedAxios } from './RateLimitedAxios';
-
-export { RateLimitedAxiosConfig, create } from './RateLimitedAxios';
+import axios, {
+  AxiosHeaderValue,
+  RawAxiosRequestHeaders,
+  AxiosRequestHeaders,
+  RawAxiosResponseHeaders,
+  AxiosResponseHeaders,
+  AxiosRequestTransformer,
+  AxiosResponseTransformer,
+  AxiosAdapter,
+  AxiosBasicCredentials,
+  AxiosProxyConfig,
+  Method,
+  ResponseType,
+  responseEncoding,
+  TransitionalOptions,
+  GenericAbortSignal,
+  FormDataVisitorHelpers,
+  SerializerVisitor,
+  SerializerOptions,
+  FormSerializerOptions,
+  ParamEncoder,
+  CustomParamsSerializer,
+  ParamsSerializerOptions,
+  AxiosProgressEvent,
+  AddressFamily,
+  LookupAddressEntry,
+  LookupAddress,
+  AxiosRequestConfig,
+  RawAxiosRequestConfig,
+  InternalAxiosRequestConfig,
+  HeadersDefaults,
+  AxiosDefaults,
+  CreateAxiosDefaults,
+  AxiosResponse,
+  AxiosPromise,
+  CancelStatic,
+  Cancel,
+  Canceler,
+  CancelTokenStatic,
+  CancelToken,
+  CancelTokenSource,
+  AxiosInterceptorOptions,
+  AxiosInterceptorManager,
+  AxiosInstance,
+  GenericFormData,
+  GenericHTMLFormElement,
+  AxiosStatic,
+} from 'axios';
+import { RateLimitedAxios, RateLimitedAxiosConfig } from './RateLimitedAxios';
 export { Rule } from './types';
-export * from 'axios';
-export default RateLimitedAxios;
+
+type RateLimitedAxiosInstance = RateLimitedAxios & {
+  default: RateLimitedAxios;
+  create: (config?: AxiosRequestConfig) => RateLimitedAxiosInstance;
+};
+
+function createInstance(config?: AxiosRequestConfig): RateLimitedAxiosInstance {
+  const instance = new RateLimitedAxios(config);
+  (instance as RateLimitedAxiosInstance).default = instance;
+  (instance as RateLimitedAxiosInstance).create = createInstance;
+  return instance as RateLimitedAxiosInstance;
+}
+
+const rateLimitedAxios = createInstance(axios.defaults as AxiosRequestConfig);
+rateLimitedAxios.default = rateLimitedAxios;
+
+// This module is intended to unwrap RateLimitedAxios default export as named.
+// Keep top-level export same with static properties
+const {
+  AxiosError,
+  CanceledError,
+  isCancel,
+  CancelToken,
+  all,
+  Cancel,
+  isAxiosError,
+  spread,
+  toFormData,
+  AxiosHeaders,
+  HttpStatusCode,
+  formToJSON,
+  getAdapter,
+  mergeConfig,
+} = rateLimitedAxios;
+
+export {
+  rateLimitedAxios as default,
+  RateLimitedAxios as Axios,
+  RateLimitedAxiosConfig,
+  AxiosHeaderValue,
+  AxiosHeaders,
+  RawAxiosRequestHeaders,
+  AxiosRequestHeaders,
+  RawAxiosResponseHeaders,
+  AxiosResponseHeaders,
+  AxiosRequestTransformer,
+  AxiosResponseTransformer,
+  AxiosAdapter,
+  AxiosBasicCredentials,
+  AxiosProxyConfig,
+  HttpStatusCode,
+  Method,
+  ResponseType,
+  responseEncoding,
+  TransitionalOptions,
+  GenericAbortSignal,
+  FormDataVisitorHelpers,
+  SerializerVisitor,
+  SerializerOptions,
+  FormSerializerOptions,
+  ParamEncoder,
+  CustomParamsSerializer,
+  ParamsSerializerOptions,
+  AxiosProgressEvent,
+  AddressFamily,
+  LookupAddressEntry,
+  LookupAddress,
+  AxiosRequestConfig,
+  RawAxiosRequestConfig,
+  InternalAxiosRequestConfig,
+  HeadersDefaults,
+  AxiosDefaults,
+  CreateAxiosDefaults,
+  AxiosResponse,
+  AxiosError,
+  CanceledError,
+  AxiosPromise,
+  CancelStatic,
+  Cancel,
+  Canceler,
+  CancelTokenStatic,
+  CancelToken,
+  CancelTokenSource,
+  AxiosInterceptorOptions,
+  AxiosInterceptorManager,
+  AxiosInstance,
+  GenericFormData,
+  GenericHTMLFormElement,
+  getAdapter,
+  toFormData,
+  formToJSON,
+  isAxiosError,
+  spread,
+  isCancel,
+  all,
+  mergeConfig,
+  AxiosStatic,
+};

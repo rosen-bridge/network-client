@@ -2,10 +2,16 @@ import originalAxios, {
   AxiosError,
   AxiosRequestConfig,
   AxiosResponse,
+  CanceledError,
+  CancelToken,
+  formToJSON,
+  getAdapter,
   InternalAxiosRequestConfig,
+  isCancel,
 } from 'axios';
 import { RateLimitedAxiosConfig } from './config';
 import { Rule } from './types';
+import pkg from '../package.json' assert { type: 'json' };
 
 declare module 'axios' {
   export interface InternalAxiosRequestConfig {
@@ -14,10 +20,29 @@ declare module 'axios' {
 }
 
 class RateLimitedAxios extends originalAxios.Axios {
+  VERSION = pkg.version;
   protected static releaseTimeoutMap = new Map<
     () => void,
     ReturnType<typeof setTimeout>
   >();
+  Axios = RateLimitedAxios;
+  RateLimitedAxiosConfig = RateLimitedAxiosConfig;
+  CanceledError = CanceledError;
+  CancelToken = {} as CancelToken;
+  isCancel = isCancel;
+  toFormData = originalAxios.toFormData;
+  AxiosError = originalAxios.AxiosError;
+  Cancel = CanceledError;
+  all = function all(promises: Promise<any>[]) {
+    return Promise.all(promises);
+  };
+  spread = originalAxios.spread;
+  isAxiosError = originalAxios.isAxiosError;
+  mergeConfig = originalAxios.mergeConfig;
+  AxiosHeaders = originalAxios.AxiosHeaders;
+  formToJSON = formToJSON;
+  getAdapter = getAdapter;
+  HttpStatusCode = originalAxios.HttpStatusCode;
 
   constructor(config?: AxiosRequestConfig) {
     super(
@@ -67,11 +92,13 @@ class RateLimitedAxios extends originalAxios.Axios {
     const url = config.url ?? '';
     const rule = RateLimitedAxios.getUrlRule(url);
 
+    config.meta = { release: undefined, startedTime: Date.now() };
+
     if (!rule) return config;
 
     const key = rule.pattern.toString();
     const release = await rule.semaphore.acquire();
-    config.meta = { release: release, startedTime: Date.now() };
+    config.meta.release = release;
 
     RateLimitedAxios.releaseTimeoutMap.set(
       release,
@@ -133,14 +160,4 @@ class RateLimitedAxios extends originalAxios.Axios {
   };
 }
 
-/**
- * Create a rate-limited axios instance
- * @param config
- * @returns
- */
-const create = (config: AxiosRequestConfig = {}) => {
-  const axiosInstance = new RateLimitedAxios(config);
-  return axiosInstance;
-};
-
-export { create, RateLimitedAxios, RateLimitedAxiosConfig };
+export { RateLimitedAxios, RateLimitedAxiosConfig };
