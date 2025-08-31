@@ -64,7 +64,7 @@ class RateLimitedAxios extends originalAxios.Axios {
    * @returns
    */
   protected static releaseQueue = (config: InternalAxiosRequestConfig) => {
-    const url = config.url ?? '';
+    const url = this.getFullAddress(config);
 
     if (config.meta.release) {
       const release = config.meta.release;
@@ -82,6 +82,18 @@ class RateLimitedAxios extends originalAxios.Axios {
   };
 
   /**
+   * get request config and return full URL address
+   *
+   * @param config
+   * @returns
+   */
+  protected static getFullAddress = (config: InternalAxiosRequestConfig) => {
+    return config.baseURL
+      ? originalAxios.getUri({ baseURL: config.baseURL, url: config.url })
+      : config.url ?? '';
+  };
+
+  /**
    * This function manages rate limiting for requests by matching URLs against regex patterns.
    * @param config
    * @returns
@@ -89,28 +101,62 @@ class RateLimitedAxios extends originalAxios.Axios {
   protected static interceptorForRequest = async (
     config: InternalAxiosRequestConfig
   ) => {
-    const url = config.url ?? '';
+    const url = this.getFullAddress(config);
+
     const rule = RateLimitedAxios.getUrlRule(url);
 
     config.meta = { release: undefined, startedTime: Date.now() };
 
     if (!rule) return config;
-
-    const key = rule.pattern.toString();
     const release = await rule.semaphore.acquire();
     config.meta.release = release;
 
     RateLimitedAxios.releaseTimeoutMap.set(
       release,
       setTimeout(() => {
+        const censoredUrl = RateLimitedAxios.censorUrl(rule.pattern, url);
         RateLimitedAxiosConfig.getLogger().debug(
-          `The response time has exceeded the defined limit for the ${key} URL pattern`
+          `The response time has exceeded the defined limit for the ${censoredUrl} URL.`
         );
         RateLimitedAxios.releaseQueue(config);
       }, rule.timeout * 1000)
     );
 
     return config;
+  };
+
+  /**
+   * Censors a URL by hiding its middle parts, keeping only
+   * the prefix (protocol + domain) and the last path segment.
+   *
+   * Example:
+   *   input:  https://example.com/users/12345/profile
+   *   output: https://example.com/*** /profile
+   *
+   * @param pattern regex pattern to match the URL
+   * @param url the URL to censor
+   * @returns censored version of the URL (or original if not matched)
+   */
+  protected static censorUrl = (pattern: RegExp, url: string): string => {
+    const match = url.match(pattern);
+    if (!match) return url;
+
+    try {
+      const parsed = new URL(url);
+      const parts = parsed.pathname.split('/').filter(Boolean);
+
+      if (parts.length <= 1) {
+        // nothing to censor, just return host
+        return parsed.origin;
+      }
+
+      const firstPart = `${parsed.origin}/***`;
+      const lastPart = url.slice(match[0].length);
+      return `${firstPart}${lastPart.startsWith('/') ? '' : '/'}${lastPart}`;
+    } catch {
+      // fallback if not a valid URL
+      return match[0];
+    }
   };
 
   /**
