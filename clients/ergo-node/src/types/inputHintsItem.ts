@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { CommitmentWithSecret } from './commitmentWithSecret';
 import { bigIntsCommitmentWithSecret } from './commitmentWithSecret';
@@ -14,4 +14,9 @@ import type { SecretProven } from './secretProven';
 import { bigIntsSecretProven } from './secretProven';
 
 export type InputHintsItem = CommitmentWithSecret | Commitment | SecretProven;
-export const bigIntsInputHintsItem = [];
+
+export const bigIntsInputHintsItem: Array<string> = [
+  ...bigIntsCommitmentWithSecret,
+  ...bigIntsCommitment,
+  ...bigIntsSecretProven,
+];

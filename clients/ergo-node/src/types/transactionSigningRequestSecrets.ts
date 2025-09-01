@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { DlogSecret } from './dlogSecret';
 import { bigIntsDlogSecret } from './dlogSecret';
@@ -21,7 +21,7 @@ export type TransactionSigningRequestSecrets = {
   dht?: DhtSecret[];
 };
 
-export const bigIntsTransactionSigningRequestSecrets = [
+export const bigIntsTransactionSigningRequestSecrets: Array<string> = [
   ...bigIntsDlogSecret.map((item) => (item === '' ? 'dlog' : `dlog.${item}`)),
   ...bigIntsDhtSecret.map((item) => (item === '' ? 'dht' : `dht.${item}`)),
 ];

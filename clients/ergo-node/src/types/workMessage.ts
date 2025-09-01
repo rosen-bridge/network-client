@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { ProofOfUpcomingTransactions } from './proofOfUpcomingTransactions';
 
@@ -22,7 +22,7 @@ export interface WorkMessage {
   proof?: ProofOfUpcomingTransactions;
 }
 
-export const bigIntsWorkMessage = [
+export const bigIntsWorkMessage: Array<string> = [
   ...bigIntsProofOfUpcomingTransactions.map((item) =>
     item === '' ? 'proof' : `proof.${item}`
   ),

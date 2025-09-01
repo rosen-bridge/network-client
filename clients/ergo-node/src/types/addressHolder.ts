@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { ErgoAddress } from './ergoAddress';
 
@@ -16,7 +16,7 @@ export interface AddressHolder {
   address: ErgoAddress;
 }
 
-export const bigIntsAddressHolder = [
+export const bigIntsAddressHolder: Array<string> = [
   ...bigIntsErgoAddress.map((item) =>
     item === '' ? 'address' : `address.${item}`
   ),

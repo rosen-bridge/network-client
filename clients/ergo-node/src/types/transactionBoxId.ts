@@ -3,11 +3,11 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 
 /**
  * Base16-encoded transaction box id bytes. Should be 32 bytes long
  */
 export type TransactionBoxId = string;
-export const bigIntsTransactionBoxId = [];
+export const bigIntsTransactionBoxId: Array<string> = [];

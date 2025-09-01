@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { SValue } from './sValue';
 
@@ -13,4 +13,4 @@ import { bigIntsSValue } from './sValue';
  * Variables to be put into context
  */
 export type SpendingProofExtension = { [key: string]: SValue };
-export const bigIntsSpendingProofExtension = [];
+export const bigIntsSpendingProofExtension: Array<string> = [];

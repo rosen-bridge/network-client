@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { IndexedErgoBox } from './indexedErgoBox';
 
@@ -16,7 +16,7 @@ export type GetBoxesByErgoTree200 = {
   total?: number;
 };
 
-export const bigIntsGetBoxesByErgoTree200 = [
+export const bigIntsGetBoxesByErgoTree200: Array<string> = [
   ...bigIntsIndexedErgoBox.map((item) =>
     item === '' ? 'items' : `items.${item}`
   ),

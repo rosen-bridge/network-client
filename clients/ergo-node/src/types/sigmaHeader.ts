@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { ModifierId } from './modifierId';
 import { bigIntsModifierId } from './modifierId';
@@ -49,7 +49,7 @@ export interface SigmaHeader {
   powDistance?: number;
 }
 
-export const bigIntsSigmaHeader = [
+export const bigIntsSigmaHeader: Array<string> = [
   ...bigIntsModifierId.map((item) => (item === '' ? 'id' : `id.${item}`)),
   ...bigIntsTimestamp.map((item) =>
     item === '' ? 'timestamp' : `timestamp.${item}`

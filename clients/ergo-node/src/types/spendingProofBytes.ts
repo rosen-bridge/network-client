@@ -3,11 +3,11 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 
 /**
  * Base16-encoded spending proofs
  */
 export type SpendingProofBytes = string;
-export const bigIntsSpendingProofBytes = [];
+export const bigIntsSpendingProofBytes: Array<string> = [];

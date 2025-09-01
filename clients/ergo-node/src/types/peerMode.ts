@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 
 export interface PeerMode {
@@ -11,4 +11,4 @@ export interface PeerMode {
   verifyingTransactions: boolean;
   fullBlocksSuffix: number;
 }
-export const bigIntsPeerMode = [];
+export const bigIntsPeerMode: Array<string> = [];

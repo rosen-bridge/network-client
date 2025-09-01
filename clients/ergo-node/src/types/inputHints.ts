@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { InputHintsItem } from './inputHintsItem';
 
@@ -15,4 +15,4 @@ import { bigIntsInputHintsItem } from './inputHintsItem';
 export interface InputHints {
   [key: string]: InputHintsItem[];
 }
-export const bigIntsInputHints = [];
+export const bigIntsInputHints: Array<string> = [];

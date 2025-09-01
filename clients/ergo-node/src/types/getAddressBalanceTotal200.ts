@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { BalanceInfo } from './balanceInfo';
 
@@ -14,7 +14,7 @@ export type GetAddressBalanceTotal200 = {
   unconfirmed?: BalanceInfo;
 };
 
-export const bigIntsGetAddressBalanceTotal200 = [
+export const bigIntsGetAddressBalanceTotal200: Array<string> = [
   ...bigIntsBalanceInfo.map((item) =>
     item === '' ? 'confirmed' : `confirmed.${item}`
   ),

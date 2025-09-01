@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { FeeHistogramBin } from './feeHistogramBin';
 
@@ -13,4 +13,4 @@ import { bigIntsFeeHistogramBin } from './feeHistogramBin';
  * Fee histogram for transactions in mempool
  */
 export type FeeHistogram = FeeHistogramBin[];
-export const bigIntsFeeHistogram = [...bigIntsFeeHistogramBin];
+export const bigIntsFeeHistogram: Array<string> = [...bigIntsFeeHistogramBin];

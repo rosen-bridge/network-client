@@ -3,11 +3,11 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 
 /**
  * Base16-encoded 32 byte digest
  */
 export type Digest32 = string;
-export const bigIntsDigest32 = [];
+export const bigIntsDigest32: Array<string> = [];

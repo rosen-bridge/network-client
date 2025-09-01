@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { PopowHeader } from './popowHeader';
 import { bigIntsPopowHeader } from './popowHeader';
@@ -23,7 +23,7 @@ export interface NipopowProof {
   suffixTail: BlockHeader[];
 }
 
-export const bigIntsNipopowProof = [
+export const bigIntsNipopowProof: Array<string> = [
   ...bigIntsPopowHeader.map((item) =>
     item === '' ? 'prefix' : `prefix.${item}`
   ),

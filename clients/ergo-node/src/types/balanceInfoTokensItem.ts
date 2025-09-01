@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { ModifierId } from './modifierId';
 
@@ -20,7 +20,7 @@ export type BalanceInfoTokensItem = {
   name?: string;
 };
 
-export const bigIntsBalanceInfoTokensItem = [
+export const bigIntsBalanceInfoTokensItem: Array<string> = [
   ...bigIntsModifierId.map((item) =>
     item === '' ? 'tokenId' : `tokenId.${item}`
   ),

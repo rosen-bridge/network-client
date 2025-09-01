@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { HexString } from './hexString';
 
@@ -22,7 +22,7 @@ export interface SigmaBoolean {
   condition?: boolean;
 }
 
-export const bigIntsSigmaBoolean = [
+export const bigIntsSigmaBoolean: Array<string> = [
   ...bigIntsHexString.map((item) => (item === '' ? 'h' : `h.${item}`)),
   ...bigIntsHexString.map((item) => (item === '' ? 'g' : `g.${item}`)),
   ...bigIntsHexString.map((item) => (item === '' ? 'u' : `u.${item}`)),

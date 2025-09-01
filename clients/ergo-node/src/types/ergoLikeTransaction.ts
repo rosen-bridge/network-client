@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { ModifierId } from './modifierId';
 import { bigIntsModifierId } from './modifierId';
@@ -22,7 +22,7 @@ export interface ErgoLikeTransaction {
   outputs: ErgoTransactionOutput[];
 }
 
-export const bigIntsErgoLikeTransaction = [
+export const bigIntsErgoLikeTransaction: Array<string> = [
   ...bigIntsModifierId.map((item) => (item === '' ? 'id' : `id.${item}`)),
   ...bigIntsErgoTransactionInput.map((item) =>
     item === '' ? 'inputs' : `inputs.${item}`

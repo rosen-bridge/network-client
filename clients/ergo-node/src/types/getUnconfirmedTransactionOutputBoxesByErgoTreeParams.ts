@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 
 export type GetUnconfirmedTransactionOutputBoxesByErgoTreeParams = {
@@ -16,4 +16,5 @@ export type GetUnconfirmedTransactionOutputBoxesByErgoTreeParams = {
    */
   offset?: number;
 };
-export const bigIntsGetUnconfirmedTransactionOutputBoxesByErgoTreeParams = [];
+export const bigIntsGetUnconfirmedTransactionOutputBoxesByErgoTreeParams: Array<string> =
+  [];

@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 
 export type SecretProvenHint =
@@ -14,4 +14,4 @@ export const SecretProvenHint = {
   proofReal: 'proofReal',
   proofSimulated: 'proofSimulated',
 } as const;
-export const bigIntsSecretProvenHint = [];
+export const bigIntsSecretProvenHint: Array<string> = [];

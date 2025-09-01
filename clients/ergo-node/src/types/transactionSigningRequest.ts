@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { UnsignedErgoTransaction } from './unsignedErgoTransaction';
 import { bigIntsUnsignedErgoTransaction } from './unsignedErgoTransaction';
@@ -29,7 +29,7 @@ export interface TransactionSigningRequest {
   secrets: TransactionSigningRequestSecrets;
 }
 
-export const bigIntsTransactionSigningRequest = [
+export const bigIntsTransactionSigningRequest: Array<string> = [
   ...bigIntsUnsignedErgoTransaction.map((item) =>
     item === '' ? 'tx' : `tx.${item}`
   ),

@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type {
   GetHeaderIdsParams,
@@ -17,9 +17,11 @@ import type {
   NodeInfo,
   TransactionId,
   ErgoTransaction,
-  Transactions,
+  TransactionsWithInputBoxes,
   GetUnconfirmedTransactionsParams,
+  ErgoTransactionWithInputBoxes,
   GetUnconfirmedTransactionsByErgoTreeParams,
+  IndexedErgoBox,
   ErgoTransactionOutput,
   GetUnconfirmedTransactionOutputBoxesByErgoTreeParams,
   Registers,
@@ -43,6 +45,7 @@ import type {
   UnlockWallet,
   WalletRescanBody,
   WalletStatus,
+  WalletUpdateChangeAddressBody,
   DeriveKeyResult,
   DeriveKey,
   DeriveNextKeyResult,
@@ -60,16 +63,18 @@ import type {
   TransactionSigningRequest,
   PaymentRequest,
   DlogSecret,
+  PrivateKeyRequest,
   WorkMessage,
+  Transactions,
   RewardAddress,
   RewardPubKey,
   PowSolutions,
   SerializedAdProof,
   TransactionBoxId,
-  IndexedErgoBox,
   SerializedBox,
+  SnapshotsInfo,
   AddressHolder,
-  SourceHolder,
+  CompileRequest,
   ErgoTreeObject,
   ScriptBytes,
   CryptoResult,
@@ -87,10 +92,11 @@ import type {
   EmissionInfo,
   EmissionScripts,
   GetIndexedHeight200,
+  IndexedFullBlock,
+  ModifierId,
   IndexedErgoTransaction,
   GetTxsByAddress200,
   GetTxsByAddressParams,
-  ModifierId,
   GetTxRangeParams,
   GetBoxesByTokenId200,
   GetBoxesByTokenIdParams,
@@ -98,6 +104,8 @@ import type {
   GetBoxesByAddress200,
   GetBoxesByAddressParams,
   GetBoxesByAddressUnspentParams,
+  GetBoxesByTemplateHashParams,
+  GetBoxesByTemplateHashUnspentParams,
   GetBoxRangeParams,
   GetBoxesByErgoTree200,
   GetBoxesByErgoTreeParams,
@@ -117,7 +125,9 @@ import {
   bigIntsNodeInfo,
   bigIntsTransactionId,
   bigIntsErgoTransaction,
-  bigIntsTransactions,
+  bigIntsTransactionsWithInputBoxes,
+  bigIntsErgoTransactionWithInputBoxes,
+  bigIntsIndexedErgoBox,
   bigIntsErgoTransactionOutput,
   bigIntsFeeHistogram,
   bigIntsPeer,
@@ -141,8 +151,8 @@ import {
   bigIntsRewardAddress,
   bigIntsRewardPubKey,
   bigIntsSerializedAdProof,
-  bigIntsIndexedErgoBox,
   bigIntsSerializedBox,
+  bigIntsSnapshotsInfo,
   bigIntsAddressHolder,
   bigIntsErgoTreeObject,
   bigIntsScriptBytes,
@@ -154,9 +164,10 @@ import {
   bigIntsEmissionInfo,
   bigIntsEmissionScripts,
   bigIntsGetIndexedHeight200,
+  bigIntsIndexedFullBlock,
+  bigIntsModifierId,
   bigIntsIndexedErgoTransaction,
   bigIntsGetTxsByAddress200,
-  bigIntsModifierId,
   bigIntsGetBoxesByTokenId200,
   bigIntsGetBoxesByAddress200,
   bigIntsGetBoxesByErgoTree200,
@@ -409,11 +420,13 @@ export const getErgoNodeAPI = (url: string) => {
   const getUnconfirmedTransactions = (
     params?: GetUnconfirmedTransactionsParams
   ) => {
-    return instance<Transactions>({
+    return instance<TransactionsWithInputBoxes>({
       url: `/transactions/unconfirmed`,
       method: 'get',
       params,
-      transformResponse: JsonFieldBigintFactory(bigIntsTransactions),
+      transformResponse: JsonFieldBigintFactory(
+        bigIntsTransactionsWithInputBoxes
+      ),
     });
   };
 
@@ -431,10 +444,34 @@ export const getErgoNodeAPI = (url: string) => {
    * @summary Get unconfirmed transaction from pool
    */
   const getUnconfirmedTransactionById = (txId: string) => {
-    return instance<ErgoTransaction>({
+    return instance<ErgoTransactionWithInputBoxes>({
       url: `/transactions/unconfirmed/byTransactionId/${txId}`,
       method: 'get',
-      transformResponse: JsonFieldBigintFactory(bigIntsErgoTransaction),
+      transformResponse: JsonFieldBigintFactory(
+        bigIntsErgoTransactionWithInputBoxes
+      ),
+    });
+  };
+
+  /**
+   * @summary Get list of unconfirmed transactions ids
+   */
+  const getUnconfirmedTxIds = () => {
+    return instance<string[]>({
+      url: `/transactions/unconfirmed/transactionIds`,
+      method: 'get',
+    });
+  };
+
+  /**
+   * @summary Get list of unconfirmed transactions by their ids
+   */
+  const getUnconfirmedTxsByIds = (getUnconfirmedTxsByIdsBody: string[]) => {
+    return instance<string[]>({
+      url: `/transactions/unconfirmed/byTransactionIds`,
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      data: getUnconfirmedTxsByIdsBody,
     });
   };
 
@@ -445,13 +482,15 @@ export const getErgoNodeAPI = (url: string) => {
     getUnconfirmedTransactionsByErgoTreeBody: string,
     params?: GetUnconfirmedTransactionsByErgoTreeParams
   ) => {
-    return instance<Transactions>({
+    return instance<ErgoTransactionWithInputBoxes>({
       url: `/transactions/unconfirmed/byErgoTree`,
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       data: getUnconfirmedTransactionsByErgoTreeBody,
       params,
-      transformResponse: JsonFieldBigintFactory(bigIntsTransactions),
+      transformResponse: JsonFieldBigintFactory(
+        bigIntsErgoTransactionWithInputBoxes
+      ),
     });
   };
 
@@ -459,10 +498,10 @@ export const getErgoNodeAPI = (url: string) => {
    * @summary Get input box from unconfirmed transactions in pool
    */
   const getUnconfirmedTransactionInputBoxById = (boxId: string) => {
-    return instance<ErgoTransactionOutput>({
+    return instance<IndexedErgoBox>({
       url: `/transactions/unconfirmed/inputs/byBoxId/${boxId}`,
       method: 'get',
-      transformResponse: JsonFieldBigintFactory(bigIntsErgoTransactionOutput),
+      transformResponse: JsonFieldBigintFactory(bigIntsIndexedErgoBox),
     });
   };
 
@@ -815,12 +854,14 @@ export const getErgoNodeAPI = (url: string) => {
   /**
    * @summary Update address to be used to send change to
    */
-  const walletUpdateChangeAddress = (ergoAddress: ErgoAddress) => {
+  const walletUpdateChangeAddress = (
+    walletUpdateChangeAddressBody: WalletUpdateChangeAddressBody
+  ) => {
     return instance<void>({
       url: `/wallet/updateChangeAddress`,
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
-      data: ergoAddress,
+      data: walletUpdateChangeAddressBody,
     });
   };
 
@@ -1031,12 +1072,12 @@ export const getErgoNodeAPI = (url: string) => {
   /**
    * @summary Get the private key corresponding to a known address
    */
-  const walletGetPrivateKey = (ergoAddress: ErgoAddress) => {
+  const walletGetPrivateKey = (privateKeyRequest: PrivateKeyRequest) => {
     return instance<DlogSecret>({
       url: `/wallet/getPrivateKey`,
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
-      data: ergoAddress,
+      data: privateKeyRequest,
       transformResponse: JsonFieldBigintFactory(bigIntsDlogSecret),
     });
   };
@@ -1115,13 +1156,13 @@ export const getErgoNodeAPI = (url: string) => {
   };
 
   /**
-   * @summary Retrieve a box by its id
+   * @summary Get box contents for a box by a unique identifier.
    */
   const getBoxById = (boxId: string) => {
-    return instance<IndexedErgoBox>({
-      url: `/blockchain/box/byId/${boxId}`,
+    return instance<ErgoTransactionOutput>({
+      url: `/utxo/byId/${boxId}`,
       method: 'get',
-      transformResponse: JsonFieldBigintFactory(bigIntsIndexedErgoBox),
+      transformResponse: JsonFieldBigintFactory(bigIntsErgoTransactionOutput),
     });
   };
 
@@ -1175,9 +1216,10 @@ export const getErgoNodeAPI = (url: string) => {
    * @summary Get information about locally stored UTXO snapshots
    */
   const getSnapshotsInfo = () => {
-    return instance<void>({
+    return instance<SnapshotsInfo>({
       url: `/utxo/getSnapshotsInfo`,
       method: 'get',
+      transformResponse: JsonFieldBigintFactory(bigIntsSnapshotsInfo),
     });
   };
 
@@ -1195,12 +1237,12 @@ export const getErgoNodeAPI = (url: string) => {
   /**
    * @summary Create P2SAddress from Sigma source
    */
-  const scriptP2SAddress = (sourceHolder: SourceHolder) => {
+  const scriptP2SAddress = (compileRequest: CompileRequest) => {
     return instance<AddressHolder>({
       url: `/script/p2sAddress`,
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
-      data: sourceHolder,
+      data: compileRequest,
       transformResponse: JsonFieldBigintFactory(bigIntsAddressHolder),
     });
   };
@@ -1208,12 +1250,12 @@ export const getErgoNodeAPI = (url: string) => {
   /**
    * @summary Create P2SHAddress from Sigma source
    */
-  const scriptP2SHAddress = (sourceHolder: SourceHolder) => {
+  const scriptP2SHAddress = (compileRequest: CompileRequest) => {
     return instance<AddressHolder>({
       url: `/script/p2shAddress`,
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
-      data: sourceHolder,
+      data: compileRequest,
       transformResponse: JsonFieldBigintFactory(bigIntsAddressHolder),
     });
   };
@@ -1425,6 +1467,30 @@ export const getErgoNodeAPI = (url: string) => {
   };
 
   /**
+   * @summary Get an indexed block by its header ID.
+   */
+  const getBlockByHeaderId = (headerId: ModifierId) => {
+    return instance<IndexedFullBlock>({
+      url: `/blockchain/block/byHeaderId/${headerId}`,
+      method: 'get',
+      transformResponse: JsonFieldBigintFactory(bigIntsIndexedFullBlock),
+    });
+  };
+
+  /**
+   * @summary Get an array of indexed blocks by their header IDs.
+   */
+  const getBlocksByHeaderIds = (modifierId: ModifierId[]) => {
+    return instance<IndexedFullBlock[]>({
+      url: `/blockchain/block/byHeaderIds`,
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      data: modifierId,
+      transformResponse: JsonFieldBigintFactory(bigIntsIndexedFullBlock),
+    });
+  };
+
+  /**
    * @summary Retrieve a transaction by its id
    */
   const getTxById = (txId: string) => {
@@ -1472,6 +1538,17 @@ export const getErgoNodeAPI = (url: string) => {
       method: 'get',
       params,
       transformResponse: JsonFieldBigintFactory(bigIntsModifierId),
+    });
+  };
+
+  /**
+   * @summary Retrieve a box by its id
+   */
+  const getIndexedBoxById = (boxId: string) => {
+    return instance<IndexedErgoBox>({
+      url: `/blockchain/box/byId/${boxId}`,
+      method: 'get',
+      transformResponse: JsonFieldBigintFactory(bigIntsIndexedErgoBox),
     });
   };
 
@@ -1551,6 +1628,36 @@ export const getErgoNodeAPI = (url: string) => {
   };
 
   /**
+   * @summary Retrieve boxes by their contract template hash
+   */
+  const getBoxesByTemplateHash = (
+    hash: ModifierId,
+    params?: GetBoxesByTemplateHashParams
+  ) => {
+    return instance<IndexedErgoBox[]>({
+      url: `/blockchain/box/byTemplateHash/${hash}`,
+      method: 'get',
+      params,
+      transformResponse: JsonFieldBigintFactory(bigIntsIndexedErgoBox),
+    });
+  };
+
+  /**
+   * @summary Retrieve unspent boxes by their contract template hash
+   */
+  const getBoxesByTemplateHashUnspent = (
+    hash: ModifierId,
+    params?: GetBoxesByTemplateHashUnspentParams
+  ) => {
+    return instance<IndexedErgoBox[]>({
+      url: `/blockchain/box/unspent/byTemplateHash/${hash}`,
+      method: 'get',
+      params,
+      transformResponse: JsonFieldBigintFactory(bigIntsIndexedErgoBox),
+    });
+  };
+
+  /**
    * @summary Get a range of box ids
    */
   const getBoxRange = (params?: GetBoxRangeParams) => {
@@ -1610,6 +1717,19 @@ export const getErgoNodeAPI = (url: string) => {
   };
 
   /**
+   * @summary Retrieve minting information about a list of tokens
+   */
+  const getTokensByIds = (getTokensByIdsBody: string[]) => {
+    return instance<IndexedToken[]>({
+      url: `/blockchain/tokens`,
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      data: getTokensByIdsBody,
+      transformResponse: JsonFieldBigintFactory(bigIntsIndexedToken),
+    });
+  };
+
+  /**
    * @summary Retrieve confirmed and unconfirmed balance of an address
    */
   const getAddressBalanceTotal = (getAddressBalanceTotalBody: string) => {
@@ -1648,6 +1768,8 @@ export const getErgoNodeAPI = (url: string) => {
     getUnconfirmedTransactions,
     checkUnconfirmedTransaction,
     getUnconfirmedTransactionById,
+    getUnconfirmedTxIds,
+    getUnconfirmedTxsByIds,
     getUnconfirmedTransactionsByErgoTree,
     getUnconfirmedTransactionInputBoxById,
     getUnconfirmedTransactionOutputBoxById,
@@ -1730,19 +1852,25 @@ export const getErgoNodeAPI = (url: string) => {
     emissionAt,
     emissionScripts,
     getIndexedHeight,
+    getBlockByHeaderId,
+    getBlocksByHeaderIds,
     getTxById,
     getTxByIndex,
     getTxsByAddress,
     getTxRange,
+    getIndexedBoxById,
     getBoxByIndex,
     getBoxesByTokenId,
     getBoxesByTokenIdUnspent,
     getBoxesByAddress,
     getBoxesByAddressUnspent,
+    getBoxesByTemplateHash,
+    getBoxesByTemplateHashUnspent,
     getBoxRange,
     getBoxesByErgoTree,
     getBoxesByErgoTreeUnspent,
     getTokenById,
+    getTokensByIds,
     getAddressBalanceTotal,
   };
 };
@@ -1836,6 +1964,14 @@ export type GetUnconfirmedTransactionByIdResult = NonNullable<
     ReturnType<
       ReturnType<typeof getErgoNodeAPI>['getUnconfirmedTransactionById']
     >
+  >
+>;
+export type GetUnconfirmedTxIdsResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getErgoNodeAPI>['getUnconfirmedTxIds']>>
+>;
+export type GetUnconfirmedTxsByIdsResult = NonNullable<
+  Awaited<
+    ReturnType<ReturnType<typeof getErgoNodeAPI>['getUnconfirmedTxsByIds']>
   >
 >;
 export type GetUnconfirmedTransactionsByErgoTreeResult = NonNullable<
@@ -2163,6 +2299,12 @@ export type EmissionScriptsResult = NonNullable<
 export type GetIndexedHeightResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getErgoNodeAPI>['getIndexedHeight']>>
 >;
+export type GetBlockByHeaderIdResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getErgoNodeAPI>['getBlockByHeaderId']>>
+>;
+export type GetBlocksByHeaderIdsResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getErgoNodeAPI>['getBlocksByHeaderIds']>>
+>;
 export type GetTxByIdResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getErgoNodeAPI>['getTxById']>>
 >;
@@ -2174,6 +2316,9 @@ export type GetTxsByAddressResult = NonNullable<
 >;
 export type GetTxRangeResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getErgoNodeAPI>['getTxRange']>>
+>;
+export type GetIndexedBoxByIdResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getErgoNodeAPI>['getIndexedBoxById']>>
 >;
 export type GetBoxByIndexResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getErgoNodeAPI>['getBoxByIndex']>>
@@ -2194,6 +2339,18 @@ export type GetBoxesByAddressUnspentResult = NonNullable<
     ReturnType<ReturnType<typeof getErgoNodeAPI>['getBoxesByAddressUnspent']>
   >
 >;
+export type GetBoxesByTemplateHashResult = NonNullable<
+  Awaited<
+    ReturnType<ReturnType<typeof getErgoNodeAPI>['getBoxesByTemplateHash']>
+  >
+>;
+export type GetBoxesByTemplateHashUnspentResult = NonNullable<
+  Awaited<
+    ReturnType<
+      ReturnType<typeof getErgoNodeAPI>['getBoxesByTemplateHashUnspent']
+    >
+  >
+>;
 export type GetBoxRangeResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getErgoNodeAPI>['getBoxRange']>>
 >;
@@ -2207,6 +2364,9 @@ export type GetBoxesByErgoTreeUnspentResult = NonNullable<
 >;
 export type GetTokenByIdResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getErgoNodeAPI>['getTokenById']>>
+>;
+export type GetTokensByIdsResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getErgoNodeAPI>['getTokensByIds']>>
 >;
 export type GetAddressBalanceTotalResult = NonNullable<
   Awaited<

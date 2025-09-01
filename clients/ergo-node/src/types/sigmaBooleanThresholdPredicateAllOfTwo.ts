@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { SigmaBoolean } from './sigmaBoolean';
 
@@ -12,6 +12,6 @@ import { bigIntsSigmaBoolean } from './sigmaBoolean';
 export type SigmaBooleanThresholdPredicateAllOfTwo = {
   args?: SigmaBoolean[];
 };
-export const bigIntsSigmaBooleanThresholdPredicateAllOfTwo = [
+export const bigIntsSigmaBooleanThresholdPredicateAllOfTwo: Array<string> = [
   ...bigIntsSigmaBoolean.map((item) => (item === '' ? 'args' : `args.${item}`)),
 ];

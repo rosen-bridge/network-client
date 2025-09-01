@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { RequestsHolderRequestsItem } from './requestsHolderRequestsItem';
 
@@ -23,7 +23,7 @@ export interface RequestsHolder {
   dataInputsRaw?: string[];
 }
 
-export const bigIntsRequestsHolder = [
+export const bigIntsRequestsHolder: Array<string> = [
   ...bigIntsRequestsHolderRequestsItem.map((item) =>
     item === '' ? 'requests' : `requests.${item}`
   ),

@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { BoxesRequestHolderTargetAssetsItemItem } from './boxesRequestHolderTargetAssetsItemItem';
 
@@ -19,7 +19,7 @@ export interface BoxesRequestHolder {
   targetBalance: bigint;
 }
 
-export const bigIntsBoxesRequestHolder = [
+export const bigIntsBoxesRequestHolder: Array<string> = [
   ...bigIntsBoxesRequestHolderTargetAssetsItemItem.map((item) =>
     item === '' ? 'targetAssets' : `targetAssets.${item}`
   ),
