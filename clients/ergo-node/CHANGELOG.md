@@ -1,8 +1,8 @@
 # @rosen-clients/ergo-node
 
-## 1.3.0
+## 2.0.0
 
-### Minor Changes
+### Major Changes
 
 - Update Ergo node api to version 6.0.1
 
