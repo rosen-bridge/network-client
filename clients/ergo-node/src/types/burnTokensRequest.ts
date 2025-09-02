@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { Asset } from './asset';
 
@@ -17,7 +17,7 @@ export interface BurnTokensRequest {
   assetsToBurn: Asset[];
 }
 
-export const bigIntsBurnTokensRequest = [
+export const bigIntsBurnTokensRequest: Array<string> = [
   ...bigIntsAsset.map((item) =>
     item === '' ? 'assetsToBurn' : `assetsToBurn.${item}`
   ),

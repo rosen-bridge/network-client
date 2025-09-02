@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { ScanningPredicate } from './scanningPredicate';
 import { bigIntsScanningPredicate } from './scanningPredicate';
@@ -18,7 +18,7 @@ export type EqualsPredicate = ScanningPredicate &
   unknown &
   EqualsPredicateAllOfTwo;
 
-export const bigIntsEqualsPredicate = [
+export const bigIntsEqualsPredicate: Array<string> = [
   ...bigIntsScanningPredicate,
   ...bigIntsEqualsPredicateAllOf,
   ...bigIntsEqualsPredicateAllOfTwo,

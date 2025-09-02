@@ -1,5 +1,16 @@
 # @rosen-clients/ergo-node
 
+## 2.0.0
+
+### Major Changes
+
+- Update Ergo node api to version 6.0.1
+
+### Patch Changes
+
+- Update dependencies
+  - @rosen-clients/axios@0.1.5
+
 ## 1.2.4
 
 ### Patch Changes

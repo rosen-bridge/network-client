@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 
 /**
@@ -15,4 +15,4 @@ export interface DlogCommitment {
   /** Hex-encoded "g" generator for the Diffie-Hellman tuple (secp256k1 curve point) */
   a: string;
 }
-export const bigIntsDlogCommitment = [];
+export const bigIntsDlogCommitment: Array<string> = [];

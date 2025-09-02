@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { BalanceInfoTokensItem } from './balanceInfoTokensItem';
 
@@ -19,7 +19,7 @@ export interface BalanceInfo {
   tokens: BalanceInfoTokensItem[];
 }
 
-export const bigIntsBalanceInfo = [
+export const bigIntsBalanceInfo: Array<string> = [
   'nanoErgs',
   ...bigIntsBalanceInfoTokensItem.map((item) =>
     item === '' ? 'tokens' : `tokens.${item}`

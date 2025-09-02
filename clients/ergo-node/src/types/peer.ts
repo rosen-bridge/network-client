@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { Timestamp } from './timestamp';
 import { bigIntsTimestamp } from './timestamp';
@@ -19,7 +19,7 @@ export interface Peer {
   connectionType?: PeerConnectionType;
 }
 
-export const bigIntsPeer = [
+export const bigIntsPeer: Array<string> = [
   ...bigIntsTimestamp.map((item) =>
     item === '' ? 'lastSeen' : `lastSeen.${item}`
   ),

@@ -3,10 +3,12 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { ExecuteScriptNamedConstants } from './executeScriptNamedConstants';
 import { bigIntsExecuteScriptNamedConstants } from './executeScriptNamedConstants';
+import type { ExecuteScriptTreeVersion } from './executeScriptTreeVersion';
+import { bigIntsExecuteScriptTreeVersion } from './executeScriptTreeVersion';
 import type { ErgoLikeContext } from './ergoLikeContext';
 
 import { bigIntsErgoLikeContext } from './ergoLikeContext';
@@ -16,13 +18,18 @@ export interface ExecuteScript {
   script: string;
   /** Environment for compiler */
   namedConstants: ExecuteScriptNamedConstants;
+  /** ErgoScript version to be used in compiler */
+  treeVersion: ExecuteScriptTreeVersion;
   /** Interpreter context */
   context: ErgoLikeContext;
 }
 
-export const bigIntsExecuteScript = [
+export const bigIntsExecuteScript: Array<string> = [
   ...bigIntsExecuteScriptNamedConstants.map((item) =>
     item === '' ? 'namedConstants' : `namedConstants.${item}`
+  ),
+  ...bigIntsExecuteScriptTreeVersion.map((item) =>
+    item === '' ? 'treeVersion' : `treeVersion.${item}`
   ),
   ...bigIntsErgoLikeContext.map((item) =>
     item === '' ? 'context' : `context.${item}`

@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { HexString } from './hexString';
 
@@ -12,6 +12,6 @@ import { bigIntsHexString } from './hexString';
 export interface ScriptBytes {
   bytes: HexString;
 }
-export const bigIntsScriptBytes = [
+export const bigIntsScriptBytes: Array<string> = [
   ...bigIntsHexString.map((item) => (item === '' ? 'bytes' : `bytes.${item}`)),
 ];

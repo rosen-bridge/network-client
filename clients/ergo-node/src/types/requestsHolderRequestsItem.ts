@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { PaymentRequest } from './paymentRequest';
 import { bigIntsPaymentRequest } from './paymentRequest';
@@ -17,4 +17,9 @@ export type RequestsHolderRequestsItem =
   | PaymentRequest
   | BurnTokensRequest
   | AssetIssueRequest;
-export const bigIntsRequestsHolderRequestsItem = [];
+
+export const bigIntsRequestsHolderRequestsItem: Array<string> = [
+  ...bigIntsPaymentRequest,
+  ...bigIntsBurnTokensRequest,
+  ...bigIntsAssetIssueRequest,
+];

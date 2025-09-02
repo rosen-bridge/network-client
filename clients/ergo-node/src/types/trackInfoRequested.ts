@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { RequestedInfoByModifierId } from './requestedInfoByModifierId';
 
@@ -13,4 +13,4 @@ import { bigIntsRequestedInfoByModifierId } from './requestedInfoByModifierId';
  * Currently requested modifiers
  */
 export type TrackInfoRequested = { [key: string]: RequestedInfoByModifierId };
-export const bigIntsTrackInfoRequested = [];
+export const bigIntsTrackInfoRequested: Array<string> = [];

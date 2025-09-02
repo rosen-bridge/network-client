@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 
 export interface RestoreWallet {
@@ -16,4 +16,4 @@ export interface RestoreWallet {
   /** use incorrect(previous) BIP32 key derivation (see https://github.com/ergoplatform/ergo/issues/1627 for details). It's recommended to set to 'true' if the original wallet was created by ergo node before v4.0.105. */
   usePre1627KeyDerivation: boolean;
 }
-export const bigIntsRestoreWallet = [];
+export const bigIntsRestoreWallet: Array<string> = [];

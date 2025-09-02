@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { Digest32 } from './digest32';
 
@@ -15,6 +15,6 @@ export interface AvlTreeData {
   keyLength?: number;
   valueLength?: number | null;
 }
-export const bigIntsAvlTreeData = [
+export const bigIntsAvlTreeData: Array<string> = [
   ...bigIntsDigest32.map((item) => (item === '' ? 'digest' : `digest.${item}`)),
 ];

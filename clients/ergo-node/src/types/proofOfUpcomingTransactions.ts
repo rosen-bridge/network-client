@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { MerkleProof } from './merkleProof';
 
@@ -19,7 +19,7 @@ export interface ProofOfUpcomingTransactions {
   txProofs: MerkleProof[];
 }
 
-export const bigIntsProofOfUpcomingTransactions = [
+export const bigIntsProofOfUpcomingTransactions: Array<string> = [
   ...bigIntsMerkleProof.map((item) =>
     item === '' ? 'txProofs' : `txProofs.${item}`
   ),

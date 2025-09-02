@@ -1,5 +1,12 @@
 # @rosen-clients/ergo-explorer
 
+## 1.1.7
+
+### Patch Changes
+
+- Update dependencies
+  - @rosen-clients/axios@0.1.5
+
 ## 1.1.6
 
 ### Patch Changes

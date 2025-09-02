@@ -3,11 +3,11 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 
 /**
  * Ergo blockchain protocol version
  */
 export type Version = number;
-export const bigIntsVersion = [];
+export const bigIntsVersion: Array<string> = [];

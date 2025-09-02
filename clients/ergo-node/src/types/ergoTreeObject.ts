@@ -3,11 +3,11 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 
 export interface ErgoTreeObject {
   /** serialized Ergo tree */
   tree?: string;
 }
-export const bigIntsErgoTreeObject = [];
+export const bigIntsErgoTreeObject: Array<string> = [];

@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { CommitmentHint } from './commitmentHint';
 import { bigIntsCommitmentHint } from './commitmentHint';
@@ -27,7 +27,7 @@ export interface Commitment {
   b?: string;
 }
 
-export const bigIntsCommitment = [
+export const bigIntsCommitment: Array<string> = [
   ...bigIntsCommitmentHint.map((item) =>
     item === '' ? 'hint' : `hint.${item}`
   ),

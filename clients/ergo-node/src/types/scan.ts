@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { ScanWalletInteraction } from './scanWalletInteraction';
 import { bigIntsScanWalletInteraction } from './scanWalletInteraction';
@@ -19,7 +19,7 @@ export interface Scan {
   trackingRule?: ScanningPredicate;
 }
 
-export const bigIntsScan = [
+export const bigIntsScan: Array<string> = [
   ...bigIntsScanWalletInteraction.map((item) =>
     item === '' ? 'walletInteraction' : `walletInteraction.${item}`
   ),

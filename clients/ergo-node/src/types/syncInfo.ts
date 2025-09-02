@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { PeerMode } from './peerMode';
 
@@ -17,6 +17,6 @@ export interface SyncInfo {
   status: string;
   height: number;
 }
-export const bigIntsSyncInfo = [
+export const bigIntsSyncInfo: Array<string> = [
   ...bigIntsPeerMode.map((item) => (item === '' ? 'mode' : `mode.${item}`)),
 ];

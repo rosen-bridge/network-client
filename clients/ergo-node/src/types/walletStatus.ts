@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 
 /**
@@ -21,4 +21,4 @@ export interface WalletStatus {
   /** last wallet error caught */
   error: string;
 }
-export const bigIntsWalletStatus = [];
+export const bigIntsWalletStatus: Array<string> = [];

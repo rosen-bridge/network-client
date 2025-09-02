@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 
 export type GetChainSliceParams = {
@@ -16,4 +16,4 @@ export type GetChainSliceParams = {
    */
   toHeight?: number;
 };
-export const bigIntsGetChainSliceParams = [];
+export const bigIntsGetChainSliceParams: Array<string> = [];

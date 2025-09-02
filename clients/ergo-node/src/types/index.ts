@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 
 export * from './aDDigest';
@@ -34,6 +34,7 @@ export * from './commitment';
 export * from './commitmentHint';
 export * from './commitmentType';
 export * from './commitmentWithSecret';
+export * from './compileRequest';
 export * from './connectedPeer';
 export * from './connectedPeerByModifierId';
 export * from './containsAssetPredicate';
@@ -56,6 +57,8 @@ export * from './equalsPredicate';
 export * from './equalsPredicateAllOf';
 export * from './equalsPredicateAllOfTwo';
 export * from './ergoAddress';
+export * from './ergoBoxWithSpendingProof';
+export * from './ergoBoxWithSpendingProofAllOf';
 export * from './ergoLikeContext';
 export * from './ergoLikeContextExtension';
 export * from './ergoLikeTransaction';
@@ -65,10 +68,12 @@ export * from './ergoTransactionInput';
 export * from './ergoTransactionOutput';
 export * from './ergoTransactionUnsignedInput';
 export * from './ergoTransactionUnsignedInputExtension';
+export * from './ergoTransactionWithInputBoxes';
 export * from './ergoTree';
 export * from './ergoTreeObject';
 export * from './executeScript';
 export * from './executeScriptNamedConstants';
+export * from './executeScriptTreeVersion';
 export * from './extension';
 export * from './feeHistogram';
 export * from './feeHistogramBin';
@@ -84,6 +89,8 @@ export * from './getBoxesByErgoTree200';
 export * from './getBoxesByErgoTreeParams';
 export * from './getBoxesByErgoTreeUnspent200';
 export * from './getBoxesByErgoTreeUnspentParams';
+export * from './getBoxesByTemplateHashParams';
+export * from './getBoxesByTemplateHashUnspentParams';
 export * from './getBoxesByTokenId200';
 export * from './getBoxesByTokenIdParams';
 export * from './getBoxesByTokenIdUnspentParams';
@@ -102,10 +109,13 @@ export * from './getUnconfirmedTransactionsByErgoTreeParams';
 export * from './getUnconfirmedTransactionsParams';
 export * from './hexString';
 export * from './hintExtractionRequest';
+export * from './indexedBlockTransactions';
 export * from './indexedErgoBox';
 export * from './indexedErgoBoxAllOf';
 export * from './indexedErgoTransaction';
+export * from './indexedFullBlock';
 export * from './indexedToken';
+export * from './indexedTransactions';
 export * from './initWallet';
 export * from './initWalletResult';
 export * from './inputHints';
@@ -132,6 +142,7 @@ export * from './peersStatus';
 export * from './popowHeader';
 export * from './powSolutions';
 export * from './preHeader';
+export * from './privateKeyRequest';
 export * from './proofOfUpcomingTransactions';
 export * from './registers';
 export * from './requestedInfo';
@@ -183,6 +194,7 @@ export * from './transactionId';
 export * from './transactionSigningRequest';
 export * from './transactionSigningRequestSecrets';
 export * from './transactions';
+export * from './transactionsWithInputBoxes';
 export * from './unlockWallet';
 export * from './unsignedErgoTransaction';
 export * from './version';
@@ -196,5 +208,6 @@ export * from './walletTransaction';
 export * from './walletTransactionsByScanIdParams';
 export * from './walletTransactionsParams';
 export * from './walletUnspentBoxesParams';
+export * from './walletUpdateChangeAddressBody';
 export * from './workMessage';
-export const bigInts = [];
+export const bigInts: Array<string> = [];

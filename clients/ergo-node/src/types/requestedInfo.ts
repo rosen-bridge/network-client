@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 
 export interface RequestedInfo {
@@ -12,4 +12,4 @@ export interface RequestedInfo {
   /** How many times we checked for modifier delivery status */
   checks: number;
 }
-export const bigIntsRequestedInfo = [];
+export const bigIntsRequestedInfo: Array<string> = [];

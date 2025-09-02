@@ -3,13 +3,15 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { ErgoAddress } from './ergoAddress';
 import { bigIntsErgoAddress } from './ergoAddress';
 import type { ModifierId } from './modifierId';
-
 import { bigIntsModifierId } from './modifierId';
+import type { SpendingProof } from './spendingProof';
+
+import { bigIntsSpendingProof } from './spendingProof';
 
 /**
  * Box indexed with extra information
@@ -22,16 +24,20 @@ export type IndexedErgoBoxAllOf = {
   spendingHeight: number | null;
   /** The height the transaction containing the box was included in a block at */
   inclusionHeight: number;
+  spendingProof?: SpendingProof;
   /** Global index of the output in the blockchain */
   globalIndex: bigint;
 };
 
-export const bigIntsIndexedErgoBoxAllOf = [
+export const bigIntsIndexedErgoBoxAllOf: Array<string> = [
   ...bigIntsErgoAddress.map((item) =>
     item === '' ? 'address' : `address.${item}`
   ),
   ...bigIntsModifierId.map((item) =>
     item === '' ? 'spentTransactionId' : `spentTransactionId.${item}`
+  ),
+  ...bigIntsSpendingProof.map((item) =>
+    item === '' ? 'spendingProof' : `spendingProof.${item}`
   ),
   'globalIndex',
 ];

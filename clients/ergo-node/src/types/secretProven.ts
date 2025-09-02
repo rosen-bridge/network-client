@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 import type { SecretProvenHint } from './secretProvenHint';
 import { bigIntsSecretProvenHint } from './secretProvenHint';
@@ -19,7 +19,7 @@ export interface SecretProven {
   position: string;
 }
 
-export const bigIntsSecretProven = [
+export const bigIntsSecretProven: Array<string> = [
   ...bigIntsSecretProvenHint.map((item) =>
     item === '' ? 'hint' : `hint.${item}`
   ),

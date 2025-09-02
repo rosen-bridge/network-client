@@ -1,5 +1,12 @@
 # @rosen-clients/cardano-koios
 
+## 2.1.4
+
+### Patch Changes
+
+- Update dependencies
+  - @rosen-clients/axios@0.1.5
+
 ## 2.1.3
 
 ### Patch Changes

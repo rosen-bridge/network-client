@@ -3,11 +3,11 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 5.0.22
+ * OpenAPI spec version: 6.0.1
  */
 
 /**
  * Base16-encoded ad proofs
  */
 export type SerializedAdProof = string;
-export const bigIntsSerializedAdProof = [];
+export const bigIntsSerializedAdProof: Array<string> = [];
