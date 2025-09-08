@@ -18,6 +18,6 @@ export interface AddressHolder {
 
 export const bigIntsAddressHolder: Array<string> = [
   ...bigIntsErgoAddress.map((item) =>
-    item === '' ? 'address' : `address.${item}`
+    item === '' ? 'address' : `address.${item}`,
   ),
 ];

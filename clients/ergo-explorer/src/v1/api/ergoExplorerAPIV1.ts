@@ -105,7 +105,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
 
   const getApiV1TransactionsByinputsscripttemplatehashP1 = (
     p1: string,
-    params?: GetApiV1TransactionsByinputsscripttemplatehashP1Params
+    params?: GetApiV1TransactionsByinputsscripttemplatehashP1Params,
   ) => {
     return instance<ItemsTransactionInfo>({
       url: `/api/v1/transactions/byInputsScriptTemplateHash/${p1}`,
@@ -119,7 +119,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
    * Get a stream of transactions ordered by global index
    */
   const getApiV1TransactionsByglobalindexStream = (
-    params: GetApiV1TransactionsByglobalindexStreamParams
+    params: GetApiV1TransactionsByglobalindexStreamParams,
   ) => {
     return instance<ListTransactionInfo>({
       url: `/api/v1/transactions/byGlobalIndex/stream`,
@@ -130,7 +130,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
   };
 
   const getApiV1BoxesUnspentBylastepochsStream = (
-    params: GetApiV1BoxesUnspentBylastepochsStreamParams
+    params: GetApiV1BoxesUnspentBylastepochsStreamParams,
   ) => {
     return instance<ListOutputInfo>({
       url: `/api/v1/boxes/unspent/byLastEpochs/stream`,
@@ -144,7 +144,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
    * Get a stream of unspent outputs ordered by global index
    */
   const getApiV1BoxesUnspentByglobalindexStream = (
-    params: GetApiV1BoxesUnspentByglobalindexStreamParams
+    params: GetApiV1BoxesUnspentByglobalindexStreamParams,
   ) => {
     return instance<ListOutputInfo>({
       url: `/api/v1/boxes/unspent/byGlobalIndex/stream`,
@@ -155,7 +155,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
   };
 
   const getApiV1BoxesUnspentStream = (
-    params: GetApiV1BoxesUnspentStreamParams
+    params: GetApiV1BoxesUnspentStreamParams,
   ) => {
     return instance<ListOutputInfo>({
       url: `/api/v1/boxes/unspent/stream`,
@@ -170,7 +170,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
    */
   const getApiV1BoxesByergotreetemplatehashP1Stream = (
     p1: string,
-    params: GetApiV1BoxesByergotreetemplatehashP1StreamParams
+    params: GetApiV1BoxesByergotreetemplatehashP1StreamParams,
   ) => {
     return instance<ListOutputInfo>({
       url: `/api/v1/boxes/byErgoTreeTemplateHash/${p1}/stream`,
@@ -182,7 +182,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
 
   const getApiV1BoxesUnspentByergotreetemplatehashP1Stream = (
     p1: string,
-    params: GetApiV1BoxesUnspentByergotreetemplatehashP1StreamParams
+    params: GetApiV1BoxesUnspentByergotreetemplatehashP1StreamParams,
   ) => {
     return instance<ListOutputInfo>({
       url: `/api/v1/boxes/unspent/byErgoTreeTemplateHash/${p1}/stream`,
@@ -194,7 +194,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
 
   const getApiV1BoxesUnspentBytokenidP1 = (
     p1: string,
-    params?: GetApiV1BoxesUnspentBytokenidP1Params
+    params?: GetApiV1BoxesUnspentBytokenidP1Params,
   ) => {
     return instance<ItemsOutputInfo>({
       url: `/api/v1/boxes/unspent/byTokenId/${p1}`,
@@ -206,7 +206,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
 
   const getApiV1BoxesBytokenidP1 = (
     p1: string,
-    params?: GetApiV1BoxesBytokenidP1Params
+    params?: GetApiV1BoxesBytokenidP1Params,
   ) => {
     return instance<ItemsOutputInfo>({
       url: `/api/v1/boxes/byTokenId/${p1}`,
@@ -226,7 +226,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
 
   const getApiV1BoxesByergotreeP1 = (
     p1: string,
-    params?: GetApiV1BoxesByergotreeP1Params
+    params?: GetApiV1BoxesByergotreeP1Params,
   ) => {
     return instance<ItemsOutputInfo>({
       url: `/api/v1/boxes/byErgoTree/${p1}`,
@@ -238,7 +238,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
 
   const getApiV1BoxesByergotreetemplatehashP1 = (
     p1: string,
-    params?: GetApiV1BoxesByergotreetemplatehashP1Params
+    params?: GetApiV1BoxesByergotreetemplatehashP1Params,
   ) => {
     return instance<ItemsOutputInfo>({
       url: `/api/v1/boxes/byErgoTreeTemplateHash/${p1}`,
@@ -250,7 +250,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
 
   const getApiV1BoxesUnspentByergotreeP1 = (
     p1: string,
-    params?: GetApiV1BoxesUnspentByergotreeP1Params
+    params?: GetApiV1BoxesUnspentByergotreeP1Params,
   ) => {
     return instance<ItemsOutputInfo>({
       url: `/api/v1/boxes/unspent/byErgoTree/${p1}`,
@@ -262,7 +262,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
 
   const getApiV1BoxesUnspentByergotreetemplatehashP1 = (
     p1: string,
-    params?: GetApiV1BoxesUnspentByergotreetemplatehashP1Params
+    params?: GetApiV1BoxesUnspentByergotreetemplatehashP1Params,
   ) => {
     return instance<ItemsOutputInfo>({
       url: `/api/v1/boxes/unspent/byErgoTreeTemplateHash/${p1}`,
@@ -274,7 +274,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
 
   const getApiV1BoxesByaddressP1 = (
     p1: string,
-    params?: GetApiV1BoxesByaddressP1Params
+    params?: GetApiV1BoxesByaddressP1Params,
   ) => {
     return instance<ItemsOutputInfo>({
       url: `/api/v1/boxes/byAddress/${p1}`,
@@ -286,7 +286,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
 
   const getApiV1BoxesUnspentUnconfirmedByaddressP1 = (
     p1: string,
-    params?: GetApiV1BoxesUnspentUnconfirmedByaddressP1Params
+    params?: GetApiV1BoxesUnspentUnconfirmedByaddressP1Params,
   ) => {
     return instance<MOutputInfo[]>({
       url: `/api/v1/boxes/unspent/unconfirmed/byAddress/${p1}`,
@@ -298,7 +298,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
 
   const getApiV1BoxesUnspentByaddressP1 = (
     p1: string,
-    params?: GetApiV1BoxesUnspentByaddressP1Params
+    params?: GetApiV1BoxesUnspentByaddressP1Params,
   ) => {
     return instance<ItemsOutputInfo>({
       url: `/api/v1/boxes/unspent/byAddress/${p1}`,
@@ -312,7 +312,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
    * Get a stream of outputs ordered by global index
    */
   const getApiV1BoxesByglobalindexStream = (
-    params: GetApiV1BoxesByglobalindexStreamParams
+    params: GetApiV1BoxesByglobalindexStreamParams,
   ) => {
     return instance<ListOutputInfo>({
       url: `/api/v1/boxes/byGlobalIndex/stream`,
@@ -327,7 +327,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
    */
   const postApiV1BoxesUnspentSearchUnion = (
     boxAssetsQuery: BoxAssetsQuery,
-    params?: PostApiV1BoxesUnspentSearchUnionParams
+    params?: PostApiV1BoxesUnspentSearchUnionParams,
   ) => {
     return instance<ItemsOutputInfo>({
       url: `/api/v1/boxes/unspent/search/union`,
@@ -344,7 +344,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
    */
   const postApiV1BoxesUnspentSearch = (
     boxQuery: BoxQuery,
-    params?: PostApiV1BoxesUnspentSearchParams
+    params?: PostApiV1BoxesUnspentSearchParams,
   ) => {
     return instance<ItemsOutputInfo>({
       url: `/api/v1/boxes/unspent/search`,
@@ -361,7 +361,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
    */
   const postApiV1BoxesSearch = (
     boxQuery: BoxQuery,
-    params?: PostApiV1BoxesSearchParams
+    params?: PostApiV1BoxesSearchParams,
   ) => {
     return instance<ItemsOutputInfo>({
       url: `/api/v1/boxes/search`,
@@ -427,7 +427,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
   };
 
   const getApiV1AssetsSearchBytokenid = (
-    params: GetApiV1AssetsSearchBytokenidParams
+    params: GetApiV1AssetsSearchBytokenidParams,
   ) => {
     return instance<ItemsAssetInfo>({
       url: `/api/v1/assets/search/byTokenId`,
@@ -447,7 +447,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
 
   const getApiV1AddressesP1Transactions = (
     p1: string,
-    params?: GetApiV1AddressesP1TransactionsParams
+    params?: GetApiV1AddressesP1TransactionsParams,
   ) => {
     return instance<ItemsTransactionInfo>({
       url: `/api/v1/addresses/${p1}/transactions`,
@@ -459,7 +459,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
 
   const getApiV1AddressesP1BalanceConfirmed = (
     p1: string,
-    params?: GetApiV1AddressesP1BalanceConfirmedParams
+    params?: GetApiV1AddressesP1BalanceConfirmedParams,
   ) => {
     return instance<Balance>({
       url: `/api/v1/addresses/${p1}/balance/confirmed`,
@@ -507,7 +507,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
    * Get a stream of blocks ordered by global index (height)
    */
   const getApiV1BlocksByglobalindexStream = (
-    params: GetApiV1BlocksByglobalindexStreamParams
+    params: GetApiV1BlocksByglobalindexStreamParams,
   ) => {
     return instance<ListBlockInfo>({
       url: `/api/v1/blocks/byGlobalIndex/stream`,
@@ -521,7 +521,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
    * Get a stream of block summaries ordered by global index (height)
    */
   const getApiV1BlocksStreamSummary = (
-    params?: GetApiV1BlocksStreamSummaryParams
+    params?: GetApiV1BlocksStreamSummaryParams,
   ) => {
     return instance<ListBlockSummaryV1>({
       url: `/api/v1/blocks/stream/summary`,
@@ -532,7 +532,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
   };
 
   const postApiV1MempoolTransactionsSubmit = (
-    postApiV1MempoolTransactionsSubmitBody: PostApiV1MempoolTransactionsSubmitBody
+    postApiV1MempoolTransactionsSubmitBody: PostApiV1MempoolTransactionsSubmitBody,
   ) => {
     return instance<TxIdResponse>({
       url: `/api/v1/mempool/transactions/submit`,
@@ -545,7 +545,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
 
   const getApiV1MempoolTransactionsByaddressP1 = (
     p1: string,
-    params?: GetApiV1MempoolTransactionsByaddressP1Params
+    params?: GetApiV1MempoolTransactionsByaddressP1Params,
   ) => {
     return instance<ItemsUTransactionInfo>({
       url: `/api/v1/mempool/transactions/byAddress/${p1}`,
@@ -594,7 +594,7 @@ export const getErgoExplorerAPIV1 = (url: string) => {
   };
 
   const postApiV1ErgotreeConvert = (
-    ergoTreeConversionRequest: ErgoTreeConversionRequest
+    ergoTreeConversionRequest: ErgoTreeConversionRequest,
   ) => {
     return instance<ErgoTreeHuman>({
       url: `/api/v1/ergotree/convert`,

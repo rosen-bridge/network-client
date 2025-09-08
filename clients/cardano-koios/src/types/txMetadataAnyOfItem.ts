@@ -150,6 +150,6 @@ export type TxMetadataAnyOfItem = {
 
 export const bigIntsTxMetadataAnyOfItem: Array<string> = [
   ...bigIntsTxMetadataAnyOfItemMetadata.map((item) =>
-    item === '' ? 'metadata' : `metadata.${item}`
+    item === '' ? 'metadata' : `metadata.${item}`,
   ),
 ];

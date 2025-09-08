@@ -160,6 +160,6 @@ export type BlockTxInfoItemOutputsItemReferenceScriptAnyOf = {
 export const bigIntsBlockTxInfoItemOutputsItemReferenceScriptAnyOf: Array<string> =
   [
     ...bigIntsBlockTxInfoItemOutputsItemReferenceScriptAnyOfValue.map((item) =>
-      item === '' ? 'value' : `value.${item}`
+      item === '' ? 'value' : `value.${item}`,
     ),
   ];

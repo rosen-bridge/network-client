@@ -220,51 +220,51 @@ export type VoterProposalListItem = {
 
 export const bigIntsVoterProposalListItem: Array<string> = [
   ...bigIntsVoterProposalListItemProposalType.map((item) =>
-    item === '' ? 'proposal_type' : `proposal_type.${item}`
+    item === '' ? 'proposal_type' : `proposal_type.${item}`,
   ),
   ...bigIntsVoterProposalListItemProposalDescription.map((item) =>
-    item === '' ? 'proposal_description' : `proposal_description.${item}`
+    item === '' ? 'proposal_description' : `proposal_description.${item}`,
   ),
   ...bigIntsVoterProposalListItemDeposit.map((item) =>
-    item === '' ? 'deposit' : `deposit.${item}`
+    item === '' ? 'deposit' : `deposit.${item}`,
   ),
   ...bigIntsVoterProposalListItemRatifiedEpoch.map((item) =>
-    item === '' ? 'ratified_epoch' : `ratified_epoch.${item}`
+    item === '' ? 'ratified_epoch' : `ratified_epoch.${item}`,
   ),
   ...bigIntsVoterProposalListItemEnactedEpoch.map((item) =>
-    item === '' ? 'enacted_epoch' : `enacted_epoch.${item}`
+    item === '' ? 'enacted_epoch' : `enacted_epoch.${item}`,
   ),
   ...bigIntsVoterProposalListItemDroppedEpoch.map((item) =>
-    item === '' ? 'dropped_epoch' : `dropped_epoch.${item}`
+    item === '' ? 'dropped_epoch' : `dropped_epoch.${item}`,
   ),
   ...bigIntsVoterProposalListItemExpiredEpoch.map((item) =>
-    item === '' ? 'expired_epoch' : `expired_epoch.${item}`
+    item === '' ? 'expired_epoch' : `expired_epoch.${item}`,
   ),
   ...bigIntsVoterProposalListItemExpiration.map((item) =>
-    item === '' ? 'expiration' : `expiration.${item}`
+    item === '' ? 'expiration' : `expiration.${item}`,
   ),
   ...bigIntsVoterProposalListItemMetaUrl.map((item) =>
-    item === '' ? 'meta_url' : `meta_url.${item}`
+    item === '' ? 'meta_url' : `meta_url.${item}`,
   ),
   ...bigIntsVoterProposalListItemMetaHash.map((item) =>
-    item === '' ? 'meta_hash' : `meta_hash.${item}`
+    item === '' ? 'meta_hash' : `meta_hash.${item}`,
   ),
   ...bigIntsVoterProposalListItemMetaJson.map((item) =>
-    item === '' ? 'meta_json' : `meta_json.${item}`
+    item === '' ? 'meta_json' : `meta_json.${item}`,
   ),
   ...bigIntsVoterProposalListItemMetaComment.map((item) =>
-    item === '' ? 'meta_comment' : `meta_comment.${item}`
+    item === '' ? 'meta_comment' : `meta_comment.${item}`,
   ),
   ...bigIntsVoterProposalListItemMetaLanguage.map((item) =>
-    item === '' ? 'meta_language' : `meta_language.${item}`
+    item === '' ? 'meta_language' : `meta_language.${item}`,
   ),
   ...bigIntsVoterProposalListItemMetaIsValid.map((item) =>
-    item === '' ? 'meta_is_valid' : `meta_is_valid.${item}`
+    item === '' ? 'meta_is_valid' : `meta_is_valid.${item}`,
   ),
   ...bigIntsVoterProposalListItemWithdrawal.map((item) =>
-    item === '' ? 'withdrawal' : `withdrawal.${item}`
+    item === '' ? 'withdrawal' : `withdrawal.${item}`,
   ),
   ...bigIntsVoterProposalListItemParamProposal.map((item) =>
-    item === '' ? 'param_proposal' : `param_proposal.${item}`
+    item === '' ? 'param_proposal' : `param_proposal.${item}`,
   ),
 ];

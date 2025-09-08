@@ -156,9 +156,9 @@ export type EpochInfoParams = {
 
 export const bigIntsEpochInfoParams: Array<string> = [
   ...bigInts_EpochNoParameter.map((item) =>
-    item === '' ? '_epoch_no' : `_epoch_no.${item}`
+    item === '' ? '_epoch_no' : `_epoch_no.${item}`,
   ),
   ...bigInts_IncludeNextEpochParameter.map((item) =>
-    item === '' ? '_include_next_epoch' : `_include_next_epoch.${item}`
+    item === '' ? '_include_next_epoch' : `_include_next_epoch.${item}`,
   ),
 ];

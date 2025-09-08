@@ -162,9 +162,9 @@ export type PoolRegistrationsItem = {
 
 export const bigIntsPoolRegistrationsItem: Array<string> = [
   ...bigIntsPoolRegistrationsItemBlockHeight.map((item) =>
-    item === '' ? 'block_height' : `block_height.${item}`
+    item === '' ? 'block_height' : `block_height.${item}`,
   ),
   ...bigIntsPoolRegistrationsItemActiveEpochNo.map((item) =>
-    item === '' ? 'active_epoch_no' : `active_epoch_no.${item}`
+    item === '' ? 'active_epoch_no' : `active_epoch_no.${item}`,
   ),
 ];

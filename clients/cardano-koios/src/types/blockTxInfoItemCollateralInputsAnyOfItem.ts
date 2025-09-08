@@ -172,21 +172,21 @@ export type BlockTxInfoItemCollateralInputsAnyOfItem = {
 
 export const bigIntsBlockTxInfoItemCollateralInputsAnyOfItem: Array<string> = [
   ...bigIntsBlockTxInfoItemCollateralInputsAnyOfItemPaymentAddr.map((item) =>
-    item === '' ? 'payment_addr' : `payment_addr.${item}`
+    item === '' ? 'payment_addr' : `payment_addr.${item}`,
   ),
   ...bigIntsBlockTxInfoItemCollateralInputsAnyOfItemStakeAddr.map((item) =>
-    item === '' ? 'stake_addr' : `stake_addr.${item}`
+    item === '' ? 'stake_addr' : `stake_addr.${item}`,
   ),
   ...bigIntsBlockTxInfoItemCollateralInputsAnyOfItemDatumHash.map((item) =>
-    item === '' ? 'datum_hash' : `datum_hash.${item}`
+    item === '' ? 'datum_hash' : `datum_hash.${item}`,
   ),
   ...bigIntsBlockTxInfoItemCollateralInputsAnyOfItemInlineDatum.map((item) =>
-    item === '' ? 'inline_datum' : `inline_datum.${item}`
+    item === '' ? 'inline_datum' : `inline_datum.${item}`,
   ),
   ...bigIntsBlockTxInfoItemCollateralInputsAnyOfItemReferenceScript.map(
-    (item) => (item === '' ? 'reference_script' : `reference_script.${item}`)
+    (item) => (item === '' ? 'reference_script' : `reference_script.${item}`),
   ),
   ...bigIntsBlockTxInfoItemCollateralInputsAnyOfItemAssetList.map((item) =>
-    item === '' ? 'asset_list' : `asset_list.${item}`
+    item === '' ? 'asset_list' : `asset_list.${item}`,
   ),
 ];

@@ -157,12 +157,12 @@ export type TxInfoItemPlutusContractsAnyOfItemInputRedeemer = {
 export const bigIntsTxInfoItemPlutusContractsAnyOfItemInputRedeemer: Array<string> =
   [
     ...bigIntsTxInfoItemPlutusContractsAnyOfItemInputRedeemerPurpose.map(
-      (item) => (item === '' ? 'purpose' : `purpose.${item}`)
+      (item) => (item === '' ? 'purpose' : `purpose.${item}`),
     ),
     ...bigIntsTxInfoItemPlutusContractsAnyOfItemInputRedeemerUnit.map((item) =>
-      item === '' ? 'unit' : `unit.${item}`
+      item === '' ? 'unit' : `unit.${item}`,
     ),
-    ...bigIntsTxInfoItemPlutusContractsAnyOfItemInputRedeemerDatum.map((item) =>
-      item === '' ? 'datum' : `datum.${item}`
+    ...bigIntsTxInfoItemPlutusContractsAnyOfItemInputRedeemerDatum.map(
+      (item) => (item === '' ? 'datum' : `datum.${item}`),
     ),
   ];

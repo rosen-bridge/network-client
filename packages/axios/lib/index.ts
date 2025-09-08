@@ -16,7 +16,7 @@ const transformBigInt = (obj: any, bigIntObj: any, field: string): any => {
       return transformBigInt(
         row,
         (bigIntObj as unknown as Array<JSON>)[index],
-        field
+        field,
       );
     }) as unknown as JSON;
   }
@@ -32,7 +32,7 @@ const transformBigInt = (obj: any, bigIntObj: any, field: string): any => {
       [subKeys[0]]: transformBigInt(
         obj[subKeys[0]],
         bigIntObj[subKeys[0]],
-        subKeys.slice(1).join('.')
+        subKeys.slice(1).join('.'),
       ),
     };
   }
@@ -55,7 +55,7 @@ export const JsonFieldBigintFactory = (fields: Array<string>) => {
 
 export const createAxiosInstanceWithHeaders = (
   url: string,
-  headers: { [key: string]: string }
+  headers: { [key: string]: string },
 ) => {
   const instance = rateLimitedAxios.create();
   instance.defaults.baseURL = url;

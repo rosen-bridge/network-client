@@ -172,21 +172,21 @@ export type BlockTxInfoItemReferenceInputsAnyOfItem = {
 
 export const bigIntsBlockTxInfoItemReferenceInputsAnyOfItem: Array<string> = [
   ...bigIntsBlockTxInfoItemReferenceInputsAnyOfItemPaymentAddr.map((item) =>
-    item === '' ? 'payment_addr' : `payment_addr.${item}`
+    item === '' ? 'payment_addr' : `payment_addr.${item}`,
   ),
   ...bigIntsBlockTxInfoItemReferenceInputsAnyOfItemStakeAddr.map((item) =>
-    item === '' ? 'stake_addr' : `stake_addr.${item}`
+    item === '' ? 'stake_addr' : `stake_addr.${item}`,
   ),
   ...bigIntsBlockTxInfoItemReferenceInputsAnyOfItemDatumHash.map((item) =>
-    item === '' ? 'datum_hash' : `datum_hash.${item}`
+    item === '' ? 'datum_hash' : `datum_hash.${item}`,
   ),
   ...bigIntsBlockTxInfoItemReferenceInputsAnyOfItemInlineDatum.map((item) =>
-    item === '' ? 'inline_datum' : `inline_datum.${item}`
+    item === '' ? 'inline_datum' : `inline_datum.${item}`,
   ),
-  ...bigIntsBlockTxInfoItemReferenceInputsAnyOfItemReferenceScript.map((item) =>
-    item === '' ? 'reference_script' : `reference_script.${item}`
+  ...bigIntsBlockTxInfoItemReferenceInputsAnyOfItemReferenceScript.map(
+    (item) => (item === '' ? 'reference_script' : `reference_script.${item}`),
   ),
   ...bigIntsBlockTxInfoItemReferenceInputsAnyOfItemAssetList.map((item) =>
-    item === '' ? 'asset_list' : `asset_list.${item}`
+    item === '' ? 'asset_list' : `asset_list.${item}`,
   ),
 ];

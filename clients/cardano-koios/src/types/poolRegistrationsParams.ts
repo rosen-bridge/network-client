@@ -150,6 +150,6 @@ export type PoolRegistrationsParams = {
 
 export const bigIntsPoolRegistrationsParams: Array<string> = [
   ...bigInts_PoolEpochNoParameter.map((item) =>
-    item === '' ? '_epoch_no' : `_epoch_no.${item}`
+    item === '' ? '_epoch_no' : `_epoch_no.${item}`,
   ),
 ];

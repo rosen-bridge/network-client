@@ -158,6 +158,6 @@ export type PoolBlocksItem = {
 
 export const bigIntsPoolBlocksItem: Array<string> = [
   ...bigIntsPoolBlocksItemBlockHeight.map((item) =>
-    item === '' ? 'block_height' : `block_height.${item}`
+    item === '' ? 'block_height' : `block_height.${item}`,
   ),
 ];

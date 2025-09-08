@@ -356,7 +356,7 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
       ? {
           Authorization: `Bearer ${authToken}`,
         }
-      : {}
+      : {},
   );
   /**
    * Get the tip info about the latest block seen by chain
@@ -680,7 +680,7 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
    * @summary Address UTXOs
    */
   const addressUtxos = (
-    paymentAddressesWithExtendedBody: PaymentAddressesWithExtendedBody
+    paymentAddressesWithExtendedBody: PaymentAddressesWithExtendedBody,
   ) => {
     return instance<UtxoInfos>({
       url: `/address_utxos`,
@@ -792,7 +792,7 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
    * @summary UTxOs for stake addresses (accounts)
    */
   const accountUtxos = (
-    stakeAddressesWithExtendedBody: StakeAddressesWithExtendedBody
+    stakeAddressesWithExtendedBody: StakeAddressesWithExtendedBody,
   ) => {
     return instance<UtxoInfos>({
       url: `/account_utxos`,
@@ -821,7 +821,7 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
    * @summary Account Rewards
    */
   const accountRewards = (
-    stakeAddressesWithEpochNoBody: StakeAddressesWithEpochNoBody
+    stakeAddressesWithEpochNoBody: StakeAddressesWithEpochNoBody,
   ) => {
     return instance<AccountRewards>({
       url: `/account_rewards`,
@@ -851,7 +851,7 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
    * @summary Account Addresses
    */
   const accountAddresses = (
-    stakeAddressesWithFirstOnlyAndEmptyBody: StakeAddressesWithFirstOnlyAndEmptyBody
+    stakeAddressesWithFirstOnlyAndEmptyBody: StakeAddressesWithFirstOnlyAndEmptyBody,
   ) => {
     return instance<AccountAddresses>({
       url: `/account_addresses`,
@@ -881,7 +881,7 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
    * @summary Account History
    */
   const accountHistory = (
-    stakeAddressesWithEpochNoBody: StakeAddressesWithEpochNoBody
+    stakeAddressesWithEpochNoBody: StakeAddressesWithEpochNoBody,
   ) => {
     return instance<AccountHistory>({
       url: `/account_history`,

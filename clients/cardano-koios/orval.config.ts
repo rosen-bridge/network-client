@@ -2,7 +2,7 @@ import { defineConfig } from 'orval';
 
 if (!process.env.SPEC_FILE)
   throw new Error(
-    'Do not run "generate-client-base". Use "generate-client" instead.'
+    'Do not run "generate-client-base". Use "generate-client" instead.',
   );
 
 export default defineConfig({

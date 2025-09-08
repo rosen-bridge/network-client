@@ -17,6 +17,6 @@ export interface SpendingProofInfo {
 
 export const bigIntsSpendingProofInfo = [
   ...bigIntsSpendingProofInfoExtension.map((item) =>
-    item === '' ? 'extension' : `extension.${item}`
+    item === '' ? 'extension' : `extension.${item}`,
   ),
 ];

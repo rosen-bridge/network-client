@@ -33,6 +33,6 @@ export const bigIntsBlockHeader = [
   'timestamp',
   'nBits',
   ...bigIntsBlockPowSolutions.map((item) =>
-    item === '' ? 'powSolutions' : `powSolutions.${item}`
+    item === '' ? 'powSolutions' : `powSolutions.${item}`,
   ),
 ];

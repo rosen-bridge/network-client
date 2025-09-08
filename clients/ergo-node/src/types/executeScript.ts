@@ -26,12 +26,12 @@ export interface ExecuteScript {
 
 export const bigIntsExecuteScript: Array<string> = [
   ...bigIntsExecuteScriptNamedConstants.map((item) =>
-    item === '' ? 'namedConstants' : `namedConstants.${item}`
+    item === '' ? 'namedConstants' : `namedConstants.${item}`,
   ),
   ...bigIntsExecuteScriptTreeVersion.map((item) =>
-    item === '' ? 'treeVersion' : `treeVersion.${item}`
+    item === '' ? 'treeVersion' : `treeVersion.${item}`,
   ),
   ...bigIntsErgoLikeContext.map((item) =>
-    item === '' ? 'context' : `context.${item}`
+    item === '' ? 'context' : `context.${item}`,
   ),
 ];

@@ -27,14 +27,14 @@ export interface PreHeader {
 
 export const bigIntsPreHeader: Array<string> = [
   ...bigIntsTimestamp.map((item) =>
-    item === '' ? 'timestamp' : `timestamp.${item}`
+    item === '' ? 'timestamp' : `timestamp.${item}`,
   ),
   ...bigIntsVersion.map((item) =>
-    item === '' ? 'version' : `version.${item}`
+    item === '' ? 'version' : `version.${item}`,
   ),
   'nBits',
   ...bigIntsModifierId.map((item) =>
-    item === '' ? 'parentId' : `parentId.${item}`
+    item === '' ? 'parentId' : `parentId.${item}`,
   ),
   ...bigIntsVotes.map((item) => (item === '' ? 'votes' : `votes.${item}`)),
 ];

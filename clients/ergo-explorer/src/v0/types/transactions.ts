@@ -27,9 +27,9 @@ export const bigIntsTransactions = [
   'confirmedBalance',
   'totalBalance',
   ...bigIntsAssetSummary.map((item) =>
-    item === '' ? 'confirmedTokensBalance' : `confirmedTokensBalance.${item}`
+    item === '' ? 'confirmedTokensBalance' : `confirmedTokensBalance.${item}`,
   ),
   ...bigIntsAssetSummary.map((item) =>
-    item === '' ? 'totalTokensBalance' : `totalTokensBalance.${item}`
+    item === '' ? 'totalTokensBalance' : `totalTokensBalance.${item}`,
   ),
 ];

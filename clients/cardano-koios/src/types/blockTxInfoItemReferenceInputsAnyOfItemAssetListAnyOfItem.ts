@@ -156,6 +156,6 @@ export type BlockTxInfoItemReferenceInputsAnyOfItemAssetListAnyOfItem = {
 export const bigIntsBlockTxInfoItemReferenceInputsAnyOfItemAssetListAnyOfItem: Array<string> =
   [
     ...bigIntsBlockTxInfoItemReferenceInputsAnyOfItemAssetListAnyOfItemAssetName.map(
-      (item) => (item === '' ? 'asset_name' : `asset_name.${item}`)
+      (item) => (item === '' ? 'asset_name' : `asset_name.${item}`),
     ),
   ];

@@ -156,9 +156,9 @@ export type AssetHistoryItem = {
 
 export const bigIntsAssetHistoryItem: Array<string> = [
   ...bigIntsAssetHistoryItemAssetName.map((item) =>
-    item === '' ? 'asset_name' : `asset_name.${item}`
+    item === '' ? 'asset_name' : `asset_name.${item}`,
   ),
   ...bigIntsAssetHistoryItemMintingTxs.map((item) =>
-    item === '' ? 'minting_txs' : `minting_txs.${item}`
+    item === '' ? 'minting_txs' : `minting_txs.${item}`,
   ),
 ];

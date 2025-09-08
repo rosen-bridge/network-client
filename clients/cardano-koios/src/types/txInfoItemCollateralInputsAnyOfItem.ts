@@ -172,21 +172,21 @@ export type TxInfoItemCollateralInputsAnyOfItem = {
 
 export const bigIntsTxInfoItemCollateralInputsAnyOfItem: Array<string> = [
   ...bigIntsTxInfoItemCollateralInputsAnyOfItemPaymentAddr.map((item) =>
-    item === '' ? 'payment_addr' : `payment_addr.${item}`
+    item === '' ? 'payment_addr' : `payment_addr.${item}`,
   ),
   ...bigIntsTxInfoItemCollateralInputsAnyOfItemStakeAddr.map((item) =>
-    item === '' ? 'stake_addr' : `stake_addr.${item}`
+    item === '' ? 'stake_addr' : `stake_addr.${item}`,
   ),
   ...bigIntsTxInfoItemCollateralInputsAnyOfItemDatumHash.map((item) =>
-    item === '' ? 'datum_hash' : `datum_hash.${item}`
+    item === '' ? 'datum_hash' : `datum_hash.${item}`,
   ),
   ...bigIntsTxInfoItemCollateralInputsAnyOfItemInlineDatum.map((item) =>
-    item === '' ? 'inline_datum' : `inline_datum.${item}`
+    item === '' ? 'inline_datum' : `inline_datum.${item}`,
   ),
   ...bigIntsTxInfoItemCollateralInputsAnyOfItemReferenceScript.map((item) =>
-    item === '' ? 'reference_script' : `reference_script.${item}`
+    item === '' ? 'reference_script' : `reference_script.${item}`,
   ),
   ...bigIntsTxInfoItemCollateralInputsAnyOfItemAssetList.map((item) =>
-    item === '' ? 'asset_list' : `asset_list.${item}`
+    item === '' ? 'asset_list' : `asset_list.${item}`,
   ),
 ];

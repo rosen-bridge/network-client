@@ -166,12 +166,12 @@ export type PoolVotesItem = {
 
 export const bigIntsPoolVotesItem: Array<string> = [
   ...bigIntsPoolVotesItemVote.map((item) =>
-    item === '' ? 'vote' : `vote.${item}`
+    item === '' ? 'vote' : `vote.${item}`,
   ),
   ...bigIntsPoolVotesItemMetaUrl.map((item) =>
-    item === '' ? 'meta_url' : `meta_url.${item}`
+    item === '' ? 'meta_url' : `meta_url.${item}`,
   ),
   ...bigIntsPoolVotesItemMetaHash.map((item) =>
-    item === '' ? 'meta_hash' : `meta_hash.${item}`
+    item === '' ? 'meta_hash' : `meta_hash.${item}`,
   ),
 ];

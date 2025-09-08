@@ -149,6 +149,6 @@ export type AccountUpdatesItem = {
 
 export const bigIntsAccountUpdatesItem: Array<string> = [
   ...bigIntsAccountUpdatesItemUpdatesItem.map((item) =>
-    item === '' ? 'updates' : `updates.${item}`
+    item === '' ? 'updates' : `updates.${item}`,
   ),
 ];

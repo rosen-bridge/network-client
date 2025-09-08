@@ -243,77 +243,77 @@ export type PoolInfoItem = {
 
 export const bigIntsPoolInfoItem: Array<string> = [
   ...bigIntsPoolInfoItemActiveEpochNo.map((item) =>
-    item === '' ? 'active_epoch_no' : `active_epoch_no.${item}`
+    item === '' ? 'active_epoch_no' : `active_epoch_no.${item}`,
   ),
   ...bigIntsPoolInfoItemVrfKeyHash.map((item) =>
-    item === '' ? 'vrf_key_hash' : `vrf_key_hash.${item}`
+    item === '' ? 'vrf_key_hash' : `vrf_key_hash.${item}`,
   ),
   ...bigIntsPoolInfoItemMargin.map((item) =>
-    item === '' ? 'margin' : `margin.${item}`
+    item === '' ? 'margin' : `margin.${item}`,
   ),
   ...bigIntsPoolInfoItemFixedCost.map((item) =>
-    item === '' ? 'fixed_cost' : `fixed_cost.${item}`
+    item === '' ? 'fixed_cost' : `fixed_cost.${item}`,
   ),
   ...bigIntsPoolInfoItemPledge.map((item) =>
-    item === '' ? 'pledge' : `pledge.${item}`
+    item === '' ? 'pledge' : `pledge.${item}`,
   ),
   ...bigIntsPoolInfoItemDeposit.map((item) =>
-    item === '' ? 'deposit' : `deposit.${item}`
+    item === '' ? 'deposit' : `deposit.${item}`,
   ),
   ...bigIntsPoolInfoItemRewardAddr.map((item) =>
-    item === '' ? 'reward_addr' : `reward_addr.${item}`
+    item === '' ? 'reward_addr' : `reward_addr.${item}`,
   ),
   ...bigIntsPoolInfoItemRewardAddrDelegatedDrep.map((item) =>
     item === ''
       ? 'reward_addr_delegated_drep'
-      : `reward_addr_delegated_drep.${item}`
+      : `reward_addr_delegated_drep.${item}`,
   ),
   ...bigIntsPoolInfoItemOwners.map((item) =>
-    item === '' ? 'owners' : `owners.${item}`
+    item === '' ? 'owners' : `owners.${item}`,
   ),
   ...bigIntsPoolInfoItemRelaysItem.map((item) =>
-    item === '' ? 'relays' : `relays.${item}`
+    item === '' ? 'relays' : `relays.${item}`,
   ),
   ...bigIntsPoolInfoItemMetaUrl.map((item) =>
-    item === '' ? 'meta_url' : `meta_url.${item}`
+    item === '' ? 'meta_url' : `meta_url.${item}`,
   ),
   ...bigIntsPoolInfoItemMetaHash.map((item) =>
-    item === '' ? 'meta_hash' : `meta_hash.${item}`
+    item === '' ? 'meta_hash' : `meta_hash.${item}`,
   ),
   ...bigIntsPoolInfoItemMetaJson.map((item) =>
-    item === '' ? 'meta_json' : `meta_json.${item}`
+    item === '' ? 'meta_json' : `meta_json.${item}`,
   ),
   ...bigIntsPoolInfoItemPoolStatus.map((item) =>
-    item === '' ? 'pool_status' : `pool_status.${item}`
+    item === '' ? 'pool_status' : `pool_status.${item}`,
   ),
   ...bigIntsPoolInfoItemRetiringEpoch.map((item) =>
-    item === '' ? 'retiring_epoch' : `retiring_epoch.${item}`
+    item === '' ? 'retiring_epoch' : `retiring_epoch.${item}`,
   ),
   ...bigIntsPoolInfoItemOpCert.map((item) =>
-    item === '' ? 'op_cert' : `op_cert.${item}`
+    item === '' ? 'op_cert' : `op_cert.${item}`,
   ),
   ...bigIntsPoolInfoItemOpCertCounter.map((item) =>
-    item === '' ? 'op_cert_counter' : `op_cert_counter.${item}`
+    item === '' ? 'op_cert_counter' : `op_cert_counter.${item}`,
   ),
   ...bigIntsPoolInfoItemActiveStake.map((item) =>
-    item === '' ? 'active_stake' : `active_stake.${item}`
+    item === '' ? 'active_stake' : `active_stake.${item}`,
   ),
   ...bigIntsPoolInfoItemSigma.map((item) =>
-    item === '' ? 'sigma' : `sigma.${item}`
+    item === '' ? 'sigma' : `sigma.${item}`,
   ),
   ...bigIntsPoolInfoItemBlockCount.map((item) =>
-    item === '' ? 'block_count' : `block_count.${item}`
+    item === '' ? 'block_count' : `block_count.${item}`,
   ),
   ...bigIntsPoolInfoItemLivePledge.map((item) =>
-    item === '' ? 'live_pledge' : `live_pledge.${item}`
+    item === '' ? 'live_pledge' : `live_pledge.${item}`,
   ),
   ...bigIntsPoolInfoItemLiveStake.map((item) =>
-    item === '' ? 'live_stake' : `live_stake.${item}`
+    item === '' ? 'live_stake' : `live_stake.${item}`,
   ),
   ...bigIntsPoolInfoItemLiveSaturation.map((item) =>
-    item === '' ? 'live_saturation' : `live_saturation.${item}`
+    item === '' ? 'live_saturation' : `live_saturation.${item}`,
   ),
   ...bigIntsPoolInfoItemVotingPower.map((item) =>
-    item === '' ? 'voting_power' : `voting_power.${item}`
+    item === '' ? 'voting_power' : `voting_power.${item}`,
   ),
 ];

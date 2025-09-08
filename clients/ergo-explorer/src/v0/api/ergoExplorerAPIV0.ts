@@ -60,7 +60,7 @@ export const getErgoExplorerAPIV0 = (url: string) => {
   const instance = createAxiosInstance(url);
   const getApiV0AddressesP1 = (
     p1: string,
-    params?: GetApiV0AddressesP1Params
+    params?: GetApiV0AddressesP1Params,
   ) => {
     return instance<AddressInfo>({
       url: `/api/v0/addresses/${p1}`,
@@ -72,7 +72,7 @@ export const getErgoExplorerAPIV0 = (url: string) => {
 
   const getApiV0AddressesP1Transactions = (
     p1: string,
-    params?: GetApiV0AddressesP1TransactionsParams
+    params?: GetApiV0AddressesP1TransactionsParams,
   ) => {
     return instance<ItemsTransactionInfo>({
       url: `/api/v0/addresses/${p1}/transactions`,
@@ -84,7 +84,7 @@ export const getErgoExplorerAPIV0 = (url: string) => {
 
   const getApiV0AddressesAssetholdersP1 = (
     p1: string,
-    params?: GetApiV0AddressesAssetholdersP1Params
+    params?: GetApiV0AddressesAssetholdersP1Params,
   ) => {
     return instance<string[]>({
       url: `/api/v0/addresses/assetHolders/${p1}`,
@@ -94,7 +94,7 @@ export const getErgoExplorerAPIV0 = (url: string) => {
   };
 
   const getApiV0AddressesBalances = (
-    params?: GetApiV0AddressesBalancesParams
+    params?: GetApiV0AddressesBalancesParams,
   ) => {
     return instance<ItemsBalanceInfo>({
       url: `/api/v0/addresses/balances`,
@@ -105,7 +105,7 @@ export const getErgoExplorerAPIV0 = (url: string) => {
   };
 
   const getApiV0AssetsIssuingboxes = (
-    params?: GetApiV0AssetsIssuingboxesParams
+    params?: GetApiV0AssetsIssuingboxesParams,
   ) => {
     return instance<ItemsOutputInfo>({
       url: `/api/v0/assets/issuingBoxes`,
@@ -152,7 +152,7 @@ export const getErgoExplorerAPIV0 = (url: string) => {
    */
   const getApiV0DexTokensP1Unspentsellorders = (
     p1: string,
-    params?: GetApiV0DexTokensP1UnspentsellordersParams
+    params?: GetApiV0DexTokensP1UnspentsellordersParams,
   ) => {
     return instance<DexSellOrderInfo[]>({
       url: `/api/v0/dex/tokens/${p1}/unspentSellOrders`,
@@ -167,7 +167,7 @@ export const getErgoExplorerAPIV0 = (url: string) => {
    */
   const getApiV0DexTokensP1Unspentbuyorders = (
     p1: string,
-    params?: GetApiV0DexTokensP1UnspentbuyordersParams
+    params?: GetApiV0DexTokensP1UnspentbuyordersParams,
   ) => {
     return instance<DexBuyOrderInfo[]>({
       url: `/api/v0/dex/tokens/${p1}/unspentBuyOrders`,
@@ -195,7 +195,7 @@ export const getErgoExplorerAPIV0 = (url: string) => {
 
   const getApiV0TransactionsUnconfirmedByaddressP1 = (
     p1: string,
-    params?: GetApiV0TransactionsUnconfirmedByaddressP1Params
+    params?: GetApiV0TransactionsUnconfirmedByaddressP1Params,
   ) => {
     return instance<ItemsUTransactionInfo>({
       url: `/api/v0/transactions/unconfirmed/byAddress/${p1}`,
@@ -206,7 +206,7 @@ export const getErgoExplorerAPIV0 = (url: string) => {
   };
 
   const getApiV0TransactionsUnconfirmed = (
-    params?: GetApiV0TransactionsUnconfirmedParams
+    params?: GetApiV0TransactionsUnconfirmedParams,
   ) => {
     return instance<ItemsUTransactionInfo>({
       url: `/api/v0/transactions/unconfirmed`,
@@ -218,7 +218,7 @@ export const getErgoExplorerAPIV0 = (url: string) => {
 
   const getApiV0TransactionsSinceP1 = (
     p1: number,
-    params?: GetApiV0TransactionsSinceP1Params
+    params?: GetApiV0TransactionsSinceP1Params,
   ) => {
     return instance<TransactionInfo[]>({
       url: `/api/v0/transactions/since/${p1}`,
@@ -229,7 +229,7 @@ export const getErgoExplorerAPIV0 = (url: string) => {
   };
 
   const postApiV0TransactionsSend = (
-    postApiV0TransactionsSendBody: PostApiV0TransactionsSendBody
+    postApiV0TransactionsSendBody: PostApiV0TransactionsSendBody,
   ) => {
     return instance<TxIdResponse>({
       url: `/api/v0/transactions/send`,

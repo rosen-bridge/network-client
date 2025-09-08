@@ -29,15 +29,15 @@ export interface FullBlock {
 
 export const bigIntsFullBlock: Array<string> = [
   ...bigIntsBlockHeader.map((item) =>
-    item === '' ? 'header' : `header.${item}`
+    item === '' ? 'header' : `header.${item}`,
   ),
   ...bigIntsBlockTransactions.map((item) =>
-    item === '' ? 'blockTransactions' : `blockTransactions.${item}`
+    item === '' ? 'blockTransactions' : `blockTransactions.${item}`,
   ),
   ...bigIntsBlockADProofs.map((item) =>
-    item === '' ? 'adProofs' : `adProofs.${item}`
+    item === '' ? 'adProofs' : `adProofs.${item}`,
   ),
   ...bigIntsExtension.map((item) =>
-    item === '' ? 'extension' : `extension.${item}`
+    item === '' ? 'extension' : `extension.${item}`,
   ),
 ];

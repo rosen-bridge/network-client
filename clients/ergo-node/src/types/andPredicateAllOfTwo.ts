@@ -15,6 +15,6 @@ export type AndPredicateAllOfTwo = {
 
 export const bigIntsAndPredicateAllOfTwo: Array<string> = [
   ...bigIntsScanningPredicate.map((item) =>
-    item === '' ? 'args' : `args.${item}`
+    item === '' ? 'args' : `args.${item}`,
   ),
 ];

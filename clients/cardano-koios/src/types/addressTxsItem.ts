@@ -154,6 +154,6 @@ export type AddressTxsItem = {
 
 export const bigIntsAddressTxsItem: Array<string> = [
   ...bigIntsAddressTxsItemBlockHeight.map((item) =>
-    item === '' ? 'block_height' : `block_height.${item}`
+    item === '' ? 'block_height' : `block_height.${item}`,
   ),
 ];

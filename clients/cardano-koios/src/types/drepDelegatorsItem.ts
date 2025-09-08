@@ -156,6 +156,6 @@ export type DrepDelegatorsItem = {
 
 export const bigIntsDrepDelegatorsItem: Array<string> = [
   ...bigIntsDrepDelegatorsItemScriptHash.map((item) =>
-    item === '' ? 'script_hash' : `script_hash.${item}`
+    item === '' ? 'script_hash' : `script_hash.${item}`,
   ),
 ];

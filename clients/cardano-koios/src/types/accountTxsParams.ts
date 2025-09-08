@@ -156,9 +156,9 @@ export type AccountTxsParams = {
 
 export const bigIntsAccountTxsParams: Array<string> = [
   ...bigInts_StakeAddressParameter.map((item) =>
-    item === '' ? '_stake_address' : `_stake_address.${item}`
+    item === '' ? '_stake_address' : `_stake_address.${item}`,
   ),
   ...bigInts_AfterBlockHeightParameter.map((item) =>
-    item === '' ? '_after_block_height' : `_after_block_height.${item}`
+    item === '' ? '_after_block_height' : `_after_block_height.${item}`,
   ),
 ];

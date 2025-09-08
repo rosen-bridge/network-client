@@ -168,15 +168,15 @@ export type ProposalVotesItem = {
 
 export const bigIntsProposalVotesItem: Array<string> = [
   ...bigIntsProposalVotesItemVoterRole.map((item) =>
-    item === '' ? 'voter_role' : `voter_role.${item}`
+    item === '' ? 'voter_role' : `voter_role.${item}`,
   ),
   ...bigIntsProposalVotesItemVote.map((item) =>
-    item === '' ? 'vote' : `vote.${item}`
+    item === '' ? 'vote' : `vote.${item}`,
   ),
   ...bigIntsProposalVotesItemMetaUrl.map((item) =>
-    item === '' ? 'meta_url' : `meta_url.${item}`
+    item === '' ? 'meta_url' : `meta_url.${item}`,
   ),
   ...bigIntsProposalVotesItemMetaHash.map((item) =>
-    item === '' ? 'meta_hash' : `meta_hash.${item}`
+    item === '' ? 'meta_hash' : `meta_hash.${item}`,
   ),
 ];

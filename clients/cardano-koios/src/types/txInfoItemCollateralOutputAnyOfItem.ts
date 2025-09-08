@@ -170,18 +170,18 @@ export type TxInfoItemCollateralOutputAnyOfItem = {
 
 export const bigIntsTxInfoItemCollateralOutputAnyOfItem: Array<string> = [
   ...bigIntsTxInfoItemCollateralOutputAnyOfItemPaymentAddr.map((item) =>
-    item === '' ? 'payment_addr' : `payment_addr.${item}`
+    item === '' ? 'payment_addr' : `payment_addr.${item}`,
   ),
   ...bigIntsTxInfoItemCollateralOutputAnyOfItemStakeAddr.map((item) =>
-    item === '' ? 'stake_addr' : `stake_addr.${item}`
+    item === '' ? 'stake_addr' : `stake_addr.${item}`,
   ),
   ...bigIntsTxInfoItemCollateralOutputAnyOfItemDatumHash.map((item) =>
-    item === '' ? 'datum_hash' : `datum_hash.${item}`
+    item === '' ? 'datum_hash' : `datum_hash.${item}`,
   ),
   ...bigIntsTxInfoItemCollateralOutputAnyOfItemInlineDatum.map((item) =>
-    item === '' ? 'inline_datum' : `inline_datum.${item}`
+    item === '' ? 'inline_datum' : `inline_datum.${item}`,
   ),
   ...bigIntsTxInfoItemCollateralOutputAnyOfItemReferenceScript.map((item) =>
-    item === '' ? 'reference_script' : `reference_script.${item}`
+    item === '' ? 'reference_script' : `reference_script.${item}`,
   ),
 ];

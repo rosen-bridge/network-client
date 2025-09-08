@@ -16,7 +16,7 @@ export interface DexSellOrderInfo {
 
 export const bigIntsDexSellOrderInfo = [
   ...bigIntsOutputInfo.map((item) =>
-    item === '' ? 'outputInfo' : `outputInfo.${item}`
+    item === '' ? 'outputInfo' : `outputInfo.${item}`,
   ),
   'amount',
 ];

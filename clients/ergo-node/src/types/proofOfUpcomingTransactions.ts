@@ -21,6 +21,6 @@ export interface ProofOfUpcomingTransactions {
 
 export const bigIntsProofOfUpcomingTransactions: Array<string> = [
   ...bigIntsMerkleProof.map((item) =>
-    item === '' ? 'txProofs' : `txProofs.${item}`
+    item === '' ? 'txProofs' : `txProofs.${item}`,
   ),
 ];

@@ -15,6 +15,6 @@ export interface ErgoTransactionDataInput {
 
 export const bigIntsErgoTransactionDataInput: Array<string> = [
   ...bigIntsTransactionBoxId.map((item) =>
-    item === '' ? 'boxId' : `boxId.${item}`
+    item === '' ? 'boxId' : `boxId.${item}`,
   ),
 ];

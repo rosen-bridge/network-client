@@ -159,6 +159,6 @@ export type UtxoInfosItemReferenceScriptAnyOf = {
 
 export const bigIntsUtxoInfosItemReferenceScriptAnyOf: Array<string> = [
   ...bigIntsUtxoInfosItemReferenceScriptAnyOfValue.map((item) =>
-    item === '' ? 'value' : `value.${item}`
+    item === '' ? 'value' : `value.${item}`,
   ),
 ];

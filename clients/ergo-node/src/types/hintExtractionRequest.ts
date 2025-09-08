@@ -31,6 +31,6 @@ export const bigIntsHintExtractionRequest: Array<string> = [
   ...bigIntsErgoTransaction.map((item) => (item === '' ? 'tx' : `tx.${item}`)),
   ...bigIntsSigmaBoolean.map((item) => (item === '' ? 'real' : `real.${item}`)),
   ...bigIntsSigmaBoolean.map((item) =>
-    item === '' ? 'simulated' : `simulated.${item}`
+    item === '' ? 'simulated' : `simulated.${item}`,
   ),
 ];

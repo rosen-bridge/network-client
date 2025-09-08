@@ -33,7 +33,6 @@ class RateLimitedAxios extends originalAxios.Axios {
   toFormData = originalAxios.toFormData;
   AxiosError = originalAxios.AxiosError;
   Cancel = CanceledError;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   all = function all(promises: Promise<any>[]) {
     return Promise.all(promises);
   };

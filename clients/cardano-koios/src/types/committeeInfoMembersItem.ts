@@ -162,12 +162,12 @@ export type CommitteeInfoMembersItem = {
 
 export const bigIntsCommitteeInfoMembersItem: Array<string> = [
   ...bigIntsCommitteeInfoMembersItemStatus.map((item) =>
-    item === '' ? 'status' : `status.${item}`
+    item === '' ? 'status' : `status.${item}`,
   ),
   ...bigIntsCommitteeInfoMembersItemCcHotHex.map((item) =>
-    item === '' ? 'cc_hot_hex' : `cc_hot_hex.${item}`
+    item === '' ? 'cc_hot_hex' : `cc_hot_hex.${item}`,
   ),
   ...bigIntsCommitteeInfoMembersItemCcHotHasScript.map((item) =>
-    item === '' ? 'cc_hot_has_script' : `cc_hot_has_script.${item}`
+    item === '' ? 'cc_hot_has_script' : `cc_hot_has_script.${item}`,
   ),
 ];

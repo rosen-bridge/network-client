@@ -160,6 +160,6 @@ export type AddressInfoItemUtxoSetItemReferenceScriptAnyOf = {
 export const bigIntsAddressInfoItemUtxoSetItemReferenceScriptAnyOf: Array<string> =
   [
     ...bigIntsAddressInfoItemUtxoSetItemReferenceScriptAnyOfValue.map((item) =>
-      item === '' ? 'value' : `value.${item}`
+      item === '' ? 'value' : `value.${item}`,
     ),
   ];

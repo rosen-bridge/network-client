@@ -149,6 +149,6 @@ export type AccountHistoryItem = {
 
 export const bigIntsAccountHistoryItem: Array<string> = [
   ...bigIntsAccountHistoryItemHistoryItem.map((item) =>
-    item === '' ? 'history' : `history.${item}`
+    item === '' ? 'history' : `history.${item}`,
   ),
 ];

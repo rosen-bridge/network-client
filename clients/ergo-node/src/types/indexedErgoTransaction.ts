@@ -46,19 +46,19 @@ export interface IndexedErgoTransaction {
 export const bigIntsIndexedErgoTransaction: Array<string> = [
   ...bigIntsTransactionId.map((item) => (item === '' ? 'id' : `id.${item}`)),
   ...bigIntsIndexedErgoBox.map((item) =>
-    item === '' ? 'inputs' : `inputs.${item}`
+    item === '' ? 'inputs' : `inputs.${item}`,
   ),
   ...bigIntsErgoTransactionDataInput.map((item) =>
-    item === '' ? 'dataInputs' : `dataInputs.${item}`
+    item === '' ? 'dataInputs' : `dataInputs.${item}`,
   ),
   ...bigIntsIndexedErgoBox.map((item) =>
-    item === '' ? 'outputs' : `outputs.${item}`
+    item === '' ? 'outputs' : `outputs.${item}`,
   ),
   ...bigIntsModifierId.map((item) =>
-    item === '' ? 'blockId' : `blockId.${item}`
+    item === '' ? 'blockId' : `blockId.${item}`,
   ),
   ...bigIntsTimestamp.map((item) =>
-    item === '' ? 'timestamp' : `timestamp.${item}`
+    item === '' ? 'timestamp' : `timestamp.${item}`,
   ),
   'globalIndex',
 ];

@@ -151,9 +151,9 @@ export type ScriptRedeemersItem = {
 
 export const bigIntsScriptRedeemersItem: Array<string> = [
   ...bigIntsScriptRedeemersItemScriptHash.map((item) =>
-    item === '' ? 'script_hash' : `script_hash.${item}`
+    item === '' ? 'script_hash' : `script_hash.${item}`,
   ),
   ...bigIntsScriptRedeemersItemRedeemersItem.map((item) =>
-    item === '' ? 'redeemers' : `redeemers.${item}`
+    item === '' ? 'redeemers' : `redeemers.${item}`,
   ),
 ];

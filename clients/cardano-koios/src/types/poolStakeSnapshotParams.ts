@@ -150,6 +150,6 @@ export type PoolStakeSnapshotParams = {
 
 export const bigIntsPoolStakeSnapshotParams: Array<string> = [
   ...bigInts_PoolBech32Parameter.map((item) =>
-    item === '' ? '_pool_bech32' : `_pool_bech32.${item}`
+    item === '' ? '_pool_bech32' : `_pool_bech32.${item}`,
   ),
 ];

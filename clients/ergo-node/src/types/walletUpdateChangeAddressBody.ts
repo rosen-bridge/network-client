@@ -15,6 +15,6 @@ export type WalletUpdateChangeAddressBody = {
 
 export const bigIntsWalletUpdateChangeAddressBody: Array<string> = [
   ...bigIntsErgoAddress.map((item) =>
-    item === '' ? 'address' : `address.${item}`
+    item === '' ? 'address' : `address.${item}`,
   ),
 ];

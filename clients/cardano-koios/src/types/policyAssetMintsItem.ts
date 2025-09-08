@@ -167,9 +167,9 @@ export type PolicyAssetMintsItem = {
 
 export const bigIntsPolicyAssetMintsItem: Array<string> = [
   ...bigIntsPolicyAssetMintsItemAssetName.map((item) =>
-    item === '' ? 'asset_name' : `asset_name.${item}`
+    item === '' ? 'asset_name' : `asset_name.${item}`,
   ),
   ...bigIntsPolicyAssetMintsItemMintingTxMetadataAllOf.map((item) =>
-    item === '' ? 'minting_tx_metadata' : `minting_tx_metadata.${item}`
+    item === '' ? 'minting_tx_metadata' : `minting_tx_metadata.${item}`,
   ),
 ];

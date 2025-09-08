@@ -201,42 +201,42 @@ export type PoolUpdatesItem = {
 
 export const bigIntsPoolUpdatesItem: Array<string> = [
   ...bigIntsPoolUpdatesItemActiveEpochNo.map((item) =>
-    item === '' ? 'active_epoch_no' : `active_epoch_no.${item}`
+    item === '' ? 'active_epoch_no' : `active_epoch_no.${item}`,
   ),
   ...bigIntsPoolUpdatesItemVrfKeyHash.map((item) =>
-    item === '' ? 'vrf_key_hash' : `vrf_key_hash.${item}`
+    item === '' ? 'vrf_key_hash' : `vrf_key_hash.${item}`,
   ),
   ...bigIntsPoolUpdatesItemMargin.map((item) =>
-    item === '' ? 'margin' : `margin.${item}`
+    item === '' ? 'margin' : `margin.${item}`,
   ),
   ...bigIntsPoolUpdatesItemFixedCost.map((item) =>
-    item === '' ? 'fixed_cost' : `fixed_cost.${item}`
+    item === '' ? 'fixed_cost' : `fixed_cost.${item}`,
   ),
   ...bigIntsPoolUpdatesItemPledge.map((item) =>
-    item === '' ? 'pledge' : `pledge.${item}`
+    item === '' ? 'pledge' : `pledge.${item}`,
   ),
   ...bigIntsPoolUpdatesItemRewardAddr.map((item) =>
-    item === '' ? 'reward_addr' : `reward_addr.${item}`
+    item === '' ? 'reward_addr' : `reward_addr.${item}`,
   ),
   ...bigIntsPoolUpdatesItemOwners.map((item) =>
-    item === '' ? 'owners' : `owners.${item}`
+    item === '' ? 'owners' : `owners.${item}`,
   ),
   ...bigIntsPoolUpdatesItemRelaysItem.map((item) =>
-    item === '' ? 'relays' : `relays.${item}`
+    item === '' ? 'relays' : `relays.${item}`,
   ),
   ...bigIntsPoolUpdatesItemMetaUrl.map((item) =>
-    item === '' ? 'meta_url' : `meta_url.${item}`
+    item === '' ? 'meta_url' : `meta_url.${item}`,
   ),
   ...bigIntsPoolUpdatesItemMetaHash.map((item) =>
-    item === '' ? 'meta_hash' : `meta_hash.${item}`
+    item === '' ? 'meta_hash' : `meta_hash.${item}`,
   ),
   ...bigIntsPoolUpdatesItemMetaJson.map((item) =>
-    item === '' ? 'meta_json' : `meta_json.${item}`
+    item === '' ? 'meta_json' : `meta_json.${item}`,
   ),
   ...bigIntsPoolUpdatesItemUpdateType.map((item) =>
-    item === '' ? 'update_type' : `update_type.${item}`
+    item === '' ? 'update_type' : `update_type.${item}`,
   ),
   ...bigIntsPoolUpdatesItemRetiringEpoch.map((item) =>
-    item === '' ? 'retiring_epoch' : `retiring_epoch.${item}`
+    item === '' ? 'retiring_epoch' : `retiring_epoch.${item}`,
   ),
 ];

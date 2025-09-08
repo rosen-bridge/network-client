@@ -155,6 +155,6 @@ export type TxInfoItemOutputsItemAssetListAnyOfItem = {
 
 export const bigIntsTxInfoItemOutputsItemAssetListAnyOfItem: Array<string> = [
   ...bigIntsTxInfoItemOutputsItemAssetListAnyOfItemAssetName.map((item) =>
-    item === '' ? 'asset_name' : `asset_name.${item}`
+    item === '' ? 'asset_name' : `asset_name.${item}`,
   ),
 ];

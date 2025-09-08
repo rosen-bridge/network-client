@@ -21,9 +21,9 @@ export interface SecretProven {
 
 export const bigIntsSecretProven: Array<string> = [
   ...bigIntsSecretProvenHint.map((item) =>
-    item === '' ? 'hint' : `hint.${item}`
+    item === '' ? 'hint' : `hint.${item}`,
   ),
   ...bigIntsSigmaBoolean.map((item) =>
-    item === '' ? 'pubkey' : `pubkey.${item}`
+    item === '' ? 'pubkey' : `pubkey.${item}`,
   ),
 ];

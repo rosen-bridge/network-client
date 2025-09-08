@@ -176,18 +176,18 @@ export type DrepUpdatesItem = {
 
 export const bigIntsDrepUpdatesItem: Array<string> = [
   ...bigIntsDrepUpdatesItemAction.map((item) =>
-    item === '' ? 'action' : `action.${item}`
+    item === '' ? 'action' : `action.${item}`,
   ),
   ...bigIntsDrepUpdatesItemDeposit.map((item) =>
-    item === '' ? 'deposit' : `deposit.${item}`
+    item === '' ? 'deposit' : `deposit.${item}`,
   ),
   ...bigIntsDrepUpdatesItemMetaUrl.map((item) =>
-    item === '' ? 'meta_url' : `meta_url.${item}`
+    item === '' ? 'meta_url' : `meta_url.${item}`,
   ),
   ...bigIntsDrepUpdatesItemMetaHash.map((item) =>
-    item === '' ? 'meta_hash' : `meta_hash.${item}`
+    item === '' ? 'meta_hash' : `meta_hash.${item}`,
   ),
   ...bigIntsDrepUpdatesItemMetaJson.map((item) =>
-    item === '' ? 'meta_json' : `meta_json.${item}`
+    item === '' ? 'meta_json' : `meta_json.${item}`,
   ),
 ];

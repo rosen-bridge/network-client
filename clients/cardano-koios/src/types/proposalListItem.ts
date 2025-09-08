@@ -220,51 +220,51 @@ export type ProposalListItem = {
 
 export const bigIntsProposalListItem: Array<string> = [
   ...bigIntsProposalListItemProposalType.map((item) =>
-    item === '' ? 'proposal_type' : `proposal_type.${item}`
+    item === '' ? 'proposal_type' : `proposal_type.${item}`,
   ),
   ...bigIntsProposalListItemProposalDescription.map((item) =>
-    item === '' ? 'proposal_description' : `proposal_description.${item}`
+    item === '' ? 'proposal_description' : `proposal_description.${item}`,
   ),
   ...bigIntsProposalListItemDeposit.map((item) =>
-    item === '' ? 'deposit' : `deposit.${item}`
+    item === '' ? 'deposit' : `deposit.${item}`,
   ),
   ...bigIntsProposalListItemRatifiedEpoch.map((item) =>
-    item === '' ? 'ratified_epoch' : `ratified_epoch.${item}`
+    item === '' ? 'ratified_epoch' : `ratified_epoch.${item}`,
   ),
   ...bigIntsProposalListItemEnactedEpoch.map((item) =>
-    item === '' ? 'enacted_epoch' : `enacted_epoch.${item}`
+    item === '' ? 'enacted_epoch' : `enacted_epoch.${item}`,
   ),
   ...bigIntsProposalListItemDroppedEpoch.map((item) =>
-    item === '' ? 'dropped_epoch' : `dropped_epoch.${item}`
+    item === '' ? 'dropped_epoch' : `dropped_epoch.${item}`,
   ),
   ...bigIntsProposalListItemExpiredEpoch.map((item) =>
-    item === '' ? 'expired_epoch' : `expired_epoch.${item}`
+    item === '' ? 'expired_epoch' : `expired_epoch.${item}`,
   ),
   ...bigIntsProposalListItemExpiration.map((item) =>
-    item === '' ? 'expiration' : `expiration.${item}`
+    item === '' ? 'expiration' : `expiration.${item}`,
   ),
   ...bigIntsProposalListItemMetaUrl.map((item) =>
-    item === '' ? 'meta_url' : `meta_url.${item}`
+    item === '' ? 'meta_url' : `meta_url.${item}`,
   ),
   ...bigIntsProposalListItemMetaHash.map((item) =>
-    item === '' ? 'meta_hash' : `meta_hash.${item}`
+    item === '' ? 'meta_hash' : `meta_hash.${item}`,
   ),
   ...bigIntsProposalListItemMetaJson.map((item) =>
-    item === '' ? 'meta_json' : `meta_json.${item}`
+    item === '' ? 'meta_json' : `meta_json.${item}`,
   ),
   ...bigIntsProposalListItemMetaComment.map((item) =>
-    item === '' ? 'meta_comment' : `meta_comment.${item}`
+    item === '' ? 'meta_comment' : `meta_comment.${item}`,
   ),
   ...bigIntsProposalListItemMetaLanguage.map((item) =>
-    item === '' ? 'meta_language' : `meta_language.${item}`
+    item === '' ? 'meta_language' : `meta_language.${item}`,
   ),
   ...bigIntsProposalListItemMetaIsValid.map((item) =>
-    item === '' ? 'meta_is_valid' : `meta_is_valid.${item}`
+    item === '' ? 'meta_is_valid' : `meta_is_valid.${item}`,
   ),
   ...bigIntsProposalListItemWithdrawal.map((item) =>
-    item === '' ? 'withdrawal' : `withdrawal.${item}`
+    item === '' ? 'withdrawal' : `withdrawal.${item}`,
   ),
   ...bigIntsProposalListItemParamProposal.map((item) =>
-    item === '' ? 'param_proposal' : `param_proposal.${item}`
+    item === '' ? 'param_proposal' : `param_proposal.${item}`,
   ),
 ];

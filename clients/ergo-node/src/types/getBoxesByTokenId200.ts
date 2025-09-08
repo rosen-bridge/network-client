@@ -18,6 +18,6 @@ export type GetBoxesByTokenId200 = {
 
 export const bigIntsGetBoxesByTokenId200: Array<string> = [
   ...bigIntsIndexedErgoBox.map((item) =>
-    item === '' ? 'items' : `items.${item}`
+    item === '' ? 'items' : `items.${item}`,
   ),
 ];

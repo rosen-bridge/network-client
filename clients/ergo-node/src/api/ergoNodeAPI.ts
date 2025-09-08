@@ -342,7 +342,7 @@ export const getErgoNodeAPI = (url: string) => {
   const getPopowProofByHeaderId = (
     minChainLength: number,
     suffixLength: number,
-    headerId: string
+    headerId: string,
   ) => {
     return instance<NipopowProof>({
       url: `/nipopow/proof/${minChainLength}/${suffixLength}/${headerId}`,
@@ -418,14 +418,14 @@ export const getErgoNodeAPI = (url: string) => {
    * @summary Get current pool of the unconfirmed transactions pool
    */
   const getUnconfirmedTransactions = (
-    params?: GetUnconfirmedTransactionsParams
+    params?: GetUnconfirmedTransactionsParams,
   ) => {
     return instance<TransactionsWithInputBoxes>({
       url: `/transactions/unconfirmed`,
       method: 'get',
       params,
       transformResponse: JsonFieldBigintFactory(
-        bigIntsTransactionsWithInputBoxes
+        bigIntsTransactionsWithInputBoxes,
       ),
     });
   };
@@ -448,7 +448,7 @@ export const getErgoNodeAPI = (url: string) => {
       url: `/transactions/unconfirmed/byTransactionId/${txId}`,
       method: 'get',
       transformResponse: JsonFieldBigintFactory(
-        bigIntsErgoTransactionWithInputBoxes
+        bigIntsErgoTransactionWithInputBoxes,
       ),
     });
   };
@@ -480,7 +480,7 @@ export const getErgoNodeAPI = (url: string) => {
    */
   const getUnconfirmedTransactionsByErgoTree = (
     getUnconfirmedTransactionsByErgoTreeBody: string,
-    params?: GetUnconfirmedTransactionsByErgoTreeParams
+    params?: GetUnconfirmedTransactionsByErgoTreeParams,
   ) => {
     return instance<ErgoTransactionWithInputBoxes>({
       url: `/transactions/unconfirmed/byErgoTree`,
@@ -489,7 +489,7 @@ export const getErgoNodeAPI = (url: string) => {
       data: getUnconfirmedTransactionsByErgoTreeBody,
       params,
       transformResponse: JsonFieldBigintFactory(
-        bigIntsErgoTransactionWithInputBoxes
+        bigIntsErgoTransactionWithInputBoxes,
       ),
     });
   };
@@ -521,7 +521,7 @@ export const getErgoNodeAPI = (url: string) => {
    */
   const getUnconfirmedTransactionOutputBoxesByErgoTree = (
     getUnconfirmedTransactionOutputBoxesByErgoTreeBody: string,
-    params?: GetUnconfirmedTransactionOutputBoxesByErgoTreeParams
+    params?: GetUnconfirmedTransactionOutputBoxesByErgoTreeParams,
   ) => {
     return instance<ErgoTransactionOutput[]>({
       url: `/transactions/unconfirmed/outputs/byErgoTree`,
@@ -549,7 +549,7 @@ export const getErgoNodeAPI = (url: string) => {
    */
   const getUnconfirmedTransactionOutputBoxesByRegisters = (
     registers: Registers,
-    params?: GetUnconfirmedTransactionOutputBoxesByRegistersParams
+    params?: GetUnconfirmedTransactionOutputBoxesByRegistersParams,
   ) => {
     return instance<ErgoTransactionOutput[]>({
       url: `/transactions/unconfirmed/outputs/byRegisters`,
@@ -855,7 +855,7 @@ export const getErgoNodeAPI = (url: string) => {
    * @summary Update address to be used to send change to
    */
   const walletUpdateChangeAddress = (
-    walletUpdateChangeAddressBody: WalletUpdateChangeAddressBody
+    walletUpdateChangeAddressBody: WalletUpdateChangeAddressBody,
   ) => {
     return instance<void>({
       url: `/wallet/updateChangeAddress`,
@@ -929,7 +929,7 @@ export const getErgoNodeAPI = (url: string) => {
    */
   const walletTransactionsByScanId = (
     scanId: number,
-    params?: WalletTransactionsByScanIdParams
+    params?: WalletTransactionsByScanIdParams,
   ) => {
     return instance<WalletTransaction[]>({
       url: `/wallet/transactionsByScanId/${scanId}`,
@@ -1015,7 +1015,7 @@ export const getErgoNodeAPI = (url: string) => {
    * @summary Generate unsigned transaction from array of requests.
    */
   const walletUnsignedTransactionGenerate = (
-    requestsHolder: RequestsHolder
+    requestsHolder: RequestsHolder,
   ) => {
     return instance<UnsignedErgoTransaction>({
       url: `/wallet/transaction/generateUnsigned`,
@@ -1030,7 +1030,7 @@ export const getErgoNodeAPI = (url: string) => {
    * @summary Sign arbitrary unsigned transaction with wallet secrets and also secrets provided.
    */
   const walletTransactionSign = (
-    transactionSigningRequest: TransactionSigningRequest
+    transactionSigningRequest: TransactionSigningRequest,
   ) => {
     return instance<ErgoTransaction>({
       url: `/wallet/transaction/sign`,
@@ -1058,7 +1058,7 @@ export const getErgoNodeAPI = (url: string) => {
    * @summary Generate and send payment transaction (default fee of 0.001 Erg is used)
    */
   const walletPaymentTransactionGenerateAndSend = (
-    paymentRequest: PaymentRequest[]
+    paymentRequest: PaymentRequest[],
   ) => {
     return instance<TransactionId>({
       url: `/wallet/payment/send`,
@@ -1097,7 +1097,7 @@ export const getErgoNodeAPI = (url: string) => {
    * @summary Request block candidate
    */
   const miningRequestBlockCandidateWithMandatoryTransactions = (
-    transactions: Transactions
+    transactions: Transactions,
   ) => {
     return instance<WorkMessage>({
       url: `/mining/candidateWithTxs`,
@@ -1337,7 +1337,7 @@ export const getErgoNodeAPI = (url: string) => {
    */
   const listUnspentScans = (
     scanId: number,
-    params?: ListUnspentScansParams
+    params?: ListUnspentScansParams,
   ) => {
     return instance<WalletBox[]>({
       url: `/scan/unspentBoxes/${scanId}`,
@@ -1389,7 +1389,7 @@ export const getErgoNodeAPI = (url: string) => {
    * @summary Generate signature commitments for inputs of an unsigned transaction
    */
   const generateCommitments = (
-    generateCommitmentsRequest: GenerateCommitmentsRequest
+    generateCommitmentsRequest: GenerateCommitmentsRequest,
   ) => {
     return instance<TransactionHintsBag>({
       url: `/wallet/generateCommitments`,
@@ -1517,7 +1517,7 @@ export const getErgoNodeAPI = (url: string) => {
    */
   const getTxsByAddress = (
     getTxsByAddressBody: string,
-    params?: GetTxsByAddressParams
+    params?: GetTxsByAddressParams,
   ) => {
     return instance<GetTxsByAddress200>({
       url: `/blockchain/transaction/byAddress`,
@@ -1568,7 +1568,7 @@ export const getErgoNodeAPI = (url: string) => {
    */
   const getBoxesByTokenId = (
     tokenId: ModifierId,
-    params?: GetBoxesByTokenIdParams
+    params?: GetBoxesByTokenIdParams,
   ) => {
     return instance<GetBoxesByTokenId200>({
       url: `/blockchain/box/byTokenId/${tokenId}`,
@@ -1583,7 +1583,7 @@ export const getErgoNodeAPI = (url: string) => {
    */
   const getBoxesByTokenIdUnspent = (
     tokenId: ModifierId,
-    params?: GetBoxesByTokenIdUnspentParams
+    params?: GetBoxesByTokenIdUnspentParams,
   ) => {
     return instance<IndexedErgoBox[]>({
       url: `/blockchain/box/unspent/byTokenId/${tokenId}`,
@@ -1598,7 +1598,7 @@ export const getErgoNodeAPI = (url: string) => {
    */
   const getBoxesByAddress = (
     getBoxesByAddressBody: string,
-    params?: GetBoxesByAddressParams
+    params?: GetBoxesByAddressParams,
   ) => {
     return instance<GetBoxesByAddress200>({
       url: `/blockchain/box/byAddress`,
@@ -1615,7 +1615,7 @@ export const getErgoNodeAPI = (url: string) => {
    */
   const getBoxesByAddressUnspent = (
     getBoxesByAddressUnspentBody: string,
-    params?: GetBoxesByAddressUnspentParams
+    params?: GetBoxesByAddressUnspentParams,
   ) => {
     return instance<IndexedErgoBox[]>({
       url: `/blockchain/box/unspent/byAddress`,
@@ -1632,7 +1632,7 @@ export const getErgoNodeAPI = (url: string) => {
    */
   const getBoxesByTemplateHash = (
     hash: ModifierId,
-    params?: GetBoxesByTemplateHashParams
+    params?: GetBoxesByTemplateHashParams,
   ) => {
     return instance<IndexedErgoBox[]>({
       url: `/blockchain/box/byTemplateHash/${hash}`,
@@ -1647,7 +1647,7 @@ export const getErgoNodeAPI = (url: string) => {
    */
   const getBoxesByTemplateHashUnspent = (
     hash: ModifierId,
-    params?: GetBoxesByTemplateHashUnspentParams
+    params?: GetBoxesByTemplateHashUnspentParams,
   ) => {
     return instance<IndexedErgoBox[]>({
       url: `/blockchain/box/unspent/byTemplateHash/${hash}`,
@@ -1674,7 +1674,7 @@ export const getErgoNodeAPI = (url: string) => {
    */
   const getBoxesByErgoTree = (
     getBoxesByErgoTreeBody: string,
-    params?: GetBoxesByErgoTreeParams
+    params?: GetBoxesByErgoTreeParams,
   ) => {
     return instance<GetBoxesByErgoTree200>({
       url: `/blockchain/box/byErgoTree`,
@@ -1691,7 +1691,7 @@ export const getErgoNodeAPI = (url: string) => {
    */
   const getBoxesByErgoTreeUnspent = (
     getBoxesByErgoTreeUnspentBody: string,
-    params?: GetBoxesByErgoTreeUnspentParams
+    params?: GetBoxesByErgoTreeUnspentParams,
   ) => {
     return instance<GetBoxesByErgoTreeUnspent200>({
       url: `/blockchain/box/unspent/byErgoTree`,
@@ -1700,7 +1700,7 @@ export const getErgoNodeAPI = (url: string) => {
       data: getBoxesByErgoTreeUnspentBody,
       params,
       transformResponse: JsonFieldBigintFactory(
-        bigIntsGetBoxesByErgoTreeUnspent200
+        bigIntsGetBoxesByErgoTreeUnspent200,
       ),
     });
   };
@@ -1739,7 +1739,7 @@ export const getErgoNodeAPI = (url: string) => {
       headers: { 'Content-Type': 'application/json' },
       data: getAddressBalanceTotalBody,
       transformResponse: JsonFieldBigintFactory(
-        bigIntsGetAddressBalanceTotal200
+        bigIntsGetAddressBalanceTotal200,
       ),
     });
   };

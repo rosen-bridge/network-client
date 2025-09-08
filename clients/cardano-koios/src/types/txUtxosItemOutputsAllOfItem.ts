@@ -156,9 +156,9 @@ export type TxUtxosItemOutputsAllOfItem = {
 
 export const bigIntsTxUtxosItemOutputsAllOfItem: Array<string> = [
   ...bigIntsTxUtxosItemOutputsAllOfItemPaymentAddr.map((item) =>
-    item === '' ? 'payment_addr' : `payment_addr.${item}`
+    item === '' ? 'payment_addr' : `payment_addr.${item}`,
   ),
   ...bigIntsTxUtxosItemOutputsAllOfItemStakeAddr.map((item) =>
-    item === '' ? 'stake_addr' : `stake_addr.${item}`
+    item === '' ? 'stake_addr' : `stake_addr.${item}`,
   ),
 ];

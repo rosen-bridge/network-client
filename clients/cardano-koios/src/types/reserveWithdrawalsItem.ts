@@ -164,6 +164,6 @@ export type ReserveWithdrawalsItem = {
 
 export const bigIntsReserveWithdrawalsItem: Array<string> = [
   ...bigIntsReserveWithdrawalsItemBlockHeight.map((item) =>
-    item === '' ? 'block_height' : `block_height.${item}`
+    item === '' ? 'block_height' : `block_height.${item}`,
   ),
 ];

@@ -17,9 +17,9 @@ export interface AddressInfo {
 
 export const bigIntsAddressInfo = [
   ...bigIntsSummary.map((item) =>
-    item === '' ? 'summary' : `summary.${item}`
+    item === '' ? 'summary' : `summary.${item}`,
   ),
   ...bigIntsTransactions.map((item) =>
-    item === '' ? 'transactions' : `transactions.${item}`
+    item === '' ? 'transactions' : `transactions.${item}`,
   ),
 ];

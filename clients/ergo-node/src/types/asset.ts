@@ -20,7 +20,7 @@ export interface Asset {
 
 export const bigIntsAsset: Array<string> = [
   ...bigIntsDigest32.map((item) =>
-    item === '' ? 'tokenId' : `tokenId.${item}`
+    item === '' ? 'tokenId' : `tokenId.${item}`,
   ),
   'amount',
 ];

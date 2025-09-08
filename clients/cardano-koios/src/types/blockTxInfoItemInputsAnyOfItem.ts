@@ -172,21 +172,21 @@ export type BlockTxInfoItemInputsAnyOfItem = {
 
 export const bigIntsBlockTxInfoItemInputsAnyOfItem: Array<string> = [
   ...bigIntsBlockTxInfoItemInputsAnyOfItemPaymentAddr.map((item) =>
-    item === '' ? 'payment_addr' : `payment_addr.${item}`
+    item === '' ? 'payment_addr' : `payment_addr.${item}`,
   ),
   ...bigIntsBlockTxInfoItemInputsAnyOfItemStakeAddr.map((item) =>
-    item === '' ? 'stake_addr' : `stake_addr.${item}`
+    item === '' ? 'stake_addr' : `stake_addr.${item}`,
   ),
   ...bigIntsBlockTxInfoItemInputsAnyOfItemDatumHash.map((item) =>
-    item === '' ? 'datum_hash' : `datum_hash.${item}`
+    item === '' ? 'datum_hash' : `datum_hash.${item}`,
   ),
   ...bigIntsBlockTxInfoItemInputsAnyOfItemInlineDatum.map((item) =>
-    item === '' ? 'inline_datum' : `inline_datum.${item}`
+    item === '' ? 'inline_datum' : `inline_datum.${item}`,
   ),
   ...bigIntsBlockTxInfoItemInputsAnyOfItemReferenceScript.map((item) =>
-    item === '' ? 'reference_script' : `reference_script.${item}`
+    item === '' ? 'reference_script' : `reference_script.${item}`,
   ),
   ...bigIntsBlockTxInfoItemInputsAnyOfItemAssetList.map((item) =>
-    item === '' ? 'asset_list' : `asset_list.${item}`
+    item === '' ? 'asset_list' : `asset_list.${item}`,
   ),
 ];

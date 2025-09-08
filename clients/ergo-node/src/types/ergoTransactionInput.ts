@@ -18,9 +18,9 @@ export interface ErgoTransactionInput {
 
 export const bigIntsErgoTransactionInput: Array<string> = [
   ...bigIntsTransactionBoxId.map((item) =>
-    item === '' ? 'boxId' : `boxId.${item}`
+    item === '' ? 'boxId' : `boxId.${item}`,
   ),
   ...bigIntsSpendingProof.map((item) =>
-    item === '' ? 'spendingProof' : `spendingProof.${item}`
+    item === '' ? 'spendingProof' : `spendingProof.${item}`,
   ),
 ];

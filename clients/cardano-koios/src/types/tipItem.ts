@@ -158,6 +158,6 @@ export type TipItem = {
 
 export const bigIntsTipItem: Array<string> = [
   ...bigIntsTipItemBlockNo.map((item) =>
-    item === '' ? 'block_no' : `block_no.${item}`
+    item === '' ? 'block_no' : `block_no.${item}`,
   ),
 ];

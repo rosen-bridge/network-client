@@ -25,12 +25,12 @@ export interface FullBlockInfo {
 
 export const bigIntsFullBlockInfo = [
   ...bigIntsHeaderInfo.map((item) =>
-    item === '' ? 'header' : `header.${item}`
+    item === '' ? 'header' : `header.${item}`,
   ),
   ...bigIntsTransactionInfo.map((item) =>
-    item === '' ? 'blockTransactions' : `blockTransactions.${item}`
+    item === '' ? 'blockTransactions' : `blockTransactions.${item}`,
   ),
   ...bigIntsBlockExtensionInfo.map((item) =>
-    item === '' ? 'extension' : `extension.${item}`
+    item === '' ? 'extension' : `extension.${item}`,
   ),
 ];

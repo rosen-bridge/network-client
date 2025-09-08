@@ -19,9 +19,9 @@ export interface PopowHeader {
 
 export const bigIntsPopowHeader: Array<string> = [
   ...bigIntsBlockHeader.map((item) =>
-    item === '' ? 'header' : `header.${item}`
+    item === '' ? 'header' : `header.${item}`,
   ),
   ...bigIntsModifierId.map((item) =>
-    item === '' ? 'interlinks' : `interlinks.${item}`
+    item === '' ? 'interlinks' : `interlinks.${item}`,
   ),
 ];

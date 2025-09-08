@@ -18,6 +18,6 @@ export interface BlockExtensionInfo {
 
 export const bigIntsBlockExtensionInfo = [
   ...bigIntsBlockExtensionInfoFields.map((item) =>
-    item === '' ? 'fields' : `fields.${item}`
+    item === '' ? 'fields' : `fields.${item}`,
   ),
 ];

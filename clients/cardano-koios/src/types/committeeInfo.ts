@@ -159,6 +159,6 @@ export interface CommitteeInfo {
 
 export const bigIntsCommitteeInfo: Array<string> = [
   ...bigIntsCommitteeInfoMembersItem.map((item) =>
-    item === '' ? 'members' : `members.${item}`
+    item === '' ? 'members' : `members.${item}`,
   ),
 ];

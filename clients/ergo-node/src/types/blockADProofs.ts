@@ -26,10 +26,10 @@ export interface BlockADProofs {
 
 export const bigIntsBlockADProofs: Array<string> = [
   ...bigIntsModifierId.map((item) =>
-    item === '' ? 'headerId' : `headerId.${item}`
+    item === '' ? 'headerId' : `headerId.${item}`,
   ),
   ...bigIntsSerializedAdProof.map((item) =>
-    item === '' ? 'proofBytes' : `proofBytes.${item}`
+    item === '' ? 'proofBytes' : `proofBytes.${item}`,
   ),
   ...bigIntsDigest32.map((item) => (item === '' ? 'digest' : `digest.${item}`)),
 ];

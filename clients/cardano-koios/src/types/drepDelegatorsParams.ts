@@ -150,6 +150,6 @@ export type DrepDelegatorsParams = {
 
 export const bigIntsDrepDelegatorsParams: Array<string> = [
   ...bigInts_DrepIdParameter.map((item) =>
-    item === '' ? '_drep_id' : `_drep_id.${item}`
+    item === '' ? '_drep_id' : `_drep_id.${item}`,
   ),
 ];

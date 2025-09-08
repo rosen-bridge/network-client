@@ -16,7 +16,7 @@ export class RateLimitedAxiosConfig {
     pattern: string,
     rateLimit: number,
     throttleWindow: number,
-    timeout: number
+    timeout: number,
   ) {
     RateLimitedAxiosConfig.removeRule(pattern);
     RateLimitedAxiosConfig.limitRules.push({
@@ -34,7 +34,7 @@ export class RateLimitedAxiosConfig {
   public static removeRule(pattern: string) {
     RateLimitedAxiosConfig.limitRules =
       RateLimitedAxiosConfig.limitRules.filter(
-        (r) => r.pattern.source !== pattern
+        (r) => r.pattern.source !== pattern,
       );
   }
 

@@ -160,9 +160,9 @@ export type TxInfoItemVotingProceduresAnyOfItem = {
 
 export const bigIntsTxInfoItemVotingProceduresAnyOfItem: Array<string> = [
   ...bigIntsTxInfoItemVotingProceduresAnyOfItemVoterRole.map((item) =>
-    item === '' ? 'voter_role' : `voter_role.${item}`
+    item === '' ? 'voter_role' : `voter_role.${item}`,
   ),
   ...bigIntsTxInfoItemVotingProceduresAnyOfItemVote.map((item) =>
-    item === '' ? 'vote' : `vote.${item}`
+    item === '' ? 'vote' : `vote.${item}`,
   ),
 ];

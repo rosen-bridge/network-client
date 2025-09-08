@@ -156,6 +156,6 @@ export type ParamUpdatesItem = {
 
 export const bigIntsParamUpdatesItem: Array<string> = [
   ...bigIntsParamUpdatesItemBlockHeight.map((item) =>
-    item === '' ? 'block_height' : `block_height.${item}`
+    item === '' ? 'block_height' : `block_height.${item}`,
   ),
 ];

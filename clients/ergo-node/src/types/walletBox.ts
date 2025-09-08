@@ -38,15 +38,15 @@ export interface WalletBox {
 
 export const bigIntsWalletBox: Array<string> = [
   ...bigIntsErgoTransactionOutput.map((item) =>
-    item === '' ? 'box' : `box.${item}`
+    item === '' ? 'box' : `box.${item}`,
   ),
   ...bigIntsErgoAddress.map((item) =>
-    item === '' ? 'address' : `address.${item}`
+    item === '' ? 'address' : `address.${item}`,
   ),
   ...bigIntsModifierId.map((item) =>
-    item === '' ? 'creationTransaction' : `creationTransaction.${item}`
+    item === '' ? 'creationTransaction' : `creationTransaction.${item}`,
   ),
   ...bigIntsModifierId.map((item) =>
-    item === '' ? 'spendingTransaction' : `spendingTransaction.${item}`
+    item === '' ? 'spendingTransaction' : `spendingTransaction.${item}`,
   ),
 ];

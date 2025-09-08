@@ -152,9 +152,9 @@ export type BlockTxInfoItemNativeScriptsAnyOfItem = {
 
 export const bigIntsBlockTxInfoItemNativeScriptsAnyOfItem: Array<string> = [
   ...bigIntsBlockTxInfoItemNativeScriptsAnyOfItemScriptHash.map((item) =>
-    item === '' ? 'script_hash' : `script_hash.${item}`
+    item === '' ? 'script_hash' : `script_hash.${item}`,
   ),
   ...bigIntsBlockTxInfoItemNativeScriptsAnyOfItemScriptJson.map((item) =>
-    item === '' ? 'script_json' : `script_json.${item}`
+    item === '' ? 'script_json' : `script_json.${item}`,
   ),
 ];

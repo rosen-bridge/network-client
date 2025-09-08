@@ -18,6 +18,6 @@ export type GetBoxesByAddress200 = {
 
 export const bigIntsGetBoxesByAddress200: Array<string> = [
   ...bigIntsIndexedErgoBox.map((item) =>
-    item === '' ? 'items' : `items.${item}`
+    item === '' ? 'items' : `items.${item}`,
   ),
 ];

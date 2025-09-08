@@ -39,23 +39,23 @@ export type CandidateBlock = {
 
 export const bigIntsCandidateBlock: Array<string> = [
   ...bigIntsDigest32.map((item) =>
-    item === '' ? 'extensionHash' : `extensionHash.${item}`
+    item === '' ? 'extensionHash' : `extensionHash.${item}`,
   ),
   ...bigIntsTimestamp.map((item) =>
-    item === '' ? 'timestamp' : `timestamp.${item}`
+    item === '' ? 'timestamp' : `timestamp.${item}`,
   ),
   ...bigIntsADDigest.map((item) =>
-    item === '' ? 'stateRoot' : `stateRoot.${item}`
+    item === '' ? 'stateRoot' : `stateRoot.${item}`,
   ),
   'nBits',
   ...bigIntsSerializedAdProof.map((item) =>
-    item === '' ? 'adProofBytes' : `adProofBytes.${item}`
+    item === '' ? 'adProofBytes' : `adProofBytes.${item}`,
   ),
   ...bigIntsModifierId.map((item) =>
-    item === '' ? 'parentId' : `parentId.${item}`
+    item === '' ? 'parentId' : `parentId.${item}`,
   ),
   ...bigIntsTransactions.map((item) =>
-    item === '' ? 'transactions' : `transactions.${item}`
+    item === '' ? 'transactions' : `transactions.${item}`,
   ),
   ...bigIntsVotes.map((item) => (item === '' ? 'votes' : `votes.${item}`)),
 ];

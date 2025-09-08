@@ -180,27 +180,27 @@ export type TxInfoItemProposalProceduresAnyOfItem = {
 
 export const bigIntsTxInfoItemProposalProceduresAnyOfItem: Array<string> = [
   ...bigIntsTxInfoItemProposalProceduresAnyOfItemType.map((item) =>
-    item === '' ? 'type' : `type.${item}`
+    item === '' ? 'type' : `type.${item}`,
   ),
   ...bigIntsTxInfoItemProposalProceduresAnyOfItemDescription.map((item) =>
-    item === '' ? 'description' : `description.${item}`
+    item === '' ? 'description' : `description.${item}`,
   ),
   ...bigIntsTxInfoItemProposalProceduresAnyOfItemDeposit.map((item) =>
-    item === '' ? 'deposit' : `deposit.${item}`
+    item === '' ? 'deposit' : `deposit.${item}`,
   ),
   ...bigIntsTxInfoItemProposalProceduresAnyOfItemExpiration.map((item) =>
-    item === '' ? 'expiration' : `expiration.${item}`
+    item === '' ? 'expiration' : `expiration.${item}`,
   ),
   ...bigIntsTxInfoItemProposalProceduresAnyOfItemMetaUrl.map((item) =>
-    item === '' ? 'meta_url' : `meta_url.${item}`
+    item === '' ? 'meta_url' : `meta_url.${item}`,
   ),
   ...bigIntsTxInfoItemProposalProceduresAnyOfItemMetaHash.map((item) =>
-    item === '' ? 'meta_hash' : `meta_hash.${item}`
+    item === '' ? 'meta_hash' : `meta_hash.${item}`,
   ),
   ...bigIntsTxInfoItemProposalProceduresAnyOfItemWithdrawal.map((item) =>
-    item === '' ? 'withdrawal' : `withdrawal.${item}`
+    item === '' ? 'withdrawal' : `withdrawal.${item}`,
   ),
   ...bigIntsTxInfoItemProposalProceduresAnyOfItemParamProposal.map((item) =>
-    item === '' ? 'param_proposal' : `param_proposal.${item}`
+    item === '' ? 'param_proposal' : `param_proposal.${item}`,
   ),
 ];

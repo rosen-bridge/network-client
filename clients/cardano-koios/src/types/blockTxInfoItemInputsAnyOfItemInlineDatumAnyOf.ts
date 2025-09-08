@@ -154,6 +154,6 @@ export type BlockTxInfoItemInputsAnyOfItemInlineDatumAnyOf = {
 export const bigIntsBlockTxInfoItemInputsAnyOfItemInlineDatumAnyOf: Array<string> =
   [
     ...bigIntsBlockTxInfoItemInputsAnyOfItemInlineDatumAnyOfValue.map((item) =>
-      item === '' ? 'value' : `value.${item}`
+      item === '' ? 'value' : `value.${item}`,
     ),
   ];

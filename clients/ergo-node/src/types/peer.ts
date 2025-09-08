@@ -21,9 +21,9 @@ export interface Peer {
 
 export const bigIntsPeer: Array<string> = [
   ...bigIntsTimestamp.map((item) =>
-    item === '' ? 'lastSeen' : `lastSeen.${item}`
+    item === '' ? 'lastSeen' : `lastSeen.${item}`,
   ),
   ...bigIntsPeerConnectionType.map((item) =>
-    item === '' ? 'connectionType' : `connectionType.${item}`
+    item === '' ? 'connectionType' : `connectionType.${item}`,
   ),
 ];

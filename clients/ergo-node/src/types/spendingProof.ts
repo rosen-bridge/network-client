@@ -22,9 +22,9 @@ export interface SpendingProof {
 
 export const bigIntsSpendingProof: Array<string> = [
   ...bigIntsSpendingProofBytes.map((item) =>
-    item === '' ? 'proofBytes' : `proofBytes.${item}`
+    item === '' ? 'proofBytes' : `proofBytes.${item}`,
   ),
   ...bigIntsSpendingProofExtension.map((item) =>
-    item === '' ? 'extension' : `extension.${item}`
+    item === '' ? 'extension' : `extension.${item}`,
   ),
 ];

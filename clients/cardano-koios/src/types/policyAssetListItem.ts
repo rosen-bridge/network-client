@@ -153,6 +153,6 @@ export type PolicyAssetListItem = {
 
 export const bigIntsPolicyAssetListItem: Array<string> = [
   ...bigIntsPolicyAssetListItemAssetName.map((item) =>
-    item === '' ? 'asset_name' : `asset_name.${item}`
+    item === '' ? 'asset_name' : `asset_name.${item}`,
   ),
 ];

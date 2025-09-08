@@ -18,6 +18,6 @@ export type GetBoxesByErgoTree200 = {
 
 export const bigIntsGetBoxesByErgoTree200: Array<string> = [
   ...bigIntsIndexedErgoBox.map((item) =>
-    item === '' ? 'items' : `items.${item}`
+    item === '' ? 'items' : `items.${item}`,
   ),
 ];

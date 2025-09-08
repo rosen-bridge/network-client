@@ -22,6 +22,6 @@ export interface BalanceInfo {
 export const bigIntsBalanceInfo: Array<string> = [
   'nanoErgs',
   ...bigIntsBalanceInfoTokensItem.map((item) =>
-    item === '' ? 'tokens' : `tokens.${item}`
+    item === '' ? 'tokens' : `tokens.${item}`,
   ),
 ];

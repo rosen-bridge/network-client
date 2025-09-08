@@ -170,18 +170,18 @@ export type ScriptRedeemersItemRedeemersItem = {
 
 export const bigIntsScriptRedeemersItemRedeemersItem: Array<string> = [
   ...bigIntsScriptRedeemersItemRedeemersItemUnitMem.map((item) =>
-    item === '' ? 'unit_mem' : `unit_mem.${item}`
+    item === '' ? 'unit_mem' : `unit_mem.${item}`,
   ),
   ...bigIntsScriptRedeemersItemRedeemersItemUnitSteps.map((item) =>
-    item === '' ? 'unit_steps' : `unit_steps.${item}`
+    item === '' ? 'unit_steps' : `unit_steps.${item}`,
   ),
   ...bigIntsScriptRedeemersItemRedeemersItemPurpose.map((item) =>
-    item === '' ? 'purpose' : `purpose.${item}`
+    item === '' ? 'purpose' : `purpose.${item}`,
   ),
   ...bigIntsScriptRedeemersItemRedeemersItemDatumHash.map((item) =>
-    item === '' ? 'datum_hash' : `datum_hash.${item}`
+    item === '' ? 'datum_hash' : `datum_hash.${item}`,
   ),
   ...bigIntsScriptRedeemersItemRedeemersItemDatumValue.map((item) =>
-    item === '' ? 'datum_value' : `datum_value.${item}`
+    item === '' ? 'datum_value' : `datum_value.${item}`,
   ),
 ];

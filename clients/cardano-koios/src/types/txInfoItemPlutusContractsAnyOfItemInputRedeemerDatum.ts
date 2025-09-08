@@ -153,9 +153,9 @@ export type TxInfoItemPlutusContractsAnyOfItemInputRedeemerDatum = {
 export const bigIntsTxInfoItemPlutusContractsAnyOfItemInputRedeemerDatum: Array<string> =
   [
     ...bigIntsTxInfoItemPlutusContractsAnyOfItemInputRedeemerDatumHash.map(
-      (item) => (item === '' ? 'hash' : `hash.${item}`)
+      (item) => (item === '' ? 'hash' : `hash.${item}`),
     ),
     ...bigIntsTxInfoItemPlutusContractsAnyOfItemInputRedeemerDatumValue.map(
-      (item) => (item === '' ? 'value' : `value.${item}`)
+      (item) => (item === '' ? 'value' : `value.${item}`),
     ),
   ];

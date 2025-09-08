@@ -21,9 +21,9 @@ export interface Scan {
 
 export const bigIntsScan: Array<string> = [
   ...bigIntsScanWalletInteraction.map((item) =>
-    item === '' ? 'walletInteraction' : `walletInteraction.${item}`
+    item === '' ? 'walletInteraction' : `walletInteraction.${item}`,
   ),
   ...bigIntsScanningPredicate.map((item) =>
-    item === '' ? 'trackingRule' : `trackingRule.${item}`
+    item === '' ? 'trackingRule' : `trackingRule.${item}`,
   ),
 ];

@@ -22,7 +22,7 @@ export type BalanceInfoTokensItem = {
 
 export const bigIntsBalanceInfoTokensItem: Array<string> = [
   ...bigIntsModifierId.map((item) =>
-    item === '' ? 'tokenId' : `tokenId.${item}`
+    item === '' ? 'tokenId' : `tokenId.${item}`,
   ),
   'amount',
 ];

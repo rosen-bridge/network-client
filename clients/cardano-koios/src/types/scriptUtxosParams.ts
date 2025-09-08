@@ -156,9 +156,9 @@ export type ScriptUtxosParams = {
 
 export const bigIntsScriptUtxosParams: Array<string> = [
   ...bigInts_ScriptHashParameter.map((item) =>
-    item === '' ? '_script_hash' : `_script_hash.${item}`
+    item === '' ? '_script_hash' : `_script_hash.${item}`,
   ),
   ...bigInts_ExtendedParameter.map((item) =>
-    item === '' ? '_extended' : `_extended.${item}`
+    item === '' ? '_extended' : `_extended.${item}`,
   ),
 ];

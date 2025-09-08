@@ -150,6 +150,6 @@ export type CommitteeVotesParams = {
 
 export const bigIntsCommitteeVotesParams: Array<string> = [
   ...bigInts_CcHotIdParameter.map((item) =>
-    item === '' ? '_cc_hot_id' : `_cc_hot_id.${item}`
+    item === '' ? '_cc_hot_id' : `_cc_hot_id.${item}`,
   ),
 ];

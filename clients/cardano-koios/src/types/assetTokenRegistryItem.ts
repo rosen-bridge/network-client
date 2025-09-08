@@ -166,18 +166,18 @@ export type AssetTokenRegistryItem = {
 
 export const bigIntsAssetTokenRegistryItem: Array<string> = [
   ...bigIntsAssetTokenRegistryItemAssetName.map((item) =>
-    item === '' ? 'asset_name' : `asset_name.${item}`
+    item === '' ? 'asset_name' : `asset_name.${item}`,
   ),
   ...bigIntsAssetTokenRegistryItemTicker.map((item) =>
-    item === '' ? 'ticker' : `ticker.${item}`
+    item === '' ? 'ticker' : `ticker.${item}`,
   ),
   ...bigIntsAssetTokenRegistryItemDescription.map((item) =>
-    item === '' ? 'description' : `description.${item}`
+    item === '' ? 'description' : `description.${item}`,
   ),
   ...bigIntsAssetTokenRegistryItemUrl.map((item) =>
-    item === '' ? 'url' : `url.${item}`
+    item === '' ? 'url' : `url.${item}`,
   ),
   ...bigIntsAssetTokenRegistryItemLogo.map((item) =>
-    item === '' ? 'logo' : `logo.${item}`
+    item === '' ? 'logo' : `logo.${item}`,
   ),
 ];

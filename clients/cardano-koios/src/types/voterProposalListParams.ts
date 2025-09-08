@@ -150,6 +150,6 @@ export type VoterProposalListParams = {
 
 export const bigIntsVoterProposalListParams: Array<string> = [
   ...bigInts_VoterIdParameter.map((item) =>
-    item === '' ? '_voter_id' : `_voter_id.${item}`
+    item === '' ? '_voter_id' : `_voter_id.${item}`,
   ),
 ];

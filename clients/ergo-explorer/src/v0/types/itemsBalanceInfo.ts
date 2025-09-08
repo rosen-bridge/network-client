@@ -16,6 +16,6 @@ export interface ItemsBalanceInfo {
 }
 export const bigIntsItemsBalanceInfo = [
   ...bigIntsBalanceInfo.map((item) =>
-    item === '' ? 'items' : `items.${item}`
+    item === '' ? 'items' : `items.${item}`,
   ),
 ];

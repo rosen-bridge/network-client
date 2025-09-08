@@ -31,12 +31,12 @@ export interface TransactionSigningRequest {
 
 export const bigIntsTransactionSigningRequest: Array<string> = [
   ...bigIntsUnsignedErgoTransaction.map((item) =>
-    item === '' ? 'tx' : `tx.${item}`
+    item === '' ? 'tx' : `tx.${item}`,
   ),
   ...bigIntsTransactionHintsBag.map((item) =>
-    item === '' ? 'hints' : `hints.${item}`
+    item === '' ? 'hints' : `hints.${item}`,
   ),
   ...bigIntsTransactionSigningRequestSecrets.map((item) =>
-    item === '' ? 'secrets' : `secrets.${item}`
+    item === '' ? 'secrets' : `secrets.${item}`,
   ),
 ];

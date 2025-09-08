@@ -16,6 +16,6 @@ export interface ScanIdBoxId {
 
 export const bigIntsScanIdBoxId: Array<string> = [
   ...bigIntsTransactionBoxId.map((item) =>
-    item === '' ? 'boxId' : `boxId.${item}`
+    item === '' ? 'boxId' : `boxId.${item}`,
   ),
 ];

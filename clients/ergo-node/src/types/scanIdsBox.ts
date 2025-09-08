@@ -19,6 +19,6 @@ export interface ScanIdsBox {
 
 export const bigIntsScanIdsBox: Array<string> = [
   ...bigIntsErgoTransactionOutput.map((item) =>
-    item === '' ? 'box' : `box.${item}`
+    item === '' ? 'box' : `box.${item}`,
   ),
 ];

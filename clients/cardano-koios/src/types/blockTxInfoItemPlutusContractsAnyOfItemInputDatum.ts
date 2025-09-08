@@ -153,9 +153,9 @@ export type BlockTxInfoItemPlutusContractsAnyOfItemInputDatum = {
 export const bigIntsBlockTxInfoItemPlutusContractsAnyOfItemInputDatum: Array<string> =
   [
     ...bigIntsBlockTxInfoItemPlutusContractsAnyOfItemInputDatumHash.map(
-      (item) => (item === '' ? 'hash' : `hash.${item}`)
+      (item) => (item === '' ? 'hash' : `hash.${item}`),
     ),
     ...bigIntsBlockTxInfoItemPlutusContractsAnyOfItemInputDatumValue.map(
-      (item) => (item === '' ? 'value' : `value.${item}`)
+      (item) => (item === '' ? 'value' : `value.${item}`),
     ),
   ];

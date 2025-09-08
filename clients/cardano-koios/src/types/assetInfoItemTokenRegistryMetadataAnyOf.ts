@@ -164,18 +164,18 @@ export type AssetInfoItemTokenRegistryMetadataAnyOf = {
 
 export const bigIntsAssetInfoItemTokenRegistryMetadataAnyOf: Array<string> = [
   ...bigIntsAssetInfoItemTokenRegistryMetadataAnyOfName.map((item) =>
-    item === '' ? 'name' : `name.${item}`
+    item === '' ? 'name' : `name.${item}`,
   ),
   ...bigIntsAssetInfoItemTokenRegistryMetadataAnyOfDescription.map((item) =>
-    item === '' ? 'description' : `description.${item}`
+    item === '' ? 'description' : `description.${item}`,
   ),
   ...bigIntsAssetInfoItemTokenRegistryMetadataAnyOfTicker.map((item) =>
-    item === '' ? 'ticker' : `ticker.${item}`
+    item === '' ? 'ticker' : `ticker.${item}`,
   ),
   ...bigIntsAssetInfoItemTokenRegistryMetadataAnyOfUrl.map((item) =>
-    item === '' ? 'url' : `url.${item}`
+    item === '' ? 'url' : `url.${item}`,
   ),
   ...bigIntsAssetInfoItemTokenRegistryMetadataAnyOfLogo.map((item) =>
-    item === '' ? 'logo' : `logo.${item}`
+    item === '' ? 'logo' : `logo.${item}`,
   ),
 ];

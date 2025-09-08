@@ -45,9 +45,9 @@ export const bigIntsHeaderInfo = [
   'timestamp',
   'nBits',
   ...bigIntsPowSolutionInfo.map((item) =>
-    item === '' ? 'powSolutions' : `powSolutions.${item}`
+    item === '' ? 'powSolutions' : `powSolutions.${item}`,
   ),
   ...bigIntsTuple3ByteByteByte.map((item) =>
-    item === '' ? 'votes' : `votes.${item}`
+    item === '' ? 'votes' : `votes.${item}`,
   ),
 ];

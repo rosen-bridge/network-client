@@ -167,18 +167,18 @@ export type BlockTxInfoItemPlutusContractsAnyOfItem = {
 
 export const bigIntsBlockTxInfoItemPlutusContractsAnyOfItem: Array<string> = [
   ...bigIntsBlockTxInfoItemPlutusContractsAnyOfItemAddress.map((item) =>
-    item === '' ? 'address' : `address.${item}`
+    item === '' ? 'address' : `address.${item}`,
   ),
   ...bigIntsBlockTxInfoItemPlutusContractsAnyOfItemSpendsInput.map((item) =>
-    item === '' ? 'spends_input' : `spends_input.${item}`
+    item === '' ? 'spends_input' : `spends_input.${item}`,
   ),
   ...bigIntsBlockTxInfoItemPlutusContractsAnyOfItemScriptHash.map((item) =>
-    item === '' ? 'script_hash' : `script_hash.${item}`
+    item === '' ? 'script_hash' : `script_hash.${item}`,
   ),
   ...bigIntsBlockTxInfoItemPlutusContractsAnyOfItemBytecode.map((item) =>
-    item === '' ? 'bytecode' : `bytecode.${item}`
+    item === '' ? 'bytecode' : `bytecode.${item}`,
   ),
   ...bigIntsBlockTxInfoItemPlutusContractsAnyOfItemInput.map((item) =>
-    item === '' ? 'input' : `input.${item}`
+    item === '' ? 'input' : `input.${item}`,
   ),
 ];

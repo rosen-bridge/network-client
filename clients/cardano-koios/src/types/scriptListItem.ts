@@ -156,9 +156,9 @@ export type ScriptListItem = {
 
 export const bigIntsScriptListItem: Array<string> = [
   ...bigIntsScriptListItemScriptHash.map((item) =>
-    item === '' ? 'script_hash' : `script_hash.${item}`
+    item === '' ? 'script_hash' : `script_hash.${item}`,
   ),
   ...bigIntsScriptListItemType.map((item) =>
-    item === '' ? 'type' : `type.${item}`
+    item === '' ? 'type' : `type.${item}`,
   ),
 ];

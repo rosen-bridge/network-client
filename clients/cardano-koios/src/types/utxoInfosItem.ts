@@ -185,24 +185,24 @@ export type UtxoInfosItem = {
 
 export const bigIntsUtxoInfosItem: Array<string> = [
   ...bigIntsUtxoInfosItemStakeAddress.map((item) =>
-    item === '' ? 'stake_address' : `stake_address.${item}`
+    item === '' ? 'stake_address' : `stake_address.${item}`,
   ),
   ...bigIntsUtxoInfosItemPaymentCred.map((item) =>
-    item === '' ? 'payment_cred' : `payment_cred.${item}`
+    item === '' ? 'payment_cred' : `payment_cred.${item}`,
   ),
   ...bigIntsUtxoInfosItemBlockHeight.map((item) =>
-    item === '' ? 'block_height' : `block_height.${item}`
+    item === '' ? 'block_height' : `block_height.${item}`,
   ),
   ...bigIntsUtxoInfosItemDatumHash.map((item) =>
-    item === '' ? 'datum_hash' : `datum_hash.${item}`
+    item === '' ? 'datum_hash' : `datum_hash.${item}`,
   ),
   ...bigIntsUtxoInfosItemInlineDatum.map((item) =>
-    item === '' ? 'inline_datum' : `inline_datum.${item}`
+    item === '' ? 'inline_datum' : `inline_datum.${item}`,
   ),
   ...bigIntsUtxoInfosItemReferenceScript.map((item) =>
-    item === '' ? 'reference_script' : `reference_script.${item}`
+    item === '' ? 'reference_script' : `reference_script.${item}`,
   ),
   ...bigIntsUtxoInfosItemAssetList.map((item) =>
-    item === '' ? 'asset_list' : `asset_list.${item}`
+    item === '' ? 'asset_list' : `asset_list.${item}`,
   ),
 ];

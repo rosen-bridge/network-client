@@ -149,6 +149,6 @@ export type AssetNftAddressItem = {
 
 export const bigIntsAssetNftAddressItem: Array<string> = [
   ...bigIntsAssetNftAddressItemStakeAddress.map((item) =>
-    item === '' ? 'stake_address' : `stake_address.${item}`
+    item === '' ? 'stake_address' : `stake_address.${item}`,
   ),
 ];
