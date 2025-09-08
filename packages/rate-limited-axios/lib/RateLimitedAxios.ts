@@ -11,7 +11,7 @@ import originalAxios, {
 } from 'axios';
 import { RateLimitedAxiosConfig } from './config';
 import { Rule } from './types';
-import pkg from '../package.json' assert { type: 'json' };
+import pkg from '../package.json' with { type: 'json' };
 
 declare module 'axios' {
   export interface InternalAxiosRequestConfig {
@@ -33,6 +33,7 @@ class RateLimitedAxios extends originalAxios.Axios {
   toFormData = originalAxios.toFormData;
   AxiosError = originalAxios.AxiosError;
   Cancel = CanceledError;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   all = function all(promises: Promise<any>[]) {
     return Promise.all(promises);
   };
@@ -48,13 +49,13 @@ class RateLimitedAxios extends originalAxios.Axios {
     super(
       originalAxios.mergeConfig(
         originalAxios.defaults as AxiosRequestConfig,
-        config || {}
-      )
+        config || {},
+      ),
     );
     this.interceptors.request.use(RateLimitedAxios.interceptorForRequest);
     this.interceptors.response.use(
       RateLimitedAxios.interceptorForResponse,
-      RateLimitedAxios.interceptorForResponseError
+      RateLimitedAxios.interceptorForResponseError,
     );
   }
 
@@ -90,7 +91,7 @@ class RateLimitedAxios extends originalAxios.Axios {
   protected static getFullAddress = (config: InternalAxiosRequestConfig) => {
     return config.baseURL
       ? originalAxios.getUri({ baseURL: config.baseURL, url: config.url })
-      : config.url ?? '';
+      : (config.url ?? '');
   };
 
   /**
@@ -99,7 +100,7 @@ class RateLimitedAxios extends originalAxios.Axios {
    * @returns
    */
   protected static interceptorForRequest = async (
-    config: InternalAxiosRequestConfig
+    config: InternalAxiosRequestConfig,
   ) => {
     const url = this.getFullAddress(config);
 
@@ -116,10 +117,10 @@ class RateLimitedAxios extends originalAxios.Axios {
       setTimeout(() => {
         const censoredUrl = RateLimitedAxios.censorUrl(rule.pattern, url);
         RateLimitedAxiosConfig.getLogger().debug(
-          `The response time has exceeded the defined limit for the ${censoredUrl} URL.`
+          `The response time has exceeded the defined limit for the ${censoredUrl} URL.`,
         );
         RateLimitedAxios.releaseQueue(config);
-      }, rule.timeout * 1000)
+      }, rule.timeout * 1000),
     );
 
     return config;
@@ -199,8 +200,8 @@ class RateLimitedAxios extends originalAxios.Axios {
     const axiosInstance = new RateLimitedAxios(
       originalAxios.mergeConfig(
         this.defaults as AxiosRequestConfig,
-        config || {}
-      )
+        config || {},
+      ),
     );
     return axiosInstance;
   };

@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@types/json-bigint": "^1.0.4",
-    "@types/node": "^20.11.9",
+    "@types/node": "^22.18.0",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
     "eslint": "^8.56.0",
@@ -26,7 +26,7 @@
     "typescript": "^5.3.3"
   },
   "engines": {
-    "node": ">=18.11.0"
+    "node": ">=22.18.0"
   },
   "dependencies": {
     "@rosen-clients/rate-limited-axios": "^0.1.1",

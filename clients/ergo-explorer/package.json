@@ -23,7 +23,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jscodeshift": "^0.11.6",
-    "@types/node": "^18.0.0",
+    "@types/node": "^22.18.0",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.26.0",
     "cross-env": "^7.0.3",
@@ -40,8 +40,12 @@
     "ergo"
   ],
   "files": [
-    "dist"
+    "dist",
+    "CHANGELOG.md"
   ],
+  "engines": {
+    "node": ">=22.18.0"
+  },
   "dependencies": {
     "@rosen-clients/axios": "^0.1.5"
   }
