@@ -152,6 +152,6 @@ export type AccountListItem = {
 
 export const bigIntsAccountListItem: Array<string> = [
   ...bigIntsAccountListItemScriptHash.map((item) =>
-    item === '' ? 'script_hash' : `script_hash.${item}`
+    item === '' ? 'script_hash' : `script_hash.${item}`,
   ),
 ];

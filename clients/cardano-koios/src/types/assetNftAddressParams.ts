@@ -156,9 +156,9 @@ export type AssetNftAddressParams = {
 
 export const bigIntsAssetNftAddressParams: Array<string> = [
   ...bigInts_AssetPolicyNftParameter.map((item) =>
-    item === '' ? '_asset_policy' : `_asset_policy.${item}`
+    item === '' ? '_asset_policy' : `_asset_policy.${item}`,
   ),
   ...bigInts_AssetNameNftParameter.map((item) =>
-    item === '' ? '_asset_name' : `_asset_name.${item}`
+    item === '' ? '_asset_name' : `_asset_name.${item}`,
   ),
 ];

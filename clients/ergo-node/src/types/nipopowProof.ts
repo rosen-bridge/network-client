@@ -25,12 +25,12 @@ export interface NipopowProof {
 
 export const bigIntsNipopowProof: Array<string> = [
   ...bigIntsPopowHeader.map((item) =>
-    item === '' ? 'prefix' : `prefix.${item}`
+    item === '' ? 'prefix' : `prefix.${item}`,
   ),
   ...bigIntsPopowHeader.map((item) =>
-    item === '' ? 'suffixHead' : `suffixHead.${item}`
+    item === '' ? 'suffixHead' : `suffixHead.${item}`,
   ),
   ...bigIntsBlockHeader.map((item) =>
-    item === '' ? 'suffixTail' : `suffixTail.${item}`
+    item === '' ? 'suffixTail' : `suffixTail.${item}`,
   ),
 ];

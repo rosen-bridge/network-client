@@ -176,15 +176,15 @@ export type PoolHistoryInfoItem = {
 
 export const bigIntsPoolHistoryInfoItem: Array<string> = [
   ...bigIntsPoolHistoryInfoItemActiveStake.map((item) =>
-    item === '' ? 'active_stake' : `active_stake.${item}`
+    item === '' ? 'active_stake' : `active_stake.${item}`,
   ),
   ...bigIntsPoolHistoryInfoItemActiveStakePct.map((item) =>
-    item === '' ? 'active_stake_pct' : `active_stake_pct.${item}`
+    item === '' ? 'active_stake_pct' : `active_stake_pct.${item}`,
   ),
   ...bigIntsPoolHistoryInfoItemBlockCnt.map((item) =>
-    item === '' ? 'block_cnt' : `block_cnt.${item}`
+    item === '' ? 'block_cnt' : `block_cnt.${item}`,
   ),
   ...bigIntsPoolHistoryInfoItemMemberRewards.map((item) =>
-    item === '' ? 'member_rewards' : `member_rewards.${item}`
+    item === '' ? 'member_rewards' : `member_rewards.${item}`,
   ),
 ];

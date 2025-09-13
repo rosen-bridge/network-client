@@ -159,6 +159,6 @@ export type PoolSnapshotItem = {
 
 export const bigIntsPoolSnapshotItem: Array<string> = [
   ...bigIntsPoolSnapshotItemNonce.map((item) =>
-    item === '' ? 'nonce' : `nonce.${item}`
+    item === '' ? 'nonce' : `nonce.${item}`,
   ),
 ];

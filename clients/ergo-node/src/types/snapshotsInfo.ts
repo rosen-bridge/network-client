@@ -16,6 +16,6 @@ export interface SnapshotsInfo {
 
 export const bigIntsSnapshotsInfo: Array<string> = [
   ...bigIntsSnapshotsInfoAvailableManifestsItem.map((item) =>
-    item === '' ? 'availableManifests' : `availableManifests.${item}`
+    item === '' ? 'availableManifests' : `availableManifests.${item}`,
   ),
 ];

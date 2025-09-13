@@ -173,12 +173,12 @@ export type AccountInfoItem = {
 
 export const bigIntsAccountInfoItem: Array<string> = [
   ...bigIntsAccountInfoItemStatus.map((item) =>
-    item === '' ? 'status' : `status.${item}`
+    item === '' ? 'status' : `status.${item}`,
   ),
   ...bigIntsAccountInfoItemDelegatedDrep.map((item) =>
-    item === '' ? 'delegated_drep' : `delegated_drep.${item}`
+    item === '' ? 'delegated_drep' : `delegated_drep.${item}`,
   ),
   ...bigIntsAccountInfoItemDelegatedPool.map((item) =>
-    item === '' ? 'delegated_pool' : `delegated_pool.${item}`
+    item === '' ? 'delegated_pool' : `delegated_pool.${item}`,
   ),
 ];

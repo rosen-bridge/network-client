@@ -151,6 +151,6 @@ export type AssetAddressesItem = {
 
 export const bigIntsAssetAddressesItem: Array<string> = [
   ...bigIntsAssetAddressesItemStakeAddress.map((item) =>
-    item === '' ? 'stake_address' : `stake_address.${item}`
+    item === '' ? 'stake_address' : `stake_address.${item}`,
   ),
 ];

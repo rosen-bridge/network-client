@@ -170,12 +170,12 @@ export type PolicyAssetInfoItem = {
 
 export const bigIntsPolicyAssetInfoItem: Array<string> = [
   ...bigIntsPolicyAssetInfoItemAssetName.map((item) =>
-    item === '' ? 'asset_name' : `asset_name.${item}`
+    item === '' ? 'asset_name' : `asset_name.${item}`,
   ),
   ...bigIntsPolicyAssetInfoItemMintingTxMetadataAllOf.map((item) =>
-    item === '' ? 'minting_tx_metadata' : `minting_tx_metadata.${item}`
+    item === '' ? 'minting_tx_metadata' : `minting_tx_metadata.${item}`,
   ),
   ...bigIntsPolicyAssetInfoItemTokenRegistryMetadata.map((item) =>
-    item === '' ? 'token_registry_metadata' : `token_registry_metadata.${item}`
+    item === '' ? 'token_registry_metadata' : `token_registry_metadata.${item}`,
   ),
 ];

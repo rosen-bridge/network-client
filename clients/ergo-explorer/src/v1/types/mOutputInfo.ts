@@ -42,9 +42,9 @@ export const bigIntsMOutputInfo = [
   'value',
   'globalIndex',
   ...bigIntsAssetInstanceInfo.map((item) =>
-    item === '' ? 'assets' : `assets.${item}`
+    item === '' ? 'assets' : `assets.${item}`,
   ),
   ...bigIntsMOutputInfoAdditionalRegisters.map((item) =>
-    item === '' ? 'additionalRegisters' : `additionalRegisters.${item}`
+    item === '' ? 'additionalRegisters' : `additionalRegisters.${item}`,
   ),
 ];

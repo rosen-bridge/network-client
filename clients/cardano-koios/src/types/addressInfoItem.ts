@@ -156,9 +156,9 @@ export type AddressInfoItem = {
 
 export const bigIntsAddressInfoItem: Array<string> = [
   ...bigIntsAddressInfoItemStakeAddress.map((item) =>
-    item === '' ? 'stake_address' : `stake_address.${item}`
+    item === '' ? 'stake_address' : `stake_address.${item}`,
   ),
   ...bigIntsAddressInfoItemUtxoSetItem.map((item) =>
-    item === '' ? 'utxo_set' : `utxo_set.${item}`
+    item === '' ? 'utxo_set' : `utxo_set.${item}`,
   ),
 ];

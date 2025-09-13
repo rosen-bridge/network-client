@@ -154,6 +154,6 @@ export type AssetHistoryItemMintingTxsAnyOfItem = {
 
 export const bigIntsAssetHistoryItemMintingTxsAnyOfItem: Array<string> = [
   ...bigIntsAssetHistoryItemMintingTxsAnyOfItemMetadataItemAllOf.map((item) =>
-    item === '' ? 'metadata' : `metadata.${item}`
+    item === '' ? 'metadata' : `metadata.${item}`,
   ),
 ];

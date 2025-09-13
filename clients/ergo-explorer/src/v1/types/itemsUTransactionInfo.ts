@@ -17,6 +17,6 @@ export interface ItemsUTransactionInfo {
 
 export const bigIntsItemsUTransactionInfo = [
   ...bigIntsUTransactionInfo.map((item) =>
-    item === '' ? 'items' : `items.${item}`
+    item === '' ? 'items' : `items.${item}`,
   ),
 ];

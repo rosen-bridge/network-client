@@ -158,12 +158,12 @@ export type DatumInfoItem = {
 
 export const bigIntsDatumInfoItem: Array<string> = [
   ...bigIntsDatumInfoItemDatumHash.map((item) =>
-    item === '' ? 'datum_hash' : `datum_hash.${item}`
+    item === '' ? 'datum_hash' : `datum_hash.${item}`,
   ),
   ...bigIntsDatumInfoItemValue.map((item) =>
-    item === '' ? 'value' : `value.${item}`
+    item === '' ? 'value' : `value.${item}`,
   ),
   ...bigIntsDatumInfoItemBytes.map((item) =>
-    item === '' ? 'bytes' : `bytes.${item}`
+    item === '' ? 'bytes' : `bytes.${item}`,
   ),
 ];

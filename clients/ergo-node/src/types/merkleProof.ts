@@ -20,6 +20,6 @@ export interface MerkleProof {
 
 export const bigIntsMerkleProof: Array<string> = [
   ...bigIntsMerkleProofLevelsItemItem.map((item) =>
-    item === '' ? 'levels' : `levels.${item}`
+    item === '' ? 'levels' : `levels.${item}`,
   ),
 ];

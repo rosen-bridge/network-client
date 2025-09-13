@@ -150,6 +150,6 @@ export type PolicyAssetInfoParams = {
 
 export const bigIntsPolicyAssetInfoParams: Array<string> = [
   ...bigInts_AssetPolicyParameter.map((item) =>
-    item === '' ? '_asset_policy' : `_asset_policy.${item}`
+    item === '' ? '_asset_policy' : `_asset_policy.${item}`,
   ),
 ];

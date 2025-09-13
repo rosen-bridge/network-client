@@ -27,9 +27,9 @@ export interface GenerateCommitmentsRequest {
 
 export const bigIntsGenerateCommitmentsRequest: Array<string> = [
   ...bigIntsUnsignedErgoTransaction.map((item) =>
-    item === '' ? 'tx' : `tx.${item}`
+    item === '' ? 'tx' : `tx.${item}`,
   ),
   ...bigIntsGenerateCommitmentsRequestSecrets.map((item) =>
-    item === '' ? 'secrets' : `secrets.${item}`
+    item === '' ? 'secrets' : `secrets.${item}`,
   ),
 ];

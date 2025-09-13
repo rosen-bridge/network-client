@@ -194,21 +194,21 @@ export type BlockInfoItem = {
 
 export const bigIntsBlockInfoItem: Array<string> = [
   ...bigIntsBlockInfoItemBlockHeight.map((item) =>
-    item === '' ? 'block_height' : `block_height.${item}`
+    item === '' ? 'block_height' : `block_height.${item}`,
   ),
   ...bigIntsBlockInfoItemPool.map((item) =>
-    item === '' ? 'pool' : `pool.${item}`
+    item === '' ? 'pool' : `pool.${item}`,
   ),
   ...bigIntsBlockInfoItemProtoMajor.map((item) =>
-    item === '' ? 'proto_major' : `proto_major.${item}`
+    item === '' ? 'proto_major' : `proto_major.${item}`,
   ),
   ...bigIntsBlockInfoItemProtoMinor.map((item) =>
-    item === '' ? 'proto_minor' : `proto_minor.${item}`
+    item === '' ? 'proto_minor' : `proto_minor.${item}`,
   ),
   ...bigIntsBlockInfoItemTotalOutput.map((item) =>
-    item === '' ? 'total_output' : `total_output.${item}`
+    item === '' ? 'total_output' : `total_output.${item}`,
   ),
   ...bigIntsBlockInfoItemTotalFees.map((item) =>
-    item === '' ? 'total_fees' : `total_fees.${item}`
+    item === '' ? 'total_fees' : `total_fees.${item}`,
   ),
 ];

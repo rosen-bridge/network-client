@@ -19,6 +19,6 @@ export interface BurnTokensRequest {
 
 export const bigIntsBurnTokensRequest: Array<string> = [
   ...bigIntsAsset.map((item) =>
-    item === '' ? 'assetsToBurn' : `assetsToBurn.${item}`
+    item === '' ? 'assetsToBurn' : `assetsToBurn.${item}`,
   ),
 ];

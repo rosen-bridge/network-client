@@ -27,11 +27,11 @@ export interface PaymentRequest {
 
 export const bigIntsPaymentRequest: Array<string> = [
   ...bigIntsErgoAddress.map((item) =>
-    item === '' ? 'address' : `address.${item}`
+    item === '' ? 'address' : `address.${item}`,
   ),
   'value',
   ...bigIntsAsset.map((item) => (item === '' ? 'assets' : `assets.${item}`)),
   ...bigIntsRegisters.map((item) =>
-    item === '' ? 'registers' : `registers.${item}`
+    item === '' ? 'registers' : `registers.${item}`,
   ),
 ];

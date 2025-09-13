@@ -22,19 +22,12 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jscodeshift": "^0.11.6",
-    "@types/node": "^18.0.0",
     "@types/tmp": "^0.2.3",
-    "@typescript-eslint/eslint-plugin": "^5.30.7",
-    "@typescript-eslint/parser": "^5.26.0",
     "bun": "^0.5.9",
-    "eslint": "^8.16.0",
-    "eslint-config-prettier": "^8.5.0",
     "jscodeshift": "^0.14.0",
     "orval": "^7.4.1",
-    "prettier": "^2.8.4",
     "rimraf": "^4.4.1",
     "tmp": "^0.2.1",
-    "typescript": "^5.0.3",
     "yaml": "^2.2.1"
   },
   "keywords": [
@@ -42,8 +35,12 @@
     "ergo"
   ],
   "files": [
-    "dist"
+    "dist",
+    "CHANGELOG.md"
   ],
+  "engines": {
+    "node": ">=22.11.0"
+  },
   "dependencies": {
     "@rosen-clients/axios": "^0.1.5"
   }

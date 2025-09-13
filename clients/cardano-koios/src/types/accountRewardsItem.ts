@@ -149,6 +149,6 @@ export type AccountRewardsItem = {
 
 export const bigIntsAccountRewardsItem: Array<string> = [
   ...bigIntsAccountRewardsItemRewardsItem.map((item) =>
-    item === '' ? 'rewards' : `rewards.${item}`
+    item === '' ? 'rewards' : `rewards.${item}`,
   ),
 ];

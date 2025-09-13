@@ -150,6 +150,6 @@ export type TxStatusItem = {
 
 export const bigIntsTxStatusItem: Array<string> = [
   ...bigIntsTxStatusItemNumConfirmations.map((item) =>
-    item === '' ? 'num_confirmations' : `num_confirmations.${item}`
+    item === '' ? 'num_confirmations' : `num_confirmations.${item}`,
   ),
 ];

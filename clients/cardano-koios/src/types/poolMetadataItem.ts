@@ -157,12 +157,12 @@ export type PoolMetadataItem = {
 
 export const bigIntsPoolMetadataItem: Array<string> = [
   ...bigIntsPoolMetadataItemMetaUrl.map((item) =>
-    item === '' ? 'meta_url' : `meta_url.${item}`
+    item === '' ? 'meta_url' : `meta_url.${item}`,
   ),
   ...bigIntsPoolMetadataItemMetaHash.map((item) =>
-    item === '' ? 'meta_hash' : `meta_hash.${item}`
+    item === '' ? 'meta_hash' : `meta_hash.${item}`,
   ),
   ...bigIntsPoolMetadataItemMetaJson.map((item) =>
-    item === '' ? 'meta_json' : `meta_json.${item}`
+    item === '' ? 'meta_json' : `meta_json.${item}`,
   ),
 ];

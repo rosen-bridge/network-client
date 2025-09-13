@@ -156,9 +156,9 @@ export type PoolDelegatorsHistoryParams = {
 
 export const bigIntsPoolDelegatorsHistoryParams: Array<string> = [
   ...bigInts_PoolBech32Parameter.map((item) =>
-    item === '' ? '_pool_bech32' : `_pool_bech32.${item}`
+    item === '' ? '_pool_bech32' : `_pool_bech32.${item}`,
   ),
   ...bigInts_EpochNoParameter.map((item) =>
-    item === '' ? '_epoch_no' : `_epoch_no.${item}`
+    item === '' ? '_epoch_no' : `_epoch_no.${item}`,
   ),
 ];

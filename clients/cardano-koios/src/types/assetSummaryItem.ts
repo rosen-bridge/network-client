@@ -160,6 +160,6 @@ export type AssetSummaryItem = {
 
 export const bigIntsAssetSummaryItem: Array<string> = [
   ...bigIntsAssetSummaryItemAssetName.map((item) =>
-    item === '' ? 'asset_name' : `asset_name.${item}`
+    item === '' ? 'asset_name' : `asset_name.${item}`,
   ),
 ];

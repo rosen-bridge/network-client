@@ -165,18 +165,18 @@ export type PolicyAssetInfoItemTokenRegistryMetadataAnyOf = {
 export const bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOf: Array<string> =
   [
     ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOfName.map((item) =>
-      item === '' ? 'name' : `name.${item}`
+      item === '' ? 'name' : `name.${item}`,
     ),
     ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOfDescription.map(
-      (item) => (item === '' ? 'description' : `description.${item}`)
+      (item) => (item === '' ? 'description' : `description.${item}`),
     ),
     ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOfTicker.map((item) =>
-      item === '' ? 'ticker' : `ticker.${item}`
+      item === '' ? 'ticker' : `ticker.${item}`,
     ),
     ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOfUrl.map((item) =>
-      item === '' ? 'url' : `url.${item}`
+      item === '' ? 'url' : `url.${item}`,
     ),
     ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOfLogo.map((item) =>
-      item === '' ? 'logo' : `logo.${item}`
+      item === '' ? 'logo' : `logo.${item}`,
     ),
   ];

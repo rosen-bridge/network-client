@@ -24,6 +24,6 @@ export interface WorkMessage {
 
 export const bigIntsWorkMessage: Array<string> = [
   ...bigIntsProofOfUpcomingTransactions.map((item) =>
-    item === '' ? 'proof' : `proof.${item}`
+    item === '' ? 'proof' : `proof.${item}`,
   ),
 ];

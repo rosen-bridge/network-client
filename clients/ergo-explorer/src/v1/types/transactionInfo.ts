@@ -38,12 +38,12 @@ export const bigIntsTransactionInfo = [
   'timestamp',
   'globalIndex',
   ...bigIntsInputInfo.map((item) =>
-    item === '' ? 'inputs' : `inputs.${item}`
+    item === '' ? 'inputs' : `inputs.${item}`,
   ),
   ...bigIntsDataInputInfo.map((item) =>
-    item === '' ? 'dataInputs' : `dataInputs.${item}`
+    item === '' ? 'dataInputs' : `dataInputs.${item}`,
   ),
   ...bigIntsOutputInfo.map((item) =>
-    item === '' ? 'outputs' : `outputs.${item}`
+    item === '' ? 'outputs' : `outputs.${item}`,
   ),
 ];

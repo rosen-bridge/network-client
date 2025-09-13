@@ -154,9 +154,9 @@ export type TxUtxosItem = {
 
 export const bigIntsTxUtxosItem: Array<string> = [
   ...bigIntsTxUtxosItemInputsItem.map((item) =>
-    item === '' ? 'inputs' : `inputs.${item}`
+    item === '' ? 'inputs' : `inputs.${item}`,
   ),
   ...bigIntsTxUtxosItemOutputsAllOfItem.map((item) =>
-    item === '' ? 'outputs' : `outputs.${item}`
+    item === '' ? 'outputs' : `outputs.${item}`,
   ),
 ];

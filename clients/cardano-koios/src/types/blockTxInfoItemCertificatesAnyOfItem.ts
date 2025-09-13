@@ -154,9 +154,9 @@ export type BlockTxInfoItemCertificatesAnyOfItem = {
 
 export const bigIntsBlockTxInfoItemCertificatesAnyOfItem: Array<string> = [
   ...bigIntsBlockTxInfoItemCertificatesAnyOfItemIndex.map((item) =>
-    item === '' ? 'index' : `index.${item}`
+    item === '' ? 'index' : `index.${item}`,
   ),
   ...bigIntsBlockTxInfoItemCertificatesAnyOfItemInfo.map((item) =>
-    item === '' ? 'info' : `info.${item}`
+    item === '' ? 'info' : `info.${item}`,
   ),
 ];

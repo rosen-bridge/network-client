@@ -154,6 +154,6 @@ export type AddressInfoItemUtxoSetItemInlineDatumAnyOf = {
 export const bigIntsAddressInfoItemUtxoSetItemInlineDatumAnyOf: Array<string> =
   [
     ...bigIntsAddressInfoItemUtxoSetItemInlineDatumAnyOfValue.map((item) =>
-      item === '' ? 'value' : `value.${item}`
+      item === '' ? 'value' : `value.${item}`,
     ),
   ];

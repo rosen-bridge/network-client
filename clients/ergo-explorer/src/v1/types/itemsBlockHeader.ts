@@ -16,6 +16,6 @@ export interface ItemsBlockHeader {
 }
 export const bigIntsItemsBlockHeader = [
   ...bigIntsBlockHeader.map((item) =>
-    item === '' ? 'items' : `items.${item}`
+    item === '' ? 'items' : `items.${item}`,
   ),
 ];

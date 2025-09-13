@@ -23,9 +23,9 @@ export interface BoxQuery {
 
 export const bigIntsBoxQuery = [
   ...bigIntsBoxQueryRegisters.map((item) =>
-    item === '' ? 'registers' : `registers.${item}`
+    item === '' ? 'registers' : `registers.${item}`,
   ),
   ...bigIntsBoxQueryConstants.map((item) =>
-    item === '' ? 'constants' : `constants.${item}`
+    item === '' ? 'constants' : `constants.${item}`,
   ),
 ];

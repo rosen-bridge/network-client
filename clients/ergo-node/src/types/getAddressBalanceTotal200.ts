@@ -16,9 +16,9 @@ export type GetAddressBalanceTotal200 = {
 
 export const bigIntsGetAddressBalanceTotal200: Array<string> = [
   ...bigIntsBalanceInfo.map((item) =>
-    item === '' ? 'confirmed' : `confirmed.${item}`
+    item === '' ? 'confirmed' : `confirmed.${item}`,
   ),
   ...bigIntsBalanceInfo.map((item) =>
-    item === '' ? 'unconfirmed' : `unconfirmed.${item}`
+    item === '' ? 'unconfirmed' : `unconfirmed.${item}`,
   ),
 ];

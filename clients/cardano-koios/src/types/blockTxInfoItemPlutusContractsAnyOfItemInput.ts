@@ -150,10 +150,10 @@ export type BlockTxInfoItemPlutusContractsAnyOfItemInput = {
 
 export const bigIntsBlockTxInfoItemPlutusContractsAnyOfItemInput: Array<string> =
   [
-    ...bigIntsBlockTxInfoItemPlutusContractsAnyOfItemInputRedeemer.map((item) =>
-      item === '' ? 'redeemer' : `redeemer.${item}`
+    ...bigIntsBlockTxInfoItemPlutusContractsAnyOfItemInputRedeemer.map(
+      (item) => (item === '' ? 'redeemer' : `redeemer.${item}`),
     ),
     ...bigIntsBlockTxInfoItemPlutusContractsAnyOfItemInputDatum.map((item) =>
-      item === '' ? 'datum' : `datum.${item}`
+      item === '' ? 'datum' : `datum.${item}`,
     ),
   ];

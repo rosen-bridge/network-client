@@ -156,6 +156,6 @@ export type AddressInfoItemUtxoSetItemAssetListAnyOfItem = {
 export const bigIntsAddressInfoItemUtxoSetItemAssetListAnyOfItem: Array<string> =
   [
     ...bigIntsAddressInfoItemUtxoSetItemAssetListAnyOfItemAssetName.map(
-      (item) => (item === '' ? 'asset_name' : `asset_name.${item}`)
+      (item) => (item === '' ? 'asset_name' : `asset_name.${item}`),
     ),
   ];

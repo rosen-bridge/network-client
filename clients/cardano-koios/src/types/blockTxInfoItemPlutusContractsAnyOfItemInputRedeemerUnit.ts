@@ -153,9 +153,9 @@ export type BlockTxInfoItemPlutusContractsAnyOfItemInputRedeemerUnit = {
 export const bigIntsBlockTxInfoItemPlutusContractsAnyOfItemInputRedeemerUnit: Array<string> =
   [
     ...bigIntsBlockTxInfoItemPlutusContractsAnyOfItemInputRedeemerUnitSteps.map(
-      (item) => (item === '' ? 'steps' : `steps.${item}`)
+      (item) => (item === '' ? 'steps' : `steps.${item}`),
     ),
     ...bigIntsBlockTxInfoItemPlutusContractsAnyOfItemInputRedeemerUnitMem.map(
-      (item) => (item === '' ? 'mem' : `mem.${item}`)
+      (item) => (item === '' ? 'mem' : `mem.${item}`),
     ),
   ];

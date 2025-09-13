@@ -21,9 +21,9 @@ export type ErgoBoxWithSpendingProofAllOf = {
 
 export const bigIntsErgoBoxWithSpendingProofAllOf: Array<string> = [
   ...bigIntsSpendingProof.map((item) =>
-    item === '' ? 'spendingProof' : `spendingProof.${item}`
+    item === '' ? 'spendingProof' : `spendingProof.${item}`,
   ),
   ...bigIntsTransactionBoxId.map((item) =>
-    item === '' ? 'boxId' : `boxId.${item}`
+    item === '' ? 'boxId' : `boxId.${item}`,
   ),
 ];

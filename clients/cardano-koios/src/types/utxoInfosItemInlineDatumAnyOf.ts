@@ -153,6 +153,6 @@ export type UtxoInfosItemInlineDatumAnyOf = {
 
 export const bigIntsUtxoInfosItemInlineDatumAnyOf: Array<string> = [
   ...bigIntsUtxoInfosItemInlineDatumAnyOfValue.map((item) =>
-    item === '' ? 'value' : `value.${item}`
+    item === '' ? 'value' : `value.${item}`,
   ),
 ];

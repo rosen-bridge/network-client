@@ -232,51 +232,51 @@ export type TxInfoItem = {
 
 export const bigIntsTxInfoItem: Array<string> = [
   ...bigIntsTxInfoItemBlockHeight.map((item) =>
-    item === '' ? 'block_height' : `block_height.${item}`
+    item === '' ? 'block_height' : `block_height.${item}`,
   ),
   ...bigIntsTxInfoItemInvalidBefore.map((item) =>
-    item === '' ? 'invalid_before' : `invalid_before.${item}`
+    item === '' ? 'invalid_before' : `invalid_before.${item}`,
   ),
   ...bigIntsTxInfoItemInvalidAfter.map((item) =>
-    item === '' ? 'invalid_after' : `invalid_after.${item}`
+    item === '' ? 'invalid_after' : `invalid_after.${item}`,
   ),
   ...bigIntsTxInfoItemCollateralInputs.map((item) =>
-    item === '' ? 'collateral_inputs' : `collateral_inputs.${item}`
+    item === '' ? 'collateral_inputs' : `collateral_inputs.${item}`,
   ),
   ...bigIntsTxInfoItemCollateralOutput.map((item) =>
-    item === '' ? 'collateral_output' : `collateral_output.${item}`
+    item === '' ? 'collateral_output' : `collateral_output.${item}`,
   ),
   ...bigIntsTxInfoItemReferenceInputs.map((item) =>
-    item === '' ? 'reference_inputs' : `reference_inputs.${item}`
+    item === '' ? 'reference_inputs' : `reference_inputs.${item}`,
   ),
   ...bigIntsTxInfoItemInputsItem.map((item) =>
-    item === '' ? 'inputs' : `inputs.${item}`
+    item === '' ? 'inputs' : `inputs.${item}`,
   ),
   ...bigIntsTxInfoItemOutputsItem.map((item) =>
-    item === '' ? 'outputs' : `outputs.${item}`
+    item === '' ? 'outputs' : `outputs.${item}`,
   ),
   ...bigIntsTxInfoItemWithdrawals.map((item) =>
-    item === '' ? 'withdrawals' : `withdrawals.${item}`
+    item === '' ? 'withdrawals' : `withdrawals.${item}`,
   ),
   ...bigIntsTxInfoItemAssetsMinted.map((item) =>
-    item === '' ? 'assets_minted' : `assets_minted.${item}`
+    item === '' ? 'assets_minted' : `assets_minted.${item}`,
   ),
   ...bigIntsTxInfoItemMetadata.map((item) =>
-    item === '' ? 'metadata' : `metadata.${item}`
+    item === '' ? 'metadata' : `metadata.${item}`,
   ),
   ...bigIntsTxInfoItemCertificates.map((item) =>
-    item === '' ? 'certificates' : `certificates.${item}`
+    item === '' ? 'certificates' : `certificates.${item}`,
   ),
   ...bigIntsTxInfoItemNativeScripts.map((item) =>
-    item === '' ? 'native_scripts' : `native_scripts.${item}`
+    item === '' ? 'native_scripts' : `native_scripts.${item}`,
   ),
   ...bigIntsTxInfoItemPlutusContracts.map((item) =>
-    item === '' ? 'plutus_contracts' : `plutus_contracts.${item}`
+    item === '' ? 'plutus_contracts' : `plutus_contracts.${item}`,
   ),
   ...bigIntsTxInfoItemVotingProcedures.map((item) =>
-    item === '' ? 'voting_procedures' : `voting_procedures.${item}`
+    item === '' ? 'voting_procedures' : `voting_procedures.${item}`,
   ),
   ...bigIntsTxInfoItemProposalProcedures.map((item) =>
-    item === '' ? 'proposal_procedures' : `proposal_procedures.${item}`
+    item === '' ? 'proposal_procedures' : `proposal_procedures.${item}`,
   ),
 ];

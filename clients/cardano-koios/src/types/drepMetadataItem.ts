@@ -182,27 +182,27 @@ export type DrepMetadataItem = {
 
 export const bigIntsDrepMetadataItem: Array<string> = [
   ...bigIntsDrepMetadataItemMetaUrl.map((item) =>
-    item === '' ? 'meta_url' : `meta_url.${item}`
+    item === '' ? 'meta_url' : `meta_url.${item}`,
   ),
   ...bigIntsDrepMetadataItemMetaHash.map((item) =>
-    item === '' ? 'meta_hash' : `meta_hash.${item}`
+    item === '' ? 'meta_hash' : `meta_hash.${item}`,
   ),
   ...bigIntsDrepMetadataItemMetaJson.map((item) =>
-    item === '' ? 'meta_json' : `meta_json.${item}`
+    item === '' ? 'meta_json' : `meta_json.${item}`,
   ),
   ...bigIntsDrepMetadataItemBytes.map((item) =>
-    item === '' ? 'bytes' : `bytes.${item}`
+    item === '' ? 'bytes' : `bytes.${item}`,
   ),
   ...bigIntsDrepMetadataItemWarning.map((item) =>
-    item === '' ? 'warning' : `warning.${item}`
+    item === '' ? 'warning' : `warning.${item}`,
   ),
   ...bigIntsDrepMetadataItemLanguage.map((item) =>
-    item === '' ? 'language' : `language.${item}`
+    item === '' ? 'language' : `language.${item}`,
   ),
   ...bigIntsDrepMetadataItemComment.map((item) =>
-    item === '' ? 'comment' : `comment.${item}`
+    item === '' ? 'comment' : `comment.${item}`,
   ),
   ...bigIntsDrepMetadataItemIsValid.map((item) =>
-    item === '' ? 'is_valid' : `is_valid.${item}`
+    item === '' ? 'is_valid' : `is_valid.${item}`,
   ),
 ];

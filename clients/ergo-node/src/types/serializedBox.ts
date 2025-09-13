@@ -18,7 +18,7 @@ export interface SerializedBox {
 
 export const bigIntsSerializedBox: Array<string> = [
   ...bigIntsTransactionBoxId.map((item) =>
-    item === '' ? 'boxId' : `boxId.${item}`
+    item === '' ? 'boxId' : `boxId.${item}`,
   ),
   ...bigIntsHexString.map((item) => (item === '' ? 'bytes' : `bytes.${item}`)),
 ];

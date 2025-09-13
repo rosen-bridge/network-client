@@ -164,18 +164,18 @@ export type PoolRelaysItemRelaysItem = {
 
 export const bigIntsPoolRelaysItemRelaysItem: Array<string> = [
   ...bigIntsPoolRelaysItemRelaysItemDns.map((item) =>
-    item === '' ? 'dns' : `dns.${item}`
+    item === '' ? 'dns' : `dns.${item}`,
   ),
   ...bigIntsPoolRelaysItemRelaysItemSrv.map((item) =>
-    item === '' ? 'srv' : `srv.${item}`
+    item === '' ? 'srv' : `srv.${item}`,
   ),
   ...bigIntsPoolRelaysItemRelaysItemIpv4.map((item) =>
-    item === '' ? 'ipv4' : `ipv4.${item}`
+    item === '' ? 'ipv4' : `ipv4.${item}`,
   ),
   ...bigIntsPoolRelaysItemRelaysItemIpv6.map((item) =>
-    item === '' ? 'ipv6' : `ipv6.${item}`
+    item === '' ? 'ipv6' : `ipv6.${item}`,
   ),
   ...bigIntsPoolRelaysItemRelaysItemPort.map((item) =>
-    item === '' ? 'port' : `port.${item}`
+    item === '' ? 'port' : `port.${item}`,
   ),
 ];

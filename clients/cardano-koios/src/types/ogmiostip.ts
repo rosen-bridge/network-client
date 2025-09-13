@@ -155,6 +155,6 @@ export interface Ogmiostip {
 
 export const bigIntsOgmiostip: Array<string> = [
   ...bigIntsOgmiostipResult.map((item) =>
-    item === '' ? 'result' : `result.${item}`
+    item === '' ? 'result' : `result.${item}`,
   ),
 ];

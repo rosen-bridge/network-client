@@ -224,45 +224,45 @@ export type BlockTxInfoItem = {
 
 export const bigIntsBlockTxInfoItem: Array<string> = [
   ...bigIntsBlockTxInfoItemBlockHeight.map((item) =>
-    item === '' ? 'block_height' : `block_height.${item}`
+    item === '' ? 'block_height' : `block_height.${item}`,
   ),
   ...bigIntsBlockTxInfoItemInvalidBefore.map((item) =>
-    item === '' ? 'invalid_before' : `invalid_before.${item}`
+    item === '' ? 'invalid_before' : `invalid_before.${item}`,
   ),
   ...bigIntsBlockTxInfoItemInvalidAfter.map((item) =>
-    item === '' ? 'invalid_after' : `invalid_after.${item}`
+    item === '' ? 'invalid_after' : `invalid_after.${item}`,
   ),
   ...bigIntsBlockTxInfoItemCollateralInputs.map((item) =>
-    item === '' ? 'collateral_inputs' : `collateral_inputs.${item}`
+    item === '' ? 'collateral_inputs' : `collateral_inputs.${item}`,
   ),
   ...bigIntsBlockTxInfoItemCollateralOutput.map((item) =>
-    item === '' ? 'collateral_output' : `collateral_output.${item}`
+    item === '' ? 'collateral_output' : `collateral_output.${item}`,
   ),
   ...bigIntsBlockTxInfoItemReferenceInputs.map((item) =>
-    item === '' ? 'reference_inputs' : `reference_inputs.${item}`
+    item === '' ? 'reference_inputs' : `reference_inputs.${item}`,
   ),
   ...bigIntsBlockTxInfoItemInputs.map((item) =>
-    item === '' ? 'inputs' : `inputs.${item}`
+    item === '' ? 'inputs' : `inputs.${item}`,
   ),
   ...bigIntsBlockTxInfoItemOutputsItem.map((item) =>
-    item === '' ? 'outputs' : `outputs.${item}`
+    item === '' ? 'outputs' : `outputs.${item}`,
   ),
   ...bigIntsBlockTxInfoItemWithdrawals.map((item) =>
-    item === '' ? 'withdrawals' : `withdrawals.${item}`
+    item === '' ? 'withdrawals' : `withdrawals.${item}`,
   ),
   ...bigIntsBlockTxInfoItemAssetsMinted.map((item) =>
-    item === '' ? 'assets_minted' : `assets_minted.${item}`
+    item === '' ? 'assets_minted' : `assets_minted.${item}`,
   ),
   ...bigIntsBlockTxInfoItemMetadata.map((item) =>
-    item === '' ? 'metadata' : `metadata.${item}`
+    item === '' ? 'metadata' : `metadata.${item}`,
   ),
   ...bigIntsBlockTxInfoItemCertificates.map((item) =>
-    item === '' ? 'certificates' : `certificates.${item}`
+    item === '' ? 'certificates' : `certificates.${item}`,
   ),
   ...bigIntsBlockTxInfoItemNativeScripts.map((item) =>
-    item === '' ? 'native_scripts' : `native_scripts.${item}`
+    item === '' ? 'native_scripts' : `native_scripts.${item}`,
   ),
   ...bigIntsBlockTxInfoItemPlutusContracts.map((item) =>
-    item === '' ? 'plutus_contracts' : `plutus_contracts.${item}`
+    item === '' ? 'plutus_contracts' : `plutus_contracts.${item}`,
   ),
 ];

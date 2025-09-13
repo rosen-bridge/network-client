@@ -157,6 +157,6 @@ export type AccountAssetsItem = {
 
 export const bigIntsAccountAssetsItem: Array<string> = [
   ...bigIntsAccountAssetsItemAssetName.map((item) =>
-    item === '' ? 'asset_name' : `asset_name.${item}`
+    item === '' ? 'asset_name' : `asset_name.${item}`,
   ),
 ];

@@ -158,6 +158,6 @@ export type AccountUpdatesItemUpdatesItem = {
 
 export const bigIntsAccountUpdatesItemUpdatesItem: Array<string> = [
   ...bigIntsAccountUpdatesItemUpdatesItemActionType.map((item) =>
-    item === '' ? 'action_type' : `action_type.${item}`
+    item === '' ? 'action_type' : `action_type.${item}`,
   ),
 ];

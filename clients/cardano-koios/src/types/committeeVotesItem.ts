@@ -166,12 +166,12 @@ export type CommitteeVotesItem = {
 
 export const bigIntsCommitteeVotesItem: Array<string> = [
   ...bigIntsCommitteeVotesItemVote.map((item) =>
-    item === '' ? 'vote' : `vote.${item}`
+    item === '' ? 'vote' : `vote.${item}`,
   ),
   ...bigIntsCommitteeVotesItemMetaUrl.map((item) =>
-    item === '' ? 'meta_url' : `meta_url.${item}`
+    item === '' ? 'meta_url' : `meta_url.${item}`,
   ),
   ...bigIntsCommitteeVotesItemMetaHash.map((item) =>
-    item === '' ? 'meta_hash' : `meta_hash.${item}`
+    item === '' ? 'meta_hash' : `meta_hash.${item}`,
   ),
 ];

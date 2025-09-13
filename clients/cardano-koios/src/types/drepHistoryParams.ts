@@ -156,9 +156,9 @@ export type DrepHistoryParams = {
 
 export const bigIntsDrepHistoryParams: Array<string> = [
   ...bigInts_EpochNoParameter.map((item) =>
-    item === '' ? '_epoch_no' : `_epoch_no.${item}`
+    item === '' ? '_epoch_no' : `_epoch_no.${item}`,
   ),
   ...bigInts_DrepIdOptionalParameter.map((item) =>
-    item === '' ? '_drep_id' : `_drep_id.${item}`
+    item === '' ? '_drep_id' : `_drep_id.${item}`,
   ),
 ];

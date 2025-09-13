@@ -27,10 +27,10 @@ export interface Extension {
 
 export const bigIntsExtension: Array<string> = [
   ...bigIntsModifierId.map((item) =>
-    item === '' ? 'headerId' : `headerId.${item}`
+    item === '' ? 'headerId' : `headerId.${item}`,
   ),
   ...bigIntsDigest32.map((item) => (item === '' ? 'digest' : `digest.${item}`)),
   ...bigIntsKeyValueItem.map((item) =>
-    item === '' ? 'fields' : `fields.${item}`
+    item === '' ? 'fields' : `fields.${item}`,
   ),
 ];

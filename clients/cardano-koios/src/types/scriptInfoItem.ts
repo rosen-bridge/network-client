@@ -167,15 +167,15 @@ export type ScriptInfoItem = {
 
 export const bigIntsScriptInfoItem: Array<string> = [
   ...bigIntsScriptInfoItemScriptHash.map((item) =>
-    item === '' ? 'script_hash' : `script_hash.${item}`
+    item === '' ? 'script_hash' : `script_hash.${item}`,
   ),
   ...bigIntsScriptInfoItemType.map((item) =>
-    item === '' ? 'type' : `type.${item}`
+    item === '' ? 'type' : `type.${item}`,
   ),
   ...bigIntsScriptInfoItemValue.map((item) =>
-    item === '' ? 'value' : `value.${item}`
+    item === '' ? 'value' : `value.${item}`,
   ),
   ...bigIntsScriptInfoItemBytes.map((item) =>
-    item === '' ? 'bytes' : `bytes.${item}`
+    item === '' ? 'bytes' : `bytes.${item}`,
   ),
 ];

@@ -157,9 +157,9 @@ export type OgmiosBody = {
 
 export const bigIntsOgmiosBody: Array<string> = [
   ...bigIntsOgmiosBodyMethod.map((item) =>
-    item === '' ? 'method' : `method.${item}`
+    item === '' ? 'method' : `method.${item}`,
   ),
   ...bigIntsOgmiosBodyParams.map((item) =>
-    item === '' ? 'params' : `params.${item}`
+    item === '' ? 'params' : `params.${item}`,
   ),
 ];

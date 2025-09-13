@@ -149,6 +149,6 @@ export type PoolRelaysItem = {
 
 export const bigIntsPoolRelaysItem: Array<string> = [
   ...bigIntsPoolRelaysItemRelaysItem.map((item) =>
-    item === '' ? 'relays' : `relays.${item}`
+    item === '' ? 'relays' : `relays.${item}`,
   ),
 ];

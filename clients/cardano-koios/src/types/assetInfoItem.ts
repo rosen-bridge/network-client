@@ -176,15 +176,15 @@ export type AssetInfoItem = {
 
 export const bigIntsAssetInfoItem: Array<string> = [
   ...bigIntsAssetInfoItemAssetName.map((item) =>
-    item === '' ? 'asset_name' : `asset_name.${item}`
+    item === '' ? 'asset_name' : `asset_name.${item}`,
   ),
   ...bigIntsAssetInfoItemMintingTxMetadataAllOf.map((item) =>
-    item === '' ? 'minting_tx_metadata' : `minting_tx_metadata.${item}`
+    item === '' ? 'minting_tx_metadata' : `minting_tx_metadata.${item}`,
   ),
   ...bigIntsAssetInfoItemTokenRegistryMetadata.map((item) =>
-    item === '' ? 'token_registry_metadata' : `token_registry_metadata.${item}`
+    item === '' ? 'token_registry_metadata' : `token_registry_metadata.${item}`,
   ),
   ...bigIntsAssetInfoItemCip68Metadata.map((item) =>
-    item === '' ? 'cip68_metadata' : `cip68_metadata.${item}`
+    item === '' ? 'cip68_metadata' : `cip68_metadata.${item}`,
   ),
 ];

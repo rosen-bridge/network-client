@@ -180,15 +180,15 @@ export type BlocksItem = {
 
 export const bigIntsBlocksItem: Array<string> = [
   ...bigIntsBlocksItemBlockHeight.map((item) =>
-    item === '' ? 'block_height' : `block_height.${item}`
+    item === '' ? 'block_height' : `block_height.${item}`,
   ),
   ...bigIntsBlocksItemPool.map((item) =>
-    item === '' ? 'pool' : `pool.${item}`
+    item === '' ? 'pool' : `pool.${item}`,
   ),
   ...bigIntsBlocksItemProtoMajor.map((item) =>
-    item === '' ? 'proto_major' : `proto_major.${item}`
+    item === '' ? 'proto_major' : `proto_major.${item}`,
   ),
   ...bigIntsBlocksItemProtoMinor.map((item) =>
-    item === '' ? 'proto_minor' : `proto_minor.${item}`
+    item === '' ? 'proto_minor' : `proto_minor.${item}`,
   ),
 ];

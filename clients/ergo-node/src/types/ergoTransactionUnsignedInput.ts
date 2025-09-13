@@ -18,9 +18,9 @@ export interface ErgoTransactionUnsignedInput {
 
 export const bigIntsErgoTransactionUnsignedInput: Array<string> = [
   ...bigIntsTransactionBoxId.map((item) =>
-    item === '' ? 'boxId' : `boxId.${item}`
+    item === '' ? 'boxId' : `boxId.${item}`,
   ),
   ...bigIntsErgoTransactionUnsignedInputExtension.map((item) =>
-    item === '' ? 'extension' : `extension.${item}`
+    item === '' ? 'extension' : `extension.${item}`,
   ),
 ];

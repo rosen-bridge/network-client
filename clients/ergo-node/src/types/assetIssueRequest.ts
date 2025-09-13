@@ -33,11 +33,11 @@ export interface AssetIssueRequest {
 
 export const bigIntsAssetIssueRequest: Array<string> = [
   ...bigIntsErgoAddress.map((item) =>
-    item === '' ? 'address' : `address.${item}`
+    item === '' ? 'address' : `address.${item}`,
   ),
   'ergValue',
   'amount',
   ...bigIntsRegisters.map((item) =>
-    item === '' ? 'registers' : `registers.${item}`
+    item === '' ? 'registers' : `registers.${item}`,
   ),
 ];

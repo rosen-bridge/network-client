@@ -153,6 +153,6 @@ export type TxInfoItemOutputsItemInlineDatumAnyOf = {
 
 export const bigIntsTxInfoItemOutputsItemInlineDatumAnyOf: Array<string> = [
   ...bigIntsTxInfoItemOutputsItemInlineDatumAnyOfValue.map((item) =>
-    item === '' ? 'value' : `value.${item}`
+    item === '' ? 'value' : `value.${item}`,
   ),
 ];

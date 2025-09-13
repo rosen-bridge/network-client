@@ -39,12 +39,12 @@ export interface WalletTransaction {
 export const bigIntsWalletTransaction: Array<string> = [
   ...bigIntsTransactionId.map((item) => (item === '' ? 'id' : `id.${item}`)),
   ...bigIntsErgoTransactionInput.map((item) =>
-    item === '' ? 'inputs' : `inputs.${item}`
+    item === '' ? 'inputs' : `inputs.${item}`,
   ),
   ...bigIntsErgoTransactionDataInput.map((item) =>
-    item === '' ? 'dataInputs' : `dataInputs.${item}`
+    item === '' ? 'dataInputs' : `dataInputs.${item}`,
   ),
   ...bigIntsErgoTransactionOutput.map((item) =>
-    item === '' ? 'outputs' : `outputs.${item}`
+    item === '' ? 'outputs' : `outputs.${item}`,
   ),
 ];

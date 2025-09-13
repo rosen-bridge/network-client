@@ -172,15 +172,15 @@ export type DrepInfoItem = {
 
 export const bigIntsDrepInfoItem: Array<string> = [
   ...bigIntsDrepInfoItemDeposit.map((item) =>
-    item === '' ? 'deposit' : `deposit.${item}`
+    item === '' ? 'deposit' : `deposit.${item}`,
   ),
   ...bigIntsDrepInfoItemExpiresEpochNo.map((item) =>
-    item === '' ? 'expires_epoch_no' : `expires_epoch_no.${item}`
+    item === '' ? 'expires_epoch_no' : `expires_epoch_no.${item}`,
   ),
   ...bigIntsDrepInfoItemMetaUrl.map((item) =>
-    item === '' ? 'meta_url' : `meta_url.${item}`
+    item === '' ? 'meta_url' : `meta_url.${item}`,
   ),
   ...bigIntsDrepInfoItemMetaHash.map((item) =>
-    item === '' ? 'meta_hash' : `meta_hash.${item}`
+    item === '' ? 'meta_hash' : `meta_hash.${item}`,
   ),
 ];

@@ -356,177 +356,177 @@ export type EpochParamsItem = {
 
 export const bigIntsEpochParamsItem: Array<string> = [
   ...bigIntsEpochParamsItemMinFeeA.map((item) =>
-    item === '' ? 'min_fee_a' : `min_fee_a.${item}`
+    item === '' ? 'min_fee_a' : `min_fee_a.${item}`,
   ),
   ...bigIntsEpochParamsItemMinFeeB.map((item) =>
-    item === '' ? 'min_fee_b' : `min_fee_b.${item}`
+    item === '' ? 'min_fee_b' : `min_fee_b.${item}`,
   ),
   ...bigIntsEpochParamsItemMaxBlockSize.map((item) =>
-    item === '' ? 'max_block_size' : `max_block_size.${item}`
+    item === '' ? 'max_block_size' : `max_block_size.${item}`,
   ),
   ...bigIntsEpochParamsItemMaxTxSize.map((item) =>
-    item === '' ? 'max_tx_size' : `max_tx_size.${item}`
+    item === '' ? 'max_tx_size' : `max_tx_size.${item}`,
   ),
   ...bigIntsEpochParamsItemMaxBhSize.map((item) =>
-    item === '' ? 'max_bh_size' : `max_bh_size.${item}`
+    item === '' ? 'max_bh_size' : `max_bh_size.${item}`,
   ),
   ...bigIntsEpochParamsItemKeyDeposit.map((item) =>
-    item === '' ? 'key_deposit' : `key_deposit.${item}`
+    item === '' ? 'key_deposit' : `key_deposit.${item}`,
   ),
   ...bigIntsEpochParamsItemPoolDeposit.map((item) =>
-    item === '' ? 'pool_deposit' : `pool_deposit.${item}`
+    item === '' ? 'pool_deposit' : `pool_deposit.${item}`,
   ),
   ...bigIntsEpochParamsItemMaxEpoch.map((item) =>
-    item === '' ? 'max_epoch' : `max_epoch.${item}`
+    item === '' ? 'max_epoch' : `max_epoch.${item}`,
   ),
   ...bigIntsEpochParamsItemOptimalPoolCount.map((item) =>
-    item === '' ? 'optimal_pool_count' : `optimal_pool_count.${item}`
+    item === '' ? 'optimal_pool_count' : `optimal_pool_count.${item}`,
   ),
   ...bigIntsEpochParamsItemInfluence.map((item) =>
-    item === '' ? 'influence' : `influence.${item}`
+    item === '' ? 'influence' : `influence.${item}`,
   ),
   ...bigIntsEpochParamsItemMonetaryExpandRate.map((item) =>
-    item === '' ? 'monetary_expand_rate' : `monetary_expand_rate.${item}`
+    item === '' ? 'monetary_expand_rate' : `monetary_expand_rate.${item}`,
   ),
   ...bigIntsEpochParamsItemTreasuryGrowthRate.map((item) =>
-    item === '' ? 'treasury_growth_rate' : `treasury_growth_rate.${item}`
+    item === '' ? 'treasury_growth_rate' : `treasury_growth_rate.${item}`,
   ),
   ...bigIntsEpochParamsItemDecentralisation.map((item) =>
-    item === '' ? 'decentralisation' : `decentralisation.${item}`
+    item === '' ? 'decentralisation' : `decentralisation.${item}`,
   ),
   ...bigIntsEpochParamsItemExtraEntropy.map((item) =>
-    item === '' ? 'extra_entropy' : `extra_entropy.${item}`
+    item === '' ? 'extra_entropy' : `extra_entropy.${item}`,
   ),
   ...bigIntsEpochParamsItemProtocolMajor.map((item) =>
-    item === '' ? 'protocol_major' : `protocol_major.${item}`
+    item === '' ? 'protocol_major' : `protocol_major.${item}`,
   ),
   ...bigIntsEpochParamsItemProtocolMinor.map((item) =>
-    item === '' ? 'protocol_minor' : `protocol_minor.${item}`
+    item === '' ? 'protocol_minor' : `protocol_minor.${item}`,
   ),
   ...bigIntsEpochParamsItemMinUtxoValue.map((item) =>
-    item === '' ? 'min_utxo_value' : `min_utxo_value.${item}`
+    item === '' ? 'min_utxo_value' : `min_utxo_value.${item}`,
   ),
   ...bigIntsEpochParamsItemMinPoolCost.map((item) =>
-    item === '' ? 'min_pool_cost' : `min_pool_cost.${item}`
+    item === '' ? 'min_pool_cost' : `min_pool_cost.${item}`,
   ),
   ...bigIntsEpochParamsItemNonce.map((item) =>
-    item === '' ? 'nonce' : `nonce.${item}`
+    item === '' ? 'nonce' : `nonce.${item}`,
   ),
   ...bigIntsEpochParamsItemCostModels.map((item) =>
-    item === '' ? 'cost_models' : `cost_models.${item}`
+    item === '' ? 'cost_models' : `cost_models.${item}`,
   ),
   ...bigIntsEpochParamsItemPriceMem.map((item) =>
-    item === '' ? 'price_mem' : `price_mem.${item}`
+    item === '' ? 'price_mem' : `price_mem.${item}`,
   ),
   ...bigIntsEpochParamsItemPriceStep.map((item) =>
-    item === '' ? 'price_step' : `price_step.${item}`
+    item === '' ? 'price_step' : `price_step.${item}`,
   ),
   ...bigIntsEpochParamsItemMaxTxExMem.map((item) =>
-    item === '' ? 'max_tx_ex_mem' : `max_tx_ex_mem.${item}`
+    item === '' ? 'max_tx_ex_mem' : `max_tx_ex_mem.${item}`,
   ),
   ...bigIntsEpochParamsItemMaxTxExSteps.map((item) =>
-    item === '' ? 'max_tx_ex_steps' : `max_tx_ex_steps.${item}`
+    item === '' ? 'max_tx_ex_steps' : `max_tx_ex_steps.${item}`,
   ),
   ...bigIntsEpochParamsItemMaxBlockExMem.map((item) =>
-    item === '' ? 'max_block_ex_mem' : `max_block_ex_mem.${item}`
+    item === '' ? 'max_block_ex_mem' : `max_block_ex_mem.${item}`,
   ),
   ...bigIntsEpochParamsItemMaxBlockExSteps.map((item) =>
-    item === '' ? 'max_block_ex_steps' : `max_block_ex_steps.${item}`
+    item === '' ? 'max_block_ex_steps' : `max_block_ex_steps.${item}`,
   ),
   ...bigIntsEpochParamsItemMaxValSize.map((item) =>
-    item === '' ? 'max_val_size' : `max_val_size.${item}`
+    item === '' ? 'max_val_size' : `max_val_size.${item}`,
   ),
   ...bigIntsEpochParamsItemCollateralPercent.map((item) =>
-    item === '' ? 'collateral_percent' : `collateral_percent.${item}`
+    item === '' ? 'collateral_percent' : `collateral_percent.${item}`,
   ),
   ...bigIntsEpochParamsItemMaxCollateralInputs.map((item) =>
-    item === '' ? 'max_collateral_inputs' : `max_collateral_inputs.${item}`
+    item === '' ? 'max_collateral_inputs' : `max_collateral_inputs.${item}`,
   ),
   ...bigIntsEpochParamsItemCoinsPerUtxoSize.map((item) =>
-    item === '' ? 'coins_per_utxo_size' : `coins_per_utxo_size.${item}`
+    item === '' ? 'coins_per_utxo_size' : `coins_per_utxo_size.${item}`,
   ),
   ...bigIntsEpochParamsItemPvtMotionNoConfidence.map((item) =>
     item === ''
       ? 'pvt_motion_no_confidence'
-      : `pvt_motion_no_confidence.${item}`
+      : `pvt_motion_no_confidence.${item}`,
   ),
   ...bigIntsEpochParamsItemPvtCommitteeNormal.map((item) =>
-    item === '' ? 'pvt_committee_normal' : `pvt_committee_normal.${item}`
+    item === '' ? 'pvt_committee_normal' : `pvt_committee_normal.${item}`,
   ),
   ...bigIntsEpochParamsItemPvtCommitteeNoConfidence.map((item) =>
     item === ''
       ? 'pvt_committee_no_confidence'
-      : `pvt_committee_no_confidence.${item}`
+      : `pvt_committee_no_confidence.${item}`,
   ),
   ...bigIntsEpochParamsItemPvtHardForkInitiation.map((item) =>
     item === ''
       ? 'pvt_hard_fork_initiation'
-      : `pvt_hard_fork_initiation.${item}`
+      : `pvt_hard_fork_initiation.${item}`,
   ),
   ...bigIntsEpochParamsItemDvtMotionNoConfidence.map((item) =>
     item === ''
       ? 'dvt_motion_no_confidence'
-      : `dvt_motion_no_confidence.${item}`
+      : `dvt_motion_no_confidence.${item}`,
   ),
   ...bigIntsEpochParamsItemDvtCommitteeNormal.map((item) =>
-    item === '' ? 'dvt_committee_normal' : `dvt_committee_normal.${item}`
+    item === '' ? 'dvt_committee_normal' : `dvt_committee_normal.${item}`,
   ),
   ...bigIntsEpochParamsItemDvtCommitteeNoConfidence.map((item) =>
     item === ''
       ? 'dvt_committee_no_confidence'
-      : `dvt_committee_no_confidence.${item}`
+      : `dvt_committee_no_confidence.${item}`,
   ),
   ...bigIntsEpochParamsItemDvtUpdateToConstitution.map((item) =>
     item === ''
       ? 'dvt_update_to_constitution'
-      : `dvt_update_to_constitution.${item}`
+      : `dvt_update_to_constitution.${item}`,
   ),
   ...bigIntsEpochParamsItemDvtHardForkInitiation.map((item) =>
     item === ''
       ? 'dvt_hard_fork_initiation'
-      : `dvt_hard_fork_initiation.${item}`
+      : `dvt_hard_fork_initiation.${item}`,
   ),
   ...bigIntsEpochParamsItemDvtPPNetworkGroup.map((item) =>
-    item === '' ? 'dvt_p_p_network_group' : `dvt_p_p_network_group.${item}`
+    item === '' ? 'dvt_p_p_network_group' : `dvt_p_p_network_group.${item}`,
   ),
   ...bigIntsEpochParamsItemDvtPPEconomicGroup.map((item) =>
-    item === '' ? 'dvt_p_p_economic_group' : `dvt_p_p_economic_group.${item}`
+    item === '' ? 'dvt_p_p_economic_group' : `dvt_p_p_economic_group.${item}`,
   ),
   ...bigIntsEpochParamsItemDvtPPTechnicalGroup.map((item) =>
-    item === '' ? 'dvt_p_p_technical_group' : `dvt_p_p_technical_group.${item}`
+    item === '' ? 'dvt_p_p_technical_group' : `dvt_p_p_technical_group.${item}`,
   ),
   ...bigIntsEpochParamsItemDvtPPGovGroup.map((item) =>
-    item === '' ? 'dvt_p_p_gov_group' : `dvt_p_p_gov_group.${item}`
+    item === '' ? 'dvt_p_p_gov_group' : `dvt_p_p_gov_group.${item}`,
   ),
   ...bigIntsEpochParamsItemDvtTreasuryWithdrawal.map((item) =>
-    item === '' ? 'dvt_treasury_withdrawal' : `dvt_treasury_withdrawal.${item}`
+    item === '' ? 'dvt_treasury_withdrawal' : `dvt_treasury_withdrawal.${item}`,
   ),
   ...bigIntsEpochParamsItemCommitteeMinSize.map((item) =>
-    item === '' ? 'committee_min_size' : `committee_min_size.${item}`
+    item === '' ? 'committee_min_size' : `committee_min_size.${item}`,
   ),
   ...bigIntsEpochParamsItemCommitteeMaxTermLength.map((item) =>
     item === ''
       ? 'committee_max_term_length'
-      : `committee_max_term_length.${item}`
+      : `committee_max_term_length.${item}`,
   ),
   ...bigIntsEpochParamsItemGovActionLifetime.map((item) =>
-    item === '' ? 'gov_action_lifetime' : `gov_action_lifetime.${item}`
+    item === '' ? 'gov_action_lifetime' : `gov_action_lifetime.${item}`,
   ),
   ...bigIntsEpochParamsItemGovActionDeposit.map((item) =>
-    item === '' ? 'gov_action_deposit' : `gov_action_deposit.${item}`
+    item === '' ? 'gov_action_deposit' : `gov_action_deposit.${item}`,
   ),
   ...bigIntsEpochParamsItemDrepDeposit.map((item) =>
-    item === '' ? 'drep_deposit' : `drep_deposit.${item}`
+    item === '' ? 'drep_deposit' : `drep_deposit.${item}`,
   ),
   ...bigIntsEpochParamsItemDrepActivity.map((item) =>
-    item === '' ? 'drep_activity' : `drep_activity.${item}`
+    item === '' ? 'drep_activity' : `drep_activity.${item}`,
   ),
   ...bigIntsEpochParamsItemPvtppSecurityGroup.map((item) =>
-    item === '' ? 'pvtpp_security_group' : `pvtpp_security_group.${item}`
+    item === '' ? 'pvtpp_security_group' : `pvtpp_security_group.${item}`,
   ),
   ...bigIntsEpochParamsItemMinFeeRefScriptCostPerByte.map((item) =>
     item === ''
       ? 'min_fee_ref_script_cost_per_byte'
-      : `min_fee_ref_script_cost_per_byte.${item}`
+      : `min_fee_ref_script_cost_per_byte.${item}`,
   ),
 ];

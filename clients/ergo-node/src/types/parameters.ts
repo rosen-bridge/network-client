@@ -36,6 +36,6 @@ export interface Parameters {
 
 export const bigIntsParameters: Array<string> = [
   ...bigIntsVersion.map((item) =>
-    item === '' ? 'blockVersion' : `blockVersion.${item}`
+    item === '' ? 'blockVersion' : `blockVersion.${item}`,
   ),
 ];

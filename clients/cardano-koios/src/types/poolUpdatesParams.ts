@@ -150,6 +150,6 @@ export type PoolUpdatesParams = {
 
 export const bigIntsPoolUpdatesParams: Array<string> = [
   ...bigInts_PoolBech32OptionalParameter.map((item) =>
-    item === '' ? '_pool_bech32' : `_pool_bech32.${item}`
+    item === '' ? '_pool_bech32' : `_pool_bech32.${item}`,
   ),
 ];

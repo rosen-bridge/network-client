@@ -174,12 +174,12 @@ export type EpochInfoItem = {
 
 export const bigIntsEpochInfoItem: Array<string> = [
   ...bigIntsEpochInfoItemActiveStake.map((item) =>
-    item === '' ? 'active_stake' : `active_stake.${item}`
+    item === '' ? 'active_stake' : `active_stake.${item}`,
   ),
   ...bigIntsEpochInfoItemTotalRewards.map((item) =>
-    item === '' ? 'total_rewards' : `total_rewards.${item}`
+    item === '' ? 'total_rewards' : `total_rewards.${item}`,
   ),
   ...bigIntsEpochInfoItemAvgBlkReward.map((item) =>
-    item === '' ? 'avg_blk_reward' : `avg_blk_reward.${item}`
+    item === '' ? 'avg_blk_reward' : `avg_blk_reward.${item}`,
   ),
 ];

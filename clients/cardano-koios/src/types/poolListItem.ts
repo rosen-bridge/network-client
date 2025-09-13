@@ -202,45 +202,45 @@ export type PoolListItem = {
 
 export const bigIntsPoolListItem: Array<string> = [
   ...bigIntsPoolListItemActiveEpochNo.map((item) =>
-    item === '' ? 'active_epoch_no' : `active_epoch_no.${item}`
+    item === '' ? 'active_epoch_no' : `active_epoch_no.${item}`,
   ),
   ...bigIntsPoolListItemMargin.map((item) =>
-    item === '' ? 'margin' : `margin.${item}`
+    item === '' ? 'margin' : `margin.${item}`,
   ),
   ...bigIntsPoolListItemFixedCost.map((item) =>
-    item === '' ? 'fixed_cost' : `fixed_cost.${item}`
+    item === '' ? 'fixed_cost' : `fixed_cost.${item}`,
   ),
   ...bigIntsPoolListItemPledge.map((item) =>
-    item === '' ? 'pledge' : `pledge.${item}`
+    item === '' ? 'pledge' : `pledge.${item}`,
   ),
   ...bigIntsPoolListItemDeposit.map((item) =>
-    item === '' ? 'deposit' : `deposit.${item}`
+    item === '' ? 'deposit' : `deposit.${item}`,
   ),
   ...bigIntsPoolListItemRewardAddr.map((item) =>
-    item === '' ? 'reward_addr' : `reward_addr.${item}`
+    item === '' ? 'reward_addr' : `reward_addr.${item}`,
   ),
   ...bigIntsPoolListItemOwners.map((item) =>
-    item === '' ? 'owners' : `owners.${item}`
+    item === '' ? 'owners' : `owners.${item}`,
   ),
   ...bigIntsPoolListItemRelaysItem.map((item) =>
-    item === '' ? 'relays' : `relays.${item}`
+    item === '' ? 'relays' : `relays.${item}`,
   ),
   ...bigIntsPoolListItemTicker.map((item) =>
-    item === '' ? 'ticker' : `ticker.${item}`
+    item === '' ? 'ticker' : `ticker.${item}`,
   ),
   ...bigIntsPoolListItemMetaUrl.map((item) =>
-    item === '' ? 'meta_url' : `meta_url.${item}`
+    item === '' ? 'meta_url' : `meta_url.${item}`,
   ),
   ...bigIntsPoolListItemMetaHash.map((item) =>
-    item === '' ? 'meta_hash' : `meta_hash.${item}`
+    item === '' ? 'meta_hash' : `meta_hash.${item}`,
   ),
   ...bigIntsPoolListItemPoolStatus.map((item) =>
-    item === '' ? 'pool_status' : `pool_status.${item}`
+    item === '' ? 'pool_status' : `pool_status.${item}`,
   ),
   ...bigIntsPoolListItemActiveStake.map((item) =>
-    item === '' ? 'active_stake' : `active_stake.${item}`
+    item === '' ? 'active_stake' : `active_stake.${item}`,
   ),
   ...bigIntsPoolListItemRetiringEpoch.map((item) =>
-    item === '' ? 'retiring_epoch' : `retiring_epoch.${item}`
+    item === '' ? 'retiring_epoch' : `retiring_epoch.${item}`,
   ),
 ];

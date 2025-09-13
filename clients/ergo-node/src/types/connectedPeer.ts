@@ -17,6 +17,6 @@ export interface ConnectedPeer {
 
 export const bigIntsConnectedPeer: Array<string> = [
   ...bigIntsTimestamp.map((item) =>
-    item === '' ? 'lastMessage' : `lastMessage.${item}`
+    item === '' ? 'lastMessage' : `lastMessage.${item}`,
   ),
 ];

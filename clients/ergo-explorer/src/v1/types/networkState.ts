@@ -21,6 +21,6 @@ export const bigIntsNetworkState = [
   'maxBoxGix',
   'maxTxGix',
   ...bigIntsEpochInfo.map((item) =>
-    item === '' ? 'params' : `params.${item}`
+    item === '' ? 'params' : `params.${item}`,
   ),
 ];

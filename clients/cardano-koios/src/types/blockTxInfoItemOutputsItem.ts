@@ -172,21 +172,21 @@ export type BlockTxInfoItemOutputsItem = {
 
 export const bigIntsBlockTxInfoItemOutputsItem: Array<string> = [
   ...bigIntsBlockTxInfoItemOutputsItemPaymentAddr.map((item) =>
-    item === '' ? 'payment_addr' : `payment_addr.${item}`
+    item === '' ? 'payment_addr' : `payment_addr.${item}`,
   ),
   ...bigIntsBlockTxInfoItemOutputsItemStakeAddr.map((item) =>
-    item === '' ? 'stake_addr' : `stake_addr.${item}`
+    item === '' ? 'stake_addr' : `stake_addr.${item}`,
   ),
   ...bigIntsBlockTxInfoItemOutputsItemDatumHash.map((item) =>
-    item === '' ? 'datum_hash' : `datum_hash.${item}`
+    item === '' ? 'datum_hash' : `datum_hash.${item}`,
   ),
   ...bigIntsBlockTxInfoItemOutputsItemInlineDatum.map((item) =>
-    item === '' ? 'inline_datum' : `inline_datum.${item}`
+    item === '' ? 'inline_datum' : `inline_datum.${item}`,
   ),
   ...bigIntsBlockTxInfoItemOutputsItemReferenceScript.map((item) =>
-    item === '' ? 'reference_script' : `reference_script.${item}`
+    item === '' ? 'reference_script' : `reference_script.${item}`,
   ),
   ...bigIntsBlockTxInfoItemOutputsItemAssetList.map((item) =>
-    item === '' ? 'asset_list' : `asset_list.${item}`
+    item === '' ? 'asset_list' : `asset_list.${item}`,
   ),
 ];

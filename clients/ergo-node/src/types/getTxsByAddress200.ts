@@ -18,6 +18,6 @@ export type GetTxsByAddress200 = {
 
 export const bigIntsGetTxsByAddress200: Array<string> = [
   ...bigIntsIndexedErgoTransaction.map((item) =>
-    item === '' ? 'items' : `items.${item}`
+    item === '' ? 'items' : `items.${item}`,
   ),
 ];

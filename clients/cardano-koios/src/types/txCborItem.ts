@@ -160,6 +160,6 @@ export type TxCborItem = {
 
 export const bigIntsTxCborItem: Array<string> = [
   ...bigIntsTxCborItemBlockHeight.map((item) =>
-    item === '' ? 'block_height' : `block_height.${item}`
+    item === '' ? 'block_height' : `block_height.${item}`,
   ),
 ];

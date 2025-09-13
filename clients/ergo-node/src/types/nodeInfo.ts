@@ -65,9 +65,9 @@ export interface NodeInfo {
 
 export const bigIntsNodeInfo: Array<string> = [
   ...bigIntsNodeInfoStateType.map((item) =>
-    item === '' ? 'stateType' : `stateType.${item}`
+    item === '' ? 'stateType' : `stateType.${item}`,
   ),
   ...bigIntsParameters.map((item) =>
-    item === '' ? 'parameters' : `parameters.${item}`
+    item === '' ? 'parameters' : `parameters.${item}`,
   ),
 ];

@@ -18,6 +18,6 @@ export interface PrivateKeyRequest {
 
 export const bigIntsPrivateKeyRequest: Array<string> = [
   ...bigIntsErgoAddress.map((item) =>
-    item === '' ? 'address' : `address.${item}`
+    item === '' ? 'address' : `address.${item}`,
   ),
 ];

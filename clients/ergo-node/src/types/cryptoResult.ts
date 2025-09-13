@@ -21,7 +21,7 @@ export interface CryptoResult {
 
 export const bigIntsCryptoResult: Array<string> = [
   ...bigIntsSigmaBoolean.map((item) =>
-    item === '' ? 'value' : `value.${item}`
+    item === '' ? 'value' : `value.${item}`,
   ),
   'cost',
 ];

@@ -156,9 +156,9 @@ export type AssetSummaryParams = {
 
 export const bigIntsAssetSummaryParams: Array<string> = [
   ...bigInts_AssetPolicyParameter.map((item) =>
-    item === '' ? '_asset_policy' : `_asset_policy.${item}`
+    item === '' ? '_asset_policy' : `_asset_policy.${item}`,
   ),
   ...bigInts_AssetNameParameter.map((item) =>
-    item === '' ? '_asset_name' : `_asset_name.${item}`
+    item === '' ? '_asset_name' : `_asset_name.${item}`,
   ),
 ];

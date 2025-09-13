@@ -154,6 +154,6 @@ export type TxInfoItemCollateralInputsAnyOfItemInlineDatumAnyOf = {
 export const bigIntsTxInfoItemCollateralInputsAnyOfItemInlineDatumAnyOf: Array<string> =
   [
     ...bigIntsTxInfoItemCollateralInputsAnyOfItemInlineDatumAnyOfValue.map(
-      (item) => (item === '' ? 'value' : `value.${item}`)
+      (item) => (item === '' ? 'value' : `value.${item}`),
     ),
   ];

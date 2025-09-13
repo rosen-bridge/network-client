@@ -29,12 +29,12 @@ export interface Commitment {
 
 export const bigIntsCommitment: Array<string> = [
   ...bigIntsCommitmentHint.map((item) =>
-    item === '' ? 'hint' : `hint.${item}`
+    item === '' ? 'hint' : `hint.${item}`,
   ),
   ...bigIntsSigmaBoolean.map((item) =>
-    item === '' ? 'pubkey' : `pubkey.${item}`
+    item === '' ? 'pubkey' : `pubkey.${item}`,
   ),
   ...bigIntsCommitmentType.map((item) =>
-    item === '' ? 'type' : `type.${item}`
+    item === '' ? 'type' : `type.${item}`,
   ),
 ];

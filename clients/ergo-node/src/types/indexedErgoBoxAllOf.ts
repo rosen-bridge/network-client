@@ -31,13 +31,13 @@ export type IndexedErgoBoxAllOf = {
 
 export const bigIntsIndexedErgoBoxAllOf: Array<string> = [
   ...bigIntsErgoAddress.map((item) =>
-    item === '' ? 'address' : `address.${item}`
+    item === '' ? 'address' : `address.${item}`,
   ),
   ...bigIntsModifierId.map((item) =>
-    item === '' ? 'spentTransactionId' : `spentTransactionId.${item}`
+    item === '' ? 'spentTransactionId' : `spentTransactionId.${item}`,
   ),
   ...bigIntsSpendingProof.map((item) =>
-    item === '' ? 'spendingProof' : `spendingProof.${item}`
+    item === '' ? 'spendingProof' : `spendingProof.${item}`,
   ),
   'globalIndex',
 ];

@@ -212,6 +212,6 @@ export type ProposalVotingSummaryItem = {
 
 export const bigIntsProposalVotingSummaryItem: Array<string> = [
   ...bigIntsProposalVotingSummaryItemProposalType.map((item) =>
-    item === '' ? 'proposal_type' : `proposal_type.${item}`
+    item === '' ? 'proposal_type' : `proposal_type.${item}`,
   ),
 ];

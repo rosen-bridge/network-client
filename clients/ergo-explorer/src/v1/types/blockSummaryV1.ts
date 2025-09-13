@@ -17,9 +17,9 @@ export interface BlockSummaryV1 {
 
 export const bigIntsBlockSummaryV1 = [
   ...bigIntsHeaderInfo.map((item) =>
-    item === '' ? 'header' : `header.${item}`
+    item === '' ? 'header' : `header.${item}`,
   ),
   ...bigIntsTransactionInfo1.map((item) =>
-    item === '' ? 'blockTransactions' : `blockTransactions.${item}`
+    item === '' ? 'blockTransactions' : `blockTransactions.${item}`,
   ),
 ];

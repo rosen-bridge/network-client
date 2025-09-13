@@ -15,6 +15,6 @@ export interface RewardAddress {
 
 export const bigIntsRewardAddress: Array<string> = [
   ...bigIntsErgoAddress.map((item) =>
-    item === '' ? 'rewardAddress' : `rewardAddress.${item}`
+    item === '' ? 'rewardAddress' : `rewardAddress.${item}`,
   ),
 ];

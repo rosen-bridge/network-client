@@ -155,9 +155,9 @@ export type PolicyAssetAddressesItem = {
 
 export const bigIntsPolicyAssetAddressesItem: Array<string> = [
   ...bigIntsPolicyAssetAddressesItemAssetName.map((item) =>
-    item === '' ? 'asset_name' : `asset_name.${item}`
+    item === '' ? 'asset_name' : `asset_name.${item}`,
   ),
   ...bigIntsPolicyAssetAddressesItemStakeAddress.map((item) =>
-    item === '' ? 'stake_address' : `stake_address.${item}`
+    item === '' ? 'stake_address' : `stake_address.${item}`,
   ),
 ];

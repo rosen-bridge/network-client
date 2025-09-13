@@ -62,38 +62,38 @@ export interface BlockHeader {
 export const bigIntsBlockHeader: Array<string> = [
   ...bigIntsModifierId.map((item) => (item === '' ? 'id' : `id.${item}`)),
   ...bigIntsTimestamp.map((item) =>
-    item === '' ? 'timestamp' : `timestamp.${item}`
+    item === '' ? 'timestamp' : `timestamp.${item}`,
   ),
   ...bigIntsVersion.map((item) =>
-    item === '' ? 'version' : `version.${item}`
+    item === '' ? 'version' : `version.${item}`,
   ),
   ...bigIntsDigest32.map((item) =>
-    item === '' ? 'adProofsRoot' : `adProofsRoot.${item}`
+    item === '' ? 'adProofsRoot' : `adProofsRoot.${item}`,
   ),
   ...bigIntsADDigest.map((item) =>
-    item === '' ? 'stateRoot' : `stateRoot.${item}`
+    item === '' ? 'stateRoot' : `stateRoot.${item}`,
   ),
   ...bigIntsDigest32.map((item) =>
-    item === '' ? 'transactionsRoot' : `transactionsRoot.${item}`
+    item === '' ? 'transactionsRoot' : `transactionsRoot.${item}`,
   ),
   'nBits',
   ...bigIntsDigest32.map((item) =>
-    item === '' ? 'extensionHash' : `extensionHash.${item}`
+    item === '' ? 'extensionHash' : `extensionHash.${item}`,
   ),
   ...bigIntsPowSolutions.map((item) =>
-    item === '' ? 'powSolutions' : `powSolutions.${item}`
+    item === '' ? 'powSolutions' : `powSolutions.${item}`,
   ),
   ...bigIntsModifierId.map((item) =>
-    item === '' ? 'parentId' : `parentId.${item}`
+    item === '' ? 'parentId' : `parentId.${item}`,
   ),
   ...bigIntsVotes.map((item) => (item === '' ? 'votes' : `votes.${item}`)),
   ...bigIntsModifierId.map((item) =>
-    item === '' ? 'extensionId' : `extensionId.${item}`
+    item === '' ? 'extensionId' : `extensionId.${item}`,
   ),
   ...bigIntsModifierId.map((item) =>
-    item === '' ? 'transactionsId' : `transactionsId.${item}`
+    item === '' ? 'transactionsId' : `transactionsId.${item}`,
   ),
   ...bigIntsModifierId.map((item) =>
-    item === '' ? 'adProofsId' : `adProofsId.${item}`
+    item === '' ? 'adProofsId' : `adProofsId.${item}`,
   ),
 ];

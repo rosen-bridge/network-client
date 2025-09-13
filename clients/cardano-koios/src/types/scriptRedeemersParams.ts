@@ -150,6 +150,6 @@ export type ScriptRedeemersParams = {
 
 export const bigIntsScriptRedeemersParams: Array<string> = [
   ...bigInts_ScriptHashParameter.map((item) =>
-    item === '' ? '_script_hash' : `_script_hash.${item}`
+    item === '' ? '_script_hash' : `_script_hash.${item}`,
   ),
 ];

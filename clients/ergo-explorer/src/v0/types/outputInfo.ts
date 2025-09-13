@@ -35,9 +35,9 @@ export interface OutputInfo {
 export const bigIntsOutputInfo = [
   'value',
   ...bigIntsAssetInstanceInfo.map((item) =>
-    item === '' ? 'assets' : `assets.${item}`
+    item === '' ? 'assets' : `assets.${item}`,
   ),
   ...bigIntsOutputInfoAdditionalRegisters.map((item) =>
-    item === '' ? 'additionalRegisters' : `additionalRegisters.${item}`
+    item === '' ? 'additionalRegisters' : `additionalRegisters.${item}`,
   ),
 ];
