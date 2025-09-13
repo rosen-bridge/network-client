@@ -22,15 +22,12 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jscodeshift": "^0.11.6",
-    "@types/node": "^22.11.0",
     "@types/tmp": "^0.2.3",
     "bun": "^0.5.9",
-    "eslint": "^8.16.0",
     "jscodeshift": "^0.14.0",
     "orval": "^7.4.1",
     "rimraf": "^4.4.1",
     "tmp": "^0.2.1",
-    "typescript": "^5.0.3",
     "yaml": "^2.2.1"
   },
   "keywords": [
