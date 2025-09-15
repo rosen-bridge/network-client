@@ -1,5 +1,16 @@
 # @rosen-clients/ergo-explorer
 
+## 2.0.0
+
+### Major Changes
+
+- Update to node 22.18.0
+
+### Patch Changes
+
+- Update dependencies
+  - @rosen-clients/axios@1.0.0
+
 ## 1.1.7
 
 ### Patch Changes
