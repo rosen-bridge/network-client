@@ -1,5 +1,16 @@
 # @rosen-clients/axios
 
+## 1.0.0
+
+### Major Changes
+
+- Update to node 22.18.0
+
+### Patch Changes
+
+- Update dependencies
+  - @rosen-clients/rate-limited-axios@1.0.0
+
 ## 0.1.5
 
 ### Patch Changes
