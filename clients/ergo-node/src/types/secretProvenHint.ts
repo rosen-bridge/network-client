@@ -9,7 +9,7 @@
 export type SecretProvenHint =
   (typeof SecretProvenHint)[keyof typeof SecretProvenHint];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const SecretProvenHint = {
   proofReal: 'proofReal',
   proofSimulated: 'proofSimulated',

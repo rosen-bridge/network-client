@@ -144,7 +144,7 @@ A big thank you to the following projects who are already starting to use Koios 
 export type ProposalVotesItemVoterRole =
   (typeof ProposalVotesItemVoterRole)[keyof typeof ProposalVotesItemVoterRole];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const ProposalVotesItemVoterRole = {
   ConstitutionalCommittee: 'ConstitutionalCommittee',
   DRep: 'DRep',

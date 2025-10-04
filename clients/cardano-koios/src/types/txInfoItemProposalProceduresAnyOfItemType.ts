@@ -144,7 +144,7 @@ A big thank you to the following projects who are already starting to use Koios 
 export type TxInfoItemProposalProceduresAnyOfItemType =
   (typeof TxInfoItemProposalProceduresAnyOfItemType)[keyof typeof TxInfoItemProposalProceduresAnyOfItemType];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const TxInfoItemProposalProceduresAnyOfItemType = {
   ParameterChange: 'ParameterChange',
   HardForkInitiation: 'HardForkInitiation',

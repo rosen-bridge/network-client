@@ -144,7 +144,7 @@ A big thank you to the following projects who are already starting to use Koios 
 export type CommitteeInfoMembersItemStatus =
   (typeof CommitteeInfoMembersItemStatus)[keyof typeof CommitteeInfoMembersItemStatus];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const CommitteeInfoMembersItemStatus = {
   authorized: 'authorized',
   not_authorized: 'not_authorized',

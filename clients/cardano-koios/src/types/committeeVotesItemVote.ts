@@ -144,7 +144,7 @@ A big thank you to the following projects who are already starting to use Koios 
 export type CommitteeVotesItemVote =
   (typeof CommitteeVotesItemVote)[keyof typeof CommitteeVotesItemVote];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const CommitteeVotesItemVote = {
   Yes: 'Yes',
   No: 'No',

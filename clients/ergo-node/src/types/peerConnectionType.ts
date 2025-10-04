@@ -9,7 +9,7 @@
 export type PeerConnectionType =
   (typeof PeerConnectionType)[keyof typeof PeerConnectionType];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const PeerConnectionType = {
   Incoming: 'Incoming',
   Outgoing: 'Outgoing',

@@ -12,7 +12,7 @@
 export type NodeInfoStateType =
   (typeof NodeInfoStateType)[keyof typeof NodeInfoStateType];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const NodeInfoStateType = {
   digest: 'digest',
   utxo: 'utxo',
