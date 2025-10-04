@@ -10,7 +10,7 @@
     "generate-client-base": "orval && rimraf ./src/api/index.ts",
     "generate-client": "bun ./generate-client.ts && npm run codemod",
     "prettify": "prettier --write . --ignore-path .gitignore",
-    "lint": "eslint . && npm run prettify",
+    "lint": "eslint --fix . && npm run prettify",
     "build": "rimraf ./dist && tsc --build",
     "type-check": "tsc --noEmit",
     "release": "npm run build && npm publish --access public"

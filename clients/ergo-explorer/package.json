@@ -11,7 +11,7 @@
     "generate-v1-client": "cross-env VERSION=1 orval && rimraf ./src/v1/api/index.ts",
     "generate-client": "npm run generate-v0-client && npm run generate-v1-client && npm run codemod",
     "prettify": "prettier --write . --ignore-path .gitignore",
-    "lint": "eslint . && npm run prettify",
+    "lint": "eslint --fix . && npm run prettify",
     "build": "rimraf ./dist && tsc --build",
     "type-check": "tsc --noEmit",
     "release": "npm run build && npm publish --access public"

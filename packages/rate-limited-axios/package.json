@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
-    "lint": "eslint . && npm run prettify",
+    "lint": "eslint --fix . && npm run prettify",
     "prettify": "prettier --write . --ignore-path ./.gitignore",
     "release": "npm run test -- --run && npm run build && npm publish --access public",
     "type-check": "tsc --noEmit"
