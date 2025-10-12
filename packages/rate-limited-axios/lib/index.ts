@@ -41,7 +41,6 @@ import axios, {
   CancelTokenSource,
   AxiosInterceptorOptions,
   AxiosInterceptorManager,
-  AxiosInstance,
   GenericFormData,
   GenericHTMLFormElement,
   AxiosStatic,
@@ -86,6 +85,7 @@ const {
 export {
   rateLimitedAxios as default,
   RateLimitedAxios as Axios,
+  RateLimitedAxiosInstance as AxiosInstance,
   RateLimitedAxiosConfig,
   AxiosHeaderValue,
   AxiosHeaders,
@@ -133,7 +133,6 @@ export {
   CancelTokenSource,
   AxiosInterceptorOptions,
   AxiosInterceptorManager,
-  AxiosInstance,
   GenericFormData,
   GenericHTMLFormElement,
   getAdapter,
