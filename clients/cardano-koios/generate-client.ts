@@ -1,6 +1,5 @@
-import fs from 'fs';
 import { execSync } from 'child_process';
-
+import fs from 'fs';
 import tmp from 'tmp';
 import yaml, { YAMLMap, parseDocument, visit } from 'yaml';
 
