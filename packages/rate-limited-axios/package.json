@@ -17,18 +17,19 @@
   ],
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
+    "clean": "rimraf dist && rimraf tsconfig.build.tsbuildinfo",
     "lint": "eslint --fix . && npm run prettify",
     "lint:check": "eslint . && npm run prettify:check",
     "prettify": "prettier --write . --ignore-path ./.gitignore",
     "prettify:check": "prettier --check . --ignore-path ../../.gitignore",
-    "release": "npm run build && npm publish --access public",
+    "release": "npm run clean && npm run build && npm publish --access public",
     "type-check": "tsc --noEmit"
   },
   "engines": {
     "node": ">=22.18.0"
   },
   "dependencies": {
-    "@rosen-bridge/abstract-logger": "^2.0.1",
+    "@rosen-bridge/abstract-logger": "^3.0.1",
     "await-semaphore": "^0.1.3",
     "axios": "^1.11.0"
   }

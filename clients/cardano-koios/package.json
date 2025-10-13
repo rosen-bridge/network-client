@@ -2,10 +2,11 @@
   "name": "@rosen-clients/cardano-koios",
   "version": "3.0.0",
   "description": "A client library for Cardano Koios",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
+    "clean": "rimraf dist && rimraf tsconfig.build.tsbuildinfo",
     "codemod": "jscodeshift --parser=ts -t ../../codemod/big-int-fields-support.ts ./src/**/*.ts && jscodeshift --parser=ts -t ../../codemod/koios-fixes.ts ./src/api/koiosAPI.ts",
     "generate-client-base": "orval && rimraf ./src/api/index.ts",
     "generate-client": "bun ./generate-client.ts && npm run codemod",
@@ -13,9 +14,9 @@
     "lint:check": "eslint . && npm run prettify:check",
     "prettify": "prettier --write . --ignore-path .gitignore",
     "prettify:check": "prettier --check . --ignore-path ../../.gitignore",
-    "build": "rimraf ./dist && tsc --build",
+    "build": "tsc --build tsconfig.build.json",
     "type-check": "tsc --noEmit",
-    "release": "npm run build && npm publish --access public"
+    "release": "npm run clean && npm run build && npm publish --access public"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,6 @@
     "bun": "^0.5.9",
     "jscodeshift": "^0.14.0",
     "orval": "^7.4.1",
-    "rimraf": "^4.4.1",
     "tmp": "^0.2.1",
     "yaml": "^2.2.1"
   },
@@ -41,7 +41,7 @@
     "CHANGELOG.md"
   ],
   "engines": {
-    "node": ">=22.11.0"
+    "node": ">=22.18.0"
   },
   "dependencies": {
     "@rosen-clients/axios": "^1.0.0"

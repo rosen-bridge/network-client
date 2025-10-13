@@ -2,19 +2,20 @@
   "name": "@rosen-clients/ergo-node",
   "version": "3.0.0",
   "description": "A client library for Ergo Node",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
+    "clean": "rimraf dist && rimraf tsconfig.build.tsbuildinfo",
     "codemod": "jscodeshift --parser=ts -t ../../codemod/big-int-fields-support.ts ./src/**/*.ts",
     "generate-client": "orval && rimraf ./src/api/index.ts && npm run codemod",
     "lint": "eslint --fix . && npm run prettify",
     "lint:check": "eslint . && npm run prettify:check",
     "prettify": "prettier --write . --ignore-path .gitignore",
     "prettify:check": "prettier --check . --ignore-path ../../.gitignore",
-    "build": "rimraf ./dist && tsc --build",
+    "build": "tsc --build tsconfig.build.json",
     "type-check": "tsc --noEmit",
-    "release": "npm run build && npm publish --access public"
+    "release": "npm run clean && npm run build && npm publish --access public"
   },
   "repository": {
     "type": "git",
@@ -24,8 +25,7 @@
   "devDependencies": {
     "@types/jscodeshift": "^0.11.6",
     "jscodeshift": "^0.14.0",
-    "orval": "^6.15.0",
-    "rimraf": "^4.4.1"
+    "orval": "^7.4.1"
   },
   "keywords": [
     "rosen",

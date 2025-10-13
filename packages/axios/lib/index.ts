@@ -1,9 +1,9 @@
+import { JsonBigIntFactory } from '@rosen-bridge/json-bigint';
 import rateLimitedAxios, {
   AxiosRequestConfig,
 } from '@rosen-clients/rate-limited-axios';
-import JsonBigintFactory from 'json-bigint';
 
-const JsonBigInt = JsonBigintFactory({
+const JsonBigInt = JsonBigIntFactory({
   alwaysParseAsBig: false,
   useNativeBigInt: true,
   constructorAction: 'ignore',
