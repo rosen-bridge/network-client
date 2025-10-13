@@ -43,7 +43,9 @@ import axios, {
   GenericHTMLFormElement,
   AxiosStatic,
 } from 'axios';
+
 import { RateLimitedAxios, RateLimitedAxiosConfig } from './RateLimitedAxios';
+
 export { Rule } from './types';
 
 type RateLimitedAxiosInstance = RateLimitedAxios & {

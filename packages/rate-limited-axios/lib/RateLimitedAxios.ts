@@ -9,9 +9,10 @@ import originalAxios, {
   InternalAxiosRequestConfig,
   isCancel,
 } from 'axios';
+
+import pkg from '../package.json' with { type: 'json' };
 import { RateLimitedAxiosConfig } from './config';
 import { Rule } from './types';
-import pkg from '../package.json' with { type: 'json' };
 
 declare module 'axios' {
   export interface InternalAxiosRequestConfig {

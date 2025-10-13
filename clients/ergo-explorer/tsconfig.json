@@ -1,9 +1,8 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": "./"
+    "outDir": "dist"
   },
   "include": ["src"],
-  "references": [{ "path": "../../packages/axios/tsconfig.build.json" }]
+  "references": [{ "path": "../../packages/axios" }]
 }
