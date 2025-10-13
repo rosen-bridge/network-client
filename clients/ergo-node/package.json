@@ -2,10 +2,24 @@
   "name": "@rosen-clients/ergo-node",
   "version": "3.0.0",
   "description": "A client library for Ergo Node",
+  "keywords": [
+    "rosen",
+    "ergo"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rosen-bridge/network-client"
+  },
+  "license": "MIT",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "module",
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
   "scripts": {
+    "build": "tsc --build tsconfig.build.json",
     "clean": "rimraf dist && rimraf tsconfig.build.tsbuildinfo",
     "codemod": "jscodeshift --parser=ts -t ../../codemod/big-int-fields-support.ts ./src/**/*.ts",
     "generate-client": "orval && rimraf ./src/api/index.ts && npm run codemod",
@@ -13,32 +27,18 @@
     "lint:check": "eslint . && npm run prettify:check",
     "prettify": "prettier --write . --ignore-path .gitignore",
     "prettify:check": "prettier --check . --ignore-path ../../.gitignore",
-    "build": "tsc --build tsconfig.build.json",
-    "type-check": "tsc --noEmit",
-    "release": "npm run clean && npm run build && npm publish --access public"
+    "release": "npm run clean && npm run build && npm publish --access public",
+    "type-check": "tsc --noEmit"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rosen-bridge/network-client"
+  "dependencies": {
+    "@rosen-clients/axios": "^1.0.0"
   },
-  "license": "MIT",
   "devDependencies": {
     "@types/jscodeshift": "^0.11.6",
     "jscodeshift": "^0.14.0",
     "orval": "^7.4.1"
   },
-  "keywords": [
-    "rosen",
-    "ergo"
-  ],
-  "files": [
-    "dist",
-    "CHANGELOG.md"
-  ],
   "engines": {
     "node": ">=22.18.0"
-  },
-  "dependencies": {
-    "@rosen-clients/axios": "^1.0.0"
   }
 }

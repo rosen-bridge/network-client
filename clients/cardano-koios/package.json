@@ -2,27 +2,38 @@
   "name": "@rosen-clients/cardano-koios",
   "version": "3.0.0",
   "description": "A client library for Cardano Koios",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "type": "module",
-  "scripts": {
-    "clean": "rimraf dist && rimraf tsconfig.build.tsbuildinfo",
-    "codemod": "jscodeshift --parser=ts -t ../../codemod/big-int-fields-support.ts ./src/**/*.ts && jscodeshift --parser=ts -t ../../codemod/koios-fixes.ts ./src/api/koiosAPI.ts",
-    "generate-client-base": "orval && rimraf ./src/api/index.ts",
-    "generate-client": "bun ./generate-client.ts && npm run codemod",
-    "lint": "eslint --fix . && npm run prettify",
-    "lint:check": "eslint . && npm run prettify:check",
-    "prettify": "prettier --write . --ignore-path .gitignore",
-    "prettify:check": "prettier --check . --ignore-path ../../.gitignore",
-    "build": "tsc --build tsconfig.build.json",
-    "type-check": "tsc --noEmit",
-    "release": "npm run clean && npm run build && npm publish --access public"
-  },
+  "keywords": [
+    "rosen",
+    "ergo"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rosen-bridge/network-client"
   },
   "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc --build tsconfig.build.json",
+    "clean": "rimraf dist && rimraf tsconfig.build.tsbuildinfo",
+    "codemod": "jscodeshift --parser=ts -t ../../codemod/big-int-fields-support.ts ./src/**/*.ts && jscodeshift --parser=ts -t ../../codemod/koios-fixes.ts ./src/api/koiosAPI.ts",
+    "generate-client": "bun ./generate-client.ts && npm run codemod",
+    "generate-client-base": "orval && rimraf ./src/api/index.ts",
+    "lint": "eslint --fix . && npm run prettify",
+    "lint:check": "eslint . && npm run prettify:check",
+    "prettify": "prettier --write . --ignore-path .gitignore",
+    "prettify:check": "prettier --check . --ignore-path ../../.gitignore",
+    "release": "npm run clean && npm run build && npm publish --access public",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@rosen-clients/axios": "^1.0.0"
+  },
   "devDependencies": {
     "@types/jscodeshift": "^0.11.6",
     "@types/tmp": "^0.2.3",
@@ -32,18 +43,7 @@
     "tmp": "^0.2.1",
     "yaml": "^2.2.1"
   },
-  "keywords": [
-    "rosen",
-    "ergo"
-  ],
-  "files": [
-    "dist",
-    "CHANGELOG.md"
-  ],
   "engines": {
     "node": ">=22.18.0"
-  },
-  "dependencies": {
-    "@rosen-clients/axios": "^1.0.0"
   }
 }
