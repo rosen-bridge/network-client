@@ -11,6 +11,7 @@
     "build": "npm run build --workspaces",
     "generate-client": "npm run generate-client --workspaces",
     "lint": "npm run lint --workspaces",
+    "lint:check": "npm run lint:check --workspaces",
     "prepare": "husky install",
     "release": "npm run release --workspaces",
     "type-check": "npm run type-check --workspaces",

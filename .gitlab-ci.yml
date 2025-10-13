@@ -55,7 +55,7 @@ lint:
       - clients/*/node_modules
       - clients/*/dist
   script:
-    - npm run lint
+    - npm run lint:check
 
 changeset:
   stage: changeset
