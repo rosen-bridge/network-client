@@ -2,5 +2,6 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "rootDir": "./src"
-  }
+  },
+  "references": [{ "path": "../../packages/axios/tsconfig.build.json" }]
 }
