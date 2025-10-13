@@ -36,7 +36,7 @@
   "devDependencies": {
     "@types/jscodeshift": "^0.11.6",
     "jscodeshift": "^0.14.0",
-    "orval": "^7.4.1"
+    "orval": "^7.13.2"
   },
   "engines": {
     "node": ">=22.18.0"
