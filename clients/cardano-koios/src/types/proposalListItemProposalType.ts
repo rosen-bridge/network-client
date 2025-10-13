@@ -144,7 +144,7 @@ A big thank you to the following projects who are already starting to use Koios 
 export type ProposalListItemProposalType =
   (typeof ProposalListItemProposalType)[keyof typeof ProposalListItemProposalType];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const ProposalListItemProposalType = {
   ParameterChange: 'ParameterChange',
   HardForkInitiation: 'HardForkInitiation',

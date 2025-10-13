@@ -9,7 +9,7 @@
 export type CommitmentHint =
   (typeof CommitmentHint)[keyof typeof CommitmentHint];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const CommitmentHint = {
   cmtWithSecret: 'cmtWithSecret',
   cmtReal: 'cmtReal',

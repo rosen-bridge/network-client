@@ -9,7 +9,7 @@
 export type CommitmentType =
   (typeof CommitmentType)[keyof typeof CommitmentType];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const CommitmentType = {
   dlog: 'dlog',
   dht: 'dht',

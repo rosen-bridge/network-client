@@ -144,7 +144,7 @@ A big thank you to the following projects who are already starting to use Koios 
 export type TxInfoItemVotingProceduresAnyOfItemVote =
   (typeof TxInfoItemVotingProceduresAnyOfItemVote)[keyof typeof TxInfoItemVotingProceduresAnyOfItemVote];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const TxInfoItemVotingProceduresAnyOfItemVote = {
   Yes: 'Yes',
   No: 'No',

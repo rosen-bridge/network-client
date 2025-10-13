@@ -144,7 +144,7 @@ A big thank you to the following projects who are already starting to use Koios 
 export type AccountRewardsItemRewardsItemType =
   (typeof AccountRewardsItemRewardsItemType)[keyof typeof AccountRewardsItemRewardsItemType];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const AccountRewardsItemRewardsItemType = {
   member: 'member',
   leader: 'leader',

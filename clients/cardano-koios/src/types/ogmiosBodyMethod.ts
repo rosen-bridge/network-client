@@ -144,7 +144,7 @@ A big thank you to the following projects who are already starting to use Koios 
 export type OgmiosBodyMethod =
   (typeof OgmiosBodyMethod)[keyof typeof OgmiosBodyMethod];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const OgmiosBodyMethod = {
   'queryNetwork/blockHeight': 'queryNetwork/blockHeight',
   'queryNetwork/genesisConfiguration': 'queryNetwork/genesisConfiguration',

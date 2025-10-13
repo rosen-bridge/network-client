@@ -144,7 +144,7 @@ A big thank you to the following projects who are already starting to use Koios 
 export type PoolListItemPoolStatus =
   (typeof PoolListItemPoolStatus)[keyof typeof PoolListItemPoolStatus];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const PoolListItemPoolStatus = {
   registered: 'registered',
   retiring: 'retiring',

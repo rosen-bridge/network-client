@@ -144,7 +144,7 @@ A big thank you to the following projects who are already starting to use Koios 
 export type AccountInfoItemStatus =
   (typeof AccountInfoItemStatus)[keyof typeof AccountInfoItemStatus];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const AccountInfoItemStatus = {
   registered: 'registered',
   not_registered: 'not registered',

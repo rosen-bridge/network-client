@@ -144,7 +144,7 @@ A big thank you to the following projects who are already starting to use Koios 
 export type ScriptRedeemersItemRedeemersItemPurpose =
   (typeof ScriptRedeemersItemRedeemersItemPurpose)[keyof typeof ScriptRedeemersItemRedeemersItemPurpose];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const ScriptRedeemersItemRedeemersItemPurpose = {
   spend: 'spend',
   mint: 'mint',

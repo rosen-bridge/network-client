@@ -144,7 +144,7 @@ A big thank you to the following projects who are already starting to use Koios 
 export type VoterProposalListItemProposalType =
   (typeof VoterProposalListItemProposalType)[keyof typeof VoterProposalListItemProposalType];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const VoterProposalListItemProposalType = {
   ParameterChange: 'ParameterChange',
   HardForkInitiation: 'HardForkInitiation',

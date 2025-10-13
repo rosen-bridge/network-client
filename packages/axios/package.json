@@ -2,16 +2,25 @@
   "name": "@rosen-clients/axios",
   "version": "1.0.0",
   "description": "create axios client for swagger clients",
-  "repository": "https://github.com/rosen-bridge/network-client",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rosen-bridge/network-client"
+  },
   "license": "MIT",
   "author": "Rosen Team",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
     "lint": "eslint --fix . && npm run prettify",
+    "lint:check": "eslint . && npm run prettify:check",
     "prettify": "prettier --write . --ignore-path ./.gitignore",
+    "prettify:check": "prettier --check . --ignore-path ../../.gitignore",
     "release": "npm run build && npm publish --access public",
     "type-check": "tsc --noEmit"
   },

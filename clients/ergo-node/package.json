@@ -8,8 +8,10 @@
   "scripts": {
     "codemod": "jscodeshift --parser=ts -t ../../codemod/big-int-fields-support.ts ./src/**/*.ts",
     "generate-client": "orval && rimraf ./src/api/index.ts && npm run codemod",
-    "prettify": "prettier --write . --ignore-path .gitignore",
     "lint": "eslint --fix . && npm run prettify",
+    "lint:check": "eslint . && npm run prettify:check",
+    "prettify": "prettier --write . --ignore-path .gitignore",
+    "prettify:check": "prettier --check . --ignore-path ../../.gitignore",
     "build": "rimraf ./dist && tsc --build",
     "type-check": "tsc --noEmit",
     "release": "npm run build && npm publish --access public"

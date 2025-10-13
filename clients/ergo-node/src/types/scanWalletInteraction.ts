@@ -9,7 +9,7 @@
 export type ScanWalletInteraction =
   (typeof ScanWalletInteraction)[keyof typeof ScanWalletInteraction];
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+// eslint-disable-next-line no-redeclare
 export const ScanWalletInteraction = {
   off: 'off',
   shared: 'shared',
