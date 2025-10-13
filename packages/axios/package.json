@@ -1,6 +1,6 @@
 {
   "name": "@rosen-clients/axios",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "create axios client for swagger clients",
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@rosen-bridge/json-bigint": "^1.1.0",
-    "@rosen-clients/rate-limited-axios": "^1.0.0"
+    "@rosen-clients/rate-limited-axios": "^1.1.0"
   },
   "engines": {
     "node": ">=22.18.0"

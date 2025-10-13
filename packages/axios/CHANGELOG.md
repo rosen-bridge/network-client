@@ -1,5 +1,18 @@
 # @rosen-clients/axios
 
+## 1.1.0
+
+### Minor Changes
+
+- Update rosen dependencies and replace json-bigint with @rosen-bridge/json-bigint also add clean script
+- Regenerate clients due to updating orval and apply lint
+
+### Patch Changes
+
+- Updated eslint and related comments
+- Update dependencies
+  - @rosen-clients/rate-limited-axios@1.1.0
+
 ## 1.0.0
 
 ### Major Changes
