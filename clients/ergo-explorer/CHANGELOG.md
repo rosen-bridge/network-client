@@ -1,5 +1,19 @@
 # @rosen-clients/ergo-explorer
 
+## 2.1.0
+
+### Minor Changes
+
+- Regenerate clients due to updating orval and apply lint
+- Update orval dependency
+
+### Patch Changes
+
+- Fix package-lock, update tsconfigs, fix prettier script and add clean script
+- Updated eslint and related comments
+- Update dependencies
+  - @rosen-clients/axios@1.1.0
+
 ## 2.0.0
 
 ### Major Changes
