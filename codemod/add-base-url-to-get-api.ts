@@ -13,7 +13,7 @@ export default (root: any, api: API) => {
           j.identifier('instance'),
           j.callExpression(j.identifier('createAxiosInstance'), [
             j.identifier('url'),
-          ])
+          ]),
         ),
       ]);
       item.value.declaration.declarations[0].init.body.body.unshift(axios);
