@@ -1,5 +1,13 @@
 # @rosen-clients/rate-limited-axios
 
+## 1.1.1
+
+### Patch Changes
+
+- Update dependencies
+  - @rosen-bridge/abstract-logger@4.0.0
+  - axios@1.13.2
+
 ## 1.1.0
 
 ### Minor Changes
