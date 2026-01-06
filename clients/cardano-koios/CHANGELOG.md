@@ -1,5 +1,11 @@
 # @rosen-clients/cardano-koios
 
+## 3.1.1
+
+### Patch Changes
+
+- @rosen-clients/axios@1.1.1
+
 ## 3.1.0
 
 ### Minor Changes
