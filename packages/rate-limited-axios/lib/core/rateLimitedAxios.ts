@@ -2,16 +2,10 @@ import originalAxios, {
   AxiosError,
   AxiosRequestConfig,
   AxiosResponse,
-  CanceledError,
-  CancelToken,
-  formToJSON,
-  getAdapter,
   InternalAxiosRequestConfig,
-  isCancel,
 } from 'axios';
 
-import pkg from '../package.json' with { type: 'json' };
-import { RateLimitedAxiosConfig } from './config';
+import { RateLimitedAxiosConfig } from './rateLimitedAxiosConfig';
 import { Rule } from './types';
 
 declare module 'axios' {
@@ -20,30 +14,11 @@ declare module 'axios' {
   }
 }
 
-class RateLimitedAxios extends originalAxios.Axios {
-  VERSION = pkg.version;
+export class RateLimitedAxios extends originalAxios.Axios {
   protected static releaseTimeoutMap = new Map<
     () => void,
     ReturnType<typeof setTimeout>
   >();
-  Axios = RateLimitedAxios;
-  RateLimitedAxiosConfig = RateLimitedAxiosConfig;
-  CanceledError = CanceledError;
-  CancelToken = {} as CancelToken;
-  isCancel = isCancel;
-  toFormData = originalAxios.toFormData;
-  AxiosError = originalAxios.AxiosError;
-  Cancel = CanceledError;
-  all = function all(promises: Promise<any>[]) {
-    return Promise.all(promises);
-  };
-  spread = originalAxios.spread;
-  isAxiosError = originalAxios.isAxiosError;
-  mergeConfig = originalAxios.mergeConfig;
-  AxiosHeaders = originalAxios.AxiosHeaders;
-  formToJSON = formToJSON;
-  getAdapter = getAdapter;
-  HttpStatusCode = originalAxios.HttpStatusCode;
 
   constructor(config?: AxiosRequestConfig) {
     super(
@@ -190,21 +165,4 @@ class RateLimitedAxios extends originalAxios.Axios {
       if (rule.pattern.test(url)) return rule;
     }
   };
-
-  /**
-   * Create a rate-limited axios instance
-   * @param config
-   * @returns
-   */
-  public create = (config: AxiosRequestConfig = {}) => {
-    const axiosInstance = new RateLimitedAxios(
-      originalAxios.mergeConfig(
-        this.defaults as AxiosRequestConfig,
-        config || {},
-      ),
-    );
-    return axiosInstance;
-  };
 }
-
-export { RateLimitedAxios, RateLimitedAxiosConfig };

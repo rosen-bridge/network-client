@@ -1,73 +1,6 @@
-import axios, {
-  AxiosHeaderValue,
-  RawAxiosRequestHeaders,
-  AxiosRequestHeaders,
-  RawAxiosResponseHeaders,
-  AxiosResponseHeaders,
-  AxiosRequestTransformer,
-  AxiosResponseTransformer,
-  AxiosAdapter,
-  AxiosBasicCredentials,
-  AxiosProxyConfig,
-  Method,
-  ResponseType,
-  responseEncoding,
-  TransitionalOptions,
-  GenericAbortSignal,
-  FormDataVisitorHelpers,
-  SerializerVisitor,
-  SerializerOptions,
-  FormSerializerOptions,
-  ParamEncoder,
-  CustomParamsSerializer,
-  ParamsSerializerOptions,
-  AxiosProgressEvent,
-  AddressFamily,
-  LookupAddressEntry,
-  LookupAddress,
-  AxiosRequestConfig,
-  RawAxiosRequestConfig,
-  InternalAxiosRequestConfig,
-  HeadersDefaults,
-  AxiosDefaults,
-  CreateAxiosDefaults,
-  AxiosResponse,
-  AxiosPromise,
-  CancelStatic,
-  Canceler,
-  CancelTokenStatic,
-  CancelTokenSource,
-  AxiosInterceptorOptions,
-  AxiosInterceptorManager,
-  GenericFormData,
-  GenericHTMLFormElement,
-  AxiosStatic,
-} from 'axios';
+import rateLimitedAxios from './rateLimitedAxios';
 
-import { RateLimitedAxios, RateLimitedAxiosConfig } from './RateLimitedAxios';
-
-export { Rule } from './types';
-
-type RateLimitedAxiosInstance = RateLimitedAxios & {
-  default: RateLimitedAxios;
-  create: (config?: AxiosRequestConfig) => RateLimitedAxiosInstance;
-};
-
-function createInstance(config?: AxiosRequestConfig): RateLimitedAxiosInstance {
-  const instance = new RateLimitedAxios(config);
-  (instance as RateLimitedAxiosInstance).default = instance;
-  (instance as RateLimitedAxiosInstance).create = createInstance;
-  return instance as RateLimitedAxiosInstance;
-}
-
-const rateLimitedAxios = createInstance(axios.defaults as AxiosRequestConfig);
-rateLimitedAxios.default = rateLimitedAxios;
-
-// This module is intended to unwrap RateLimitedAxios default export as named.
-// Keep top-level export same with static properties
 const {
-  AxiosError,
-  CanceledError,
   isCancel,
   CancelToken,
   all,
@@ -82,13 +15,13 @@ const {
   mergeConfig,
 } = rateLimitedAxios;
 
-export {
-  rateLimitedAxios as default,
-  RateLimitedAxios as Axios,
+export type { Rule } from './core/types';
+export type {
   RateLimitedAxiosInstance as AxiosInstance,
-  RateLimitedAxiosConfig,
+  RateLimitedAxiosStatic as AxiosStatic,
+} from './rateLimitedAxios';
+export type {
   AxiosHeaderValue,
-  AxiosHeaders,
   RawAxiosRequestHeaders,
   AxiosRequestHeaders,
   RawAxiosResponseHeaders,
@@ -98,7 +31,6 @@ export {
   AxiosAdapter,
   AxiosBasicCredentials,
   AxiosProxyConfig,
-  HttpStatusCode,
   Method,
   ResponseType,
   responseEncoding,
@@ -122,19 +54,28 @@ export {
   AxiosDefaults,
   CreateAxiosDefaults,
   AxiosResponse,
-  AxiosError,
-  CanceledError,
   AxiosPromise,
   CancelStatic,
-  Cancel,
   Canceler,
   CancelTokenStatic,
-  CancelToken,
   CancelTokenSource,
   AxiosInterceptorOptions,
   AxiosInterceptorManager,
   GenericFormData,
   GenericHTMLFormElement,
+} from 'axios';
+
+// Its important to export the Axios like this not from the rateLimitedAxios
+// so that it can be used as a class
+export { RateLimitedAxios as Axios } from './core/rateLimitedAxios';
+export { RateLimitedAxiosConfig } from './core/rateLimitedAxiosConfig';
+
+export {
+  rateLimitedAxios as default,
+  AxiosHeaders,
+  HttpStatusCode,
+  CancelToken,
+  Cancel,
   getAdapter,
   toFormData,
   formToJSON,
@@ -143,5 +84,4 @@ export {
   isCancel,
   all,
   mergeConfig,
-  AxiosStatic,
 };
