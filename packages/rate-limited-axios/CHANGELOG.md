@@ -1,5 +1,11 @@
 # @rosen-clients/rate-limited-axios
 
+## 2.0.0
+
+### Major Changes
+
+- Refactor package types to be compatible with original axios.
+
 ## 1.1.1
 
 ### Patch Changes

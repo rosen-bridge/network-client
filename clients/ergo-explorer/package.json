@@ -1,6 +1,6 @@
 {
   "name": "@rosen-clients/ergo-explorer",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "A client library for Ergo Explorer",
   "keywords": [
     "rosen",
@@ -33,7 +33,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@rosen-clients/axios": "^1.1.1"
+    "@rosen-clients/axios": "^1.1.2"
   },
   "devDependencies": {
     "@types/jscodeshift": "^0.11.6",
