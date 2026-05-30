@@ -1,5 +1,11 @@
 # @rosen-clients/ergo-node
 
+## 3.1.3
+
+### Patch Changes
+
+- @rosen-clients/axios@1.1.3
+
 ## 3.1.2
 
 ### Patch Changes
