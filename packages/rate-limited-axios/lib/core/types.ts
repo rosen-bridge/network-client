@@ -1,4 +1,4 @@
-import { Semaphore } from 'await-semaphore';
+import { Semaphore } from '@rosen-bridge/semaphore';
 
 export type Rule = {
   pattern: RegExp;

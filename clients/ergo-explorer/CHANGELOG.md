@@ -1,5 +1,11 @@
 # @rosen-clients/ergo-explorer
 
+## 2.1.3
+
+### Patch Changes
+
+- @rosen-clients/axios@1.1.3
+
 ## 2.1.2
 
 ### Patch Changes

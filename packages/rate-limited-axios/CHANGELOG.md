@@ -1,5 +1,11 @@
 # @rosen-clients/rate-limited-axios
 
+## 2.0.1
+
+### Patch Changes
+
+- Replace the `await-semaphore` dependency with `@rosen-bridge/semaphore`
+
 ## 2.0.0
 
 ### Major Changes

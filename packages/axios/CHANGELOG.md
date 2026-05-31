@@ -1,5 +1,12 @@
 # @rosen-clients/axios
 
+## 1.1.3
+
+### Patch Changes
+
+- Update dependencies
+  - @rosen-clients/rate-limited-axios@2.0.1
+
 ## 1.1.2
 
 ### Patch Changes
