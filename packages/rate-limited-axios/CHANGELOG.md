@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- Replaced the `await-semaphore` dependency with `@rosen-bridge/semaphore`
+- Replace the `await-semaphore` dependency with `@rosen-bridge/semaphore`
 
 ## 2.0.0
 
