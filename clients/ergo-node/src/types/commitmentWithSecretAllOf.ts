@@ -6,7 +6,7 @@
  * OpenAPI spec version: 6.0.3
  */
 
-export interface ScanId {
-  scanId?: number;
-}
-export const bigIntsScanId: Array<string> = [];
+export type CommitmentWithSecretAllOf = {
+  secret: string;
+};
+export const bigIntsCommitmentWithSecretAllOf: Array<string> = [];

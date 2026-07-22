@@ -3,13 +3,13 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 6.0.1
+ * OpenAPI spec version: 6.0.3
  */
 import type { ErgoAddress } from './ergoAddress';
 import { bigIntsErgoAddress } from './ergoAddress';
 
 export interface DeriveNextKeyResult {
-  /** Derivation path of the resulted secret */
+  /** BIP-32 derivation path that was picked for the newly derived key. */
   derivationPath: string;
   address: ErgoAddress;
 }

@@ -3,15 +3,18 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 6.0.1
+ * OpenAPI spec version: 6.0.3
  */
 import type { Commitment } from './commitment';
 import { bigIntsCommitment } from './commitment';
+import type { CommitmentWithSecretAllOf } from './commitmentWithSecretAllOf';
+import { bigIntsCommitmentWithSecretAllOf } from './commitmentWithSecretAllOf';
 
 /**
  * commitment to secret along with secret (!) randomness
  */
-export type CommitmentWithSecret = Commitment;
+export type CommitmentWithSecret = Commitment & CommitmentWithSecretAllOf;
 export const bigIntsCommitmentWithSecret: Array<string> = [
   ...bigIntsCommitment,
+  ...bigIntsCommitmentWithSecretAllOf,
 ];

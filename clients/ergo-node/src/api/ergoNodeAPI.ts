@@ -62,6 +62,7 @@ import type {
   ListSpentScansParams,
   ListUnspentScansParams,
   MerkleProof,
+  MiningRequest,
   ModifierId,
   NipopowProof,
   NodeInfo,
@@ -763,8 +764,13 @@ export const getErgoNodeAPI = (url: string) => {
   };
 
   /**
-   * @summary Initialize new wallet with randomly generated seed
-   */
+ * Initializes a brand new wallet by generating a fresh BIP-39 mnemonic seed phrase on the server.
+The seed is encrypted on disk with `pass` and the returned mnemonic is the ONLY copy — the caller
+must back it up, the node will not show it again. Fails if a wallet file already exists;
+use `/wallet/restore` to overwrite from a known mnemonic instead.
+
+ * @summary Initialize new wallet with randomly generated seed
+ */
   const walletInit = (initWallet: InitWallet) => {
     return instance<InitWalletResult>({
       url: `/wallet/init`,
@@ -776,8 +782,13 @@ export const getErgoNodeAPI = (url: string) => {
   };
 
   /**
-   * @summary Create new wallet from existing mnemonic seed
-   */
+ * Creates a wallet from a mnemonic the caller already has (e.g. one previously returned by
+`/wallet/init`, or generated elsewhere). The mnemonic is converted to a BIP-32 seed
+(optionally salted with `mnemonicPass`) and the resulting secret is encrypted on disk
+with `pass`. Note the `usePre1627KeyDerivation` flag — see its field description.
+
+ * @summary Create new wallet from existing mnemonic seed
+ */
   const walletRestore = (restoreWallet: RestoreWallet) => {
     return instance<void>({
       url: `/wallet/restore`,
@@ -857,8 +868,13 @@ export const getErgoNodeAPI = (url: string) => {
   };
 
   /**
-   * @summary Derive new key according to a provided path
-   */
+ * Derives a new secret key at the BIP-32 path supplied by the caller and returns its P2PK address.
+The wallet must be unlocked. The path is relative to the wallet's root and uses standard
+BIP-32 notation (e.g. `m/44'/429'/0'/0/1`, with apostrophe denoting hardened indices).
+The derived key is stored by the wallet so subsequent calls to `/wallet/addresses` will include it.
+
+ * @summary Derive new key according to a provided path
+ */
   const walletDeriveKey = (deriveKey: DeriveKey) => {
     return instance<DeriveKeyResult>({
       url: `/wallet/deriveKey`,
@@ -870,8 +886,12 @@ export const getErgoNodeAPI = (url: string) => {
   };
 
   /**
-   * @summary Derive next key
-   */
+ * Derives the next sequential key after the highest-index key already known to the wallet,
+following EIP-3 (`m/44'/429'/0'/0/N`, where `N` is the next unused account-chain index).
+Convenience wrapper over `/wallet/deriveKey` that picks the path for you. Wallet must be unlocked.
+
+ * @summary Derive next key
+ */
   const walletDeriveNextKey = () => {
     return instance<DeriveNextKeyResult>({
       url: `/wallet/deriveNextKey`,
@@ -1095,6 +1115,21 @@ export const getErgoNodeAPI = (url: string) => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       data: transactions,
+      transformResponse: JsonFieldBigintFactory(bigIntsWorkMessage),
+    });
+  };
+
+  /**
+   * @summary Request block candidate with mandatory transactions and custom miner public key
+   */
+  const miningRequestBlockCandidateWithMandatoryTransactionsAndPk = (
+    miningRequest: MiningRequest,
+  ) => {
+    return instance<WorkMessage>({
+      url: `/mining/candidateWithTxsAndPk`,
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      data: miningRequest,
       transformResponse: JsonFieldBigintFactory(bigIntsWorkMessage),
     });
   };
@@ -1813,6 +1848,7 @@ export const getErgoNodeAPI = (url: string) => {
     walletGetPrivateKey,
     miningRequestBlockCandidate,
     miningRequestBlockCandidateWithMandatoryTransactions,
+    miningRequestBlockCandidateWithMandatoryTransactionsAndPk,
     miningReadMinerRewardAddress,
     miningReadMinerRewardPubkey,
     miningSubmitSolution,
@@ -2189,6 +2225,16 @@ export type MiningRequestBlockCandidateWithMandatoryTransactionsResult =
         ReturnType<
           typeof getErgoNodeAPI
         >['miningRequestBlockCandidateWithMandatoryTransactions']
+      >
+    >
+  >;
+export type MiningRequestBlockCandidateWithMandatoryTransactionsAndPkResult =
+  NonNullable<
+    Awaited<
+      ReturnType<
+        ReturnType<
+          typeof getErgoNodeAPI
+        >['miningRequestBlockCandidateWithMandatoryTransactionsAndPk']
       >
     >
   >;

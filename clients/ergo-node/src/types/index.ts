@@ -3,7 +3,7 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 6.0.1
+ * OpenAPI spec version: 6.0.3
  */
 
 export * from './aDDigest';
@@ -34,6 +34,7 @@ export * from './commitment';
 export * from './commitmentHint';
 export * from './commitmentType';
 export * from './commitmentWithSecret';
+export * from './commitmentWithSecretAllOf';
 export * from './compileRequest';
 export * from './connectedPeer';
 export * from './connectedPeerByModifierId';
@@ -125,6 +126,7 @@ export * from './listSpentScansParams';
 export * from './listUnspentScansParams';
 export * from './merkleProof';
 export * from './merkleProofLevelsItemItem';
+export * from './miningRequest';
 export * from './modifierId';
 export * from './nipopowProof';
 export * from './nodeInfo';
