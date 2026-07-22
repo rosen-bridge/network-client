@@ -3,17 +3,17 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 6.0.1
+ * OpenAPI spec version: 6.0.3
  */
 
 export interface RestoreWallet {
-  /** Password to encrypt wallet file with */
+  /** Spending password used to encrypt the wallet secret storage on disk. Required on every /wallet/unlock afterwards. Not recoverable — losing it means restoring from the mnemonic. */
   pass: string;
-  /** Mnemonic seed */
+  /** BIP-39 mnemonic seed phrase (space-separated words) the wallet will be restored from. */
   mnemonic: string;
-  /** Optional pass to password-protect mnemonic seed */
+  /** Optional BIP-39 passphrase (a.k.a. 25th word) mixed into the seed derivation. Distinct from `pass` and not stored by the node. Must match the value used when the mnemonic was originally generated, otherwise a different wallet will be restored silently. */
   mnemonicPass?: string;
-  /** use incorrect(previous) BIP32 key derivation (see https://github.com/ergoplatform/ergo/issues/1627 for details). It's recommended to set to 'true' if the original wallet was created by ergo node before v4.0.105. */
+  /** Use the legacy (pre-EIP-3) BIP-32 key derivation that was the default before node v4.0.105. Set `true` only when restoring a wallet originally created on an older node; new wallets should use `false`. See https://github.com/ergoplatform/ergo/issues/1627 for details. */
   usePre1627KeyDerivation: boolean;
 }
 export const bigIntsRestoreWallet: Array<string> = [];

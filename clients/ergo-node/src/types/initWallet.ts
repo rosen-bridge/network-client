@@ -3,13 +3,13 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 6.0.1
+ * OpenAPI spec version: 6.0.3
  */
 
 export interface InitWallet {
-  /** Password to encrypt wallet file with */
+  /** Spending password used to encrypt the wallet secret storage on disk. Required on every /wallet/unlock afterwards. Not recoverable — losing it means restoring from the mnemonic. */
   pass: string;
-  /** Optional pass to password-protect mnemonic seed */
+  /** Optional BIP-39 passphrase (a.k.a. 25th word) that is mixed into the seed derivation. Distinct from `pass`: it is NOT stored by the node and MUST be supplied again on restore. Empty/omitted means no passphrase. */
   mnemonicPass?: string;
 }
 export const bigIntsInitWallet: Array<string> = [];

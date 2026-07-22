@@ -135,10 +135,8 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
-import type { BlocksItemBlockHeight } from './blocksItemBlockHeight';
-import { bigIntsBlocksItemBlockHeight } from './blocksItemBlockHeight';
 import type { BlocksItemPool } from './blocksItemPool';
 import { bigIntsBlocksItemPool } from './blocksItemPool';
 import type { BlocksItemProtoMajor } from './blocksItemProtoMajor';
@@ -156,7 +154,7 @@ export type BlocksItem = {
   /** Slot number of the block in epoch */
   epoch_slot?: number;
   /** Block height */
-  block_height?: BlocksItemBlockHeight;
+  block_height?: number;
   /** Block size in bytes */
   block_size?: number;
   /** UNIX timestamp of the block */
@@ -178,9 +176,6 @@ export type BlocksItem = {
 };
 
 export const bigIntsBlocksItem: Array<string> = [
-  ...bigIntsBlocksItemBlockHeight.map((item) =>
-    item === '' ? 'block_height' : `block_height.${item}`,
-  ),
   ...bigIntsBlocksItemPool.map((item) =>
     item === '' ? 'pool' : `pool.${item}`,
   ),

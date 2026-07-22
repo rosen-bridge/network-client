@@ -135,7 +135,7 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { EpochInfoItemActiveStake } from './epochInfoItemActiveStake';
 import { bigIntsEpochInfoItemActiveStake } from './epochInfoItemActiveStake';
@@ -147,6 +147,8 @@ import { bigIntsEpochInfoItemTotalRewards } from './epochInfoItemTotalRewards';
 export type EpochInfoItem = {
   /** Epoch number */
   epoch_no?: number;
+  /** Cardano Era */
+  era?: string;
   /** Total output value across all transactions in epoch */
   out_sum?: string;
   /** Total fees incurred by transactions in epoch */

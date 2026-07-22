@@ -135,10 +135,10 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
-import type { TxInfoItemCollateralInputsAnyOfItemAssetList } from './txInfoItemCollateralInputsAnyOfItemAssetList';
-import { bigIntsTxInfoItemCollateralInputsAnyOfItemAssetList } from './txInfoItemCollateralInputsAnyOfItemAssetList';
+import type { TxInfoItemCollateralInputsAnyOfItemAssetListItem } from './txInfoItemCollateralInputsAnyOfItemAssetListItem';
+import { bigIntsTxInfoItemCollateralInputsAnyOfItemAssetListItem } from './txInfoItemCollateralInputsAnyOfItemAssetListItem';
 import type { TxInfoItemCollateralInputsAnyOfItemDatumHash } from './txInfoItemCollateralInputsAnyOfItemDatumHash';
 import { bigIntsTxInfoItemCollateralInputsAnyOfItemDatumHash } from './txInfoItemCollateralInputsAnyOfItemDatumHash';
 import type { TxInfoItemCollateralInputsAnyOfItemInlineDatum } from './txInfoItemCollateralInputsAnyOfItemInlineDatum';
@@ -166,7 +166,7 @@ export type TxInfoItemCollateralInputsAnyOfItem = {
   /** Allow reference scripts to be used to satisfy script requirements during validation, rather than requiring the spending transaction to do so. (CIP-33) */
   reference_script?: TxInfoItemCollateralInputsAnyOfItemReferenceScript;
   /** An array of assets on the UTxO */
-  asset_list?: TxInfoItemCollateralInputsAnyOfItemAssetList;
+  asset_list?: TxInfoItemCollateralInputsAnyOfItemAssetListItem[];
 };
 
 export const bigIntsTxInfoItemCollateralInputsAnyOfItem: Array<string> = [
@@ -185,7 +185,7 @@ export const bigIntsTxInfoItemCollateralInputsAnyOfItem: Array<string> = [
   ...bigIntsTxInfoItemCollateralInputsAnyOfItemReferenceScript.map((item) =>
     item === '' ? 'reference_script' : `reference_script.${item}`,
   ),
-  ...bigIntsTxInfoItemCollateralInputsAnyOfItemAssetList.map((item) =>
+  ...bigIntsTxInfoItemCollateralInputsAnyOfItemAssetListItem.map((item) =>
     item === '' ? 'asset_list' : `asset_list.${item}`,
   ),
 ];

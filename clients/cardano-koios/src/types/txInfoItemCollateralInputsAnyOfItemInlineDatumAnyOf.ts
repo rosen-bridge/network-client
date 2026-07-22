@@ -135,24 +135,11 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
-import type { TxInfoItemCollateralInputsAnyOfItemInlineDatumAnyOfValue } from './txInfoItemCollateralInputsAnyOfItemInlineDatumAnyOfValue';
-import { bigIntsTxInfoItemCollateralInputsAnyOfItemInlineDatumAnyOfValue } from './txInfoItemCollateralInputsAnyOfItemInlineDatumAnyOfValue';
 
-/**
- * Allows datums to be attached to UTxO (CIP-32)
- */
 export type TxInfoItemCollateralInputsAnyOfItemInlineDatumAnyOf = {
-  /** Datum bytes (hex) */
-  bytes?: string;
-  /** Value (json) */
-  value?: TxInfoItemCollateralInputsAnyOfItemInlineDatumAnyOfValue;
+  [key: string]: unknown;
 };
-
 export const bigIntsTxInfoItemCollateralInputsAnyOfItemInlineDatumAnyOf: Array<string> =
-  [
-    ...bigIntsTxInfoItemCollateralInputsAnyOfItemInlineDatumAnyOfValue.map(
-      (item) => (item === '' ? 'value' : `value.${item}`),
-    ),
-  ];
+  [];

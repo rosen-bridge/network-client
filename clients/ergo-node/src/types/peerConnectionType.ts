@@ -3,16 +3,19 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 6.0.1
+ * OpenAPI spec version: 6.0.3
  */
 
+/**
+ * @nullable
+ */
 export type PeerConnectionType =
-  (typeof PeerConnectionType)[keyof typeof PeerConnectionType];
+  | (typeof PeerConnectionType)[keyof typeof PeerConnectionType]
+  | null;
 
 // eslint-disable-next-line no-redeclare
 export const PeerConnectionType = {
   Incoming: 'Incoming',
   Outgoing: 'Outgoing',
-  null: null,
 } as const;
 export const bigIntsPeerConnectionType: Array<string> = [];

@@ -135,15 +135,48 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { TxInfoItemCollateralInputsAnyOfItemReferenceScriptAnyOf } from './txInfoItemCollateralInputsAnyOfItemReferenceScriptAnyOf';
 import { bigIntsTxInfoItemCollateralInputsAnyOfItemReferenceScriptAnyOf } from './txInfoItemCollateralInputsAnyOfItemReferenceScriptAnyOf';
+import type { TxInfoItemCollateralInputsAnyOfItemReferenceScriptValue } from './txInfoItemCollateralInputsAnyOfItemReferenceScriptValue';
+import { bigIntsTxInfoItemCollateralInputsAnyOfItemReferenceScriptValue } from './txInfoItemCollateralInputsAnyOfItemReferenceScriptValue';
 
 /**
  * Allow reference scripts to be used to satisfy script requirements during validation, rather than requiring the spending transaction to do so. (CIP-33)
  */
 export type TxInfoItemCollateralInputsAnyOfItemReferenceScript =
-  TxInfoItemCollateralInputsAnyOfItemReferenceScriptAnyOf | null;
+  | (TxInfoItemCollateralInputsAnyOfItemReferenceScriptAnyOf & {
+      /** Hash of referenced script */
+      hash?: string;
+      /** Size in bytes */
+      size?: number;
+      /** Type of script */
+      type?: string;
+      /** Script bytes (hex) */
+      bytes?: string;
+      /** Value (json) */
+      value?: TxInfoItemCollateralInputsAnyOfItemReferenceScriptValue;
+    })
+  | (null & {
+      /** Hash of referenced script */
+      hash?: string;
+      /** Size in bytes */
+      size?: number;
+      /** Type of script */
+      type?: string;
+      /** Script bytes (hex) */
+      bytes?: string;
+      /** Value (json) */
+      value?: TxInfoItemCollateralInputsAnyOfItemReferenceScriptValue;
+    });
+
 export const bigIntsTxInfoItemCollateralInputsAnyOfItemReferenceScript: Array<string> =
-  [...bigIntsTxInfoItemCollateralInputsAnyOfItemReferenceScriptAnyOf];
+  [
+    ...bigIntsTxInfoItemCollateralInputsAnyOfItemReferenceScriptValue.map(
+      (item) => (item === '' ? 'value' : `value.${item}`),
+    ),
+    ...bigIntsTxInfoItemCollateralInputsAnyOfItemReferenceScriptValue.map(
+      (item) => (item === '' ? 'value' : `value.${item}`),
+    ),
+  ];

@@ -135,7 +135,7 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { EpochParamsItemCoinsPerUtxoSize } from './epochParamsItemCoinsPerUtxoSize';
 import { bigIntsEpochParamsItemCoinsPerUtxoSize } from './epochParamsItemCoinsPerUtxoSize';
@@ -245,6 +245,8 @@ import { bigIntsEpochParamsItemTreasuryGrowthRate } from './epochParamsItemTreas
 export type EpochParamsItem = {
   /** Epoch number */
   epoch_no?: number;
+  /** Cardano Era */
+  era?: string;
   /** The 'a' parameter to calculate the minimum transaction fee */
   min_fee_a?: EpochParamsItemMinFeeA;
   /** The 'b' parameter to calculate the minimum transaction fee */

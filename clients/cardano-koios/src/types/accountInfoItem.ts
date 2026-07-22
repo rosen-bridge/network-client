@@ -135,7 +135,7 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { AccountInfoItemDelegatedDrep } from './accountInfoItemDelegatedDrep';
 import { bigIntsAccountInfoItemDelegatedDrep } from './accountInfoItemDelegatedDrep';
@@ -168,6 +168,8 @@ export type AccountInfoItem = {
   reserves?: string;
   /** Total treasury MIR value of the account */
   treasury?: string;
+  /** Total proposal refund for this account */
+  'proposal-refund'?: string;
 };
 
 export const bigIntsAccountInfoItem: Array<string> = [

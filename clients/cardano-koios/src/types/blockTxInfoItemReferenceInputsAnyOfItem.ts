@@ -135,10 +135,10 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
-import type { BlockTxInfoItemReferenceInputsAnyOfItemAssetList } from './blockTxInfoItemReferenceInputsAnyOfItemAssetList';
-import { bigIntsBlockTxInfoItemReferenceInputsAnyOfItemAssetList } from './blockTxInfoItemReferenceInputsAnyOfItemAssetList';
+import type { BlockTxInfoItemReferenceInputsAnyOfItemAssetListItem } from './blockTxInfoItemReferenceInputsAnyOfItemAssetListItem';
+import { bigIntsBlockTxInfoItemReferenceInputsAnyOfItemAssetListItem } from './blockTxInfoItemReferenceInputsAnyOfItemAssetListItem';
 import type { BlockTxInfoItemReferenceInputsAnyOfItemDatumHash } from './blockTxInfoItemReferenceInputsAnyOfItemDatumHash';
 import { bigIntsBlockTxInfoItemReferenceInputsAnyOfItemDatumHash } from './blockTxInfoItemReferenceInputsAnyOfItemDatumHash';
 import type { BlockTxInfoItemReferenceInputsAnyOfItemInlineDatum } from './blockTxInfoItemReferenceInputsAnyOfItemInlineDatum';
@@ -166,7 +166,7 @@ export type BlockTxInfoItemReferenceInputsAnyOfItem = {
   /** Allow reference scripts to be used to satisfy script requirements during validation, rather than requiring the spending transaction to do so. (CIP-33) */
   reference_script?: BlockTxInfoItemReferenceInputsAnyOfItemReferenceScript;
   /** An array of assets on the UTxO */
-  asset_list?: BlockTxInfoItemReferenceInputsAnyOfItemAssetList;
+  asset_list?: BlockTxInfoItemReferenceInputsAnyOfItemAssetListItem[];
 };
 
 export const bigIntsBlockTxInfoItemReferenceInputsAnyOfItem: Array<string> = [
@@ -185,7 +185,7 @@ export const bigIntsBlockTxInfoItemReferenceInputsAnyOfItem: Array<string> = [
   ...bigIntsBlockTxInfoItemReferenceInputsAnyOfItemReferenceScript.map(
     (item) => (item === '' ? 'reference_script' : `reference_script.${item}`),
   ),
-  ...bigIntsBlockTxInfoItemReferenceInputsAnyOfItemAssetList.map((item) =>
+  ...bigIntsBlockTxInfoItemReferenceInputsAnyOfItemAssetListItem.map((item) =>
     item === '' ? 'asset_list' : `asset_list.${item}`,
   ),
 ];

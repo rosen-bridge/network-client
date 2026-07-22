@@ -135,15 +135,35 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { UtxoInfosItemInlineDatumAnyOf } from './utxoInfosItemInlineDatumAnyOf';
 import { bigIntsUtxoInfosItemInlineDatumAnyOf } from './utxoInfosItemInlineDatumAnyOf';
+import type { UtxoInfosItemInlineDatumValue } from './utxoInfosItemInlineDatumValue';
+import { bigIntsUtxoInfosItemInlineDatumValue } from './utxoInfosItemInlineDatumValue';
 
 /**
  * Allows datums to be attached to UTxO (CIP-32)
  */
-export type UtxoInfosItemInlineDatum = UtxoInfosItemInlineDatumAnyOf | null;
+export type UtxoInfosItemInlineDatum =
+  | (UtxoInfosItemInlineDatumAnyOf & {
+      /** Datum bytes (hex) */
+      bytes?: string;
+      /** Value (json) */
+      value?: UtxoInfosItemInlineDatumValue;
+    })
+  | (null & {
+      /** Datum bytes (hex) */
+      bytes?: string;
+      /** Value (json) */
+      value?: UtxoInfosItemInlineDatumValue;
+    });
+
 export const bigIntsUtxoInfosItemInlineDatum: Array<string> = [
-  ...bigIntsUtxoInfosItemInlineDatumAnyOf,
+  ...bigIntsUtxoInfosItemInlineDatumValue.map((item) =>
+    item === '' ? 'value' : `value.${item}`,
+  ),
+  ...bigIntsUtxoInfosItemInlineDatumValue.map((item) =>
+    item === '' ? 'value' : `value.${item}`,
+  ),
 ];

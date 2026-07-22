@@ -135,16 +135,73 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { PolicyAssetInfoItemTokenRegistryMetadataAnyOf } from './policyAssetInfoItemTokenRegistryMetadataAnyOf';
 import { bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOf } from './policyAssetInfoItemTokenRegistryMetadataAnyOf';
+import type { PolicyAssetInfoItemTokenRegistryMetadataDescription } from './policyAssetInfoItemTokenRegistryMetadataDescription';
+import { bigIntsPolicyAssetInfoItemTokenRegistryMetadataDescription } from './policyAssetInfoItemTokenRegistryMetadataDescription';
+import type { PolicyAssetInfoItemTokenRegistryMetadataLogo } from './policyAssetInfoItemTokenRegistryMetadataLogo';
+import { bigIntsPolicyAssetInfoItemTokenRegistryMetadataLogo } from './policyAssetInfoItemTokenRegistryMetadataLogo';
+import type { PolicyAssetInfoItemTokenRegistryMetadataName } from './policyAssetInfoItemTokenRegistryMetadataName';
+import { bigIntsPolicyAssetInfoItemTokenRegistryMetadataName } from './policyAssetInfoItemTokenRegistryMetadataName';
+import type { PolicyAssetInfoItemTokenRegistryMetadataTicker } from './policyAssetInfoItemTokenRegistryMetadataTicker';
+import { bigIntsPolicyAssetInfoItemTokenRegistryMetadataTicker } from './policyAssetInfoItemTokenRegistryMetadataTicker';
+import type { PolicyAssetInfoItemTokenRegistryMetadataUrl } from './policyAssetInfoItemTokenRegistryMetadataUrl';
+import { bigIntsPolicyAssetInfoItemTokenRegistryMetadataUrl } from './policyAssetInfoItemTokenRegistryMetadataUrl';
 
 /**
  * Asset metadata registered on the Cardano Token Registry
  */
 export type PolicyAssetInfoItemTokenRegistryMetadata =
-  PolicyAssetInfoItemTokenRegistryMetadataAnyOf | null;
+  | (PolicyAssetInfoItemTokenRegistryMetadataAnyOf & {
+      name?: PolicyAssetInfoItemTokenRegistryMetadataName;
+      description?: PolicyAssetInfoItemTokenRegistryMetadataDescription;
+      ticker?: PolicyAssetInfoItemTokenRegistryMetadataTicker;
+      url?: PolicyAssetInfoItemTokenRegistryMetadataUrl;
+      /** A PNG image file as a byte string */
+      logo?: PolicyAssetInfoItemTokenRegistryMetadataLogo;
+      decimals?: number;
+    })
+  | (null & {
+      name?: PolicyAssetInfoItemTokenRegistryMetadataName;
+      description?: PolicyAssetInfoItemTokenRegistryMetadataDescription;
+      ticker?: PolicyAssetInfoItemTokenRegistryMetadataTicker;
+      url?: PolicyAssetInfoItemTokenRegistryMetadataUrl;
+      /** A PNG image file as a byte string */
+      logo?: PolicyAssetInfoItemTokenRegistryMetadataLogo;
+      decimals?: number;
+    });
+
 export const bigIntsPolicyAssetInfoItemTokenRegistryMetadata: Array<string> = [
-  ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOf,
+  ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataName.map((item) =>
+    item === '' ? 'name' : `name.${item}`,
+  ),
+  ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataDescription.map((item) =>
+    item === '' ? 'description' : `description.${item}`,
+  ),
+  ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataTicker.map((item) =>
+    item === '' ? 'ticker' : `ticker.${item}`,
+  ),
+  ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataUrl.map((item) =>
+    item === '' ? 'url' : `url.${item}`,
+  ),
+  ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataLogo.map((item) =>
+    item === '' ? 'logo' : `logo.${item}`,
+  ),
+  ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataName.map((item) =>
+    item === '' ? 'name' : `name.${item}`,
+  ),
+  ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataDescription.map((item) =>
+    item === '' ? 'description' : `description.${item}`,
+  ),
+  ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataTicker.map((item) =>
+    item === '' ? 'ticker' : `ticker.${item}`,
+  ),
+  ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataUrl.map((item) =>
+    item === '' ? 'url' : `url.${item}`,
+  ),
+  ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataLogo.map((item) =>
+    item === '' ? 'logo' : `logo.${item}`,
+  ),
 ];

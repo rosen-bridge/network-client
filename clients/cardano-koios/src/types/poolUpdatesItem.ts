@@ -135,7 +135,7 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { PoolUpdatesItemActiveEpochNo } from './poolUpdatesItemActiveEpochNo';
 import { bigIntsPoolUpdatesItemActiveEpochNo } from './poolUpdatesItemActiveEpochNo';
@@ -149,8 +149,6 @@ import type { PoolUpdatesItemMetaJson } from './poolUpdatesItemMetaJson';
 import { bigIntsPoolUpdatesItemMetaJson } from './poolUpdatesItemMetaJson';
 import type { PoolUpdatesItemMetaUrl } from './poolUpdatesItemMetaUrl';
 import { bigIntsPoolUpdatesItemMetaUrl } from './poolUpdatesItemMetaUrl';
-import type { PoolUpdatesItemOwners } from './poolUpdatesItemOwners';
-import { bigIntsPoolUpdatesItemOwners } from './poolUpdatesItemOwners';
 import type { PoolUpdatesItemPledge } from './poolUpdatesItemPledge';
 import { bigIntsPoolUpdatesItemPledge } from './poolUpdatesItemPledge';
 import type { PoolUpdatesItemRelaysItem } from './poolUpdatesItemRelaysItem';
@@ -185,7 +183,7 @@ export type PoolUpdatesItem = {
   pledge?: PoolUpdatesItemPledge;
   /** Pool reward address */
   reward_addr?: PoolUpdatesItemRewardAddr;
-  owners?: PoolUpdatesItemOwners;
+  owners?: string[];
   relays?: PoolUpdatesItemRelaysItem[];
   /** Pool metadata URL */
   meta_url?: PoolUpdatesItemMetaUrl;
@@ -216,9 +214,6 @@ export const bigIntsPoolUpdatesItem: Array<string> = [
   ),
   ...bigIntsPoolUpdatesItemRewardAddr.map((item) =>
     item === '' ? 'reward_addr' : `reward_addr.${item}`,
-  ),
-  ...bigIntsPoolUpdatesItemOwners.map((item) =>
-    item === '' ? 'owners' : `owners.${item}`,
   ),
   ...bigIntsPoolUpdatesItemRelaysItem.map((item) =>
     item === '' ? 'relays' : `relays.${item}`,

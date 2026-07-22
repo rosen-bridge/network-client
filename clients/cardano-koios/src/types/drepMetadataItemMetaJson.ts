@@ -135,7 +135,7 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { DrepMetadataItemMetaJsonAnyOf } from './drepMetadataItemMetaJsonAnyOf';
 import { bigIntsDrepMetadataItemMetaJsonAnyOf } from './drepMetadataItemMetaJsonAnyOf';
@@ -143,7 +143,7 @@ import { bigIntsDrepMetadataItemMetaJsonAnyOf } from './drepMetadataItemMetaJson
 /**
  * The payload as JSON
  */
-export type DrepMetadataItemMetaJson = null | DrepMetadataItemMetaJsonAnyOf;
+export type DrepMetadataItemMetaJson = DrepMetadataItemMetaJsonAnyOf | null;
 export const bigIntsDrepMetadataItemMetaJson: Array<string> = [
   ...bigIntsDrepMetadataItemMetaJsonAnyOf,
 ];

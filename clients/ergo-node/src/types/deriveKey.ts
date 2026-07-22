@@ -3,11 +3,11 @@
  * Do not edit manually.
  * Ergo Node API
  * API docs for Ergo Node. Models are shared between all Ergo products
- * OpenAPI spec version: 6.0.1
+ * OpenAPI spec version: 6.0.3
  */
 
 export interface DeriveKey {
-  /** Derivation path for a new secret to derive */
+  /** BIP-32 derivation path of the secret to derive, relative to the wallet root. Apostrophe denotes hardened indices. Example below uses a short path; a typical EIP-3 path looks like `m/44'/429'/0'/0/3`. */
   derivationPath: string;
 }
 export const bigIntsDeriveKey: Array<string> = [];

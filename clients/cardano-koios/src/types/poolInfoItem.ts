@@ -135,7 +135,7 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { PoolInfoItemActiveEpochNo } from './poolInfoItemActiveEpochNo';
 import { bigIntsPoolInfoItemActiveEpochNo } from './poolInfoItemActiveEpochNo';
@@ -165,8 +165,6 @@ import type { PoolInfoItemOpCert } from './poolInfoItemOpCert';
 import { bigIntsPoolInfoItemOpCert } from './poolInfoItemOpCert';
 import type { PoolInfoItemOpCertCounter } from './poolInfoItemOpCertCounter';
 import { bigIntsPoolInfoItemOpCertCounter } from './poolInfoItemOpCertCounter';
-import type { PoolInfoItemOwners } from './poolInfoItemOwners';
-import { bigIntsPoolInfoItemOwners } from './poolInfoItemOwners';
 import type { PoolInfoItemPledge } from './poolInfoItemPledge';
 import { bigIntsPoolInfoItemPledge } from './poolInfoItemPledge';
 import type { PoolInfoItemPoolStatus } from './poolInfoItemPoolStatus';
@@ -207,7 +205,7 @@ export type PoolInfoItem = {
   reward_addr?: PoolInfoItemRewardAddr;
   /** Reward address' current delegation status to DRep ID in CIP-129 Bech32 format */
   reward_addr_delegated_drep?: PoolInfoItemRewardAddrDelegatedDrep;
-  owners?: PoolInfoItemOwners;
+  owners?: string[];
   relays?: PoolInfoItemRelaysItem[];
   /** Pool metadata URL */
   meta_url?: PoolInfoItemMetaUrl;
@@ -266,9 +264,6 @@ export const bigIntsPoolInfoItem: Array<string> = [
     item === ''
       ? 'reward_addr_delegated_drep'
       : `reward_addr_delegated_drep.${item}`,
-  ),
-  ...bigIntsPoolInfoItemOwners.map((item) =>
-    item === '' ? 'owners' : `owners.${item}`,
   ),
   ...bigIntsPoolInfoItemRelaysItem.map((item) =>
     item === '' ? 'relays' : `relays.${item}`,

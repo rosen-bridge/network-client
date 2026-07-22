@@ -135,18 +135,16 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
-import type { BlockTxInfoItemAssetsMinted } from './blockTxInfoItemAssetsMinted';
-import { bigIntsBlockTxInfoItemAssetsMinted } from './blockTxInfoItemAssetsMinted';
-import type { BlockTxInfoItemBlockHeight } from './blockTxInfoItemBlockHeight';
-import { bigIntsBlockTxInfoItemBlockHeight } from './blockTxInfoItemBlockHeight';
-import type { BlockTxInfoItemCertificates } from './blockTxInfoItemCertificates';
-import { bigIntsBlockTxInfoItemCertificates } from './blockTxInfoItemCertificates';
+import type { BlockTxInfoItemAssetsMintedItem } from './blockTxInfoItemAssetsMintedItem';
+import { bigIntsBlockTxInfoItemAssetsMintedItem } from './blockTxInfoItemAssetsMintedItem';
+import type { BlockTxInfoItemCertificatesItem } from './blockTxInfoItemCertificatesItem';
+import { bigIntsBlockTxInfoItemCertificatesItem } from './blockTxInfoItemCertificatesItem';
 import type { BlockTxInfoItemCollateralInputs } from './blockTxInfoItemCollateralInputs';
 import { bigIntsBlockTxInfoItemCollateralInputs } from './blockTxInfoItemCollateralInputs';
-import type { BlockTxInfoItemCollateralOutput } from './blockTxInfoItemCollateralOutput';
-import { bigIntsBlockTxInfoItemCollateralOutput } from './blockTxInfoItemCollateralOutput';
+import type { BlockTxInfoItemCollateralOutputItem } from './blockTxInfoItemCollateralOutputItem';
+import { bigIntsBlockTxInfoItemCollateralOutputItem } from './blockTxInfoItemCollateralOutputItem';
 import type { BlockTxInfoItemInputs } from './blockTxInfoItemInputs';
 import { bigIntsBlockTxInfoItemInputs } from './blockTxInfoItemInputs';
 import type { BlockTxInfoItemInvalidAfter } from './blockTxInfoItemInvalidAfter';
@@ -155,16 +153,16 @@ import type { BlockTxInfoItemInvalidBefore } from './blockTxInfoItemInvalidBefor
 import { bigIntsBlockTxInfoItemInvalidBefore } from './blockTxInfoItemInvalidBefore';
 import type { BlockTxInfoItemMetadata } from './blockTxInfoItemMetadata';
 import { bigIntsBlockTxInfoItemMetadata } from './blockTxInfoItemMetadata';
-import type { BlockTxInfoItemNativeScripts } from './blockTxInfoItemNativeScripts';
-import { bigIntsBlockTxInfoItemNativeScripts } from './blockTxInfoItemNativeScripts';
+import type { BlockTxInfoItemNativeScriptsItem } from './blockTxInfoItemNativeScriptsItem';
+import { bigIntsBlockTxInfoItemNativeScriptsItem } from './blockTxInfoItemNativeScriptsItem';
 import type { BlockTxInfoItemOutputsItem } from './blockTxInfoItemOutputsItem';
 import { bigIntsBlockTxInfoItemOutputsItem } from './blockTxInfoItemOutputsItem';
-import type { BlockTxInfoItemPlutusContracts } from './blockTxInfoItemPlutusContracts';
-import { bigIntsBlockTxInfoItemPlutusContracts } from './blockTxInfoItemPlutusContracts';
+import type { BlockTxInfoItemPlutusContractsItem } from './blockTxInfoItemPlutusContractsItem';
+import { bigIntsBlockTxInfoItemPlutusContractsItem } from './blockTxInfoItemPlutusContractsItem';
 import type { BlockTxInfoItemReferenceInputs } from './blockTxInfoItemReferenceInputs';
 import { bigIntsBlockTxInfoItemReferenceInputs } from './blockTxInfoItemReferenceInputs';
-import type { BlockTxInfoItemWithdrawals } from './blockTxInfoItemWithdrawals';
-import { bigIntsBlockTxInfoItemWithdrawals } from './blockTxInfoItemWithdrawals';
+import type { BlockTxInfoItemWithdrawalsItem } from './blockTxInfoItemWithdrawalsItem';
+import { bigIntsBlockTxInfoItemWithdrawalsItem } from './blockTxInfoItemWithdrawalsItem';
 
 export type BlockTxInfoItem = {
   /** Hash identifier of the transaction */
@@ -172,7 +170,7 @@ export type BlockTxInfoItem = {
   /** Hash of the block */
   block_hash?: string;
   /** Block height */
-  block_height?: BlockTxInfoItemBlockHeight;
+  block_height?: number;
   /** Epoch number of the block */
   epoch_no?: number;
   /** Slot number of the block in epoch */
@@ -200,7 +198,7 @@ export type BlockTxInfoItem = {
   /** An array of collateral inputs needed for smart contracts in case of contract failure */
   collateral_inputs?: BlockTxInfoItemCollateralInputs;
   /** A collateral output for change if the smart contract fails to execute and collateral inputs are spent. (CIP-40) */
-  collateral_output?: BlockTxInfoItemCollateralOutput;
+  collateral_output?: BlockTxInfoItemCollateralOutputItem[];
   /** An array of reference inputs. A reference input allows looking at an output without spending it. (CIP-31) */
   reference_inputs?: BlockTxInfoItemReferenceInputs;
   /** An array of UTxO inputs spent in the transaction */
@@ -208,23 +206,20 @@ export type BlockTxInfoItem = {
   /** An array of UTxO outputs created by the transaction */
   outputs?: BlockTxInfoItemOutputsItem[];
   /** Array of withdrawals with-in a transaction */
-  withdrawals?: BlockTxInfoItemWithdrawals;
+  withdrawals?: BlockTxInfoItemWithdrawalsItem[];
   /** Array of minted assets with-in a transaction */
-  assets_minted?: BlockTxInfoItemAssetsMinted;
+  assets_minted?: BlockTxInfoItemAssetsMintedItem[];
   /** A JSON array containing details about metadata within transaction */
   metadata?: BlockTxInfoItemMetadata;
   /** Certificates present with-in a transaction (if any) */
-  certificates?: BlockTxInfoItemCertificates;
+  certificates?: BlockTxInfoItemCertificatesItem[];
   /** Native scripts present in a transaction (if any) */
-  native_scripts?: BlockTxInfoItemNativeScripts;
+  native_scripts?: BlockTxInfoItemNativeScriptsItem[];
   /** Plutus contracts present in transaction (if any) */
-  plutus_contracts?: BlockTxInfoItemPlutusContracts;
+  plutus_contracts?: BlockTxInfoItemPlutusContractsItem[];
 };
 
 export const bigIntsBlockTxInfoItem: Array<string> = [
-  ...bigIntsBlockTxInfoItemBlockHeight.map((item) =>
-    item === '' ? 'block_height' : `block_height.${item}`,
-  ),
   ...bigIntsBlockTxInfoItemInvalidBefore.map((item) =>
     item === '' ? 'invalid_before' : `invalid_before.${item}`,
   ),
@@ -234,7 +229,7 @@ export const bigIntsBlockTxInfoItem: Array<string> = [
   ...bigIntsBlockTxInfoItemCollateralInputs.map((item) =>
     item === '' ? 'collateral_inputs' : `collateral_inputs.${item}`,
   ),
-  ...bigIntsBlockTxInfoItemCollateralOutput.map((item) =>
+  ...bigIntsBlockTxInfoItemCollateralOutputItem.map((item) =>
     item === '' ? 'collateral_output' : `collateral_output.${item}`,
   ),
   ...bigIntsBlockTxInfoItemReferenceInputs.map((item) =>
@@ -246,22 +241,22 @@ export const bigIntsBlockTxInfoItem: Array<string> = [
   ...bigIntsBlockTxInfoItemOutputsItem.map((item) =>
     item === '' ? 'outputs' : `outputs.${item}`,
   ),
-  ...bigIntsBlockTxInfoItemWithdrawals.map((item) =>
+  ...bigIntsBlockTxInfoItemWithdrawalsItem.map((item) =>
     item === '' ? 'withdrawals' : `withdrawals.${item}`,
   ),
-  ...bigIntsBlockTxInfoItemAssetsMinted.map((item) =>
+  ...bigIntsBlockTxInfoItemAssetsMintedItem.map((item) =>
     item === '' ? 'assets_minted' : `assets_minted.${item}`,
   ),
   ...bigIntsBlockTxInfoItemMetadata.map((item) =>
     item === '' ? 'metadata' : `metadata.${item}`,
   ),
-  ...bigIntsBlockTxInfoItemCertificates.map((item) =>
+  ...bigIntsBlockTxInfoItemCertificatesItem.map((item) =>
     item === '' ? 'certificates' : `certificates.${item}`,
   ),
-  ...bigIntsBlockTxInfoItemNativeScripts.map((item) =>
+  ...bigIntsBlockTxInfoItemNativeScriptsItem.map((item) =>
     item === '' ? 'native_scripts' : `native_scripts.${item}`,
   ),
-  ...bigIntsBlockTxInfoItemPlutusContracts.map((item) =>
+  ...bigIntsBlockTxInfoItemPlutusContractsItem.map((item) =>
     item === '' ? 'plutus_contracts' : `plutus_contracts.${item}`,
   ),
 ];

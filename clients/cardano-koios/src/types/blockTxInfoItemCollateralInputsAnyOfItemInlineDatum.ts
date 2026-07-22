@@ -135,15 +135,36 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { BlockTxInfoItemCollateralInputsAnyOfItemInlineDatumAnyOf } from './blockTxInfoItemCollateralInputsAnyOfItemInlineDatumAnyOf';
 import { bigIntsBlockTxInfoItemCollateralInputsAnyOfItemInlineDatumAnyOf } from './blockTxInfoItemCollateralInputsAnyOfItemInlineDatumAnyOf';
+import type { BlockTxInfoItemCollateralInputsAnyOfItemInlineDatumValue } from './blockTxInfoItemCollateralInputsAnyOfItemInlineDatumValue';
+import { bigIntsBlockTxInfoItemCollateralInputsAnyOfItemInlineDatumValue } from './blockTxInfoItemCollateralInputsAnyOfItemInlineDatumValue';
 
 /**
  * Allows datums to be attached to UTxO (CIP-32)
  */
 export type BlockTxInfoItemCollateralInputsAnyOfItemInlineDatum =
-  BlockTxInfoItemCollateralInputsAnyOfItemInlineDatumAnyOf | null;
+  | (BlockTxInfoItemCollateralInputsAnyOfItemInlineDatumAnyOf & {
+      /** Datum bytes (hex) */
+      bytes?: string;
+      /** Value (json) */
+      value?: BlockTxInfoItemCollateralInputsAnyOfItemInlineDatumValue;
+    })
+  | (null & {
+      /** Datum bytes (hex) */
+      bytes?: string;
+      /** Value (json) */
+      value?: BlockTxInfoItemCollateralInputsAnyOfItemInlineDatumValue;
+    });
+
 export const bigIntsBlockTxInfoItemCollateralInputsAnyOfItemInlineDatum: Array<string> =
-  [...bigIntsBlockTxInfoItemCollateralInputsAnyOfItemInlineDatumAnyOf];
+  [
+    ...bigIntsBlockTxInfoItemCollateralInputsAnyOfItemInlineDatumValue.map(
+      (item) => (item === '' ? 'value' : `value.${item}`),
+    ),
+    ...bigIntsBlockTxInfoItemCollateralInputsAnyOfItemInlineDatumValue.map(
+      (item) => (item === '' ? 'value' : `value.${item}`),
+    ),
+  ];

@@ -135,12 +135,12 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { AssetHistoryItemAssetName } from './assetHistoryItemAssetName';
 import { bigIntsAssetHistoryItemAssetName } from './assetHistoryItemAssetName';
-import type { AssetHistoryItemMintingTxs } from './assetHistoryItemMintingTxs';
-import { bigIntsAssetHistoryItemMintingTxs } from './assetHistoryItemMintingTxs';
+import type { AssetHistoryItemMintingTxsItem } from './assetHistoryItemMintingTxsItem';
+import { bigIntsAssetHistoryItemMintingTxsItem } from './assetHistoryItemMintingTxsItem';
 
 export type AssetHistoryItem = {
   /** Asset Policy ID (hex) */
@@ -150,14 +150,14 @@ export type AssetHistoryItem = {
   /** The CIP14 fingerprint of the asset */
   fingerprint?: string;
   /** Array of all mint/burn transactions for an asset */
-  minting_txs?: AssetHistoryItemMintingTxs;
+  minting_txs?: AssetHistoryItemMintingTxsItem[];
 };
 
 export const bigIntsAssetHistoryItem: Array<string> = [
   ...bigIntsAssetHistoryItemAssetName.map((item) =>
     item === '' ? 'asset_name' : `asset_name.${item}`,
   ),
-  ...bigIntsAssetHistoryItemMintingTxs.map((item) =>
+  ...bigIntsAssetHistoryItemMintingTxsItem.map((item) =>
     item === '' ? 'minting_txs' : `minting_txs.${item}`,
   ),
 ];
