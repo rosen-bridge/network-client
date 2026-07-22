@@ -1,5 +1,11 @@
 # @rosen-clients/ergo-node
 
+## 3.2.0
+
+### Minor Changes
+
+- Update openapi version 6.0.1 to 6.0.3 also fix a bug in openapi manually related to CommitmentWithSecret schema
+
 ## 3.1.3
 
 ### Patch Changes
