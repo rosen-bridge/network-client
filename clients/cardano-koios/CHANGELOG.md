@@ -1,5 +1,11 @@
 # @rosen-clients/cardano-koios
 
+## 3.2.0
+
+### Minor Changes
+
+- Update koios openapi from 1.3.1 to 1.4.2
+
 ## 3.1.3
 
 ### Patch Changes
