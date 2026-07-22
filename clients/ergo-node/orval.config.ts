@@ -13,6 +13,9 @@ export default defineConfig({
       mode: 'split',
       client: 'axios',
       prettier: true,
+      // Drop previously generated files so schemas removed from the spec don't
+      // linger and get post-processed a second time by the codemods.
+      clean: true,
       override: {
         useBigInt: true,
         mutator: {
