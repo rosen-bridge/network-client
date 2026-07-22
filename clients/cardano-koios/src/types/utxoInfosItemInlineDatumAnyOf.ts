@@ -135,23 +135,8 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
-import type { UtxoInfosItemInlineDatumAnyOfValue } from './utxoInfosItemInlineDatumAnyOfValue';
-import { bigIntsUtxoInfosItemInlineDatumAnyOfValue } from './utxoInfosItemInlineDatumAnyOfValue';
 
-/**
- * Allows datums to be attached to UTxO (CIP-32)
- */
-export type UtxoInfosItemInlineDatumAnyOf = {
-  /** Datum bytes (hex) */
-  bytes?: string;
-  /** Value (json) */
-  value?: UtxoInfosItemInlineDatumAnyOfValue;
-};
-
-export const bigIntsUtxoInfosItemInlineDatumAnyOf: Array<string> = [
-  ...bigIntsUtxoInfosItemInlineDatumAnyOfValue.map((item) =>
-    item === '' ? 'value' : `value.${item}`,
-  ),
-];
+export type UtxoInfosItemInlineDatumAnyOf = { [key: string]: unknown };
+export const bigIntsUtxoInfosItemInlineDatumAnyOf: Array<string> = [];

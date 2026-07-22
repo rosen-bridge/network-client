@@ -135,47 +135,11 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
-import type { PolicyAssetInfoItemTokenRegistryMetadataAnyOfDescription } from './policyAssetInfoItemTokenRegistryMetadataAnyOfDescription';
-import { bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOfDescription } from './policyAssetInfoItemTokenRegistryMetadataAnyOfDescription';
-import type { PolicyAssetInfoItemTokenRegistryMetadataAnyOfLogo } from './policyAssetInfoItemTokenRegistryMetadataAnyOfLogo';
-import { bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOfLogo } from './policyAssetInfoItemTokenRegistryMetadataAnyOfLogo';
-import type { PolicyAssetInfoItemTokenRegistryMetadataAnyOfName } from './policyAssetInfoItemTokenRegistryMetadataAnyOfName';
-import { bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOfName } from './policyAssetInfoItemTokenRegistryMetadataAnyOfName';
-import type { PolicyAssetInfoItemTokenRegistryMetadataAnyOfTicker } from './policyAssetInfoItemTokenRegistryMetadataAnyOfTicker';
-import { bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOfTicker } from './policyAssetInfoItemTokenRegistryMetadataAnyOfTicker';
-import type { PolicyAssetInfoItemTokenRegistryMetadataAnyOfUrl } from './policyAssetInfoItemTokenRegistryMetadataAnyOfUrl';
-import { bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOfUrl } from './policyAssetInfoItemTokenRegistryMetadataAnyOfUrl';
 
-/**
- * Asset metadata registered on the Cardano Token Registry
- */
 export type PolicyAssetInfoItemTokenRegistryMetadataAnyOf = {
-  name?: PolicyAssetInfoItemTokenRegistryMetadataAnyOfName;
-  description?: PolicyAssetInfoItemTokenRegistryMetadataAnyOfDescription;
-  ticker?: PolicyAssetInfoItemTokenRegistryMetadataAnyOfTicker;
-  url?: PolicyAssetInfoItemTokenRegistryMetadataAnyOfUrl;
-  /** A PNG image file as a byte string */
-  logo?: PolicyAssetInfoItemTokenRegistryMetadataAnyOfLogo;
-  decimals?: number;
+  [key: string]: unknown;
 };
-
 export const bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOf: Array<string> =
-  [
-    ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOfName.map((item) =>
-      item === '' ? 'name' : `name.${item}`,
-    ),
-    ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOfDescription.map(
-      (item) => (item === '' ? 'description' : `description.${item}`),
-    ),
-    ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOfTicker.map((item) =>
-      item === '' ? 'ticker' : `ticker.${item}`,
-    ),
-    ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOfUrl.map((item) =>
-      item === '' ? 'url' : `url.${item}`,
-    ),
-    ...bigIntsPolicyAssetInfoItemTokenRegistryMetadataAnyOfLogo.map((item) =>
-      item === '' ? 'logo' : `logo.${item}`,
-    ),
-  ];
+  [];

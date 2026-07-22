@@ -135,7 +135,7 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { ProposalVotingSummaryItemProposalType } from './proposalVotingSummaryItemProposalType';
 import { bigIntsProposalVotingSummaryItemProposalType } from './proposalVotingSummaryItemProposalType';
@@ -148,55 +148,55 @@ export type ProposalVotingSummaryItem = {
   /** Number of 'yes' votes casted by dreps */
   drep_yes_votes_cast?: number;
   /** Power of 'yes' votes that were explicitly cast */
-  drep_active_yes_vote_power?: number;
+  drep_active_yes_vote_power?: string;
   /** Power of 'yes' votes from dreps (includes explicit yes and inferred via other means) */
-  drep_yes_vote_power?: number;
+  drep_yes_vote_power?: string;
   /** Percentage of 'yes' votes from dreps */
   drep_yes_pct?: number;
   /** Number of 'no' votes casted by dreps */
   drep_no_votes_cast?: number;
   /** Power of 'no' votes that were explicitly cast */
-  drep_active_no_vote_power?: number;
+  drep_active_no_vote_power?: string;
   /** Power of 'no' votes from dreps (includes explicit no and inferred via other means) */
-  drep_no_vote_power?: number;
+  drep_no_vote_power?: string;
   /** Percentage of 'no' votes from dreps */
   drep_no_pct?: number;
   /** Number of active 'abstain' votes from dreps */
   drep_abstain_votes_cast?: number;
   /** Power of 'abstain' votes that were explicitly cast */
-  drep_active_abstain_vote_power?: number;
+  drep_active_abstain_vote_power?: string;
   /** Power of votes delegated to 'always_no_confidence' predefined drep */
-  drep_always_no_confidence_vote_power?: number;
+  drep_always_no_confidence_vote_power?: string;
   /** Power of votes delegated to 'always_abstain' predefined drep */
-  drep_always_abstain_vote_power?: number;
+  drep_always_abstain_vote_power?: string;
   /** Number of 'yes' votes casted by pools */
   pool_yes_votes_cast?: number;
   /** Power of 'yes' pool votes that were explicitly cast */
-  pool_active_yes_vote_power?: number;
+  pool_active_yes_vote_power?: string;
   /** Power of 'yes' votes from pools (includes explicit yes and inferred via other means) */
-  pool_yes_vote_power?: number;
+  pool_yes_vote_power?: string;
   /** Percentage of 'yes' votes from pools */
   pool_yes_pct?: number;
   /** Number of 'no' votes casted by pools */
   pool_no_votes_cast?: number;
   /** Power of 'no' pool votes that were explicitly cast */
-  pool_active_no_vote_power?: number;
+  pool_active_no_vote_power?: string;
   /** Power of 'no' votes from pools (includes explicit no and inferred via other means) */
-  pool_no_vote_power?: number;
+  pool_no_vote_power?: string;
   /** Percentage of 'no' votes from pools */
   pool_no_pct?: number;
   /** Percentage of 'abstain' votes from pools */
   pool_abstain_votes_cast?: number;
   /** Power of 'abstain' pool votes that were explicitly cast */
-  pool_active_abstain_vote_power?: number;
+  pool_active_abstain_vote_power?: string;
   /** Number of non-voting SPO pool reward addresses delegating to 'always_abstain' drep */
   pool_passive_always_abstain_votes_assigned?: number;
   /** Combined power of non-voting SPO pool votes where reward addresses delegate to 'always_abstain' */
-  pool_passive_always_abstain_vote_power?: number;
+  pool_passive_always_abstain_vote_power?: string;
   /** Number of non-voting SPO pool reward addresses delegating to 'always_no_confidence' drep */
   pool_passive_always_no_confidence_votes_assigned?: number;
   /** Combined power of non-voting SPO pool votes where reward addresses delegate to 'always_no_confidence' */
-  pool_passive_always_no_confidence_vote_power?: number;
+  pool_passive_always_no_confidence_vote_power?: string;
   /** Number of 'yes' votes casted by committee */
   committee_yes_votes_cast?: number;
   /** Percentage of 'yes' votes from committee */

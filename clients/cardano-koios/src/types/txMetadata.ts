@@ -135,13 +135,13 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
-import type { TxMetadataAnyOfItem } from './txMetadataAnyOfItem';
-import { bigIntsTxMetadataAnyOfItem } from './txMetadataAnyOfItem';
+import type { TxMetadataItem } from './txMetadataItem';
+import { bigIntsTxMetadataItem } from './txMetadataItem';
 
 /**
  * Array of metadata information present in each of the transactions queried
  */
-export type TxMetadata = TxMetadataAnyOfItem[] | null;
-export const bigIntsTxMetadata: Array<string> = [...bigIntsTxMetadataAnyOfItem];
+export type TxMetadata = TxMetadataItem[];
+export const bigIntsTxMetadata: Array<string> = [...bigIntsTxMetadataItem];

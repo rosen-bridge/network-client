@@ -135,10 +135,10 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
-import type { BlockTxInfoItemInputsAnyOfItemAssetList } from './blockTxInfoItemInputsAnyOfItemAssetList';
-import { bigIntsBlockTxInfoItemInputsAnyOfItemAssetList } from './blockTxInfoItemInputsAnyOfItemAssetList';
+import type { BlockTxInfoItemInputsAnyOfItemAssetListItem } from './blockTxInfoItemInputsAnyOfItemAssetListItem';
+import { bigIntsBlockTxInfoItemInputsAnyOfItemAssetListItem } from './blockTxInfoItemInputsAnyOfItemAssetListItem';
 import type { BlockTxInfoItemInputsAnyOfItemDatumHash } from './blockTxInfoItemInputsAnyOfItemDatumHash';
 import { bigIntsBlockTxInfoItemInputsAnyOfItemDatumHash } from './blockTxInfoItemInputsAnyOfItemDatumHash';
 import type { BlockTxInfoItemInputsAnyOfItemInlineDatum } from './blockTxInfoItemInputsAnyOfItemInlineDatum';
@@ -166,7 +166,7 @@ export type BlockTxInfoItemInputsAnyOfItem = {
   /** Allow reference scripts to be used to satisfy script requirements during validation, rather than requiring the spending transaction to do so. (CIP-33) */
   reference_script?: BlockTxInfoItemInputsAnyOfItemReferenceScript;
   /** An array of assets on the UTxO */
-  asset_list?: BlockTxInfoItemInputsAnyOfItemAssetList;
+  asset_list?: BlockTxInfoItemInputsAnyOfItemAssetListItem[];
 };
 
 export const bigIntsBlockTxInfoItemInputsAnyOfItem: Array<string> = [
@@ -185,7 +185,7 @@ export const bigIntsBlockTxInfoItemInputsAnyOfItem: Array<string> = [
   ...bigIntsBlockTxInfoItemInputsAnyOfItemReferenceScript.map((item) =>
     item === '' ? 'reference_script' : `reference_script.${item}`,
   ),
-  ...bigIntsBlockTxInfoItemInputsAnyOfItemAssetList.map((item) =>
+  ...bigIntsBlockTxInfoItemInputsAnyOfItemAssetListItem.map((item) =>
     item === '' ? 'asset_list' : `asset_list.${item}`,
   ),
 ];

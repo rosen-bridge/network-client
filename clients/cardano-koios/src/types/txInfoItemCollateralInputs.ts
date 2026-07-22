@@ -135,7 +135,7 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { TxInfoItemCollateralInputsAnyOfItem } from './txInfoItemCollateralInputsAnyOfItem';
 import { bigIntsTxInfoItemCollateralInputsAnyOfItem } from './txInfoItemCollateralInputsAnyOfItem';
@@ -144,8 +144,8 @@ import { bigIntsTxInfoItemCollateralInputsAnyOfItem } from './txInfoItemCollater
  * An array of collateral inputs needed for smart contracts in case of contract failure
  */
 export type TxInfoItemCollateralInputs =
-  | null
-  | TxInfoItemCollateralInputsAnyOfItem[];
+  | TxInfoItemCollateralInputsAnyOfItem[]
+  | null;
 export const bigIntsTxInfoItemCollateralInputs: Array<string> = [
   ...bigIntsTxInfoItemCollateralInputsAnyOfItem,
 ];

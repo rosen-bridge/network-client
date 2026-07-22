@@ -135,7 +135,7 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { _VoterIdParameter } from './_voterIdParameter';
 import { bigInts_VoterIdParameter } from './_voterIdParameter';
@@ -144,7 +144,7 @@ export type VoterProposalListParams = {
   /**
    * Voter ID (Drep, SPO, Committee Member) in Bech32 format (CIP-5 | CIP-129)
    */
-  _voter_id: _VoterIdParameter;
+  _voter_id?: _VoterIdParameter;
 };
 
 export const bigIntsVoterProposalListParams: Array<string> = [

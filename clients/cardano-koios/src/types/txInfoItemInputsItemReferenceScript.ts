@@ -135,16 +135,47 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { TxInfoItemInputsItemReferenceScriptAnyOf } from './txInfoItemInputsItemReferenceScriptAnyOf';
 import { bigIntsTxInfoItemInputsItemReferenceScriptAnyOf } from './txInfoItemInputsItemReferenceScriptAnyOf';
+import type { TxInfoItemInputsItemReferenceScriptValue } from './txInfoItemInputsItemReferenceScriptValue';
+import { bigIntsTxInfoItemInputsItemReferenceScriptValue } from './txInfoItemInputsItemReferenceScriptValue';
 
 /**
  * Allow reference scripts to be used to satisfy script requirements during validation, rather than requiring the spending transaction to do so. (CIP-33)
  */
 export type TxInfoItemInputsItemReferenceScript =
-  TxInfoItemInputsItemReferenceScriptAnyOf | null;
+  | (TxInfoItemInputsItemReferenceScriptAnyOf & {
+      /** Hash of referenced script */
+      hash?: string;
+      /** Size in bytes */
+      size?: number;
+      /** Type of script */
+      type?: string;
+      /** Script bytes (hex) */
+      bytes?: string;
+      /** Value (json) */
+      value?: TxInfoItemInputsItemReferenceScriptValue;
+    })
+  | (null & {
+      /** Hash of referenced script */
+      hash?: string;
+      /** Size in bytes */
+      size?: number;
+      /** Type of script */
+      type?: string;
+      /** Script bytes (hex) */
+      bytes?: string;
+      /** Value (json) */
+      value?: TxInfoItemInputsItemReferenceScriptValue;
+    });
+
 export const bigIntsTxInfoItemInputsItemReferenceScript: Array<string> = [
-  ...bigIntsTxInfoItemInputsItemReferenceScriptAnyOf,
+  ...bigIntsTxInfoItemInputsItemReferenceScriptValue.map((item) =>
+    item === '' ? 'value' : `value.${item}`,
+  ),
+  ...bigIntsTxInfoItemInputsItemReferenceScriptValue.map((item) =>
+    item === '' ? 'value' : `value.${item}`,
+  ),
 ];

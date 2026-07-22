@@ -135,30 +135,11 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
-import type { AddressInfoItemUtxoSetItemReferenceScriptAnyOfValue } from './addressInfoItemUtxoSetItemReferenceScriptAnyOfValue';
-import { bigIntsAddressInfoItemUtxoSetItemReferenceScriptAnyOfValue } from './addressInfoItemUtxoSetItemReferenceScriptAnyOfValue';
 
-/**
- * Allow reference scripts to be used to satisfy script requirements during validation, rather than requiring the spending transaction to do so. (CIP-33)
- */
 export type AddressInfoItemUtxoSetItemReferenceScriptAnyOf = {
-  /** Hash of referenced script */
-  hash?: string;
-  /** Size in bytes */
-  size?: number;
-  /** Type of script */
-  type?: string;
-  /** Script bytes (hex) */
-  bytes?: string;
-  /** Value (json) */
-  value?: AddressInfoItemUtxoSetItemReferenceScriptAnyOfValue;
+  [key: string]: unknown;
 };
-
 export const bigIntsAddressInfoItemUtxoSetItemReferenceScriptAnyOf: Array<string> =
-  [
-    ...bigIntsAddressInfoItemUtxoSetItemReferenceScriptAnyOfValue.map((item) =>
-      item === '' ? 'value' : `value.${item}`,
-    ),
-  ];
+  [];

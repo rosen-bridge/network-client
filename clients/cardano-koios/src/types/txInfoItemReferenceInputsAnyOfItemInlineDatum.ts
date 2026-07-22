@@ -135,15 +135,36 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { TxInfoItemReferenceInputsAnyOfItemInlineDatumAnyOf } from './txInfoItemReferenceInputsAnyOfItemInlineDatumAnyOf';
 import { bigIntsTxInfoItemReferenceInputsAnyOfItemInlineDatumAnyOf } from './txInfoItemReferenceInputsAnyOfItemInlineDatumAnyOf';
+import type { TxInfoItemReferenceInputsAnyOfItemInlineDatumValue } from './txInfoItemReferenceInputsAnyOfItemInlineDatumValue';
+import { bigIntsTxInfoItemReferenceInputsAnyOfItemInlineDatumValue } from './txInfoItemReferenceInputsAnyOfItemInlineDatumValue';
 
 /**
  * Allows datums to be attached to UTxO (CIP-32)
  */
 export type TxInfoItemReferenceInputsAnyOfItemInlineDatum =
-  TxInfoItemReferenceInputsAnyOfItemInlineDatumAnyOf | null;
+  | (TxInfoItemReferenceInputsAnyOfItemInlineDatumAnyOf & {
+      /** Datum bytes (hex) */
+      bytes?: string;
+      /** Value (json) */
+      value?: TxInfoItemReferenceInputsAnyOfItemInlineDatumValue;
+    })
+  | (null & {
+      /** Datum bytes (hex) */
+      bytes?: string;
+      /** Value (json) */
+      value?: TxInfoItemReferenceInputsAnyOfItemInlineDatumValue;
+    });
+
 export const bigIntsTxInfoItemReferenceInputsAnyOfItemInlineDatum: Array<string> =
-  [...bigIntsTxInfoItemReferenceInputsAnyOfItemInlineDatumAnyOf];
+  [
+    ...bigIntsTxInfoItemReferenceInputsAnyOfItemInlineDatumValue.map((item) =>
+      item === '' ? 'value' : `value.${item}`,
+    ),
+    ...bigIntsTxInfoItemReferenceInputsAnyOfItemInlineDatumValue.map((item) =>
+      item === '' ? 'value' : `value.${item}`,
+    ),
+  ];

@@ -135,12 +135,10 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
-import type { AddressInfoItemUtxoSetItemAssetList } from './addressInfoItemUtxoSetItemAssetList';
-import { bigIntsAddressInfoItemUtxoSetItemAssetList } from './addressInfoItemUtxoSetItemAssetList';
-import type { AddressInfoItemUtxoSetItemBlockHeight } from './addressInfoItemUtxoSetItemBlockHeight';
-import { bigIntsAddressInfoItemUtxoSetItemBlockHeight } from './addressInfoItemUtxoSetItemBlockHeight';
+import type { AddressInfoItemUtxoSetItemAssetListItem } from './addressInfoItemUtxoSetItemAssetListItem';
+import { bigIntsAddressInfoItemUtxoSetItemAssetListItem } from './addressInfoItemUtxoSetItemAssetListItem';
 import type { AddressInfoItemUtxoSetItemDatumHash } from './addressInfoItemUtxoSetItemDatumHash';
 import { bigIntsAddressInfoItemUtxoSetItemDatumHash } from './addressInfoItemUtxoSetItemDatumHash';
 import type { AddressInfoItemUtxoSetItemInlineDatum } from './addressInfoItemUtxoSetItemInlineDatum';
@@ -154,7 +152,7 @@ export type AddressInfoItemUtxoSetItem = {
   /** Index of UTxO in the transaction */
   tx_index?: number;
   /** Block height */
-  block_height?: AddressInfoItemUtxoSetItemBlockHeight;
+  block_height?: number;
   /** UNIX timestamp of the block */
   block_time?: number;
   /** Total sum of ADA on the UTxO */
@@ -166,13 +164,10 @@ export type AddressInfoItemUtxoSetItem = {
   /** Allow reference scripts to be used to satisfy script requirements during validation, rather than requiring the spending transaction to do so. (CIP-33) */
   reference_script?: AddressInfoItemUtxoSetItemReferenceScript;
   /** An array of assets on the UTxO */
-  asset_list?: AddressInfoItemUtxoSetItemAssetList;
+  asset_list?: AddressInfoItemUtxoSetItemAssetListItem[];
 };
 
 export const bigIntsAddressInfoItemUtxoSetItem: Array<string> = [
-  ...bigIntsAddressInfoItemUtxoSetItemBlockHeight.map((item) =>
-    item === '' ? 'block_height' : `block_height.${item}`,
-  ),
   ...bigIntsAddressInfoItemUtxoSetItemDatumHash.map((item) =>
     item === '' ? 'datum_hash' : `datum_hash.${item}`,
   ),
@@ -182,7 +177,7 @@ export const bigIntsAddressInfoItemUtxoSetItem: Array<string> = [
   ...bigIntsAddressInfoItemUtxoSetItemReferenceScript.map((item) =>
     item === '' ? 'reference_script' : `reference_script.${item}`,
   ),
-  ...bigIntsAddressInfoItemUtxoSetItemAssetList.map((item) =>
+  ...bigIntsAddressInfoItemUtxoSetItemAssetListItem.map((item) =>
     item === '' ? 'asset_list' : `asset_list.${item}`,
   ),
 ];

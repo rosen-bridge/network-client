@@ -135,10 +135,10 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
-import type { TxInfoItemOutputsItemAssetList } from './txInfoItemOutputsItemAssetList';
-import { bigIntsTxInfoItemOutputsItemAssetList } from './txInfoItemOutputsItemAssetList';
+import type { TxInfoItemOutputsItemAssetListItem } from './txInfoItemOutputsItemAssetListItem';
+import { bigIntsTxInfoItemOutputsItemAssetListItem } from './txInfoItemOutputsItemAssetListItem';
 import type { TxInfoItemOutputsItemDatumHash } from './txInfoItemOutputsItemDatumHash';
 import { bigIntsTxInfoItemOutputsItemDatumHash } from './txInfoItemOutputsItemDatumHash';
 import type { TxInfoItemOutputsItemInlineDatum } from './txInfoItemOutputsItemInlineDatum';
@@ -166,7 +166,7 @@ export type TxInfoItemOutputsItem = {
   /** Allow reference scripts to be used to satisfy script requirements during validation, rather than requiring the spending transaction to do so. (CIP-33) */
   reference_script?: TxInfoItemOutputsItemReferenceScript;
   /** An array of assets on the UTxO */
-  asset_list?: TxInfoItemOutputsItemAssetList;
+  asset_list?: TxInfoItemOutputsItemAssetListItem[];
 };
 
 export const bigIntsTxInfoItemOutputsItem: Array<string> = [
@@ -185,7 +185,7 @@ export const bigIntsTxInfoItemOutputsItem: Array<string> = [
   ...bigIntsTxInfoItemOutputsItemReferenceScript.map((item) =>
     item === '' ? 'reference_script' : `reference_script.${item}`,
   ),
-  ...bigIntsTxInfoItemOutputsItemAssetList.map((item) =>
+  ...bigIntsTxInfoItemOutputsItemAssetListItem.map((item) =>
     item === '' ? 'asset_list' : `asset_list.${item}`,
   ),
 ];

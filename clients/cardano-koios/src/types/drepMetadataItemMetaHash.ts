@@ -135,11 +135,11 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 
 /**
  * A hash of the contents of the metadata URL
  */
-export type DrepMetadataItemMetaHash = null | string;
+export type DrepMetadataItemMetaHash = string | null;
 export const bigIntsDrepMetadataItemMetaHash: Array<string> = [];

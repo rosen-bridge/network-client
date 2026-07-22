@@ -135,16 +135,73 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { AssetInfoItemTokenRegistryMetadataAnyOf } from './assetInfoItemTokenRegistryMetadataAnyOf';
 import { bigIntsAssetInfoItemTokenRegistryMetadataAnyOf } from './assetInfoItemTokenRegistryMetadataAnyOf';
+import type { AssetInfoItemTokenRegistryMetadataDescription } from './assetInfoItemTokenRegistryMetadataDescription';
+import { bigIntsAssetInfoItemTokenRegistryMetadataDescription } from './assetInfoItemTokenRegistryMetadataDescription';
+import type { AssetInfoItemTokenRegistryMetadataLogo } from './assetInfoItemTokenRegistryMetadataLogo';
+import { bigIntsAssetInfoItemTokenRegistryMetadataLogo } from './assetInfoItemTokenRegistryMetadataLogo';
+import type { AssetInfoItemTokenRegistryMetadataName } from './assetInfoItemTokenRegistryMetadataName';
+import { bigIntsAssetInfoItemTokenRegistryMetadataName } from './assetInfoItemTokenRegistryMetadataName';
+import type { AssetInfoItemTokenRegistryMetadataTicker } from './assetInfoItemTokenRegistryMetadataTicker';
+import { bigIntsAssetInfoItemTokenRegistryMetadataTicker } from './assetInfoItemTokenRegistryMetadataTicker';
+import type { AssetInfoItemTokenRegistryMetadataUrl } from './assetInfoItemTokenRegistryMetadataUrl';
+import { bigIntsAssetInfoItemTokenRegistryMetadataUrl } from './assetInfoItemTokenRegistryMetadataUrl';
 
 /**
  * Asset metadata registered on the Cardano Token Registry
  */
 export type AssetInfoItemTokenRegistryMetadata =
-  AssetInfoItemTokenRegistryMetadataAnyOf | null;
+  | (AssetInfoItemTokenRegistryMetadataAnyOf & {
+      name?: AssetInfoItemTokenRegistryMetadataName;
+      description?: AssetInfoItemTokenRegistryMetadataDescription;
+      ticker?: AssetInfoItemTokenRegistryMetadataTicker;
+      url?: AssetInfoItemTokenRegistryMetadataUrl;
+      /** A PNG image file as a byte string */
+      logo?: AssetInfoItemTokenRegistryMetadataLogo;
+      decimals?: number;
+    })
+  | (null & {
+      name?: AssetInfoItemTokenRegistryMetadataName;
+      description?: AssetInfoItemTokenRegistryMetadataDescription;
+      ticker?: AssetInfoItemTokenRegistryMetadataTicker;
+      url?: AssetInfoItemTokenRegistryMetadataUrl;
+      /** A PNG image file as a byte string */
+      logo?: AssetInfoItemTokenRegistryMetadataLogo;
+      decimals?: number;
+    });
+
 export const bigIntsAssetInfoItemTokenRegistryMetadata: Array<string> = [
-  ...bigIntsAssetInfoItemTokenRegistryMetadataAnyOf,
+  ...bigIntsAssetInfoItemTokenRegistryMetadataName.map((item) =>
+    item === '' ? 'name' : `name.${item}`,
+  ),
+  ...bigIntsAssetInfoItemTokenRegistryMetadataDescription.map((item) =>
+    item === '' ? 'description' : `description.${item}`,
+  ),
+  ...bigIntsAssetInfoItemTokenRegistryMetadataTicker.map((item) =>
+    item === '' ? 'ticker' : `ticker.${item}`,
+  ),
+  ...bigIntsAssetInfoItemTokenRegistryMetadataUrl.map((item) =>
+    item === '' ? 'url' : `url.${item}`,
+  ),
+  ...bigIntsAssetInfoItemTokenRegistryMetadataLogo.map((item) =>
+    item === '' ? 'logo' : `logo.${item}`,
+  ),
+  ...bigIntsAssetInfoItemTokenRegistryMetadataName.map((item) =>
+    item === '' ? 'name' : `name.${item}`,
+  ),
+  ...bigIntsAssetInfoItemTokenRegistryMetadataDescription.map((item) =>
+    item === '' ? 'description' : `description.${item}`,
+  ),
+  ...bigIntsAssetInfoItemTokenRegistryMetadataTicker.map((item) =>
+    item === '' ? 'ticker' : `ticker.${item}`,
+  ),
+  ...bigIntsAssetInfoItemTokenRegistryMetadataUrl.map((item) =>
+    item === '' ? 'url' : `url.${item}`,
+  ),
+  ...bigIntsAssetInfoItemTokenRegistryMetadataLogo.map((item) =>
+    item === '' ? 'logo' : `logo.${item}`,
+  ),
 ];

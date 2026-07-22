@@ -135,16 +135,35 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { AddressInfoItemUtxoSetItemInlineDatumAnyOf } from './addressInfoItemUtxoSetItemInlineDatumAnyOf';
 import { bigIntsAddressInfoItemUtxoSetItemInlineDatumAnyOf } from './addressInfoItemUtxoSetItemInlineDatumAnyOf';
+import type { AddressInfoItemUtxoSetItemInlineDatumValue } from './addressInfoItemUtxoSetItemInlineDatumValue';
+import { bigIntsAddressInfoItemUtxoSetItemInlineDatumValue } from './addressInfoItemUtxoSetItemInlineDatumValue';
 
 /**
  * Allows datums to be attached to UTxO (CIP-32)
  */
 export type AddressInfoItemUtxoSetItemInlineDatum =
-  AddressInfoItemUtxoSetItemInlineDatumAnyOf | null;
+  | (AddressInfoItemUtxoSetItemInlineDatumAnyOf & {
+      /** Datum bytes (hex) */
+      bytes?: string;
+      /** Value (json) */
+      value?: AddressInfoItemUtxoSetItemInlineDatumValue;
+    })
+  | (null & {
+      /** Datum bytes (hex) */
+      bytes?: string;
+      /** Value (json) */
+      value?: AddressInfoItemUtxoSetItemInlineDatumValue;
+    });
+
 export const bigIntsAddressInfoItemUtxoSetItemInlineDatum: Array<string> = [
-  ...bigIntsAddressInfoItemUtxoSetItemInlineDatumAnyOf,
+  ...bigIntsAddressInfoItemUtxoSetItemInlineDatumValue.map((item) =>
+    item === '' ? 'value' : `value.${item}`,
+  ),
+  ...bigIntsAddressInfoItemUtxoSetItemInlineDatumValue.map((item) =>
+    item === '' ? 'value' : `value.${item}`,
+  ),
 ];

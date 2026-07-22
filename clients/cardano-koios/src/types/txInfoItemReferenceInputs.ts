@@ -135,7 +135,7 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { TxInfoItemReferenceInputsAnyOfItem } from './txInfoItemReferenceInputsAnyOfItem';
 import { bigIntsTxInfoItemReferenceInputsAnyOfItem } from './txInfoItemReferenceInputsAnyOfItem';
@@ -144,8 +144,8 @@ import { bigIntsTxInfoItemReferenceInputsAnyOfItem } from './txInfoItemReference
  * An array of reference inputs. A reference input allows looking at an output without spending it. (CIP-31)
  */
 export type TxInfoItemReferenceInputs =
-  | null
-  | TxInfoItemReferenceInputsAnyOfItem[];
+  | TxInfoItemReferenceInputsAnyOfItem[]
+  | null;
 export const bigIntsTxInfoItemReferenceInputs: Array<string> = [
   ...bigIntsTxInfoItemReferenceInputsAnyOfItem,
 ];

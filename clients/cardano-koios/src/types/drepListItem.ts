@@ -135,8 +135,10 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
+import type { DrepListItemDrepStatus } from './drepListItemDrepStatus';
+import { bigIntsDrepListItemDrepStatus } from './drepListItemDrepStatus';
 
 export type DrepListItem = {
   /** DRep ID in CIP-129 bech32 format */
@@ -145,7 +147,12 @@ export type DrepListItem = {
   hex?: string;
   /** Flag which shows if this credential is a script hash */
   has_script?: boolean;
-  /** Flag to show if the DRep is currently registered */
-  registered?: boolean;
+  /** DRep's current registration status */
+  drep_status?: DrepListItemDrepStatus;
 };
-export const bigIntsDrepListItem: Array<string> = [];
+
+export const bigIntsDrepListItem: Array<string> = [
+  ...bigIntsDrepListItemDrepStatus.map((item) =>
+    item === '' ? 'drep_status' : `drep_status.${item}`,
+  ),
+];

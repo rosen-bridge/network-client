@@ -135,10 +135,8 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
-import type { BlockInfoItemBlockHeight } from './blockInfoItemBlockHeight';
-import { bigIntsBlockInfoItemBlockHeight } from './blockInfoItemBlockHeight';
 import type { BlockInfoItemPool } from './blockInfoItemPool';
 import { bigIntsBlockInfoItemPool } from './blockInfoItemPool';
 import type { BlockInfoItemProtoMajor } from './blockInfoItemProtoMajor';
@@ -155,12 +153,14 @@ export type BlockInfoItem = {
   hash?: string;
   /** Epoch number of the block */
   epoch_no?: number;
+  /** Cardano Era */
+  era?: string;
   /** Absolute slot number of the block */
   abs_slot?: number;
   /** Slot number of the block in epoch */
   epoch_slot?: number;
   /** Block height */
-  block_height?: BlockInfoItemBlockHeight;
+  block_height?: number;
   /** Block size in bytes */
   block_size?: number;
   /** UNIX timestamp of the block */
@@ -192,9 +192,6 @@ export type BlockInfoItem = {
 };
 
 export const bigIntsBlockInfoItem: Array<string> = [
-  ...bigIntsBlockInfoItemBlockHeight.map((item) =>
-    item === '' ? 'block_height' : `block_height.${item}`,
-  ),
   ...bigIntsBlockInfoItemPool.map((item) =>
     item === '' ? 'pool' : `pool.${item}`,
   ),

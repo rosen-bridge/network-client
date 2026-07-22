@@ -8,11 +8,16 @@ import type {
   AccountHistory,
   AccountInfo,
   AccountList,
+  AccountRewardHistory,
   AccountRewards,
+  AccountStakeHistory,
   AccountTxsParams,
+  AccountUpdateHistory,
   AccountUpdates,
   AddressAssets,
   AddressInfo,
+  AddressList,
+  AddressOutputs,
   AddressTxs,
   AddressTxsBody,
   AssetAddresses,
@@ -22,6 +27,7 @@ import type {
   AssetInfo,
   AssetList,
   AssetListBody,
+  AssetListParams,
   AssetListWithExtendedBody,
   AssetNftAddress,
   AssetNftAddressParams,
@@ -48,7 +54,6 @@ import type {
   DrepDelegatorsParams,
   DrepEpochSummary,
   DrepEpochSummaryParams,
-  DrepHistory,
   DrepHistoryParams,
   DrepIdBulkBody,
   DrepInfo,
@@ -58,12 +63,15 @@ import type {
   DrepUpdatesParams,
   DrepVotes,
   DrepVotesParams,
+  DrepVotingPowerHistory,
+  DrepVotingPowerHistoryParams,
   EpochBlockProtocols,
   EpochBlockProtocolsParams,
   EpochInfo,
   EpochInfoParams,
   EpochParams,
   EpochParamsParams,
+  EraSummaries,
   Genesis,
   OgmiosBody,
   Ogmiostip,
@@ -80,17 +88,22 @@ import type {
   PolicyAssetMintsParams,
   PoolBlocks,
   PoolBlocksParams,
+  PoolCalidusKeys,
   PoolDelegators,
   PoolDelegatorsHistory,
   PoolDelegatorsHistoryParams,
   PoolDelegatorsParams,
+  PoolGroups,
   PoolHistoryInfo,
   PoolHistoryParams,
   PoolIdsBody,
   PoolIdsOptionalBody,
   PoolInfo,
+  PoolInvalidDelegators,
+  PoolInvalidDelegatorsParams,
   PoolList,
   PoolMetadata,
+  PoolOwnerHistory,
   PoolRegistrations,
   PoolRegistrationsParams,
   PoolRelays,
@@ -101,6 +114,8 @@ import type {
   PoolUpdatesParams,
   PoolVotes,
   PoolVotesParams,
+  PoolVotingPowerHistory,
+  PoolVotingPowerHistoryParams,
   ProposalList,
   ProposalVotes,
   ProposalVotesParams,
@@ -112,6 +127,7 @@ import type {
   ScriptList,
   ScriptRedeemers,
   ScriptRedeemersParams,
+  ScriptUtxos,
   ScriptUtxosParams,
   StakeAddressesBody,
   StakeAddressesWithEpochNoBody,
@@ -120,17 +136,22 @@ import type {
   Tip,
   Totals,
   TotalsParams,
+  TxByMetalabel,
+  TxByMetalabelParams,
   TxCbor,
   TxIdsBody,
   TxInfo,
   TxInfoBody,
   TxMetadata,
   TxMetalabels,
+  TxOutsEpoch,
+  TxOutsEpochParams,
   TxStatus,
   TxUtxos,
   TxbinBody,
   UtxoInfos,
   UtxoRefsWithExtendedBody,
+  VoteList,
   VoterProposalListParams,
 } from '../types';
 import {
@@ -139,10 +160,15 @@ import {
   bigIntsAccountHistory,
   bigIntsAccountInfo,
   bigIntsAccountList,
+  bigIntsAccountRewardHistory,
   bigIntsAccountRewards,
+  bigIntsAccountStakeHistory,
+  bigIntsAccountUpdateHistory,
   bigIntsAccountUpdates,
   bigIntsAddressAssets,
   bigIntsAddressInfo,
+  bigIntsAddressList,
+  bigIntsAddressOutputs,
   bigIntsAddressTxs,
   bigIntsAssetAddresses,
   bigIntsAssetHistory,
@@ -162,15 +188,16 @@ import {
   bigIntsDatumInfo,
   bigIntsDrepDelegators,
   bigIntsDrepEpochSummary,
-  bigIntsDrepHistory,
   bigIntsDrepInfo,
   bigIntsDrepList,
   bigIntsDrepMetadata,
   bigIntsDrepUpdates,
   bigIntsDrepVotes,
+  bigIntsDrepVotingPowerHistory,
   bigIntsEpochBlockProtocols,
   bigIntsEpochInfo,
   bigIntsEpochParams,
+  bigIntsEraSummaries,
   bigIntsGenesis,
   bigIntsOgmiostip,
   bigIntsParamUpdates,
@@ -179,17 +206,22 @@ import {
   bigIntsPolicyAssetList,
   bigIntsPolicyAssetMints,
   bigIntsPoolBlocks,
+  bigIntsPoolCalidusKeys,
   bigIntsPoolDelegators,
   bigIntsPoolDelegatorsHistory,
+  bigIntsPoolGroups,
   bigIntsPoolHistoryInfo,
   bigIntsPoolInfo,
+  bigIntsPoolInvalidDelegators,
   bigIntsPoolList,
   bigIntsPoolMetadata,
+  bigIntsPoolOwnerHistory,
   bigIntsPoolRegistrations,
   bigIntsPoolRelays,
   bigIntsPoolSnapshot,
   bigIntsPoolUpdates,
   bigIntsPoolVotes,
+  bigIntsPoolVotingPowerHistory,
   bigIntsProposalList,
   bigIntsProposalVotes,
   bigIntsProposalVotingSummary,
@@ -197,15 +229,19 @@ import {
   bigIntsScriptInfo,
   bigIntsScriptList,
   bigIntsScriptRedeemers,
+  bigIntsScriptUtxos,
   bigIntsTip,
   bigIntsTotals,
+  bigIntsTxByMetalabel,
   bigIntsTxCbor,
   bigIntsTxInfo,
   bigIntsTxMetadata,
   bigIntsTxMetalabels,
+  bigIntsTxOutsEpoch,
   bigIntsTxStatus,
   bigIntsTxUtxos,
   bigIntsUtxoInfos,
+  bigIntsVoteList,
 } from '../types';
 
 export const getKoiosAPI = (url: string, authToken?: string) => {
@@ -226,6 +262,18 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
       url: `/tip`,
       method: 'GET',
       transformResponse: JsonFieldBigintFactory(bigIntsTip),
+    });
+  };
+
+  /**
+   * Get some information about each era on the network alongwith it's start epoch
+   * @summary Get Era Summaries
+   */
+  const eraSummaries = () => {
+    return instance<EraSummaries>({
+      url: `/era_summaries`,
+      method: 'GET',
+      transformResponse: JsonFieldBigintFactory(bigIntsEraSummaries),
     });
   };
 
@@ -479,6 +527,19 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
   };
 
   /**
+   * Get a list of all transactions that include a specific metadata label (key)
+   * @summary Transactions by Metadata Label
+   */
+  const txByMetalabel = (params: TxByMetalabelParams) => {
+    return instance<TxByMetalabel>({
+      url: `/tx_by_metalabel`,
+      method: 'GET',
+      params,
+      transformResponse: JsonFieldBigintFactory(bigIntsTxByMetalabel),
+    });
+  };
+
+  /**
    * Submit an already serialized transaction to the network.
    * @summary Submit Transaction
    */
@@ -506,6 +567,19 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
   };
 
   /**
+   * Get a list of all transaction outputs for requested epoch
+   * @summary Transaction outputs by epoch
+   */
+  const txOutsEpoch = (params: TxOutsEpochParams) => {
+    return instance<TxOutsEpoch>({
+      url: `/tx_outs_epoch`,
+      method: 'GET',
+      params,
+      transformResponse: JsonFieldBigintFactory(bigIntsTxOutsEpoch),
+    });
+  };
+
+  /**
    * Get UTxO set (inputs/outputs) of transactions [DEPRECATED - Use /utxo_info instead].
    * @deprecated
    * @summary Transaction UTxOs
@@ -517,6 +591,18 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
       headers: { 'Content-Type': 'application/json' },
       data: txIdsBody,
       transformResponse: JsonFieldBigintFactory(bigIntsTxUtxos),
+    });
+  };
+
+  /**
+   * Get a list of all used address on blockchain
+   * @summary Address List
+   */
+  const addressList = () => {
+    return instance<AddressList>({
+      url: `/address_list`,
+      method: 'GET',
+      transformResponse: JsonFieldBigintFactory(bigIntsAddressList),
     });
   };
 
@@ -536,7 +622,7 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
 
   /**
    * Get UTxO set for given addresses
-   * @summary Address UTXOs
+   * @summary Address UTxOs
    */
   const addressUtxos = (
     paymentAddressesWithExtendedBody: PaymentAddressesWithExtendedBody,
@@ -547,6 +633,20 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
       headers: { 'Content-Type': 'application/json' },
       data: paymentAddressesWithExtendedBody,
       transformResponse: JsonFieldBigintFactory(bigIntsUtxoInfos),
+    });
+  };
+
+  /**
+   * Basic transaction output info for given addresses
+   * @summary Address Outputs
+   */
+  const addressOutputs = (addressTxsBody: AddressTxsBody) => {
+    return instance<AddressOutputs>({
+      url: `/address_outputs`,
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      data: addressTxsBody,
+      transformResponse: JsonFieldBigintFactory(bigIntsAddressOutputs),
     });
   };
 
@@ -677,6 +777,7 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
 
   /**
    * Get the full rewards history (including MIR) for given stake addresses
+   * @deprecated
    * @summary Account Rewards
    */
   const accountRewards = (
@@ -692,7 +793,24 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
   };
 
   /**
+   * Get the full rewards history (including MIR) for given stake addresses
+   * @summary Account Reward History
+   */
+  const accountRewardHistory = (
+    stakeAddressesWithEpochNoBody: StakeAddressesWithEpochNoBody,
+  ) => {
+    return instance<AccountRewardHistory>({
+      url: `/account_reward_history`,
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      data: stakeAddressesWithEpochNoBody,
+      transformResponse: JsonFieldBigintFactory(bigIntsAccountRewardHistory),
+    });
+  };
+
+  /**
    * Get the account updates (registration, deregistration, delegation and withdrawals) for given stake addresses
+   * @deprecated
    * @summary Account Updates
    */
   const accountUpdates = (stakeAddressesBody: StakeAddressesBody) => {
@@ -702,6 +820,20 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
       headers: { 'Content-Type': 'application/json' },
       data: stakeAddressesBody,
       transformResponse: JsonFieldBigintFactory(bigIntsAccountUpdates),
+    });
+  };
+
+  /**
+   * Get the account updates (registration, deregistration, delegation and withdrawals) for given stake addresses
+   * @summary Account Update History
+   */
+  const accountUpdateHistory = (stakeAddressesBody: StakeAddressesBody) => {
+    return instance<AccountUpdateHistory>({
+      url: `/account_update_history`,
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      data: stakeAddressesBody,
+      transformResponse: JsonFieldBigintFactory(bigIntsAccountUpdateHistory),
     });
   };
 
@@ -737,28 +869,42 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
 
   /**
    * Get the staking history of given stake addresses (accounts)
+   * @deprecated
    * @summary Account History
    */
-  const accountHistory = (
-    stakeAddressesWithEpochNoBody: StakeAddressesWithEpochNoBody,
-  ) => {
+  const accountHistory = (stakeAddressesBody: StakeAddressesBody) => {
     return instance<AccountHistory>({
       url: `/account_history`,
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      data: stakeAddressesWithEpochNoBody,
+      data: stakeAddressesBody,
       transformResponse: JsonFieldBigintFactory(bigIntsAccountHistory),
     });
   };
 
   /**
-   * Get the list of all native assets (paginated)
+   * Get the staking history of given stake addresses (accounts)
+   * @summary Account Stake History
+   */
+  const accountStakeHistory = (stakeAddressesBody: StakeAddressesBody) => {
+    return instance<AccountStakeHistory>({
+      url: `/account_stake_history`,
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      data: stakeAddressesBody,
+      transformResponse: JsonFieldBigintFactory(bigIntsAccountStakeHistory),
+    });
+  };
+
+  /**
+   * Get the list of all native assets (paginated). Use the optional parameters to filter efficiently, bypassing the performance cost of filtering the encoded output. Results are pre-sorted by policy ID and then asset name.
    * @summary Asset List
    */
-  const assetList = () => {
+  const assetList = (params: AssetListParams) => {
     return instance<AssetList>({
       url: `/asset_list`,
       method: 'GET',
+      params,
       transformResponse: JsonFieldBigintFactory(bigIntsAssetList),
     });
   };
@@ -803,8 +949,8 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
   };
 
   /**
-   * Get the UTXO information of a list of assets including
-   * @summary Asset UTXOs
+   * Get the UTxO information of a list of assets including
+   * @summary Asset UTxOs
    */
   const assetUtxos = (assetListWithExtendedBody: AssetListWithExtendedBody) => {
     return instance<UtxoInfos>({
@@ -857,6 +1003,7 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
 
   /**
    * Get the list of addresses with quantity for each asset on the given policy <br><br> `Note - Due to cardano's UTxO design and usage from projects, asset to addresses map can be infinite. Thus, for a small subset of active projects with millions of transactions, these might end up with timeouts (HTTP code 504) on free layer. Such large-scale projects are free to subscribe to query layers to have a dedicated cache table for themselves served via Koios.`
+   * @deprecated
    * @summary Policy Asset Address List
    */
   const policyAssetAddresses = (params: PolicyAssetAddressesParams) => {
@@ -870,6 +1017,7 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
 
   /**
    * Get the information for all assets under the same policy
+   * @deprecated
    * @summary Policy Asset Information
    */
   const policyAssetInfo = (params: PolicyAssetInfoParams) => {
@@ -988,19 +1136,34 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
 
   /**
    * History of DReps voting power against each (or requested) epoch
+   * @deprecated
    * @summary DReps Voting Power History
    */
   const drepHistory = (params?: DrepHistoryParams) => {
-    return instance<DrepHistory>({
+    return instance<DrepVotingPowerHistory>({
       url: `/drep_history`,
       method: 'GET',
       params,
-      transformResponse: JsonFieldBigintFactory(bigIntsDrepHistory),
+      transformResponse: JsonFieldBigintFactory(bigIntsDrepVotingPowerHistory),
+    });
+  };
+
+  /**
+   * History of DReps voting power against each (or requested) epoch
+   * @summary DReps Voting Power History
+   */
+  const drepVotingPowerHistory = (params?: DrepVotingPowerHistoryParams) => {
+    return instance<DrepVotingPowerHistory>({
+      url: `/drep_voting_power_history`,
+      method: 'GET',
+      params,
+      transformResponse: JsonFieldBigintFactory(bigIntsDrepVotingPowerHistory),
     });
   };
 
   /**
    * List of all votes casted by requested delegated representative (DRep)
+   * @deprecated
    * @summary DReps Votes
    */
   const drepVotes = (params: DrepVotesParams) => {
@@ -1066,7 +1229,7 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
    * List of all governance proposals for specified DRep, SPO or Committee credential
    * @summary Voter's Proposal List
    */
-  const voterProposalList = (params: VoterProposalListParams) => {
+  const voterProposalList = (params?: VoterProposalListParams) => {
     return instance<ProposalList>({
       url: `/voter_proposal_list`,
       method: 'GET',
@@ -1098,6 +1261,18 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
       method: 'GET',
       params,
       transformResponse: JsonFieldBigintFactory(bigIntsProposalVotes),
+    });
+  };
+
+  /**
+   * List of all votes posted on-chain
+   * @summary Vote List
+   */
+  const voteList = () => {
+    return instance<VoteList>({
+      url: `/vote_list`,
+      method: 'GET',
+      transformResponse: JsonFieldBigintFactory(bigIntsVoteList),
     });
   };
 
@@ -1167,6 +1342,19 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
   };
 
   /**
+   * Return information about delegators for a given pool that are invalid for the specified epoch.
+   * @summary Pool Invalid Delegators
+   */
+  const poolInvalidDelegators = (params: PoolInvalidDelegatorsParams) => {
+    return instance<PoolInvalidDelegators>({
+      url: `/pool_invalid_delegators`,
+      method: 'GET',
+      params,
+      transformResponse: JsonFieldBigintFactory(bigIntsPoolInvalidDelegators),
+    });
+  };
+
+  /**
    * Return information about blocks minted by a given pool for all epochs (or _epoch_no if provided)
    * @summary Pool Blocks
    */
@@ -1176,6 +1364,20 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
       method: 'GET',
       params,
       transformResponse: JsonFieldBigintFactory(bigIntsPoolBlocks),
+    });
+  };
+
+  /**
+   * Return information about pool owner's historical stake and their promised pledge to their pools
+   * @summary Pool Owner History
+   */
+  const poolOwnerHistory = (poolIdsBody: PoolIdsBody) => {
+    return instance<PoolOwnerHistory>({
+      url: `/pool_owner_history`,
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      data: poolIdsBody,
+      transformResponse: JsonFieldBigintFactory(bigIntsPoolOwnerHistory),
     });
   };
 
@@ -1244,7 +1446,21 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
   };
 
   /**
+   * History of Pool voting power against each (or requested) epoch
+   * @summary Pool's Voting Power History
+   */
+  const poolVotingPowerHistory = (params?: PoolVotingPowerHistoryParams) => {
+    return instance<PoolVotingPowerHistory>({
+      url: `/pool_voting_power_history`,
+      method: 'GET',
+      params,
+      transformResponse: JsonFieldBigintFactory(bigIntsPoolVotingPowerHistory),
+    });
+  };
+
+  /**
    * List of all votes casted by a pool
+   * @deprecated
    * @summary Pool Votes
    */
   const poolVotes = (params: PoolVotesParams) => {
@@ -1253,6 +1469,18 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
       method: 'GET',
       params,
       transformResponse: JsonFieldBigintFactory(bigIntsPoolVotes),
+    });
+  };
+
+  /**
+   * List of all registered pool and their groups across sources from [pool_groups](https://github.com/cardano-community/pool_groups) repository. This is only relevant for mainnet
+   * @summary Pool Groups
+   */
+  const poolGroups = () => {
+    return instance<PoolGroups>({
+      url: `/pool_groups`,
+      method: 'GET',
+      transformResponse: JsonFieldBigintFactory(bigIntsPoolGroups),
     });
   };
 
@@ -1267,6 +1495,18 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
       headers: { 'Content-Type': 'application/json' },
       data: poolIdsOptionalBody,
       transformResponse: JsonFieldBigintFactory(bigIntsPoolMetadata),
+    });
+  };
+
+  /**
+   * List of valid calidus keys for all pools
+   * @summary Pool Calidus Keys
+   */
+  const poolCalidusKeys = () => {
+    return instance<PoolCalidusKeys>({
+      url: `/pool_calidus_keys`,
+      method: 'GET',
+      transformResponse: JsonFieldBigintFactory(bigIntsPoolCalidusKeys),
     });
   };
 
@@ -1322,8 +1562,23 @@ export const getKoiosAPI = (url: string, authToken?: string) => {
   };
 
   /**
-   * List of all UTXOs for a given script hash
-   * @summary Script UTXOs
+   * List of all unspent UTxOs with a reference script matching given script hashes
+   * @summary Reference Script UTxOs
+   */
+  const referenceScriptUtxos = (scriptHashesBody: ScriptHashesBody) => {
+    return instance<ScriptUtxos>({
+      url: `/reference_script_utxos`,
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      data: scriptHashesBody,
+      transformResponse: JsonFieldBigintFactory(bigIntsScriptUtxos),
+    });
+  };
+
+  /**
+   * List of all UTxOs for a given script hash
+   * @deprecated
+   * @summary Script UTxOs
    */
   const scriptUtxos = (params: ScriptUtxosParams) => {
     return instance<UtxoInfos>({
@@ -1370,6 +1625,7 @@ We do support transparent forwarding for various methods from Ogmios, you can re
 
   return {
     tip,
+    eraSummaries,
     genesis,
     totals,
     paramUpdates,
@@ -1389,11 +1645,15 @@ We do support transparent forwarding for various methods from Ogmios, you can re
     txInfo,
     txMetadata,
     txMetalabels,
+    txByMetalabel,
     submittx,
     txStatus,
+    txOutsEpoch,
     txUtxos,
+    addressList,
     addressInfo,
     addressUtxos,
+    addressOutputs,
     credentialUtxos,
     addressTxs,
     credentialTxs,
@@ -1404,10 +1664,13 @@ We do support transparent forwarding for various methods from Ogmios, you can re
     accountUtxos,
     accountTxs,
     accountRewards,
+    accountRewardHistory,
     accountUpdates,
+    accountUpdateHistory,
     accountAddresses,
     accountAssets,
     accountHistory,
+    accountStakeHistory,
     assetList,
     policyAssetList,
     assetTokenRegistry,
@@ -1427,6 +1690,7 @@ We do support transparent forwarding for various methods from Ogmios, you can re
     drepMetadata,
     drepUpdates,
     drepHistory,
+    drepVotingPowerHistory,
     drepVotes,
     drepDelegators,
     committeeInfo,
@@ -1435,23 +1699,30 @@ We do support transparent forwarding for various methods from Ogmios, you can re
     voterProposalList,
     proposalVotingSummary,
     proposalVotes,
+    voteList,
     poolList,
     poolInfo,
     poolStakeSnapshot,
     poolDelegators,
     poolDelegatorsHistory,
+    poolInvalidDelegators,
     poolBlocks,
+    poolOwnerHistory,
     poolHistory,
     poolUpdates,
     poolRegistrations,
     poolRetirements,
     poolRelays,
+    poolVotingPowerHistory,
     poolVotes,
+    poolGroups,
     poolMetadata,
+    poolCalidusKeys,
     scriptInfo,
     nativeScriptList,
     plutusScriptList,
     scriptRedeemers,
+    referenceScriptUtxos,
     scriptUtxos,
     datumInfo,
     ogmios,
@@ -1464,6 +1735,9 @@ type Awaited<O> = O extends AwaitedInput<infer T> ? T : never;
 
 export type TipResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['tip']>>
+>;
+export type EraSummariesResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['eraSummaries']>>
 >;
 export type GenesisResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['genesis']>>
@@ -1522,20 +1796,32 @@ export type TxMetadataResult = NonNullable<
 export type TxMetalabelsResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['txMetalabels']>>
 >;
+export type TxByMetalabelResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['txByMetalabel']>>
+>;
 export type SubmittxResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['submittx']>>
 >;
 export type TxStatusResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['txStatus']>>
 >;
+export type TxOutsEpochResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['txOutsEpoch']>>
+>;
 export type TxUtxosResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['txUtxos']>>
+>;
+export type AddressListResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['addressList']>>
 >;
 export type AddressInfoResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['addressInfo']>>
 >;
 export type AddressUtxosResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['addressUtxos']>>
+>;
+export type AddressOutputsResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['addressOutputs']>>
 >;
 export type CredentialUtxosResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['credentialUtxos']>>
@@ -1567,8 +1853,14 @@ export type AccountTxsResult = NonNullable<
 export type AccountRewardsResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['accountRewards']>>
 >;
+export type AccountRewardHistoryResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['accountRewardHistory']>>
+>;
 export type AccountUpdatesResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['accountUpdates']>>
+>;
+export type AccountUpdateHistoryResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['accountUpdateHistory']>>
 >;
 export type AccountAddressesResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['accountAddresses']>>
@@ -1578,6 +1870,9 @@ export type AccountAssetsResult = NonNullable<
 >;
 export type AccountHistoryResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['accountHistory']>>
+>;
+export type AccountStakeHistoryResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['accountStakeHistory']>>
 >;
 export type AssetListResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['assetList']>>
@@ -1636,6 +1931,9 @@ export type DrepUpdatesResult = NonNullable<
 export type DrepHistoryResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['drepHistory']>>
 >;
+export type DrepVotingPowerHistoryResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['drepVotingPowerHistory']>>
+>;
 export type DrepVotesResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['drepVotes']>>
 >;
@@ -1660,6 +1958,9 @@ export type ProposalVotingSummaryResult = NonNullable<
 export type ProposalVotesResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['proposalVotes']>>
 >;
+export type VoteListResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['voteList']>>
+>;
 export type PoolListResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['poolList']>>
 >;
@@ -1675,8 +1976,14 @@ export type PoolDelegatorsResult = NonNullable<
 export type PoolDelegatorsHistoryResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['poolDelegatorsHistory']>>
 >;
+export type PoolInvalidDelegatorsResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['poolInvalidDelegators']>>
+>;
 export type PoolBlocksResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['poolBlocks']>>
+>;
+export type PoolOwnerHistoryResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['poolOwnerHistory']>>
 >;
 export type PoolHistoryResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['poolHistory']>>
@@ -1693,11 +2000,20 @@ export type PoolRetirementsResult = NonNullable<
 export type PoolRelaysResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['poolRelays']>>
 >;
+export type PoolVotingPowerHistoryResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['poolVotingPowerHistory']>>
+>;
 export type PoolVotesResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['poolVotes']>>
 >;
+export type PoolGroupsResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['poolGroups']>>
+>;
 export type PoolMetadataResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['poolMetadata']>>
+>;
+export type PoolCalidusKeysResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['poolCalidusKeys']>>
 >;
 export type ScriptInfoResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['scriptInfo']>>
@@ -1710,6 +2026,9 @@ export type PlutusScriptListResult = NonNullable<
 >;
 export type ScriptRedeemersResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['scriptRedeemers']>>
+>;
+export type ReferenceScriptUtxosResult = NonNullable<
+  Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['referenceScriptUtxos']>>
 >;
 export type ScriptUtxosResult = NonNullable<
   Awaited<ReturnType<ReturnType<typeof getKoiosAPI>['scriptUtxos']>>

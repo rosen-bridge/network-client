@@ -135,10 +135,10 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
-import type { TxInfoItemReferenceInputsAnyOfItemAssetList } from './txInfoItemReferenceInputsAnyOfItemAssetList';
-import { bigIntsTxInfoItemReferenceInputsAnyOfItemAssetList } from './txInfoItemReferenceInputsAnyOfItemAssetList';
+import type { TxInfoItemReferenceInputsAnyOfItemAssetListItem } from './txInfoItemReferenceInputsAnyOfItemAssetListItem';
+import { bigIntsTxInfoItemReferenceInputsAnyOfItemAssetListItem } from './txInfoItemReferenceInputsAnyOfItemAssetListItem';
 import type { TxInfoItemReferenceInputsAnyOfItemDatumHash } from './txInfoItemReferenceInputsAnyOfItemDatumHash';
 import { bigIntsTxInfoItemReferenceInputsAnyOfItemDatumHash } from './txInfoItemReferenceInputsAnyOfItemDatumHash';
 import type { TxInfoItemReferenceInputsAnyOfItemInlineDatum } from './txInfoItemReferenceInputsAnyOfItemInlineDatum';
@@ -166,7 +166,7 @@ export type TxInfoItemReferenceInputsAnyOfItem = {
   /** Allow reference scripts to be used to satisfy script requirements during validation, rather than requiring the spending transaction to do so. (CIP-33) */
   reference_script?: TxInfoItemReferenceInputsAnyOfItemReferenceScript;
   /** An array of assets on the UTxO */
-  asset_list?: TxInfoItemReferenceInputsAnyOfItemAssetList;
+  asset_list?: TxInfoItemReferenceInputsAnyOfItemAssetListItem[];
 };
 
 export const bigIntsTxInfoItemReferenceInputsAnyOfItem: Array<string> = [
@@ -185,7 +185,7 @@ export const bigIntsTxInfoItemReferenceInputsAnyOfItem: Array<string> = [
   ...bigIntsTxInfoItemReferenceInputsAnyOfItemReferenceScript.map((item) =>
     item === '' ? 'reference_script' : `reference_script.${item}`,
   ),
-  ...bigIntsTxInfoItemReferenceInputsAnyOfItemAssetList.map((item) =>
+  ...bigIntsTxInfoItemReferenceInputsAnyOfItemAssetListItem.map((item) =>
     item === '' ? 'asset_list' : `asset_list.${item}`,
   ),
 ];

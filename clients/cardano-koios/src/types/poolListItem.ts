@@ -135,7 +135,7 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { PoolListItemActiveEpochNo } from './poolListItemActiveEpochNo';
 import { bigIntsPoolListItemActiveEpochNo } from './poolListItemActiveEpochNo';
@@ -151,10 +151,10 @@ import type { PoolListItemMetaHash } from './poolListItemMetaHash';
 import { bigIntsPoolListItemMetaHash } from './poolListItemMetaHash';
 import type { PoolListItemMetaUrl } from './poolListItemMetaUrl';
 import { bigIntsPoolListItemMetaUrl } from './poolListItemMetaUrl';
-import type { PoolListItemOwners } from './poolListItemOwners';
-import { bigIntsPoolListItemOwners } from './poolListItemOwners';
 import type { PoolListItemPledge } from './poolListItemPledge';
 import { bigIntsPoolListItemPledge } from './poolListItemPledge';
+import type { PoolListItemPoolGroup } from './poolListItemPoolGroup';
+import { bigIntsPoolListItemPoolGroup } from './poolListItemPoolGroup';
 import type { PoolListItemPoolStatus } from './poolListItemPoolStatus';
 import { bigIntsPoolListItemPoolStatus } from './poolListItemPoolStatus';
 import type { PoolListItemRelaysItem } from './poolListItemRelaysItem';
@@ -183,10 +183,12 @@ export type PoolListItem = {
   deposit?: PoolListItemDeposit;
   /** Pool reward address */
   reward_addr?: PoolListItemRewardAddr;
-  owners?: PoolListItemOwners;
+  owners?: string[];
   relays?: PoolListItemRelaysItem[];
   /** Pool ticker */
   ticker?: PoolListItemTicker;
+  /** A group that the pool was identified to be associated with */
+  pool_group?: PoolListItemPoolGroup;
   /** Pool metadata URL */
   meta_url?: PoolListItemMetaUrl;
   /** Pool metadata hash */
@@ -218,14 +220,14 @@ export const bigIntsPoolListItem: Array<string> = [
   ...bigIntsPoolListItemRewardAddr.map((item) =>
     item === '' ? 'reward_addr' : `reward_addr.${item}`,
   ),
-  ...bigIntsPoolListItemOwners.map((item) =>
-    item === '' ? 'owners' : `owners.${item}`,
-  ),
   ...bigIntsPoolListItemRelaysItem.map((item) =>
     item === '' ? 'relays' : `relays.${item}`,
   ),
   ...bigIntsPoolListItemTicker.map((item) =>
     item === '' ? 'ticker' : `ticker.${item}`,
+  ),
+  ...bigIntsPoolListItemPoolGroup.map((item) =>
+    item === '' ? 'pool_group' : `pool_group.${item}`,
   ),
   ...bigIntsPoolListItemMetaUrl.map((item) =>
     item === '' ? 'meta_url' : `meta_url.${item}`,

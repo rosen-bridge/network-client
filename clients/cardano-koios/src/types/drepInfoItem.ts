@@ -135,10 +135,12 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { DrepInfoItemDeposit } from './drepInfoItemDeposit';
 import { bigIntsDrepInfoItemDeposit } from './drepInfoItemDeposit';
+import type { DrepInfoItemDrepStatus } from './drepInfoItemDrepStatus';
+import { bigIntsDrepInfoItemDrepStatus } from './drepInfoItemDrepStatus';
 import type { DrepInfoItemExpiresEpochNo } from './drepInfoItemExpiresEpochNo';
 import { bigIntsDrepInfoItemExpiresEpochNo } from './drepInfoItemExpiresEpochNo';
 import type { DrepInfoItemMetaHash } from './drepInfoItemMetaHash';
@@ -153,8 +155,8 @@ export type DrepInfoItem = {
   hex?: string;
   /** Flag which shows if this credential is a script hash */
   has_script?: boolean;
-  /** Flag to show if the DRep is currently registered */
-  registered?: boolean;
+  /** DRep's current registration status */
+  drep_status?: DrepInfoItemDrepStatus;
   /** DRep's registration deposit  in number */
   deposit?: DrepInfoItemDeposit;
   /** Flag to show if the DRep is  (i.e. not expired) */
@@ -167,9 +169,14 @@ export type DrepInfoItem = {
   meta_url?: DrepInfoItemMetaUrl;
   /** A hash of the contents of the metadata URL */
   meta_hash?: DrepInfoItemMetaHash;
+  /** Number of delegators whose last voting power delegation was to this DRep */
+  live_delegator_count?: number;
 };
 
 export const bigIntsDrepInfoItem: Array<string> = [
+  ...bigIntsDrepInfoItemDrepStatus.map((item) =>
+    item === '' ? 'drep_status' : `drep_status.${item}`,
+  ),
   ...bigIntsDrepInfoItemDeposit.map((item) =>
     item === '' ? 'deposit' : `deposit.${item}`,
   ),

@@ -135,28 +135,26 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
-import type { TipItemBlockNo } from './tipItemBlockNo';
-import { bigIntsTipItemBlockNo } from './tipItemBlockNo';
 
 export type TipItem = {
   /** Hash of the block */
   hash?: string;
+  /** Cardano Era */
+  era?: string;
   /** Epoch number of the block */
   epoch_no?: number;
   /** Absolute slot number of the block */
   abs_slot?: number;
   /** Slot number of the block in epoch */
   epoch_slot?: number;
-  /** Block height */
-  block_no?: TipItemBlockNo;
+  /**
+   * DEPRECATED!! Use Block height instead
+   * @deprecated
+   */
+  block_no?: number;
   /** UNIX timestamp of the block */
   block_time?: number;
 };
-
-export const bigIntsTipItem: Array<string> = [
-  ...bigIntsTipItemBlockNo.map((item) =>
-    item === '' ? 'block_no' : `block_no.${item}`,
-  ),
-];
+export const bigIntsTipItem: Array<string> = [];

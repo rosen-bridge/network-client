@@ -135,18 +135,16 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
-import type { TxInfoItemAssetsMinted } from './txInfoItemAssetsMinted';
-import { bigIntsTxInfoItemAssetsMinted } from './txInfoItemAssetsMinted';
-import type { TxInfoItemBlockHeight } from './txInfoItemBlockHeight';
-import { bigIntsTxInfoItemBlockHeight } from './txInfoItemBlockHeight';
-import type { TxInfoItemCertificates } from './txInfoItemCertificates';
-import { bigIntsTxInfoItemCertificates } from './txInfoItemCertificates';
+import type { TxInfoItemAssetsMintedItem } from './txInfoItemAssetsMintedItem';
+import { bigIntsTxInfoItemAssetsMintedItem } from './txInfoItemAssetsMintedItem';
+import type { TxInfoItemCertificatesItem } from './txInfoItemCertificatesItem';
+import { bigIntsTxInfoItemCertificatesItem } from './txInfoItemCertificatesItem';
 import type { TxInfoItemCollateralInputs } from './txInfoItemCollateralInputs';
 import { bigIntsTxInfoItemCollateralInputs } from './txInfoItemCollateralInputs';
-import type { TxInfoItemCollateralOutput } from './txInfoItemCollateralOutput';
-import { bigIntsTxInfoItemCollateralOutput } from './txInfoItemCollateralOutput';
+import type { TxInfoItemCollateralOutputItem } from './txInfoItemCollateralOutputItem';
+import { bigIntsTxInfoItemCollateralOutputItem } from './txInfoItemCollateralOutputItem';
 import type { TxInfoItemInputsItem } from './txInfoItemInputsItem';
 import { bigIntsTxInfoItemInputsItem } from './txInfoItemInputsItem';
 import type { TxInfoItemInvalidAfter } from './txInfoItemInvalidAfter';
@@ -155,20 +153,20 @@ import type { TxInfoItemInvalidBefore } from './txInfoItemInvalidBefore';
 import { bigIntsTxInfoItemInvalidBefore } from './txInfoItemInvalidBefore';
 import type { TxInfoItemMetadata } from './txInfoItemMetadata';
 import { bigIntsTxInfoItemMetadata } from './txInfoItemMetadata';
-import type { TxInfoItemNativeScripts } from './txInfoItemNativeScripts';
-import { bigIntsTxInfoItemNativeScripts } from './txInfoItemNativeScripts';
+import type { TxInfoItemNativeScriptsItem } from './txInfoItemNativeScriptsItem';
+import { bigIntsTxInfoItemNativeScriptsItem } from './txInfoItemNativeScriptsItem';
 import type { TxInfoItemOutputsItem } from './txInfoItemOutputsItem';
 import { bigIntsTxInfoItemOutputsItem } from './txInfoItemOutputsItem';
-import type { TxInfoItemPlutusContracts } from './txInfoItemPlutusContracts';
-import { bigIntsTxInfoItemPlutusContracts } from './txInfoItemPlutusContracts';
-import type { TxInfoItemProposalProcedures } from './txInfoItemProposalProcedures';
-import { bigIntsTxInfoItemProposalProcedures } from './txInfoItemProposalProcedures';
+import type { TxInfoItemPlutusContractsItem } from './txInfoItemPlutusContractsItem';
+import { bigIntsTxInfoItemPlutusContractsItem } from './txInfoItemPlutusContractsItem';
+import type { TxInfoItemProposalProceduresItem } from './txInfoItemProposalProceduresItem';
+import { bigIntsTxInfoItemProposalProceduresItem } from './txInfoItemProposalProceduresItem';
 import type { TxInfoItemReferenceInputs } from './txInfoItemReferenceInputs';
 import { bigIntsTxInfoItemReferenceInputs } from './txInfoItemReferenceInputs';
-import type { TxInfoItemVotingProcedures } from './txInfoItemVotingProcedures';
-import { bigIntsTxInfoItemVotingProcedures } from './txInfoItemVotingProcedures';
-import type { TxInfoItemWithdrawals } from './txInfoItemWithdrawals';
-import { bigIntsTxInfoItemWithdrawals } from './txInfoItemWithdrawals';
+import type { TxInfoItemVotingProceduresItem } from './txInfoItemVotingProceduresItem';
+import { bigIntsTxInfoItemVotingProceduresItem } from './txInfoItemVotingProceduresItem';
+import type { TxInfoItemWithdrawalsItem } from './txInfoItemWithdrawalsItem';
+import { bigIntsTxInfoItemWithdrawalsItem } from './txInfoItemWithdrawalsItem';
 
 export type TxInfoItem = {
   /** Hash identifier of the transaction */
@@ -176,7 +174,7 @@ export type TxInfoItem = {
   /** Hash of the block */
   block_hash?: string;
   /** Block height */
-  block_height?: TxInfoItemBlockHeight;
+  block_height?: number;
   /** Epoch number of the block */
   epoch_no?: number;
   /** Slot number of the block in epoch */
@@ -204,7 +202,7 @@ export type TxInfoItem = {
   /** An array of collateral inputs needed for smart contracts in case of contract failure */
   collateral_inputs?: TxInfoItemCollateralInputs;
   /** A collateral output for change if the smart contract fails to execute and collateral inputs are spent. (CIP-40) */
-  collateral_output?: TxInfoItemCollateralOutput;
+  collateral_output?: TxInfoItemCollateralOutputItem[];
   /** An array of reference inputs. A reference input allows looking at an output without spending it. (CIP-31) */
   reference_inputs?: TxInfoItemReferenceInputs;
   /** An array of UTxO outputs created by the transaction */
@@ -212,27 +210,24 @@ export type TxInfoItem = {
   /** An array of UTxO outputs created by the transaction */
   outputs?: TxInfoItemOutputsItem[];
   /** Array of withdrawals with-in a transaction */
-  withdrawals?: TxInfoItemWithdrawals;
+  withdrawals?: TxInfoItemWithdrawalsItem[];
   /** Array of minted assets with-in a transaction */
-  assets_minted?: TxInfoItemAssetsMinted;
+  assets_minted?: TxInfoItemAssetsMintedItem[];
   /** A JSON array containing details about metadata within transaction */
   metadata?: TxInfoItemMetadata;
   /** Certificates present with-in a transaction (if any) */
-  certificates?: TxInfoItemCertificates;
+  certificates?: TxInfoItemCertificatesItem[];
   /** Native scripts present in a transaction (if any) */
-  native_scripts?: TxInfoItemNativeScripts;
+  native_scripts?: TxInfoItemNativeScriptsItem[];
   /** Plutus contracts present in transaction (if any) */
-  plutus_contracts?: TxInfoItemPlutusContracts;
+  plutus_contracts?: TxInfoItemPlutusContractsItem[];
   /** Governance votes in a transaction (if any) */
-  voting_procedures?: TxInfoItemVotingProcedures;
+  voting_procedures?: TxInfoItemVotingProceduresItem[];
   /** Governance proposals in a transaction (if any) */
-  proposal_procedures?: TxInfoItemProposalProcedures;
+  proposal_procedures?: TxInfoItemProposalProceduresItem[];
 };
 
 export const bigIntsTxInfoItem: Array<string> = [
-  ...bigIntsTxInfoItemBlockHeight.map((item) =>
-    item === '' ? 'block_height' : `block_height.${item}`,
-  ),
   ...bigIntsTxInfoItemInvalidBefore.map((item) =>
     item === '' ? 'invalid_before' : `invalid_before.${item}`,
   ),
@@ -242,7 +237,7 @@ export const bigIntsTxInfoItem: Array<string> = [
   ...bigIntsTxInfoItemCollateralInputs.map((item) =>
     item === '' ? 'collateral_inputs' : `collateral_inputs.${item}`,
   ),
-  ...bigIntsTxInfoItemCollateralOutput.map((item) =>
+  ...bigIntsTxInfoItemCollateralOutputItem.map((item) =>
     item === '' ? 'collateral_output' : `collateral_output.${item}`,
   ),
   ...bigIntsTxInfoItemReferenceInputs.map((item) =>
@@ -254,28 +249,28 @@ export const bigIntsTxInfoItem: Array<string> = [
   ...bigIntsTxInfoItemOutputsItem.map((item) =>
     item === '' ? 'outputs' : `outputs.${item}`,
   ),
-  ...bigIntsTxInfoItemWithdrawals.map((item) =>
+  ...bigIntsTxInfoItemWithdrawalsItem.map((item) =>
     item === '' ? 'withdrawals' : `withdrawals.${item}`,
   ),
-  ...bigIntsTxInfoItemAssetsMinted.map((item) =>
+  ...bigIntsTxInfoItemAssetsMintedItem.map((item) =>
     item === '' ? 'assets_minted' : `assets_minted.${item}`,
   ),
   ...bigIntsTxInfoItemMetadata.map((item) =>
     item === '' ? 'metadata' : `metadata.${item}`,
   ),
-  ...bigIntsTxInfoItemCertificates.map((item) =>
+  ...bigIntsTxInfoItemCertificatesItem.map((item) =>
     item === '' ? 'certificates' : `certificates.${item}`,
   ),
-  ...bigIntsTxInfoItemNativeScripts.map((item) =>
+  ...bigIntsTxInfoItemNativeScriptsItem.map((item) =>
     item === '' ? 'native_scripts' : `native_scripts.${item}`,
   ),
-  ...bigIntsTxInfoItemPlutusContracts.map((item) =>
+  ...bigIntsTxInfoItemPlutusContractsItem.map((item) =>
     item === '' ? 'plutus_contracts' : `plutus_contracts.${item}`,
   ),
-  ...bigIntsTxInfoItemVotingProcedures.map((item) =>
+  ...bigIntsTxInfoItemVotingProceduresItem.map((item) =>
     item === '' ? 'voting_procedures' : `voting_procedures.${item}`,
   ),
-  ...bigIntsTxInfoItemProposalProcedures.map((item) =>
+  ...bigIntsTxInfoItemProposalProceduresItem.map((item) =>
     item === '' ? 'proposal_procedures' : `proposal_procedures.${item}`,
   ),
 ];

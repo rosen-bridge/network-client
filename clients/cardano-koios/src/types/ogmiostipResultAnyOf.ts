@@ -135,16 +135,8 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 
-/**
- * Result of the query
- */
-export type OgmiostipResultAnyOf = {
-  /** Absolute slot number on chain */
-  slot?: number;
-  /** Block Hash (Blake2b 32-byte hash digest, encoded in base16) */
-  id?: string;
-};
+export type OgmiostipResultAnyOf = { [key: string]: unknown };
 export const bigIntsOgmiostipResultAnyOf: Array<string> = [];

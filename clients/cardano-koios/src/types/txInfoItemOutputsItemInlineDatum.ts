@@ -135,16 +135,35 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { TxInfoItemOutputsItemInlineDatumAnyOf } from './txInfoItemOutputsItemInlineDatumAnyOf';
 import { bigIntsTxInfoItemOutputsItemInlineDatumAnyOf } from './txInfoItemOutputsItemInlineDatumAnyOf';
+import type { TxInfoItemOutputsItemInlineDatumValue } from './txInfoItemOutputsItemInlineDatumValue';
+import { bigIntsTxInfoItemOutputsItemInlineDatumValue } from './txInfoItemOutputsItemInlineDatumValue';
 
 /**
  * Allows datums to be attached to UTxO (CIP-32)
  */
 export type TxInfoItemOutputsItemInlineDatum =
-  TxInfoItemOutputsItemInlineDatumAnyOf | null;
+  | (TxInfoItemOutputsItemInlineDatumAnyOf & {
+      /** Datum bytes (hex) */
+      bytes?: string;
+      /** Value (json) */
+      value?: TxInfoItemOutputsItemInlineDatumValue;
+    })
+  | (null & {
+      /** Datum bytes (hex) */
+      bytes?: string;
+      /** Value (json) */
+      value?: TxInfoItemOutputsItemInlineDatumValue;
+    });
+
 export const bigIntsTxInfoItemOutputsItemInlineDatum: Array<string> = [
-  ...bigIntsTxInfoItemOutputsItemInlineDatumAnyOf,
+  ...bigIntsTxInfoItemOutputsItemInlineDatumValue.map((item) =>
+    item === '' ? 'value' : `value.${item}`,
+  ),
+  ...bigIntsTxInfoItemOutputsItemInlineDatumValue.map((item) =>
+    item === '' ? 'value' : `value.${item}`,
+  ),
 ];

@@ -135,7 +135,7 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
 import type { VoterProposalListItemDeposit } from './voterProposalListItemDeposit';
 import { bigIntsVoterProposalListItemDeposit } from './voterProposalListItemDeposit';
@@ -161,14 +161,16 @@ import type { VoterProposalListItemMetaUrl } from './voterProposalListItemMetaUr
 import { bigIntsVoterProposalListItemMetaUrl } from './voterProposalListItemMetaUrl';
 import type { VoterProposalListItemParamProposal } from './voterProposalListItemParamProposal';
 import { bigIntsVoterProposalListItemParamProposal } from './voterProposalListItemParamProposal';
+import type { VoterProposalListItemPreviousGovActionProposalId } from './voterProposalListItemPreviousGovActionProposalId';
+import { bigIntsVoterProposalListItemPreviousGovActionProposalId } from './voterProposalListItemPreviousGovActionProposalId';
 import type { VoterProposalListItemProposalDescription } from './voterProposalListItemProposalDescription';
 import { bigIntsVoterProposalListItemProposalDescription } from './voterProposalListItemProposalDescription';
 import type { VoterProposalListItemProposalType } from './voterProposalListItemProposalType';
 import { bigIntsVoterProposalListItemProposalType } from './voterProposalListItemProposalType';
 import type { VoterProposalListItemRatifiedEpoch } from './voterProposalListItemRatifiedEpoch';
 import { bigIntsVoterProposalListItemRatifiedEpoch } from './voterProposalListItemRatifiedEpoch';
-import type { VoterProposalListItemWithdrawal } from './voterProposalListItemWithdrawal';
-import { bigIntsVoterProposalListItemWithdrawal } from './voterProposalListItemWithdrawal';
+import type { VoterProposalListItemWithdrawalItem } from './voterProposalListItemWithdrawalItem';
+import { bigIntsVoterProposalListItemWithdrawalItem } from './voterProposalListItemWithdrawalItem';
 
 export type VoterProposalListItem = {
   /** UNIX timestamp of the block */
@@ -183,19 +185,21 @@ export type VoterProposalListItem = {
   proposal_type?: VoterProposalListItemProposalType;
   /** Description for Proposal Action */
   proposal_description?: VoterProposalListItemProposalDescription;
+  /** If not null, the CIP-129 formatted governance action ID of the previous governance action in a chain of actions (e.g. for NewConstitution or HardForkInitiation) */
+  previous_gov_action_proposal_id?: VoterProposalListItemPreviousGovActionProposalId;
   /** DRep's registration deposit  in number */
   deposit?: VoterProposalListItemDeposit;
   /** The StakeAddress index of the reward address to receive the deposit when it is repaid. */
   return_address?: string;
   /** Shows the epoch at which this governance action was proposed. */
   proposed_epoch?: number;
-  /** If not null, then this proposal has been ratified at the specfied epoch. */
+  /** If not null, then this proposal has been ratified at the specified epoch. */
   ratified_epoch?: VoterProposalListItemRatifiedEpoch;
-  /** If not null, then this proposal has been enacted at the specfied epoch. */
+  /** If not null, then this proposal has been enacted at the specified epoch. */
   enacted_epoch?: VoterProposalListItemEnactedEpoch;
-  /** If not null, then this proposal has been dropped (expired/enacted) at the specfied epoch. */
+  /** If not null, then this proposal has been dropped (expired/enacted) at the specified epoch. */
   dropped_epoch?: VoterProposalListItemDroppedEpoch;
-  /** If not null, then this proposal has been expired at the specfied epoch. */
+  /** If not null, then this proposal has been expired at the specified epoch. */
   expired_epoch?: VoterProposalListItemExpiredEpoch;
   /** Shows the epoch at which this governance action is expected to expire. */
   expiration?: VoterProposalListItemExpiration;
@@ -209,10 +213,10 @@ export type VoterProposalListItem = {
   meta_comment?: VoterProposalListItemMetaComment;
   /** The language described in the context of the metadata as per CIP-100 */
   meta_language?: VoterProposalListItemMetaLanguage;
-  /** Indicate whether data is invalid (currently returns null for all as per dbsync) */
+  /** Indicate whether data is invalid */
   meta_is_valid?: VoterProposalListItemMetaIsValid;
-  /** If not null, the amount withdrawn from treasury into stake address by this this proposal */
-  withdrawal?: VoterProposalListItemWithdrawal;
+  /** The array of amounts withdrawn from treasury into specified stake addresses by this proposal */
+  withdrawal?: VoterProposalListItemWithdrawalItem[];
   /** If not null, the proposed new parameter set */
   param_proposal?: VoterProposalListItemParamProposal;
 };
@@ -223,6 +227,11 @@ export const bigIntsVoterProposalListItem: Array<string> = [
   ),
   ...bigIntsVoterProposalListItemProposalDescription.map((item) =>
     item === '' ? 'proposal_description' : `proposal_description.${item}`,
+  ),
+  ...bigIntsVoterProposalListItemPreviousGovActionProposalId.map((item) =>
+    item === ''
+      ? 'previous_gov_action_proposal_id'
+      : `previous_gov_action_proposal_id.${item}`,
   ),
   ...bigIntsVoterProposalListItemDeposit.map((item) =>
     item === '' ? 'deposit' : `deposit.${item}`,
@@ -260,7 +269,7 @@ export const bigIntsVoterProposalListItem: Array<string> = [
   ...bigIntsVoterProposalListItemMetaIsValid.map((item) =>
     item === '' ? 'meta_is_valid' : `meta_is_valid.${item}`,
   ),
-  ...bigIntsVoterProposalListItemWithdrawal.map((item) =>
+  ...bigIntsVoterProposalListItemWithdrawalItem.map((item) =>
     item === '' ? 'withdrawal' : `withdrawal.${item}`,
   ),
   ...bigIntsVoterProposalListItemParamProposal.map((item) =>

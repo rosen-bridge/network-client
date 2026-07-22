@@ -135,46 +135,10 @@ The examples across this API site already [supports authentication](/#auth), for
 
 A big thank you to the following projects who are already starting to use Koios from early days. A list of tools, libraries and projects utilising Koios (atleast those who'd like to be named) can be found [here](https://www.koios.rest/community.html)
 
- * OpenAPI spec version: v1.3.1
+ * OpenAPI spec version: v1.4.2
  */
-import type { AssetInfoItemTokenRegistryMetadataAnyOfDescription } from './assetInfoItemTokenRegistryMetadataAnyOfDescription';
-import { bigIntsAssetInfoItemTokenRegistryMetadataAnyOfDescription } from './assetInfoItemTokenRegistryMetadataAnyOfDescription';
-import type { AssetInfoItemTokenRegistryMetadataAnyOfLogo } from './assetInfoItemTokenRegistryMetadataAnyOfLogo';
-import { bigIntsAssetInfoItemTokenRegistryMetadataAnyOfLogo } from './assetInfoItemTokenRegistryMetadataAnyOfLogo';
-import type { AssetInfoItemTokenRegistryMetadataAnyOfName } from './assetInfoItemTokenRegistryMetadataAnyOfName';
-import { bigIntsAssetInfoItemTokenRegistryMetadataAnyOfName } from './assetInfoItemTokenRegistryMetadataAnyOfName';
-import type { AssetInfoItemTokenRegistryMetadataAnyOfTicker } from './assetInfoItemTokenRegistryMetadataAnyOfTicker';
-import { bigIntsAssetInfoItemTokenRegistryMetadataAnyOfTicker } from './assetInfoItemTokenRegistryMetadataAnyOfTicker';
-import type { AssetInfoItemTokenRegistryMetadataAnyOfUrl } from './assetInfoItemTokenRegistryMetadataAnyOfUrl';
-import { bigIntsAssetInfoItemTokenRegistryMetadataAnyOfUrl } from './assetInfoItemTokenRegistryMetadataAnyOfUrl';
 
-/**
- * Asset metadata registered on the Cardano Token Registry
- */
 export type AssetInfoItemTokenRegistryMetadataAnyOf = {
-  name?: AssetInfoItemTokenRegistryMetadataAnyOfName;
-  description?: AssetInfoItemTokenRegistryMetadataAnyOfDescription;
-  ticker?: AssetInfoItemTokenRegistryMetadataAnyOfTicker;
-  url?: AssetInfoItemTokenRegistryMetadataAnyOfUrl;
-  /** A PNG image file as a byte string */
-  logo?: AssetInfoItemTokenRegistryMetadataAnyOfLogo;
-  decimals?: number;
+  [key: string]: unknown;
 };
-
-export const bigIntsAssetInfoItemTokenRegistryMetadataAnyOf: Array<string> = [
-  ...bigIntsAssetInfoItemTokenRegistryMetadataAnyOfName.map((item) =>
-    item === '' ? 'name' : `name.${item}`,
-  ),
-  ...bigIntsAssetInfoItemTokenRegistryMetadataAnyOfDescription.map((item) =>
-    item === '' ? 'description' : `description.${item}`,
-  ),
-  ...bigIntsAssetInfoItemTokenRegistryMetadataAnyOfTicker.map((item) =>
-    item === '' ? 'ticker' : `ticker.${item}`,
-  ),
-  ...bigIntsAssetInfoItemTokenRegistryMetadataAnyOfUrl.map((item) =>
-    item === '' ? 'url' : `url.${item}`,
-  ),
-  ...bigIntsAssetInfoItemTokenRegistryMetadataAnyOfLogo.map((item) =>
-    item === '' ? 'logo' : `logo.${item}`,
-  ),
-];
+export const bigIntsAssetInfoItemTokenRegistryMetadataAnyOf: Array<string> = [];
